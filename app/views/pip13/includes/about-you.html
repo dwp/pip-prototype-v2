@@ -1,0 +1,59 @@
+
+{% macro checkChange(questions,helper) %}
+<li>
+  <div class="form-group">
+    <p class="check-question column-third">{{questions.heading}}</p>
+    <p class="column-two-thirds">
+      <a href="#" class="show-answer" aria-label="Hide my answers for Help with your application" data-open-text="Show my answers" data-close-text="Hide my answers">Hide my answers</a>
+    </p>
+  </div>
+  <div class="answered-question-cont">
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">{{ questions.question2 }}</p>
+      <p class="show-answer column-two-thirds">{{ helper.name }}</p>
+    </div>
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">{{ questions.question3 }}</p>
+      <p class="show-answer column-two-thirds">{{ helper.relationship }}</p>
+    </div>
+    <div class="column-two-thirds">
+      <a href="/pip13/helper?edit=true" class="button change-my-answer" aria-label="Change my answers for Help with your application">
+Change my answers									</a>
+    </div>
+  </div>
+</li>
+<li>
+  <div class="form-group">
+    <p class="check-question column-third">Nationality and where you live</p>
+    <p class="column-two-thirds">
+      <a href="#" class="show-answer" aria-label="Hide my answers for Nationality and where you live" data-open-text="Show my answers" data-close-text="Hide my answers">Hide my answers</a>
+    </p>
+  </div>
+  <div class="answered-question-cont">
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">What is your nationality?</p>
+      <p class="show-answer column-two-thirds">{{nationality.britishCitizen}}</p>
+    </div>
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">Your nationality</p>
+      <p class="show-answer column-two-thirds">{{nationality.yourNationality}}</p>
+    </div>
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">Do you live in England, Scotland or Wales?</p>
+      <p class="show-answer column-two-thirds">{{nationality.livingUK}}</p>
+    </div>
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">Country you live in</p>
+      <p class="show-answer column-two-thirds">{{nationality.livingCountry}}</p>
+    </div>
+    <div class="answered-question  ">
+      <p class="question form-label-bold column-third">Have you been out of England, Scotland or Wales for more than a year in the last 3 years?</p>
+      <p class="show-answer column-two-thirds">{{nationality.beenAbroad}}</p>
+    </div>
+    <div class="column-two-thirds">
+      <a href="/pip12/nationality?edit=true" class="button change-my-answer" aria-label="Change my answers for Nationality and where you live">
+Change my answers									</a>
+    </div>
+  </div>
+</li>
+{% endmacro %}

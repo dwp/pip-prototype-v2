@@ -1,0 +1,48 @@
+{
+  "name": "govuk_template_mustache",
+  "version": "0.16.0",
+  "description": "{{ mustache }} packaged version of the GOV.UK template",
+  "keywords": [
+    "alphagov",
+    "govuk",
+    "mustache",
+    "template"
+  ],
+  "bugs": {
+    "url": "https://github.com/alphagov/govuk_template_mustache/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Government Digital Service developers",
+    "url": "https://gds.blog.gov.uk/"
+  },
+  "main": "views/layouts/govuk_template.html",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alphagov/govuk_template_mustache.git"
+  },
+  "gitHead": "5e0c4f3651608c70786d45b4a81a8484a4e95084",
+  "homepage": "https://github.com/alphagov/govuk_template_mustache",
+  "_id": "govuk_template_mustache@0.16.0",
+  "scripts": {},
+  "_shasum": "6557663176d7bb2f943c3db38a9544228ab853fe",
+  "_from": "govuk_template_mustache@>=0.16.0 <0.17.0",
+  "_npmVersion": "1.4.28",
+  "_npmUser": {
+    "name": "alphagov",
+    "email": "govuk-dev@digital.cabinet-office.gov.uk"
+  },
+  "maintainers": [
+    {
+      "name": "alphagov",
+      "email": "govuk-dev@digital.cabinet-office.gov.uk"
+    }
+  ],
+  "dist": {
+    "shasum": "6557663176d7bb2f943c3db38a9544228ab853fe",
+    "tarball": "http://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.0.tgz",
+  "readme": "ERROR: No README data found!"
+}

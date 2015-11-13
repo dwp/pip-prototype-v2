@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "elements/elements.html" as elements %}
+
+{% for page in page %}
+{% for questions in page.nationality %}
+
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip13/questions" method="post" class="form checkMyAnswers" data-question="questions">
+
+					<a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
+
+					<header>
+	          <h1 class="form-title heading-large">
+							<span class=" section-progress">
+							  Page {{questions.page}} of {{page.maxPages}}
+							</span>
+							{{questions.heading}} </h1>
+	        </header>
+
+
+	        <div class="form-group">
+	          <input type="submit" class="button" value="{{page.continue}}" name="saveAndcontinue">
+	          <input type="submit" value="{{page.saveExit}}" name="saveAndExit" class="exit-link">
+            <a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
+	        </div>
+				</form>
+
+			</div>
+			<div class="column-third">
+
+			</div>
+		</div>
+
+</main>
+{% endfor %}
+{% endfor %}
+{% endblock %}

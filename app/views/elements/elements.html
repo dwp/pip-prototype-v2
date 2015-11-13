@@ -1,0 +1,34 @@
+{% macro field(name, value='', type='text') %}
+<div class="field">
+  <input type="{{ type }}" name="{{ name }}"
+         value="{{ value | escape }}" />
+</div>
+{% endmacro %}
+
+{% macro label(text) %}
+<div>
+  <label>{{ text }}</label>
+</div>
+{% endmacro %}
+
+{% macro genericInput(id,question,answer) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label" for="{{ id }}">{{question}}</label>
+  <input type="text" class="form-control " id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
+{% endmacro %}
+
+{% macro formRadioSelect(id,question,answer,radioOptions) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <fieldset class="inline">
+    <legend class="form-label-bold" id="{{ id }}" for="{{ id }}">
+      <span class="frequency-question">{{ question }}</span>
+    </legend>
+    {% for item in radioOptions %}
+      <label class="block-label" for="{{ item.id }}" data-target="{{ item.showPanel }}">
+        <input id="{{ item.id }}" type="radio" name="{{ id }}" {% if answer == item.value %}checked='checked' {% endif %} value="{{ item.value }}" aria-controls="{{ item.showPanel }}"> {{ item.value }}
+      </label>
+    {% endfor %}
+  </fieldset>
+</div>
+{% endmacro %}

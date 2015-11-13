@@ -1,0 +1,186 @@
+// Import GOV.UK elements, this will import the frontend toolkit and some base styles.
+// Take a look at elements.scss to see which files are imported.
+@import 'elements';
+
+// Set up your main content area <main id="content">
+// This will give you a full width content block
+// See elements _layout.scss line 7.
+
+// If you need it, set up your grid layout - refer to the grid layout usage example
+// See elements _layout.scss line 28.
+
+// If you need a phase banner, put this inside the main content area
+// See elements _layout.scss line 22.
+.phase-banner-alpha  {
+  @include phase-banner(alpha); // Change this to (beta) for a beta banner
+}
+.phase-tag-alpha {
+  @include phase-tag(alpha); // Change this to (beta) for a beta tag
+}
+
+// If you need to create a page as part of your journey, but without GOV.UK branding
+// See localhost:3000/examples/unbranded/
+.unbranded {
+  background: $white;
+  // Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+  * {
+    font-family: Arial !important;
+  }
+  // Remove GOV.UK footer styles
+  #footer {
+    border: 0;
+    background: $white;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
+// either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+.exit-link {
+  cursor: pointer;
+  display: block;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  background-color: #fff;
+  color: #00f;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.example-back-link {
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+
+[class*="heading-"] .section-progress {
+font-size: 2rem;
+font-weight: 300;
+display: block;
+color: #6f777b;
+}
+
+
+/********************
+Check and change
+********************/
+
+.check-and-change > li {
+	border-bottom:1px solid #dee0e2;
+	float:left;
+	margin-bottom:10px;
+	padding-top:15px;
+	width:100%;
+}
+
+.check-and-change li .form-group {
+	margin-bottom:0;
+}
+
+.change-my-answer {
+  background:#DEE0E2;
+}
+
+.show-answer {
+	float: right;
+}
+
+#check-my-answers section {
+  margin-left:30px;
+}
+
+
+.question {
+	font-size:20px;
+}
+
+#check-my-answers h3{
+	float:left;
+	margin-top:1em;
+}
+
+.answered-question {
+	float:left;
+	margin-bottom:5px;
+	width:100%;
+}
+
+.seperator {
+  border-top:1px solid #dee0e2;
+  padding-top:20px;
+}
+
+#check-my-answers .grid-row {
+margin-right: 0;
+}
+#check-my-answers section {
+  margin-left:15px;
+}
+
+.check-and-change .button {
+  background:#eee;
+  box-shadow:0 0;
+  color:#000;
+  margin:10px 0 15px;
+}
+
+@media only all and (max-width:40em) {
+	.check-and-change .column-two-thirds {
+    float:none;
+  }
+
+  .check-and-change p.column-two-thirds,
+	.show-all .column-two-thirds {
+		float: left;
+	}
+	.check-and-change .button {
+		text-align: center;
+		margin-left:-13px;
+		width:100%;
+	}
+}
+
+
+.check-and-change p.column-third,
+.check-and-change .column-two-thirds {
+  padding:0 ;
+}
+
+.check-and-change .column-two-thirds {
+  padding-left:0;
+}
+
+.check-and-change .show-answer {
+  padding-left:15px;
+}
+/*****************************/
+.help-text .panel-indent {
+  margin-bottom:10px;
+}
+
+.help-text .list-bullet {
+  margin-bottom:0;
+}
+
+.form-control {
+  border:1px solid #6F777B;
+}
+
+
+.character-count {
+  float:left;
+  margin:10px 0 0 4px;
+  text-align:right;
+}
+
+.help-text {
+  margin-top:15px;
+}
+
+[class*="heading-"] .section-progress {
+font-size: 2rem;
+font-weight: 300;
+display: block;
+color: #6f777b;
+}

@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip13/includes/about-you.html" as aboutYou %}
+
+{% for page in page %}
+{% for questions in page.helper %}
+
+<main id="content" role="main">
+	<form id="check-my-answers" action="check-and-change" method="post" class="form">
+	    <h1 class="form-title heading-large">Check your answers </h1>
+
+	    <div class="grid-row show-all">
+	      <p class="column-two-thirds">
+	        <a href="#" class="show-all" data-action="close" data-open-text="Show all my answers" data-close-text="Hide all my answers">Hide all my answers</a>
+	      </p>
+	    </div>
+
+	    <div class="grid-row form-group">
+	      <section>
+	        <ul class="check-and-change">
+						{{ aboutYou.checkChange(questions,helperAnswers) }}
+					</ul>
+				</section>
+			</div>
+
+</main>
+{% endfor %}
+{% endfor %}
+{% endblock %}
