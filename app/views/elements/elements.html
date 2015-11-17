@@ -1,13 +1,8 @@
-{% macro field(name, value='', type='text') %}
-<div class="field">
-  <input type="{{ type }}" name="{{ name }}"
-         value="{{ value | escape }}" />
-</div>
-{% endmacro %}
-
-{% macro label(text) %}
-<div>
-  <label>{{ text }}</label>
+{% macro submit(page,questions) %}
+<div class="form-group">
+    <input type="submit" class="button" value="{{page.continue}}" name="saveAndcontinue">
+    <input type="submit" value="{{page.saveExit}}" name="saveAndExit" class="exit-link">
+  <a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
 </div>
 {% endmacro %}
 
@@ -18,15 +13,22 @@
 </div>
 {% endmacro %}
 
-{% macro formRadioSelect(id,question,answer,radioOptions) %}
+{% macro formRadioSelect(id,question,hintText,answer,radioOptions,inline) %}
 <div class="form-group" id="form-group-{{ id }}">
-  <fieldset class="inline">
+  <fieldset {% if inline %}class="inline"{% endif %}>
     <legend class="form-label-bold" id="{{ id }}" for="{{ id }}">
       <span class="frequency-question">{{ question }}</span>
+      {% if hintText %}
+        <p class="form-hint">{{ hintText }}</p>
+      {% endif %}
     </legend>
     {% for item in radioOptions %}
-      <label class="block-label" for="{{ item.id }}" data-target="{{ item.showPanel }}">
-        <input id="{{ item.id }}" type="radio" name="{{ id }}" {% if answer == item.value %}checked='checked' {% endif %} value="{{ item.value }}" aria-controls="{{ item.showPanel }}"> {{ item.value }}
+      <label class="block-label" for="{{ item.id }}"
+        {% if item.showPanel %} data-target="{{ item.showPanel }}"{% endif %}
+      >
+      <input id="{{ item.id }}" type="radio" name="{{ id }}"
+        {% if answer == item.value %}checked='checked' {% endif %}
+        value="{{ item.value }}" aria-controls="{{ item.showPanel }}"> {{ item.value }}
       </label>
     {% endfor %}
   </fieldset>

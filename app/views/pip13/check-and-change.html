@@ -9,7 +9,6 @@
 {% import "pip13/includes/about-you.html" as aboutYou %}
 
 {% for page in page %}
-{% for questions in page.helper %}
 
 <main id="content" role="main">
 	<form id="check-my-answers" action="check-and-change" method="post" class="form">
@@ -24,12 +23,11 @@
 	    <div class="grid-row form-group">
 	      <section>
 	        <ul class="check-and-change">
-						{{ aboutYou.checkChange(questions,helperAnswers) }}
+						{{ aboutYou.checkChange(page,helperAnswers,nationalityAnswers,paymentsFromAbroadAnswers) }}
 					</ul>
 				</section>
 			</div>
 
 </main>
-{% endfor %}
 {% endfor %}
 {% endblock %}

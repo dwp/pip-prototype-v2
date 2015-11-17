@@ -16,7 +16,7 @@
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip13/helper{% if edit %}?edit=true{% endif %}" method="post" class="form checkMyAnswers" data-question="helper">
+				<form action="/pip13/helper{% if edit %}?edit=true{% endif %}" method="post" class="form">
 
 					<a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
 
@@ -35,19 +35,16 @@
 				  {% set question3 = questions.question3 %}
 				  {% set answer3   = answers.relationship %}
 
-					{% set seq  = [{"id":"helper-Yes","value":"Yes","showPanel":"helperDetailsFields"},{"id":"helper-no","value":"No"}] %}
-					{{ elements.formRadioSelect('helper',question,answer,seq) }}
+					{% set seq  = [{"id":"helper-Yes","value":"Yes","showPanel":"helperDetailsFields"},{"id":"helper-No","value":"No"}] %}
+					{{ elements.formRadioSelect('helper',question,"",answer,seq,"inline") }}
 
 				  <div class="panel-indent {% if answer != 'Yes' %}js-hidden{% endif %} " id="helperDetailsFields">
 				    {{ elements.genericInput('name',question2, answer2) }}
 				    {{ elements.genericInput('relationship',question3, answer3) }}
 				  </div>
 
-	        <div class="form-group">
-	          <input type="submit" class="button" value="Save and continue" name="saveAndcontinue">
-	          <input type="submit" value="Save and exit" name="saveAndExit" class="exit-link">
-						<a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
-	        </div>
+					{{elements.submit(page,questions)}}
+
 				</form>
 
 			</div>

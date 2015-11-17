@@ -36,9 +36,9 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/nationality', function (req, res) {
        res.render('pip13/nationality', {
-         nationalityAnswers : req.session['pip13-nationality'],
-         'edit'             : req.param('edit'),
-         'page'             : data.getTableData()
+         answers : req.session['pip13-nationality'],
+         'edit'  : req.param('edit'),
+         'page'  : data.getTableData()
        });
    });
 
@@ -46,9 +46,9 @@ module.exports = function(app){
      req.session['pip13-nationality'] = req.body;
 
      if (req.param('edit')) {
-       res.redirect('pip13/check-and-change');
+       res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('pip13/paymentsFromAbroad');
+       res.redirect('/pip13/paymentsFromAbroad');
      }
    });
 
@@ -57,20 +57,19 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/paymentsFromAbroad', function (req, res) {
        res.render('pip13/paymentsFromAbroad', {
-         page               : '3',
-         paymentsFromAbroad : req.session['pip13-paymentsFromAbroad'],
-         'edit'             : req.param('edit')
+         answers : req.session['pip13-paymentsFromAbroad'],
+         'edit'  : req.param('edit'),
+         'page'  : data.getTableData()
        });
    });
+
    app.post('/pip13/paymentsFromAbroad', function (req, res) {
      req.session['pip13-paymentsFromAbroad'] = req.body;
-     req.session['pip13-paymentsFromAbroad']['benefitsAbroadPayment' + req.body.benefitsAbroadPayment] = req.body.benefitsAbroadPayment;
-     req.session['pip13-paymentsFromAbroad']['payInsuranceAbroad' + req.body.payInsuranceAbroad]       = req.body.payInsuranceAbroad;
 
      if (req.param('edit')) {
-       res.redirect('pip13/check-and-change');
+       res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('pip13/youAndYourCondition');
+       res.redirect('/pip13/conditionDetails');
      }
    });
 
@@ -87,9 +86,9 @@ module.exports = function(app){
    app.post('/pip13/conditionDetails', function (req, res) {
      req.session['pip13-conditionDetails'] = req.body;
      if (req.param('edit')) {
-       res.redirect('pip13/check-and-change');
+       res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('pip13/medications');
+       res.redirect('/pip13/medications');
      }
    });
 
