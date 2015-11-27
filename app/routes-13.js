@@ -69,7 +69,7 @@ module.exports = function(app){
      if (req.param('edit')) {
        res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('/pip13/conditionDetails');
+       res.redirect('/pip13/youAndYourCondition');
      }
    });
 
@@ -78,9 +78,9 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/conditionDetails', function (req, res) {
        res.render('pip13/conditionDetails', {
-         page             : '4',
-         conditionDetails : req.session['pip13-conditionDetails'],
-         'edit'           : req.param('edit')
+         answers : req.session['pip13-conditionDetails'],
+         'edit'  : req.param('edit'),
+         'page'  : data.getTableData()
        });
    });
    app.post('/pip13/conditionDetails', function (req, res) {
@@ -97,9 +97,9 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/medications', function (req, res) {
        res.render('pip13/medications', {
-         page        : '5',
-         medications : req.session['pip13-medications'],
-         'edit'      : req.param('edit')
+         answers : req.session['pip13-medications'],
+         'edit'  : req.param('edit'),
+         'page'  : data.getTableData()
        });
    });
    app.post('/pip13/medications', function (req, res) {
@@ -107,14 +107,14 @@ module.exports = function(app){
 
      if(req.body.currentMedications === 'Yes') {
        if (req.param('edit')) {
-         res.redirect('pip13/manageMedications?edit=true');
+         res.redirect('/pip13/manageMedications?edit=true');
        } else {
-         res.redirect('pip13/manageMedications');
+         res.redirect('/pip13/manageMedications');
        }
      } else if (req.param('edit')) {
-       res.redirect('pip13/check-and-change');
+       res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('pip13/treatments');
+       res.redirect('/pip13/treatments');
      }
    });
 
@@ -123,21 +123,17 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/manageMedications', function (req, res) {
        res.render('pip13/manageMedications', {
-         page               : '6',
-         medications   : req.session['pip13-manageMedications'],
-         'edit'             : req.param('edit')
+         answers : req.session['pip13-manageMedications'],
+         'edit'  : req.param('edit'),
+         'page'  : data.getTableData()
        });
    });
    app.post('/pip13/manageMedications', function (req, res) {
      req.session['pip13-manageMedications'] = req.body;
-     //req.session['pip13-conditionDetails']['benefitsAbroadPayment' + req.body.benefitsAbroadPayment] = req.body.benefitsAbroadPayment;
-     //req.session['pip13-conditionDetails']['payInsuranceAbroad' + req.body.payInsuranceAbroad]       = req.body.payInsuranceAbroad;
-
-     //console.log(JSON.stringify(req.session['pip13-conditionDetails']));
      if (req.param('edit')) {
-       res.redirect('pip13/check-and-change');
+       res.redirect('/pip13/check-and-change');
      } else {
-       res.redirect('pip13/treatments');
+       res.redirect('/pip13/treatments');
      }
    });
 
@@ -146,7 +142,6 @@ module.exports = function(app){
    *******************/
    app.get('/pip13/treatments', function (req, res) {
        res.render('pip13/treatments', {
-         page               : '7',
          medications   : req.session['pip13-treatments'],
          'edit'             : req.param('edit')
        });

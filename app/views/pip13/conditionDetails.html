@@ -6,10 +6,44 @@
 
 {% block content %}
 
-<main id="content" role="main">
-	conditionDetails
+{% import "elements/elements.html" as elements %}
 
+{% for page in page %}
+{% for questions in page.conditionDetails %}
+
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip13/conditionDetails{% if edit %}?edit=true{% endif %}" method="post" class="form checkMyAnswers" data-question="questions">
+
+					<a href="{{questions.backLink}}" class="example-back-link">{{page.backText}}</a>
+
+					<header>
+	          <h1 class="form-title heading-large">
+							<span class=" section-progress">
+							  Page {{questions.page}} of {{page.maxPages}}
+							</span>
+							{{questions.heading}} </h1>
+	        </header>
+
+					{% set tableHeading  = questions.tableHeading %}
+					{% set tableHeading2 = questions.tableHeading2 %}
+					{{ elements.formTable('conditionList','condition',tableHeading,tableHeading2,"",8,answers) }}
+
+	        {{elements.submit(page,questions)}}
+
+				</form>
+
+			</div>
+			<div class="column-third">
+
+			</div>
+		</div>
 
 </main>
 
+{% endfor %}
+{% endfor %}
 {% endblock %}

@@ -35,7 +35,10 @@
 				  {% set question3 = questions.question3 %}
 				  {% set answer3   = answers.relationship %}
 
-					{% set seq  = [{"id":"helper-Yes","value":"Yes","showPanel":"helperDetailsFields"},{"id":"helper-No","value":"No"}] %}
+					{% set seq  = [
+						{"id":"helper-Yes","value":"Yes","showPanel":"helperDetailsFields"},
+						{"id":"helper-No", "value":"No"}
+					] %}
 					{{ elements.formRadioSelect('helper',question,"",answer,seq,"inline") }}
 
 				  <div class="panel-indent {% if answer != 'Yes' %}js-hidden{% endif %} " id="helperDetailsFields">

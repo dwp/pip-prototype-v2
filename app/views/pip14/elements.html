@@ -1,0 +1,103 @@
+{% macro submit(data,questions,backLink) %}
+<div class="form-group">
+    <input type="submit" class="button" value="{{data.continue}}" name="saveAndcontinue">
+    <input type="submit" value="{{data.saveExit}}" name="saveAndExit" class="exit-link">
+    {% if backLink != false %}
+      <a href="{{questions.backLink}}" class="example-back-link">{{data.backText}}</a>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro textInput (id,answer) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <input type="text" class="form-control " id="{{ id }}" name="{{ id }}" value="{{ answer }}">
+</div>
+{% endmacro %}
+
+{% macro genericInput(id,question,answer,inputSize) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label" for="{{ id }}">{{question}}</label>
+  <input type="text" class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
+{% endmacro %}
+
+{% macro radioSelect(id,question,hintText,answer,radioOptions,inline) %}
+<fieldset {% if inline %}class="inline"{% endif %}>
+  <legend id="{{ id }}" for="{{ id }}">
+    <span class="frequency-question">{{ question }}</span>
+    {% if hintText %}
+      <p class="form-hint">{{ hintText }}</p>
+    {% endif %}
+  </legend>
+  <div class="form-group">
+    {% for item in radioOptions %}
+      <label class="block-label" for="{{ item.id }}"
+        {% if item.showPanel %} data-target="{{ item.showPanel }}"{% endif %} >
+
+      <input id="{{ item.id }}" type="radio" name="{{ id }}"
+        {% if answer == item.value %}checked='checked' {% endif %}
+        value="{{ item.value }}" aria-controls="{{ item.showPanel }}"> {{ item.value }}
+      </label>
+    {% endfor %}
+  </div>
+</fieldset>
+{% endmacro %}
+
+{% macro textarea(id,label,maxlength=1500) %}
+<div class="form-group">
+  <label class="form-label" for="{{ id }}">
+    {{ label }}
+  </label>
+  <textarea maxlength="{{ maxlength }}" class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}"></textarea>
+  <span class="font-xsmall form-control-3-4 character-count"><span class="char-count">{{ maxlength }}</span> characters left</span>
+</div>
+{% endmacro %}
+
+{% macro checkbox(id,question,hintText,checkboxOptions) %}
+<fieldset>
+  <legend>{{ question }}</legend>
+  {% if hintText %}
+    <p class="form-hint">{{ hintText }}</p>
+  {% endif %}
+
+  {% for item in checkboxOptions %}
+    <label class="block-label" for="{{ item.id }}"
+      {% if item.textarea %}
+        data-target="{{ item.target }}"
+      {% endif %} >
+      <input id="{{ item.id }}" name="{{ id }}" type="checkbox" value="{{ item.value }}">
+      {{ item.label }}
+    </label>
+    {% if item.textarea %}
+      <fieldset id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false" >
+        {{ textarea(item.textareaId,item.textareaLabel) }}
+      </fieldset>
+    {% endif %}
+  {% endfor %}
+  <div class="form-group js-hidden" id="anything-else">
+    <label class="form-label" for="full-name-f2">Tell us the details</label>
+    <textarea maxlength="1500" class="form-control form-control-3-4  " id="full-name-f2" name="aids[0].description"></textarea>
+    <span class="font-xsmall js-hiddens form-control-3-4 character-count"><span class="char-count">1500</span> characters left</span>
+  </div>
+</fieldset>
+{% endmacro %}
+
+{% macro helpText(summary,hintText,list,open=true) %}
+<details class="help-text"
+{% if open != false %}
+open
+{% endif %}
+>
+  <summary><span class="summary">{{ summary }}</span></summary>
+  <div class="panel-indent">
+    <p>
+      {{ hintText }}
+    </p>
+    <ul class="list-bullet">
+      {% for item in list %}
+        <li>{{ item.listItem }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</details>
+{% endmacro %}

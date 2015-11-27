@@ -1,9 +1,21 @@
 var data = [ {
-  "maxPages"   : "35",
-  "continue"   : "Save and continue",
-  "saveExit"   : "Save and come back later",
-  "backText"   : "Back",
-  "helper"     : [
+  "maxPages"           : "35",
+  "continue"           : "Save and continue",
+  "saveExit"           : "Save and come back later",
+  "backText"           : "Back",
+
+  "frequency"          : [
+    {"value" : "All the time"},
+    {"value" : "More than half the time"},
+    {"value" : "Less than half the time"},
+    {"value" : "None of the time", "target" : "none"},
+    {"value" : "Tell us how often in your own words"}
+  ],
+  "diffultyQuestion"   : "What do you have difficulty with?",
+  "difficultyHintText" : "Select as many as you need.",
+  "howOften"           : "How often",
+
+  "helper"      : [
     {
       "page"             : "1",
       "heading"          : "Help with your application",
@@ -33,12 +45,45 @@ var data = [ {
       "question"          : "Have you, or anyone in your family, ever claimed benefits or been paid a pension from any country outside of England, Scotland or Wales?",
       "questionHintText"  : "This means your partner, parents or children.",
       "question2"         : "Do you, or anyone in your family, work or pay national insurance to any country outside of England, Scotland or Wales?",
-      "question2HintText" : "This means your partner, parents or children."
+      "question2HintText" : "This means your partner, parents or children.",
+      "backLink"          : "/pip13/nationality"
+    },
+  ],
+  "conditionDetails" : [
+    {
+      "page"          : "4",
+      "heading"       : "Your conditions and disabilities",
+      "tableHeading"  : "List your conditions and disabilities",
+      "tableHeading2" : "When it started",
+      "backLink"      : "/pip13/youAndYourCondition"
+    },
+  ],
+  "medications" : [
+    {
+      "page"          : "5",
+      "heading"       : "Your medication",
+      "question"      : "Are you currently taking any medication?",
+      "tableHeading"  : "Medication",
+      "tableHeading2" : "Dosage",
+      "tableHeading3" : "How often you take it",
+      "backLink"      : "/pip13/conditionDetails"
+    },
+  ],
+  "manageMedications" : [
+    {
+      "page"             : "6",
+      "heading"          : "Managing your medication",
+      "question"         : "Does your condition affect you managing your medication?",
+      "questionHintText" : "This includes if you rely on something or someone to help you or remind you.",
+      "difficultyList"   : ["test1", "test2", "test3","Something else"],
+      "question2"        : "Why your condition affects you managing your medication.",
+      "question3"        : "How you manage your medication at the moment.",
+      "backLink"         : "/pip13/medications"
     },
   ]
 }
 ];
 
-exports.getTableData = function(page) {
+exports.getTableData = function() {
   return data;
 };

@@ -12,10 +12,10 @@
 // If you need a phase banner, put this inside the main content area
 // See elements _layout.scss line 22.
 .phase-banner-alpha  {
-  @include phase-banner(alpha); // Change this to (beta) for a beta banner
+  @include phase-banner(beta); // Change this to (beta) for a beta banner
 }
 .phase-tag-alpha {
-  @include phase-tag(alpha); // Change this to (beta) for a beta tag
+  @include phase-tag(beta); // Change this to (beta) for a beta tag
 }
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
@@ -35,152 +35,66 @@
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+/**************
+V1
+****************/
 .exit-link {
-  cursor: pointer;
-  display: block;
+  background-color: $page-colour;
   border: 0px;
-  margin: 0px;
-  padding: 0px;
-  background-color: #fff;
-  color: #00f;
-  text-decoration: underline;
-  margin-top: 20px;
+  color: $link-colour;
+	cursor: pointer;
+  margin: 10px 0 0;
+	padding: 0px;
+	text-decoration: underline;
 }
 
-.example-back-link {
-  display: -moz-inline-stack;
-  display: inline-block;
-  margin-top: 30px;
-}
+/**************
+Redesign
+****************/
 
+.form-title {
+  margin-bottom:8px;
+}
 
 [class*="heading-"] .section-progress {
-font-size: 2rem;
-font-weight: 300;
-display: block;
-color: #6f777b;
+  @include core-24;
+  color: $secondary-text-colour;
+  display:block;
+}
+
+.inline > .form-group {
+  margin-bottom:0px;
+}
+
+.panel-indent {
+  margin-top:10px;
+}
+
+.panel-indent .form-hint {
+  @include core-16;
+}
+
+.border-bottom {
+  border-bottom:1px solid $border-colour;
+}
+
+.secondary-button {
+  @include button ($panel-colour);
+  box-shadow:0 2px 0 $secondary-text-colour;
+  padding: 0.4em 0.7em 0.1em 0.7em;
 }
 
 
-/********************
-Check and change
-********************/
-
-.check-and-change > li {
-	border-bottom:1px solid #dee0e2;
-	float:left;
-	margin-bottom:10px;
-	padding-top:15px;
-	width:100%;
+textarea {
+  min-height:6em;
 }
 
-.check-and-change li .form-group {
-	margin-bottom:0;
-}
-
-.change-my-answer {
-  background:#DEE0E2;
-}
-
-.show-answer {
-	float: right;
-}
-
-#check-my-answers section {
-  margin-left:30px;
-}
-
-
-.question {
-	font-size:20px;
-}
-
-#check-my-answers h3{
-	float:left;
-	margin-top:1em;
-}
-
-.answered-question {
-	float:left;
-	margin-bottom:5px;
-	width:100%;
-}
-
-.seperator {
-  border-top:1px solid #dee0e2;
-  padding-top:20px;
-}
-
-#check-my-answers .grid-row {
-margin-right: 0;
-}
-#check-my-answers section {
-  margin-left:15px;
-}
-
-.check-and-change .button {
-  background:#eee;
-  box-shadow:0 0;
-  color:#000;
-  margin:10px 0 15px;
-}
-
-@media only all and (max-width:40em) {
-	.check-and-change .column-two-thirds {
-    float:none;
-  }
-
-  .check-and-change p.column-two-thirds,
-	.show-all .column-two-thirds {
-		float: left;
-	}
-	.check-and-change .button {
-		text-align: center;
-		margin-left:-13px;
-		width:100%;
-	}
-}
-
-
-.check-and-change p.column-third,
-.check-and-change .column-two-thirds {
-  padding:0 ;
-}
-
-.check-and-change .column-two-thirds {
-  padding-left:0;
-}
-
-.check-and-change .show-answer {
-  padding-left:15px;
-}
-/*****************************/
-.help-text .panel-indent {
-  margin-bottom:10px;
-}
-
-.help-text .list-bullet {
-  margin-bottom:0;
-}
-
-.form-control {
-  border:1px solid #6F777B;
-}
-
-
-.character-count {
+textarea + .character-count {
   float:left;
-  margin:10px 0 0 4px;
+  margin:5px 0 0 4px;
   text-align:right;
 }
 
-.help-text {
-  margin-top:15px;
-}
-
-[class*="heading-"] .section-progress {
-font-size: 2rem;
-font-weight: 300;
-display: block;
-color: #6f777b;
+fieldset .panel-indent {
+  margin-bottom:10px;
 }

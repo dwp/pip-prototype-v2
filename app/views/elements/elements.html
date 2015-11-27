@@ -34,3 +34,98 @@
   </fieldset>
 </div>
 {% endmacro %}
+
+{% macro frequency(id,question,questionHintText,answer,howOften,frequency,diffultyQuestion,difficultyHintText,difficulties,question2,question3,page) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <fieldset>
+    <legend class="form-label-bold" id="{{ id }}" for="{{ id }}">
+      <span class="{{ id }}-question">{{ question }}</span>
+      <p class="form-hint">{{ questionHintText }}</p>
+    </legend>
+
+    {% for frequencyOption in frequency %}
+    <label class="block-label" for="pip.radio.{{ frequencyOption.value|replace(" ", "")  }}.id" {% if frequencyOption.target != "none" %}data-target="details" {% endif %}>
+      <input id="pip.radio.{{ frequencyOption.value|replace(" ", "")  }}.id" {% if answer ==  frequencyOption.value %}checked=checked {% endif %} type="radio" name="{{ id }}" value="{{ frequencyOption.value }}" aria-controls="details">
+      {{ frequencyOption.value }}
+    </label>
+    {% endfor %}
+
+    <div class="panel-indent {% if answer != 'None of the time' %}js-hidden{% endif %} " id="details">
+      {{ genericInput('howOften',howOften, "") }}
+
+      <fieldset class="form-group">
+        <legend class="form-label-bold">{{ page.diffultyQuestion }}</legend>
+        <p>{{ difficultyHintText }}</p>
+        {% for difficulty in difficulties %}
+          {% if loop.last %}
+            <label class="block-label" for="waste-type-{{ loop.index0 }}" data-target="other">
+              <input id="difficulty-type-{{ loop.index0 }}" name="{{ id }}-difficulty" type="checkbox" value="Other" aria-controls="other" aria-expanded="false">
+              Something else
+            </label>
+            <div class="panel-indent js-hidden" id="other" aria-hidden="true">
+              <input class="form-control" type="text" id="something-else" name="something-else">
+            </div>
+          {% else %}
+            <label class="block-label" for="waste-type-{{ loop.index0 }}">
+              <input id="difficulty-type-{{ loop.index0 }}" name="{{ id }}-difficulty" type="checkbox" value="{{ difficulty }}">
+              {{ difficulty }}
+            </label>
+          {% endif %}
+        {% endfor %}
+      </fieldset>
+
+      {{ genericInput('why',question2, "") }}
+      {{ genericInput('how',question3, "answer3") }}
+    </div>
+  </fieldset>
+</div>
+
+{% endmacro %}
+
+
+{% macro formTable(id,name,tableHeading,tableHeading2,tableHeading3,count,answers) %}
+
+<div class="form-group">
+  <table class="condition">
+    <thead>
+        <th>{{tableHeading}}</th>
+        <th class="numeric">{{tableHeading2}}</th>
+        {% if tableHeading3 %}
+          <th class="numeric">{{tableHeading3}}</th>
+        {% endif %}
+    </thead>
+    <tbody>
+      {% for i in range(0, count) -%}
+        <tr id2="{{ name }}-row-{{ i }}" class="{{ name }}-row ">
+          <td>
+            <div class="form-group" id="form-group-{{ id }}{{ i }}.{{ name }}">
+              <label class="form-label" for="{{ id }}{{ i }}.{{ name }}">
+                <span class="visuallyhidden">{{ tableHeading }} </span>
+              </label>
+              <input type="text" class="form-control" id="{{ id }}{{ i }}.{{ name }}" name="{{ id }}{{ i }}{{ name }}" value="">
+            </div>
+          </td>
+          <td>
+            <div class="form-group" id="form-group-{{ id }}{{ i }}.started">
+              <label class="form-label" for="{{ id }}{{ i }}.started">
+                <span class="visuallyhidden">{{ tableHeading2 }}</span>
+              </label>
+              <input type="text" class="form-control" id="{{ id }}{{ i }}.started" name="{{ id }}{{ i }}started" value="">
+            </div>
+          </td>
+          {% if tableHeading3 %}
+            <td>
+              <div class="form-group" id="form-group-{{ id }}{{ i }}.frequency">
+                <label class="form-label" for="{{ id }}{{ i }}.frequency">
+                  <span class="visuallyhidden">{{ tableHeading3 }}</span>
+                </label>
+                <input type="text" class="form-control" id="{{ id }}{{ i }}.frequency" name="{{ id }}{{ i }}.frequency" value="">
+              </div>
+            </td>
+          {% endif %}
+        </tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+{% endmacro %}
