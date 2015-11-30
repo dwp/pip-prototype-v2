@@ -35,7 +35,7 @@
 						{{ elements.textInput('address3','') }}
 					</fieldset>
 
-					{{ elements.genericInput('howManyHours','How many hours?', "", "form-control-1-8") }}
+					{{ elements.genericInput('howManyHours','How many hours?', "", "","form-control-1-8") }}
 
 					{{ elements.textarea('id','Texarea Label') }}
 
@@ -63,7 +63,6 @@
 						<a href="#" class="secondary-button">Button</a>
 					</div>
 
-
 					{% set seq3 = [
 						{"listItem" : "if you rely on any aids or adaptations to use the toilet"},
 						{"listItem" : "if you rely on someone to help you, supervise you or remind you to use the toilet"},
@@ -76,8 +75,9 @@
 
 					{{ elements.submit(data,questions,false) }}
 
-				</div>
-		</div>
+				</form>
+			</div>
+	</div>
 
 </main>
 

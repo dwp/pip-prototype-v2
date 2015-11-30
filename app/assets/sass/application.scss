@@ -84,6 +84,10 @@ Redesign
   padding: 0.4em 0.7em 0.1em 0.7em;
 }
 
+.link-back {
+  display: block;
+  width:38px;
+}
 
 textarea {
   min-height:6em;
@@ -97,4 +101,12 @@ textarea + .character-count {
 
 fieldset .panel-indent {
   margin-bottom:10px;
+}
+
+.form-login .panel-indent {
+  position:relative;
+  background: rgb(40,161,151); /* Fallback for older browsers without RGBA-support */
+  background: rgba(40,161,151,0.25);
+  border-left:6px solid #28A197;
+  padding:20px 27px 15px;
 }

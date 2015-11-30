@@ -1,9 +1,20 @@
+{% macro header(page,question) %}
+<header>
+  <h1 class="form-title heading-xlarge">
+    <span class="section-progress">
+      Page {{question.page}} of {{page.maxPages}}
+    </span>
+    {{question.heading}}</h1>
+</header>
+<p class="lede">{{ question.introText }}</p>
+{% endmacro %}
+
 {% macro submit(data,questions,backLink) %}
 <div class="form-group">
     <input type="submit" class="button" value="{{data.continue}}" name="saveAndcontinue">
     <input type="submit" value="{{data.saveExit}}" name="saveAndExit" class="exit-link">
     {% if backLink != false %}
-      <a href="{{questions.backLink}}" class="example-back-link">{{data.backText}}</a>
+      <a href="{{questions.backLink}}" class="link-back">{{data.backText}}</a>
     {% endif %}
 </div>
 {% endmacro %}
@@ -14,47 +25,103 @@
 </div>
 {% endmacro %}
 
-{% macro genericInput(id,question,answer,inputSize) %}
+{% macro genericInput(id,question,answer,hintText,inputSize,password=false) %}
 <div class="form-group" id="form-group-{{ id }}">
-  <label class="form-label" for="{{ id }}">{{question}}</label>
-  <input type="text" class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+  <label class="form-label" for="{{ id }}">{{question}}
+  {% if hintText %}
+    <span class="form-hint">{{ hintText }}</span>
+  {% endif %}
+  </label>
+  <input
+  {% if password == true %}
+    type="password"
+  {% else %}
+    type="text"
+  {% endif %}
+  class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
 </div>
 {% endmacro %}
 
+{% macro genericInputPhone(id,question,answer,hintText,inputSize,password=false) %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label" for="{{ id }}">{{question}}
+  {% if hintText %}
+    <span class="form-hint">{{ hintText }}</span>
+  {% endif %}
+  </label>
+  <input
+  {% if password == true %}
+    type="password"
+  {% else %}
+    type="text"
+  {% endif %}
+  class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+
+  <label class="form-checkbox" for="checkbox-telephone-number">
+    <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
+    I need to be contacted using a text phone
+  </label>
+</div>
+{% endmacro %}
+
+{% macro date(id,answer)%}
+<fieldset class="form-group">
+
+  <legend>Date of birth</legend>
+  <div class="form-date">
+    <div class="form-group form-group-day">
+      <label for="{{id}}-dob-day">Day</label>
+      <input class="form-control" id="{{id}}-dob-day" name="{{id}}-dob-day" value="{{answer}}-dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+    </div>
+
+    <div class="form-group form-group-month">
+      <label for="{{id}}-dob-month">Month</label>
+      <input class="form-control" id="{{id}}-dob-month" name="{{id}}-dob-month" value="{{answer}}-dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+    </div>
+
+    <div class="form-group form-group-year">
+      <label for="{{id}}-dob-year">Year</label>
+      <input class="form-control" id="{{id}}-dob-year" name="{{id}}-dob-year" value="{{answer}}-dob-year" type="number" pattern="[0-9]*" min="0" max="2014">
+    </div>
+  </div>
+
+</fieldset>
+{% endmacro %}
+
 {% macro radioSelect(id,question,hintText,answer,radioOptions,inline) %}
-<fieldset {% if inline %}class="inline"{% endif %}>
+<fieldset class="form-group {% if inline %}inline{% endif %}">
   <legend id="{{ id }}" for="{{ id }}">
     <span class="frequency-question">{{ question }}</span>
     {% if hintText %}
-      <p class="form-hint">{{ hintText }}</p>
+      <span class="form-hint">{{ hintText }}</span>
     {% endif %}
   </legend>
   <div class="form-group">
     {% for item in radioOptions %}
-      <label class="block-label" for="{{ item.id }}"
+      <label class="block-label" for="{{ id }}-{{ item.value }}"
         {% if item.showPanel %} data-target="{{ item.showPanel }}"{% endif %} >
 
-      <input id="{{ item.id }}" type="radio" name="{{ id }}"
+      <input id="{{ id }}-{{ item.value }}" type="radio" name="{{ id }}"
         {% if answer == item.value %}checked='checked' {% endif %}
-        value="{{ item.value }}" aria-controls="{{ item.showPanel }}"> {{ item.value }}
+        value="{{ item.value }}" aria-controls="{{ item.showPanel }}">{{ item.value }}
       </label>
     {% endfor %}
   </div>
 </fieldset>
 {% endmacro %}
 
-{% macro textarea(id,label,maxlength=1500) %}
+{% macro textarea(id,label,answer,maxlength=1500) %}
 <div class="form-group">
   <label class="form-label" for="{{ id }}">
     {{ label }}
   </label>
-  <textarea maxlength="{{ maxlength }}" class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}"></textarea>
+  <textarea maxlength="{{ maxlength }}" class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}">{{answer}}</textarea>
   <span class="font-xsmall form-control-3-4 character-count"><span class="char-count">{{ maxlength }}</span> characters left</span>
 </div>
 {% endmacro %}
 
-{% macro checkbox(id,question,hintText,checkboxOptions) %}
-<fieldset>
+{% macro checkbox(id,question,hintText,checkboxOptions,answers) %}
+<fieldset class="form-group">
   <legend>{{ question }}</legend>
   {% if hintText %}
     <p class="form-hint">{{ hintText }}</p>
@@ -65,20 +132,27 @@
       {% if item.textarea %}
         data-target="{{ item.target }}"
       {% endif %} >
-      <input id="{{ item.id }}" name="{{ id }}" type="checkbox" value="{{ item.value }}">
+      <input id="{{ item.id }}" name="{{ id }}" type="checkbox" value="{{ item.value }}"
+      {% for answer in answers.communcationPref %}
+        {% if answer == item.value %}
+          checked='checked'
+        {% endif %}
+      {% endfor %}
+      >
       {{ item.label }}
     </label>
     {% if item.textarea %}
-      <fieldset id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false" >
-        {{ textarea(item.textareaId,item.textareaLabel) }}
+      <fieldset id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false"
+      {% for answer in answers.communcationPref %}
+        {% if answer == 'anything else' %}
+          style="display:block;"
+        {% endif %}
+      {% endfor %}
+      >
+        {{ textarea(item.textareaId,item.textareaLabel,item.textareaAnswer) }}
       </fieldset>
     {% endif %}
   {% endfor %}
-  <div class="form-group js-hidden" id="anything-else">
-    <label class="form-label" for="full-name-f2">Tell us the details</label>
-    <textarea maxlength="1500" class="form-control form-control-3-4  " id="full-name-f2" name="aids[0].description"></textarea>
-    <span class="font-xsmall js-hiddens form-control-3-4 character-count"><span class="char-count">1500</span> characters left</span>
-  </div>
 </fieldset>
 {% endmacro %}
 

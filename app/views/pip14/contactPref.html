@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip14/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.contactPref %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip14/contactPref{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"smsContact","value":"Yes","showPanel":"helperDetails"},
+						{"id":"smsContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('smsContact',question.question,"",answers.smsContact,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="helperDetails">
+            {{ elements.genericInput('mobile',question.question2, answers.mobile) }}
+          </div>
+
+					{% set seq2  = [
+						{"id":"callContact","value":"Yes"},
+						{"id":"callContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('callContact',question.question3,"",answers.callContact,seq2,"inline") }}
+
+					{% set seq3 = [
+						{"id":"checkbox-1", "label":"I’d like large print paperwork", "value":"large print paperwork"},
+						{"id":"checkbox-2", "label":"I require braille paperwork", "value":"braille paperwork"},
+						{"id":"checkbox-3", "label":"I require an audio CD", "value":"auido cd"},
+						{"id":"checkbox-4", "label":"Anything else", "value":"anything else","target":"target2","textarea":true,"textareaId":"textreadId2","textareaLabel":"Tell us the details","textareaAnswer" :answers.textreadId2}
+					] %}
+					{{ elements.checkbox('communcationPref',question.question4,'',seq3,answers) }}
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
