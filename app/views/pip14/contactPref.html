@@ -18,28 +18,38 @@
 					{{ elements.header(page,question) }}
 
 					{% set seq  = [
-						{"id":"smsContact","value":"Yes","showPanel":"helperDetails"},
+						{"id":"smsContact","value":"Yes","showPanel":"smsContactPanel"},
 						{"id":"smsContact", "value":"No"}
 					] %}
 					{{ elements.radioSelect('smsContact',question.question,"",answers.smsContact,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="helperDetails">
+					<div class="form-group panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="smsContactPanel">
             {{ elements.genericInput('mobile',question.question2, answers.mobile) }}
           </div>
 
 					{% set seq2  = [
-						{"id":"callContact","value":"Yes"},
+						{"id":"callContact","value":"Yes","showPanel":"callContactPanel"},
 						{"id":"callContact", "value":"No"}
 					] %}
 					{{ elements.radioSelect('callContact',question.question3,"",answers.callContact,seq2,"inline") }}
 
 					{% set seq3 = [
-						{"id":"checkbox-1", "label":"I’d like large print paperwork", "value":"large print paperwork"},
-						{"id":"checkbox-2", "label":"I require braille paperwork", "value":"braille paperwork"},
-						{"id":"checkbox-3", "label":"I require an audio CD", "value":"auido cd"},
-						{"id":"checkbox-4", "label":"Anything else", "value":"anything else","target":"target2","textarea":true,"textareaId":"textreadId2","textareaLabel":"Tell us the details","textareaAnswer" :answers.textreadId2}
+						{"id":"checkbox-1", "label": question.checkbox1, "value":question.checkbox1},
+						{"id":"checkbox-2", "label": question.checkbox2, "value":question.checkbox2},
+						{"id":"checkbox-3", "label": question.checkbox3, "value":question.checkbox3},
+						{"id":"checkbox-4", "label": question.checkbox4, "value":"other",
+							"target"         : "target2",
+							"textarea"       : true,
+							"textareaId"     : "textreadId2",
+							"textareaLabel"  : question.textareaQ,
+							"textareaAnswer" : answers.textreadId2,
+							"hintText"       : question.textareaHintText
+						}
 					] %}
-					{{ elements.checkbox('communcationPref',question.question4,'',seq3,answers) }}
+
+					<div class="form-group panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
+						{{ elements.checkbox('communcationPref',question.question4,'',seq3,answers) }}
+					</div>
 
 					{{ elements.submit(page,question) }}
 

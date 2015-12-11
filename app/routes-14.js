@@ -98,11 +98,11 @@ module.exports = function (app) {
   nationality
   *******************/
   app.get('/pip14/nationality', function (req, res) {
-      res.render('pip14/nationality', {
-        answers : req.session['pip14-nationality'],
-        'edit'  : req.param('edit'),
-        data    : aboutYou.getTableData()
-      });
+    res.render('pip14/nationality', {
+      answers : req.session['pip14-nationality'],
+      'edit'  : req.param('edit'),
+      data    : aboutYou.getTableData()
+    });
   });
 
   app.post('/pip14/nationality', function (req, res) {
@@ -300,7 +300,28 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/healthcareprofessional');
+      res.redirect('/pip14/submitEvidence');
+    }
+  });
+
+  /*******************
+  submitEvidence
+  *******************/
+  app.get('/pip14/submitEvidence', function (req, res) {
+      res.render('pip14/submitEvidence', {
+        answers : req.session['pip14-submitEvidence'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/submitEvidence', function (req, res) {
+    req.session['pip14-submitEvidence'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/submitEvidence');
     }
   });
 

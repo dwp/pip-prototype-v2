@@ -19,11 +19,9 @@
 					</header>
 					<p class="lede">Many questions in this application ask for detailed answers which may take time to fill in. You can leave the application at any point and go back to it when you want, without losing any of your information.</p>
 
-					<p class="panel-indent">￼Before you start, make a note of your username and password. You'll need these to be able to continue your application later.</p>
-
-					{{ elements.genericInput('username',"Choose username","","Your username must be at least 8 characters long") }}
-					{{ elements.genericInput('password',"Choose password","","Your password must be at least 8 characters long","",true) }}
-					{{ elements.genericInput('password2',"Re-type your password","","","",true) }}
+					{{ elements.genericInput('username',"Choose username","","You'll need this to sign in again so make it memorable, like your email address. Make it at least 8 characters long.") }}
+					{{ elements.genericInput('password',"Choose password","","Your password must be at least 8 characters long","",type='password') }}
+					{{ elements.genericInput('password2',"Confirm password","","","",type='password') }}
 
 					<div class="form-group">
 		        <a class="button " href="summaryMain" >Save</a>

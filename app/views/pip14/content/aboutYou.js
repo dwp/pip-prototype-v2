@@ -9,12 +9,10 @@ var data = [ {
   "helper" : [
     {
       "page"             : "1",
-      "heading"          : "Is someone helping you?",
-      "introText"        : "You may find it necessary to ask someone to help you complete this application and this is alright. It helps if you can let us know the person’s name and their relationship to you.",
-      "question"         : "Are you receiving help to complete this form?",
+      "heading"          : "Help with your application",
+      "question"         : "Is someone helping you fill in this application?",
       "question2"        : "The name of the person helping you",
       "question3"        : "Their relationship to you",
-      "q3HintText"       : "eg spouse, social worker, carer",
       "backLink"         : "/pip14/summaryMain"
     },
   ],
@@ -22,7 +20,6 @@ var data = [ {
     {
       "page"             : "2",
       "heading"          : "About you",
-      "introText"        : "Entering your personal details will help us accurately identify you.",
       "question"         : "First name",
       "question2"        : "Middle name (optional)",
       "question3"        : "Last name",
@@ -35,12 +32,12 @@ var data = [ {
     {
       "page"             : "3",
       "heading"          : "Your contact details",
-      "introText"        : "Let us know your contact details so we can get in touch about your claim whilst it’s in progress.",
       "question"         : "Your address",
       "question2"        : "Postcode",
       "question3"        : "Postcode",
       "question4"        : "Your phone number",
-      "question5"        : "Alternative phone number (optional)",
+      "q4HintText"       : "We'll only use this if we need to contact you about your claim.",
+      "question5"        : "Alternative phone number",
       "question6"        : "Email address",
       "backLink"         : "/pip14/aboutYou"
     },
@@ -49,11 +46,15 @@ var data = [ {
     {
       "page"             : "4",
       "heading"          : "Contact preferences",
-      "introText"        : "We will need to contact you as part of the claim process so let us know if you have any particular preferences in terms of how we get in touch.",
-      "question"         : "Would you like us to send SMS messages to your phone with claim updates?",
+      "question"         : "Do you want to get SMS text messages about where your claim is up to?",
       "question2"        : "Mobile number",
-      "question3"        : "Would you be happy for us to call you if we needed to?",
-      "question4"        : "Do you have any other communication preferences due to your condition or disability that you’d like to tell us about?",
+      "question3"        : "You will get your decision letter in the post. Do you need this in a different format eg braille, large print or audio CD?",
+      "checkbox1"        : "Large print",
+      "checkbox2"        : "Braille",
+      "checkbox3"        : "Audio CD",
+      "checkbox4"        : "Other",
+      "textareaQ"        : "What format do you need?",
+      "textareaHintText" : "We can only provide this if it’s necessary because of your condition or disability.",
       "backLink"         : "/pip14/contactDetails"
     },
   ],
@@ -159,6 +160,26 @@ var data = [ {
       "introText"        : "It could help us get the information we need if we’re able to contact professionals who will share details about the effects of your condition with us. They could be a doctor, counsellor, key worker or anyone else who has information about the effects of your condition.",
       "question"         : "Do you agree to us contacting professionals who will share information about your condition with us?",
       "backLink"         : "/pip14/monitoringCondition"
+    },
+  ],
+  "submitEvidence" : [
+    {
+      "page"             : "15",
+      "heading"          : "Your medical information",
+      "introText"        : "It will really help your case if you can send us any medical information that will give us details about your condition or disability and how it is being managed.",
+      "question"         : "Do you have medical information you’re able to send us?",
+      "question2"        : "Which of the following are you able to send us?",
+      "q2HintText"       : "You can tick as many of these as you like",
+      "medicalList"      : [
+        {"label":"Medical reports", "value":"Medical reports"},
+        {"label":"Your care or treatment plans", "value":"Your care or treatment plans"},
+        {"label":"Medical test results (including sight and hearing tests)", "value":"Medical test results"},
+        {"label":"Your hospital discharge letters", "value":"Your hospital discharge letters"},
+        {"label":"Reports from a Prison Service Disability Employment Advisor", "value":"Reports from a Prison Service Disability Employment Advisor"},
+        {"label":"Education, Health and Care Plans", "value":"Education, Health and Care Plans"},
+        {"label":"Other", "value":"Other","target":"target2","textarea":true,"textareaId":"textreadId2","textareaLabel":"Tell us the details","textareaAnswer" :"answers.textreadId2"},
+      ],
+      "backLink"         : "/pip14/healthcareprofessional"
     },
   ],
 

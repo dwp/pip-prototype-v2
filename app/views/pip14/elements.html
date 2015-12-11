@@ -25,20 +25,14 @@
 </div>
 {% endmacro %}
 
-{% macro genericInput(id,question,answer,hintText,inputSize,password=false) %}
+{% macro genericInput(id,question,answer,hintText,inputSize,type='text') %}
 <div class="form-group" id="form-group-{{ id }}">
   <label class="form-label" for="{{ id }}">{{question}}
   {% if hintText %}
     <span class="form-hint">{{ hintText }}</span>
   {% endif %}
   </label>
-  <input
-  {% if password == true %}
-    type="password"
-  {% else %}
-    type="text"
-  {% endif %}
-  class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+  <input type="{{ type }}" class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
 </div>
 {% endmacro %}
 
@@ -59,7 +53,7 @@
 
   <label class="form-checkbox" for="checkbox-telephone-number">
     <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
-    I need to be contacted using a text phone
+    You need to be contacted using a text phone
   </label>
 </div>
 {% endmacro %}
@@ -110,10 +104,15 @@
 </fieldset>
 {% endmacro %}
 
-{% macro textarea(id,label,answer,maxlength=1500) %}
+{% macro textarea(id,label,answer,hintText,maxlength=1500) %}
 <div class="form-group">
-  <label class="form-label" for="{{ id }}">
-    {{ label }}
+  <label for="{{ id }}">
+    <span class="form-label">
+      {{ label }}
+    </span>
+    {% if hintText %}
+      <span class="form-hint">{{ hintText }}</span>
+    {% endif %}
   </label>
   <textarea maxlength="{{ maxlength }}" class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}">{{answer}}</textarea>
   <span class="font-xsmall form-control-3-4 character-count"><span class="char-count">{{ maxlength }}</span> characters left</span>
@@ -128,14 +127,25 @@
   {% endif %}
 
   {% for item in checkboxOptions %}
+  {% set savedAnswer = '' %}
     <label class="block-label" for="{{ item.id }}"
       {% if item.textarea %}
         data-target="{{ item.target }}"
       {% endif %} >
       <input id="{{ item.id }}" name="{{ id }}" type="checkbox" value="{{ item.value }}"
+
       {% for answer in answers.communcationPref %}
+        {% if loop.first %}
+          {% if answer.length < 2 %}
+            {% if answers.communcationPref == item.value %}
+              checked='checked'
+              {% set savedAnswer = answers.communcationPref %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
         {% if answer == item.value %}
           checked='checked'
+          {% set savedAnswer = answer %}
         {% endif %}
       {% endfor %}
       >
@@ -143,13 +153,11 @@
     </label>
     {% if item.textarea %}
       <fieldset id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false"
-      {% for answer in answers.communcationPref %}
-        {% if answer == 'anything else' %}
-          style="display:block;"
-        {% endif %}
-      {% endfor %}
+      {% if savedAnswer == 'other' %}
+        style="display:block;"
+      {% endif %}
       >
-        {{ textarea(item.textareaId,item.textareaLabel,item.textareaAnswer) }}
+      {{ textarea(item.textareaId,item.textareaLabel,item.textareaAnswer,item.hintText) }}
       </fieldset>
     {% endif %}
   {% endfor %}

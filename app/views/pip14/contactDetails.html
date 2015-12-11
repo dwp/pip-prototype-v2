@@ -27,12 +27,9 @@
 					</fieldset>
 
 					<fieldset class="form-group">
-						<legend class="form-label">Correspondence address
-							<span class="form-hint">We can send any postal correspondence to another address if you would prefer.</span>
-						</legend>
 						<label class="block-label" for="radio-1" data-target="correspondenceAddress">
 			        <input id="radio-1" type="checkbox" name="radio-correspondence" value="Add a correspondence address">
-							Add a correspondence address
+							Post any letters to a different address
 			      </label>
 						<div class="panel-indent js-hidden" id="correspondenceAddress">
 							<legend class="form-label">Correspondence address</legend>
@@ -44,7 +41,7 @@
 						</div>
 					</fieldset>
 
-					{{ elements.genericInputPhone('phone',question.question4, answers.phone) }}
+					{{ elements.genericInputPhone('phone',question.question4, answers.phone,question.q4HintText) }}
 
 
 					{{ elements.genericInput('altPhone',question.question5, answers.altPhone) }}

@@ -2057,6 +2057,10 @@ fieldset .panel-indent {
   margin-bottom: 10px;
 }
 
+.help-text {
+  margin-top: 15px;
+}
+
 .form-login .panel-indent {
   position: relative;
   background: #28a197;
