@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip14/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.submitEvidence %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip14/submitEvidence{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq3 = [
+		        {"label":"Medical reports", "value":"Medical reports"},
+		        {"label":"Your care or treatment plans", "value":"Your care or treatment plans"},
+		        {"label":"Medical test results (including sight and hearing tests)", "value":"Medical test results"},
+		        {"label":"Your hospital discharge letters", "value":"Your hospital discharge letters"},
+		        {"label":"Reports from a Prison Service Disability Employment Advisor", "value":"Reports from a Prison Service Disability Employment Advisor"},
+		        {"label":"Education, Health and Care Plans", "value":"Education, Health and Care Plans"},
+		        {"label":"Other", "value":"Other","target":"target2","textarea":true,"textareaId":"textreadId2","textareaLabel":"Tell us the details"}
+		      ] %}
+					{{ elements.checkbox('communcationPref',question.question4,'',seq3,answers) }}
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
