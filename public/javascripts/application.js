@@ -293,12 +293,12 @@ $(document).ready(function() {
 		return false;
 	});
 
-  $('#form-group-frequency input[type="checkbox"]').click(function() {
+  $('.form-group-frequency input[type="checkbox"], .form-group-frequency input[type="radio"]').click(function() {
 		var show = $(this).parent().data('show'),
 				hide = $(this).parent().data('hide');
 		if (hide) {
 			$('#' + hide).hide();
-			$('#form-group-frequency :checkbox:checked').each(function() {
+			$('.form-group-frequency :checkbox:checked').each(function() {
 				if($(this).parent().data('show')) {
 					$(this).attr('checked', false).parent().removeClass('selected');
 					if ($(this).parent().attr('data-target')) {
@@ -308,7 +308,7 @@ $(document).ready(function() {
 			});
 		} else {
 			$('#' + show).show();
-				$('#form-group-frequency :checkbox:checked').each(function() {
+				$('.form-group-frequency :checkbox:checked').each(function() {
 					if($(this).parent().data('hide')) {
 						$(this).attr('checked', false).parent().removeClass('selected');
 					}

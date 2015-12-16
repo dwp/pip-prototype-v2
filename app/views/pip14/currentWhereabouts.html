@@ -14,29 +14,32 @@
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip14/currentWhereabouts{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<form action="/pip14/currentWhereabouts{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
 					{{ elements.header(page,question) }}
 					{% set seq = [
-						{"id":"location1", "label":"hospital", "value":"hospital"},
-						{"id":"location2", "label":"care or nursing home", "value":"care or nursing home"},
-						{"id":"location3", "label":"sheltered housing", "value":"sheltered housing"},
-						{"id":"location4", "label":"residential college", "value":"residential college"},
-						{"id":"location5", "label":"hostel", "value":"hostel"},
-						{"id":"location6", "label":"hospice", "value":"hospice"},
-						{"id":"location7", "label":"you are currently not staying in any of these", "value":"you are currently not staying in any of these"}
+						{"id":"location1", "label":"hospital", "value":"hospital", "showPanel":"details"},
+						{"id":"location2", "label":"care or nursing home", "value":"care or nursing home", "showPanel":"details"},
+						{"id":"location3", "label":"sheltered housing", "value":"sheltered housing", "showPanel":"details"},
+						{"id":"location4", "label":"residential college", "value":"residential college", "showPanel":"details"},
+						{"id":"location5", "label":"hostel", "value":"hostel", "showPanel":"details"},
+						{"id":"location6", "label":"hospice", "value":"hospice", "showPanel":"details"},
+						{"id":"location7", "label":"you are currently not staying in any of these", "value":"you are currently not staying in any of these", "hidePanel":"details"}
 					] %}
 					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers) }}
 
-					{{ elements.genericInput('when',question.question2, answers.when,question.q2HintText) }}
+					<div class="form-group panel-indent
+					{% if not answers.optionsName  or answers.optionsName == 'you are currently not staying in any of these' %}js-hidden{% endif %}" id="details">
+						{{ elements.genericInput('when',question.question2, answers.when,question.q2HintText) }}
 
-					<fieldset>
-						<legend class="form-label">{{ question.question3 }}</legend>
-						{{ elements.textInput('address1',answers.address1) }}
-						{{ elements.textInput('address2',answers.address2) }}
-						{{ elements.textInput('address3',answers.address3) }}
-					</fieldset>
+						<fieldset class="form-group">
+							<legend class="form-label">{{ question.question3 }}</legend>
+							{{ elements.textInput('address1',answers.address1) }}
+							{{ elements.textInput('address2',answers.address2) }}
+							{{ elements.textInput('address3',answers.address3) }}
+						</fieldset>
 
-					{{ elements.genericInput('postcode',question.question4, answers.postcode) }}
+						{{ elements.genericInput('postcode',question.question4, answers.postcode) }}
+					</div>
 
 					{{ elements.submit(page,question) }}
 

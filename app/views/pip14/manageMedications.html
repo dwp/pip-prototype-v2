@@ -14,7 +14,7 @@
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form id="form-group-frequency" action="/pip14/manageMedications{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<form action="/pip14/manageMedications{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
 					{{ elements.header(page,question) }}
 
 					{% set seq = [
