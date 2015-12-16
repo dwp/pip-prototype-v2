@@ -1906,8 +1906,20 @@ V1
 /**************
 Redesign
 ****************/
+strong {
+  font-weight: bold;
+}
+
+#submit-group {
+  margin-top: 20px;
+}
+
 .form-title {
   margin-bottom: 8px;
+}
+
+.form-block {
+  margin: 10px 0 20px;
 }
 
 [class*="heading-"] .section-progress {
@@ -2061,6 +2073,10 @@ fieldset .panel-indent {
   margin-top: 15px;
 }
 
+.list-help-text {
+  margin: -15px 0 0 10px;
+}
+
 .form-login .panel-indent {
   position: relative;
   background: #28a197;
@@ -2068,4 +2084,29 @@ fieldset .panel-indent {
   background: rgba(40, 161, 151, 0.25);
   border-left: 6px solid #28A197;
   padding: 20px 27px 15px;
+}
+
+.list-user-input li {
+  border-bottom: 1px solid #bfc1c3;
+  float: left;
+  width: 100%;
+}
+
+.list-user-input li,
+.panel-indent .list-user-input .form-group:last-child {
+  margin-bottom: 20px;
+}
+
+.list-user-input li:last-child {
+  border: none;
+  margin-bottom: 60px;
+}
+
+.list-user-input li h2 {
+  float: left;
+  margin-top: 0;
+}
+
+.list-user-input .remove {
+  float: right;
 }

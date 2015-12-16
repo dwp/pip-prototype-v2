@@ -90,6 +90,27 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
+      res.redirect('/pip14/currentWhereabouts');
+    }
+  });
+
+  /*******************
+  currentWhereabouts
+  *******************/
+  app.get('/pip14/currentWhereabouts', function (req, res) {
+      res.render('pip14/currentWhereabouts', {
+        answers : req.session['pip14-currentWhereabouts'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/currentWhereabouts', function (req, res) {
+    req.session['pip14-currentWhereabouts'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
       res.redirect('/pip14/nationality');
     }
   });
@@ -140,6 +161,7 @@ module.exports = function (app) {
   conditionDetails
   *******************/
   app.get('/pip14/conditionDetails', function (req, res) {
+    console.error(req.session['pip14-conditionDetails']);
       res.render('pip14/conditionDetails', {
         answers : req.session['pip14-conditionDetails'],
         'edit'  : req.param('edit'),
@@ -171,11 +193,17 @@ module.exports = function (app) {
   app.post('/pip14/medications', function (req, res) {
     req.session['pip14-medications'] = req.body;
 
-    if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
-    } else {
-      res.redirect('/pip14/manageMedications');
-    }
+    if(req.body.takingMedication === 'Yes') {
+       if (req.param('edit')) {
+         res.redirect('/pip14/manageMedications?edit=true');
+       } else {
+         res.redirect('/pip14/manageMedications');
+       }
+     } else if (req.param('edit')) {
+       res.redirect('/pip14/check-and-change');
+     } else {
+       res.redirect('/pip14/treatments');
+     }
   });
 
   /*******************

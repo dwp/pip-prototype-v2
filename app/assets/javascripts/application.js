@@ -273,6 +273,47 @@ $(document).ready(function() {
   toggleContent.showHideRadioToggledContent();
   toggleContent.showHideCheckboxToggledContent();
 
-  
+  /*******************************
+  Prototype pip 14
+  ********************************/
+  $(".add-another").click(function() {
+    var dataTarget = $(this).attr('data-target');
+		$("li."+dataTarget+".js-hidden").first().removeClass('js-hidden');
+
+    if( $("li."+dataTarget+".js-hidden").length === 0) {
+      $(this).addClass('js-hidden');
+    }
+		return false;
+	});
+
+  $('.remove').click(function() {
+
+		$(this).parent().addClass("js-hidden");
+
+		return false;
+	});
+
+  $('#form-group-frequency input[type="checkbox"]').click(function() {
+		var show = $(this).parent().data('show'),
+				hide = $(this).parent().data('hide');
+		if (hide) {
+			$('#' + hide).hide();
+			$('#form-group-frequency :checkbox:checked').each(function() {
+				if($(this).parent().data('show')) {
+					$(this).attr('checked', false).parent().removeClass('selected');
+					if ($(this).parent().attr('data-target')) {
+            $(this).parent().next().hide();
+          }
+				}
+			});
+		} else {
+			$('#' + show).show();
+				$('#form-group-frequency :checkbox:checked').each(function() {
+					if($(this).parent().data('hide')) {
+						$(this).attr('checked', false).parent().removeClass('selected');
+					}
+				});
+		}
+	});
 
 });

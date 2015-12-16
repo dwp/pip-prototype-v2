@@ -17,6 +17,36 @@
 				<form action="/pip14/medications{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
+					{% set seq  = [
+						{"id":"takingMedication","value":"Yes","showPanel":"medications"},
+						{"id":"takingMedication", "value":"No"}
+					] %}
+					{{ elements.radioSelect('takingMedication',question.question,"",answers.takingMedication,seq,"inline") }}
+
+          <div class="form-group panel-indent {% if answers.takingMedication != 'Yes' %}js-hidden{% endif %}" id="medications">
+						<ul class="list-user-input">
+							{% for i in range(1, 11) -%}
+								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first %} js-hidden {% endif %}">
+									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
+									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
+
+										{% set medication = "medication" + i %}
+										{% set conditionAnswer = answers.medication %}
+										{{ elements.genericInputList(medication,question.medicationHd, conditionAnswer,"medication-1") }}
+
+										{% set dosage = "dosage" + i %}
+										{% set startedAnswer = answers.dosage %}
+										{{ elements.genericInputList(dosage,question.dosageHd, answers.dosage,"dosage-1",question.dosageHintText) }}
+
+										{% set often = "often" + i %}
+										{% set startedAnswer = answers.often %}
+										{{ elements.genericInputList(often,question.oftenHd, answers.often,"often-1",question.oftenHintText) }}
+								</li>
+							{% endfor %}
+							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+						</ul>
+          </div>
+
 					{{ elements.submit(page,question) }}
 
         </form>

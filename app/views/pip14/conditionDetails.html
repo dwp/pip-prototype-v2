@@ -17,6 +17,25 @@
 				<form action="/pip14/conditionDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
+					<ul class="list-user-input">
+						{% for i in range(1, 11) -%}
+							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first %} js-hidden {% endif %}">
+								<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
+								{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
+
+									{% set condition = "condition" + i %}
+									{% set conditionAnswer = answers.condition %}
+									{{ elements.genericInputList(condition,question.conditionHd, conditionAnswer,"condtion-1") }}
+
+									{% set started = "started" + i %}
+									{% set startedAnswer = answers.started1 %}
+									{{ elements.genericInputList(started,question.startedHd, answers.started1,"started-1") }}
+
+							</li>
+						{% endfor %}
+						<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+					</ul>
+
 					{{ elements.submit(page,question) }}
 
         </form>

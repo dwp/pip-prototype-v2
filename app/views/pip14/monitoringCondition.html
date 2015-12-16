@@ -16,7 +16,7 @@
 
 				<form action="/pip14/monitoringCondition{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
-
+					
 					{% set seq  = [
 						{"id":"monitored","value":"Yes","showPanel":"monitoredDetails"},
 						{"id":"monitored", "value":"No"}
@@ -24,15 +24,9 @@
 					{{ elements.radioSelect('monitored',question.question,"",answers.monitored,seq,"inline") }}
 
           <div class="form-group panel-indent {% if answers.monitored != 'Yes' %}js-hidden{% endif %}" id="monitoredDetails">
-						{% set seq2  = [
-							{"id":"monitoredSomeoneElse","value":"Yes"},
-							{"id":"monitoredSomeoneElse", "value":"No"}
-						] %}
-						{{ elements.radioSelect('monitoredSomeoneElse',question.question2,"",answers.monitoredSomeoneElse,seq2,"inline") }}
-
-						{{ elements.genericInput('howManyHours',question.question3,answers.howManyHours,"","form-control-1-8") }}
-						{{ elements.textarea("whyNeedMonitoring",question.question4,answers.whyNeedMonitoring) }}
-						{{ elements.textarea("howHelpToMonitor",question.question5,answers.howHelpToMonitor) }}
+						{{ elements.genericInput('howManyHours',question.question2,answers.howManyHours,"","form-control-1-8") }}
+						{{ elements.textarea("whyNeedMonitoring",question.question3,answers.whyNeedMonitoring) }}
+						{{ elements.textarea("howHelpToMonitor",question.question4,answers.howHelpToMonitor) }}
           </div>
 
 					{{ elements.submit(page,question) }}

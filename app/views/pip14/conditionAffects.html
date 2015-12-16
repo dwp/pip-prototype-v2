@@ -21,11 +21,11 @@
 						{"id":"conditionAffects","value":"Yes","showPanel":"conditionAffectsDetails"},
 						{"id":"conditionAffects", "value":"No"}
 					] %}
-					{{ elements.radioSelect('conditionAffects',question.question,"",answers.conditionAffects,seq,"inline") }}
+					{{ elements.radioSelect('conditionAffects',question.question,question.qHintText,answers.conditionAffects,seq,"inline") }}
 
           <div class="form-group panel-indent {% if answers.conditionAffects != 'Yes' %}js-hidden{% endif %}" id="conditionAffectsDetails">
 						{{ elements.textarea("howConditionEffects",question.question2,answers.howConditionEffects) }}
-						{{ elements.textarea("howOftenConditionAffects",question.question3,answers.howOftenConditionAffects) }}
+						{{ elements.textarea("howOftenConditionAffects",question.question3,answers.howOftenConditionAffects,question.q3HintText) }}
           </div>
 
 					{{ elements.submit(page,question) }}

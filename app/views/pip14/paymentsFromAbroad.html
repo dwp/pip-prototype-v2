@@ -17,17 +17,30 @@
 				<form action="/pip14/paymentsFromAbroad{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{% set seq  = [
-						{"id":"benefitsAbroadPayment","value":"Yes"},
-						{"id":"benefitsAbroadPayment", "value":"No"}
+					{% set seq = [
+						{"id" : "workedAbroad", "value":"Yes","showPanel":"benefitsAbroad"},
+						{"id" : "workedAbroad", "value":"No"}
 					] %}
-					{{ elements.radioSelect('benefitsAbroadPayment',question.question,question.qHintText,answers.benefitsAbroadPayment,seq,"inline") }}
+					{{ elements.radioSelect('workedAbroad',question.question,question.qHintText,answers.workedAbroad,seq,"inline") }}
 
-					{% set seq  = [
-						{"id":"payInsuranceAbroad","value":"Yes"},
-						{"id":"payInsuranceAbroad", "value":"No"}
-					] %}
-					{{ elements.radioSelect('payInsuranceAbroad',question.question,question2.qHintText,answers.payInsuranceAbroad,seq,"inline") }}
+					<div class="form-group panel-indent {% if answers.workedAbroad != 'Yes' %}js-hidden{% endif %}" id="benefitsAbroad">
+						<p>
+							{{question.countriesIntro}} <br />
+							{{question.countries}}
+						</p>
+
+						{% set seq2  = [
+							{"id":"benefitsAbroadPayment","value":"Yes"},
+							{"id":"benefitsAbroadPayment", "value":"No"}
+						] %}
+						{{ elements.radioSelect('benefitsAbroadPayment',question.question2,"",answers.benefitsAbroadPayment,seq2,"inline") }}
+
+						{% set seq3  = [
+							{"id":"payInsuranceAbroad","value":"Yes"},
+							{"id":"payInsuranceAbroad", "value":"No"}
+						] %}
+						{{ elements.radioSelect('payInsuranceAbroad',question.question3,"",answers.payInsuranceAbroad,seq3,"inline") }}
+					</div>
 
 					{{ elements.submit(page,question) }}
 
