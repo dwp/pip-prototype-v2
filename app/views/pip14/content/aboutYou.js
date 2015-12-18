@@ -6,6 +6,14 @@ var data = [ {
   "continue"           : "Save and continue",
   "saveExit"           : "Save and come back later",
   "backText"           : "Back",
+  "frequency"          : [
+    {
+      "allTime"        : "All the time",
+      "moreHalf"       : "More than half the time",
+      "lessHalf"       : "Less than half the time",
+      "ownWords"       : "Explain how often in your own words"
+    },
+  ],
   "helper" : [
     {
       "page"             : "1",
@@ -54,7 +62,7 @@ var data = [ {
       "checkbox3"        : "Audio CD",
       "checkbox4"        : "Other",
       "textareaQ"        : "What format do you need?",
-      "textareaHintText" : "We can only provide this if it’s necessary because of your condition or disability.",
+      "textareaHintText" : "We can only provide this if it’s necessary because of your condition.",
       "backLink"         : "/pip14/contactDetails"
     },
   ],
@@ -103,18 +111,18 @@ var data = [ {
       "page"             : "8",
       "heading"          : "Your conditions and disabilities",
       "introText"        : "List all the conditions or disabilities you have that affect your life and when they started to affect you.",
-      "rowHd"            : "Condition or disability",
-      "conditionHd"      : "Name of condition or disability",
+      "rowHd"            : "condition",
+      "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip14/paymentsFromAbroad"
+      "backLink"         : "/pip14/summaryMain?show=yourCondition&next=conditionDetails&back=paymentsFromAbroad"
     },
   ],
   "medications" : [
     {
       "page"             : "9",
       "heading"          : "Your medications",
-      "introText"        : "Let us know if you take any medication for your condition or disability. This could include medicine that you need to take daily or something you take only a few times a year.",
+      "introText"        : "Let us know if you take any medication for your condition. This could include medicine that you need to take daily or something you take only a few times a year.",
       "question"         : "Are you currently taking any medication?",
       "rowHd"            : "Medication",
       "medicationHd"     : "Name of medication",
@@ -136,7 +144,8 @@ var data = [ {
       "howoften1"        : "Always",
       "howoften2"        : "Sometimes",
       "question3"        : "How do you manage your medication now?",
-      "question4"        : "Tell us some more details about the effects your condition or disability has on your ability to manage your medication",
+      "question4"        : "Tell us some more details about the effects your condition has on your ability to manage your medication",
+      "helpTextHd"       : "Inclue if:",
       "helpText"         : ["you could end up at risk","what you’re able to do depends on the type of day you’re having"],
       "backLink"         : "/pip14/medications"
     },
@@ -208,11 +217,103 @@ var data = [ {
     {
       "page"             : "16",
       "heading"          : "Information you can send",
-      "introText"        : "It will really help your case if you can send us any medical information that will give us details about your condition or disability and how it is being managed.",
+      "introText"        : "It will really help your case if you can send us any medical information that will give us details about your condition and how it is being managed.",
       "question"         : "Do you have medical information you’re able to send us?",
       "question2"        : "Which of the following are you able to send us?",
       "q2HintText"       : "You can tick as many of these as you like",
       "backLink"         : "/pip14/healthcareprofessional"
+    },
+  ],
+  "specialAids" : [
+    {
+      "page"              : "17",
+      "heading"           : "Aids and adaptations",
+      "question"          : "Where do you rely on aids, adaptations or anything else to make things easier for you?",
+      "qHintText"         : "Include any aids or adaptations you need but have not got yet.",
+      "homeLabel"         : "Getting in and out of your home",
+      "homeTextareaQ"     : "List aids, adaptations or anything you have to use to make getting in or out of your home easier.",
+      "stairsLabel"       : "Hallway or stairs",
+      "stairsTextareaQ"   : "List aids, adaptations or anything you have in your hallway or on your stairs to make things easier.",
+      "kitchenLabel"      : "Kitchen or dining area",
+      "kitchenTextareaQ"  : "List aids, adaptations or anything you have to use in your kitchen to make things easier.",
+      "loungeLabel"       : "Lounge or sitting room",
+      "loungeTextareaQ"   : "List aids, adaptations or anything you have to use in your lounge or sitting room to make things easier.",
+      "bedroomLabel"      : "Your bedroom",
+      "bedroomTextareaQ"  : "List aids, adaptations or anything you have to use in your bedroom to make things easier.",
+      "bathroomLabel"     : "Bathroom or toilet",
+      "bathroomTextareaQ" : "List aids, adaptations or anything you have to use in your bathroom or toilet to make things easier.",
+      "outsideLabel"      : "Outside",
+      "outsideTextareaQ"  : "List aids, adaptations or anything you have to use when you're outside to make things easier.",
+      "question2"         : "List anything else you have with you all or most of the time to make things easier for you.",
+      "q2HintText"        : "This might include things like a wheelchair, hearing aid or prosthetic limb.",
+      "backLink"          : "/pip14/submitEvidence"
+    },
+  ],
+  "sight" : [
+    {
+      "page"             : "18",
+      "heading"          : "Your sight",
+      "question"         : "Does your condition affect your eyesight?",
+      "question2"        : "Roughly how often is it affected?",
+      "question3"        : "How does your condition affect your sight?",
+      "backLink"         : "/pip14/specialAids"
+    },
+  ],
+  "speech" : [
+    {
+      "page"             : "19",
+      "heading"          : "Your speech",
+      "question"         : "Does your condition affect your speech?",
+      "question2"        : "Roughly how often is it affected?",
+      "question3"        : "How does your condition affect your speech?",
+      "backLink"         : "/pip14/sight"
+    },
+  ],
+  "hearing" : [
+    {
+      "page"             : "20",
+      "heading"          : "Your hearing",
+      "question"         : "Does your condition affect your hearing?",
+      "question2"        : "Which of these apply?",
+      "hearingAidLabel"  : "You need a hearing aid",
+      "2hearingAidLabel" : "You need two hearing aids",
+      "implantLabel"     : "You have a cochlear implant",
+      "somethingLabel"   : "You rely on something else",
+      "somethingTxtQ"    : "Explain what your rely on",
+      "someoneLabel"     : "You rely on someone to help you communicate",
+      "someoneTxtQ"      : "How they help you",
+      "cantHearLabel"    : "You can not hear at all",
+      "cantHearTxtQ"     : "Explain how you communicate",
+      "question3"        : "Explain how your condition affects your hearing.",
+      "helpTextHd"       : "Include if the effects change depending on:",
+      "helpText"         : ["where you are","what you’re doing"],
+      "backLink"         : "/pip14/sight"
+    },
+  ],
+  "gettingUp" : [
+    {
+      "page"             : "21",
+      "heading"          : "Getting up and moving around",
+      "question"         : "Does your condition affect you:",
+      "motivatedLabel"   : "being motivated to get up",
+      "sittingUpLabel"   : "sitting up",
+      "outBedLabel"      : "getting out of bed",
+      "standingLabel"    : "standing",
+      "movingRoomsLabel" : "moving between rooms",
+      "stairsLabel"      : "using the stairs",
+      "otherWayLabel"    : "in another way",
+      "doesntLabel"      : "Your condition does not affect you moving around your home",
+      "question2"        : "How often does your condition affect you moving around your home?",
+      "question3"        : "When your condition affects you, how do you get up and move around your home?",
+      "encourageLabel"   : "Someone needs to encourage you to get out of bed",
+      "helpLabel"        : "Someone needs to help you move",
+      "relyLabel"        : "You rely on aids or something else to help",
+      "manageLabel"      : "You manage on your own, but with difficulty",
+      "dontLabel"        : "You do not get out of bed",
+      "question4"        : "Explain how your condition affects you getting up and moving around.",
+      "helpTextHd"       : "Include if:",
+      "helpText"         : ["it takes a long time","what you’re able to do","depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
+      "backLink"         : "/pip14/summaryMain?show=yourHome&next=gettingUp&back=hearing"
     },
   ],
 

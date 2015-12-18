@@ -32,10 +32,10 @@
 						},
 						{"id":"affect6", "label":"Your condition does not affect you taking your medication", "value":"Your condition does not affect you taking your medication", "hidePanel":"details"}
 					] %}
-					{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq,answers) }}
+					{{ elements.checkbox('conditionAffect',"checkbox",question.question,'',seq,answers,answers.conditionAffect,"check-uncheck") }}
 
 					<div class="form-group panel-indent
-					 {% if not answers.optionsName  or answers.optionsName == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
+					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
 
 						{% set seq2  = [
 							{"id":"howOften", "value":question.howoften1},
@@ -52,9 +52,9 @@
 							{"id":"checkbox-3", "label":"I manage it on my own with difficulty", "value":"I manage it on my own with difficulty"},
 							{"id":"checkbox-4", "label":"I avoid it completely", "value":"I avoid it completely"}
 						] %}
-						{{ elements.checkbox('optionsName',"checkbox",question.question3,'',seq3,answers) }}
+						{{ elements.checkbox('manageNow',"checkbox",question.question3,'',seq3,answers,answers.manageNow) }}
 
-						{{ elements.textarea('moreDetails',question.question4,answers.moreDetails,"",question.helpText) }}
+						{{ elements.textarea('moreDetails',question.question4,answers.moreDetails,"",question.helpTextHd,question.helpText) }}
 
 					</div>
 

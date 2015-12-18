@@ -25,7 +25,7 @@
 						{"id":"location6", "label":"hospice", "value":"hospice", "showPanel":"details"},
 						{"id":"location7", "label":"you are currently not staying in any of these", "value":"you are currently not staying in any of these", "hidePanel":"details"}
 					] %}
-					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers) }}
+					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
 
 					<div class="form-group panel-indent
 					{% if not answers.optionsName  or answers.optionsName == 'you are currently not staying in any of these' %}js-hidden{% endif %}" id="details">

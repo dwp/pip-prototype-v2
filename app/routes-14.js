@@ -11,6 +11,17 @@ module.exports = function (app) {
   });
 
   /*******************
+  summaryMain
+  *******************/
+  app.get('/pip14/summaryMain', function (req, res) {
+      res.render('pip14/summaryMain', {
+        'show'  : req.param('show'),
+        'next'  : req.param('next'),
+        'back'  : req.param('back')
+      });
+  });
+
+  /*******************
   Helper
   *******************/
   app.get('/pip14/helper', function (req, res) {
@@ -153,7 +164,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/conditionDetails');
+      res.redirect('/pip14/summaryMain?show=yourCondition&next=conditionDetails&back=paymentsFromAbroad');
     }
   });
 
@@ -161,7 +172,6 @@ module.exports = function (app) {
   conditionDetails
   *******************/
   app.get('/pip14/conditionDetails', function (req, res) {
-    console.error(req.session['pip14-conditionDetails']);
       res.render('pip14/conditionDetails', {
         answers : req.session['pip14-conditionDetails'],
         'edit'  : req.param('edit'),
@@ -349,7 +359,112 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/submitEvidence');
+      res.redirect('/pip14/specialAids');
+    }
+  });
+
+  /*******************
+  specialAids
+  *******************/
+  app.get('/pip14/specialAids', function (req, res) {
+      res.render('pip14/specialAids', {
+        answers : req.session['pip14-specialAids'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/specialAids', function (req, res) {
+    req.session['pip14-specialAids'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/sight');
+    }
+  });
+
+  /*******************
+  sight
+  *******************/
+  app.get('/pip14/sight', function (req, res) {
+      res.render('pip14/sight', {
+        answers : req.session['pip14-sight'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/sight', function (req, res) {
+    req.session['pip14-sight'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/speech');
+    }
+  });
+
+  /*******************
+  speech
+  *******************/
+  app.get('/pip14/speech', function (req, res) {
+      res.render('pip14/speech', {
+        answers : req.session['pip14-speech'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/speech', function (req, res) {
+    req.session['pip14-speech'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/hearing');
+    }
+  });
+
+  /*******************
+  hearing
+  *******************/
+  app.get('/pip14/hearing', function (req, res) {
+      res.render('pip14/hearing', {
+        answers : req.session['pip14-hearing'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/hearing', function (req, res) {
+    req.session['pip14-hearing'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/summaryMain?show=yourHome&next=gettingUp&back=hearing');
+    }
+  });
+
+  /*******************
+  gettingUp
+  *******************/
+  app.get('/pip14/gettingUp', function (req, res) {
+      res.render('pip14/gettingUp', {
+        answers : req.session['pip14-gettingUp'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/gettingUp', function (req, res) {
+    req.session['pip14-gettingUp'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/gettingUp');
     }
   });
 

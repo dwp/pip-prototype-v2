@@ -17,7 +17,7 @@
 				</header>
 				<p class="lede">We need to know how your condition affects you, so you’ll be asked about the following:</p>
 
-				<details class="help-text" open>
+				<details class="help-text" {% if show == 'aboutYou' %} open {% endif %}>
 	        <summary><span class="summary">About you</span></summary>
 	          <ul class="list-bullet">
 	            <li>help with your application</li>
@@ -26,7 +26,7 @@
 	          </ul>
 	      </details>
 
-	      <details class="help-text">
+	      <details class="help-text" {% if show == 'yourCondition' %} open {% endif %}>
 	        <summary><span class="summary">You and your condition</span></summary>
 	        <ul id="yourAndYourCondition" class=" list-bullet">
 	          <li>your conditions and disabilities</li>
@@ -42,7 +42,7 @@
 	        </ul>
 	      </details>
 
-	      <details class="help-text">
+	      <details class="help-text" {% if show == 'yourHome' %} open {% endif %}>
 	        <summary><span class="summary">You and your home</span></summary>
 	          <ul class=" list-bullet">
 	            <li>moving around your home</li>
@@ -54,7 +54,7 @@
 	          </ul>
 	      </details>
 
-	      <details class="help-text">
+	      <details class="help-text" {% if show == 'gettingOut' %} open {% endif %}>
 	        <summary><span class="summary">Getting out and about</span></summary>
 	          <ul class=" list-bullet">
 	            <li>getting out and walking about</li>
@@ -62,7 +62,7 @@
 	          </ul>
 	      </details>
 
-	      <details class="help-text">
+	      <details class="help-text" {% if show == 'understanding' %} open {% endif %}>
 	        <summary><span class="summary">Making sense of things</span></summary>
 	          <ul class=" list-bullet">
 	            <li>planning a local journey</li>
@@ -78,8 +78,8 @@
         		<p class="panel-indent">Include as much information as you can in your answers.</p>
 		      </div>
 
-		      <a href="helper" class="button">Continue</a>
-
+		      <a href="{{next}}" class="button">Continue</a>
+					<a href="{{back}}" class="link-back">Back</a>
 
 			</div>
 	</div>

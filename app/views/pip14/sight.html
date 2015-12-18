@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip14/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.sight %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip14/sight{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"sight","value":"Yes","showPanel":"sightDetails"},
+						{"id":"sight", "value":"No"}
+					] %}
+					{{ elements.radioSelect('sight',question.question,"",answers.sight,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.sight != 'Yes' %}js-hidden{% endif %}" id="sightDetails">
+						{{ elements.genericInput('howOften',question.question2, answers.howOften) }}
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes) }}
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
