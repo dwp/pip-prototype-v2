@@ -464,10 +464,240 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/gettingUp');
+      res.redirect('/pip14/toilet');
+    }
+  });
+
+  /*******************
+  toilet
+  *******************/
+  app.get('/pip14/toilet', function (req, res) {
+      res.render('pip14/toilet', {
+        answers : req.session['pip14-toilet'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/toilet', function (req, res) {
+    req.session['pip14-toilet'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/washing');
+    }
+  });
+
+  /*******************
+  washing
+  *******************/
+  app.get('/pip14/washing', function (req, res) {
+      res.render('pip14/washing', {
+        answers : req.session['pip14-washing'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/washing', function (req, res) {
+    req.session['pip14-washing'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/gettingDressed');
+    }
+  });
+
+  /*******************
+  gettingDressed
+  *******************/
+  app.get('/pip14/gettingDressed', function (req, res) {
+      res.render('pip14/gettingDressed', {
+        answers : req.session['pip14-gettingDressed'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/gettingDressed', function (req, res) {
+    req.session['pip14-gettingDressed'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/hotMeal');
+    }
+  });
+
+  /*******************
+  hotMeal
+  *******************/
+  app.get('/pip14/hotMeal', function (req, res) {
+      res.render('pip14/hotMeal', {
+        answers : req.session['pip14-hotMeal'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/hotMeal', function (req, res) {
+    req.session['pip14-hotMeal'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/eatingAndDrinking');
+    }
+  });
+
+  /*******************
+  eatingAndDrinking
+  *******************/
+  app.get('/pip14/eatingAndDrinking', function (req, res) {
+      res.render('pip14/eatingAndDrinking', {
+        answers : req.session['pip14-eatingAndDrinking'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/eatingAndDrinking', function (req, res) {
+    req.session['pip14-eatingAndDrinking'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/gettingOut');
+    }
+  });
+
+  /*******************
+  gettingOut
+  *******************/
+  app.get('/pip14/gettingOut', function (req, res) {
+      res.render('pip14/gettingOut', {
+        answers : req.session['pip14-gettingOut'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/gettingOut', function (req, res) {
+    req.session['pip14-gettingOut'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/mixing');
     }
   });
 
 
+  /*******************
+  mixing
+  *******************/
+  app.get('/pip14/mixing', function (req, res) {
+      res.render('pip14/mixing', {
+        answers : req.session['pip14-mixing'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/mixing', function (req, res) {
+    req.session['pip14-mixing'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/localJourney');
+    }
+  });
+
+  /*******************
+  localJourney
+  *******************/
+  app.get('/pip14/localJourney', function (req, res) {
+      res.render('pip14/localJourney', {
+        answers : req.session['pip14-localJourney'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/localJourney', function (req, res) {
+    req.session['pip14-localJourney'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/somewhereNeverBeenBefore');
+    }
+  });
+
+  /*******************
+  somewhereNeverBeenBefore
+  *******************/
+  app.get('/pip14/somewhereNeverBeenBefore', function (req, res) {
+      res.render('pip14/somewhereNeverBeenBefore', {
+        answers : req.session['pip14-somewhereNeverBeenBefore'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/somewhereNeverBeenBefore', function (req, res) {
+    req.session['pip14-somewhereNeverBeenBefore'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/somewhereYouKnow');
+    }
+  });
+
+  /*******************
+  somewhereYouKnow
+  *******************/
+  app.get('/pip14/somewhereYouKnow', function (req, res) {
+      res.render('pip14/somewhereYouKnow', {
+        answers : req.session['pip14-somewhereYouKnow'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/somewhereYouKnow', function (req, res) {
+    req.session['pip14-somewhereYouKnow'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/understanding');
+    }
+  });
+
+  /*******************
+  understanding
+  *******************/
+  app.get('/pip14/understanding', function (req, res) {
+      res.render('pip14/understanding', {
+        answers : req.session['pip14-understanding'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/understanding', function (req, res) {
+    req.session['pip14-understanding'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/understanding');
+    }
+  });
 
 };
