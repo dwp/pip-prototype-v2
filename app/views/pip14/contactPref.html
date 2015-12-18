@@ -48,7 +48,7 @@
 					] %}
 
 					<div class="form-group panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
-						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers) }}
+						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
 					</div>
 
 					{{ elements.submit(page,question) }}

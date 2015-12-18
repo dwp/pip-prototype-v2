@@ -287,7 +287,7 @@ var data = [ {
       "question3"        : "Explain how your condition affects your hearing.",
       "helpTextHd"       : "Include if the effects change depending on:",
       "helpText"         : ["where you are","what you’re doing"],
-      "backLink"         : "/pip14/sight"
+      "backLink"         : "/pip14/speech"
     },
   ],
   "gettingUp" : [

@@ -28,10 +28,10 @@
 
 					<fieldset class="form-group">
 						<label class="block-label" for="radio-1" data-target="correspondenceAddress">
-			        <input id="radio-1" type="checkbox" name="radio-correspondence" value="Add a correspondence address">
-							Post any letters to a different address
+			        <input id="radio-1" type="checkbox" name="radioCorrespondence" value="Yes" {% if answers.radioCorrespondence == 'Yes' %} checked=checked {% endif %}>
+							Post any letters to a different address - {{answers.radioCorrespondence}}
 			      </label>
-						<div class="panel-indent js-hidden" id="correspondenceAddress">
+						<div class="panel-indent {% if answers.radioCorrespondence != 'Yes' %} js-hidden {% endif %}" id="correspondenceAddress">
 							<legend class="form-label">Send letters to:</legend>
 							{{ elements.textInput('correspondenceAddress1',answers.correspondenceAddress1) }}
 							{{ elements.textInput('correspondenceAddress2',answers.correspondenceAddress2) }}
@@ -41,7 +41,7 @@
 						</div>
 					</fieldset>
 
-					{{ elements.genericInputPhone('phone',question.question4, answers.phone,question.q4HintText) }}
+					{{ elements.genericInputPhone('phone',question.question4, answers.phone,answers.textPhone,question.q4HintText) }}
 
 
 					{{ elements.genericInput('altPhone',question.question5, answers.altPhone) }}

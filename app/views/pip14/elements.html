@@ -47,7 +47,7 @@
 </div>
 {% endmacro %}
 
-{% macro genericInputPhone(id,question,answer,hintText,inputSize,password=false) %}
+{% macro genericInputPhone(id,question,answer,answerTextPhone,hintText,inputSize,password=false) %}
 <div class="form-group" id="form-group-{{ id }}">
   <label class="form-label" for="{{ id }}">{{question}}
   {% if hintText %}
@@ -63,7 +63,7 @@
   class="form-control {% if inputSize %}{{ inputSize }}{% endif %}" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
 
   <label class="form-checkbox" for="checkbox-telephone-number">
-    <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true">
+    <input id="checkbox-telephone-number" name="textPhone" type="checkbox" value="true" {% if answerTextPhone == 'true' %} checked=checked {% endif %}>
     You need to be contacted using a text phone
   </label>
 </div>
