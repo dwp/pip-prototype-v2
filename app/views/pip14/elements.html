@@ -11,7 +11,9 @@
 
 {% macro submit(data,questions,backLink) %}
 <div id="submit-group" class="form-group">
-    <input type="submit" class="button" value="{{data.continue}}" name="saveAndcontinue">
+    <input type="submit" class="button"
+    value="{% if questions.submit %} {{questions.submit}} {% else %} {{data.continue}} {% endif %}"
+    name="saveAndcontinue">
     <input type="submit" value="{{data.saveExit}}" name="saveAndExit" class="exit-link">
     {% if backLink != false %}
       <a href="{{questions.backLink}}" class="link-back">{{data.backText}}</a>

@@ -2059,6 +2059,10 @@ textarea {
   min-height: 6em;
 }
 
+textarea#additionalInfo {
+  min-height: 15em;
+}
+
 textarea + .character-count {
   float: left;
   margin: 5px 0 0 4px;
@@ -2077,7 +2081,7 @@ fieldset .panel-indent {
   margin: -15px 0 0 10px;
 }
 
-.form-login .panel-indent {
+.panel-indent.disclaimer {
   position: relative;
   background: #28a197;
   /* Fallback for older browsers without RGBA-support */

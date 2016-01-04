@@ -1,6 +1,6 @@
 var data = [ {
   "page"               : "1",
-  "maxPages"           : "35",
+  "maxPages"           : "36",
   "title"              : "Title of page",
   "introText"          : "Introduction paragraph which should be over two or three lines maximum ideally. Maybe two or three sentences.",
   "continue"           : "Save and continue",
@@ -618,6 +618,67 @@ var data = [ {
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it can take you a long time to work out what things mean","not understanding things puts you at risk"],
       "backLink"         : "/pip14/somewhereYouKnow"
+    },
+  ],
+  "money" : [
+    {
+      "page"             : "33",
+      "heading"          : "Dealing with money",
+      "introText"        : "If you do not deal with money or bills, tell us if you’d be able to if you had to.",
+      "question"         : "Does your condition affect you:",
+      "billsLabel"       : "understanding bills",
+      "spendLabel"       : "knowing how much you have to spend",
+      "costLabel"        : "understanding how much things cost",
+      "changeLabel"      : "knowing how much change you should get",
+      "overspendLabel"   : "overspending",
+      "doesntLabel"      : "Your condition does not affect you dealing with money",
+      "question2"        : "How do you deal with money?",
+      "relySomeoneLabel" : "Someone has to explain things to you",
+      "relyRemindLabel"  : "Someone has to remind you or encourage you to pay bills",
+      "ownLabel"         : "You manage on your own, but with difficulty",
+      "notAbleLabel"     : "You would not be able to deal with money",
+      "otherWayLabel"    : "In another way",
+      "question3"        : "Explain how your condition affects you dealing with money.",
+      "helpTextHd"       : "Include if:",
+      "helpText"         : ["what you’re able to do depends on the type of day you’re having","it can take a long time to work things out","you could end up at risk"],
+      "backLink"         : "/pip14/understanding"
+    },
+  ],
+  "checkYourAnswers" : [
+    {
+      "page"             : "34",
+      "heading"          : "Check your answers",
+      "introText"        : "You can check all the answers you’ve given and change them if you need to.",
+      "backLink"         : "/pip14/money"
+    },
+  ],
+  "additionalInfo" : [
+    {
+      "page"             : "35",
+      "heading"          : "Additional information",
+      "introText"        : "Include anything else that explains how your condition or disability affects you.",
+      "backLink"         : "/pip14/checkYourAnswers"
+    },
+  ],
+  "declaration" : [
+    {
+      "page"             : "36",
+      "heading"          : "Declaration",
+      "listHeading"      : "By sending this application you agree:",
+      "list"             : ["the information in this application is complete and correct as far as you know","to <a href='#'>report any changes to your circumstances</a>"],
+      "disclaimer"       : "You could be prosecuted or have to pay a fine if you deliberately give false or incomplete information, or don’t report changes. Your Personal Independence Payment may also be stopped or reduced.",
+      "submit"           : "I agree - send me application",
+      "backLink"         : "/pip14/additionalInfo"
+    },
+  ],
+  "thankYou" : [
+    {
+      "heading"          : "Submit",
+      "listHeading"      : "By sending this application you agree:",
+      "list"             : ["the information in this application is complete and correct as far as you know","to <a href='#'>report any changes to your circumstances</a>"],
+      "disclaimer"       : "You could be prosecuted or have to pay a fine if you deliberately give false or incomplete information, or don’t report changes. Your Personal Independence Payment may also be stopped or reduced.",
+      "submit"           : "I agree - send me application",
+      "backLink"         : "/pip14/additionalInfo"
     },
   ],
 

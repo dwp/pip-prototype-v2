@@ -314,12 +314,17 @@ $(document).ready(function() {
 		}
 	});
 
+  function charCount(textarea) {
+    var max  = textarea.attr('maxLength'),
+        left = textarea.val().length;
+    textarea.next('span').text(max - left + ' characters left');
+  }
+
   $('textarea').each(function() {
+    charCount($(this));
     if($(this).attr('maxLength')){
   		$(this).keyup(function() {
-  			var max  = $(this).attr('maxLength'),
-  					left = $(this).val().length;
-  			$(this).next('span').text(max - left + ' characters left');
+        charCount($(this));
   		});
     }
 	});

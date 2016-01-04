@@ -696,8 +696,104 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/understanding');
+      res.redirect('/pip14/money');
     }
   });
+
+  /*******************
+  money
+  *******************/
+  app.get('/pip14/money', function (req, res) {
+      res.render('pip14/money', {
+        answers : req.session['pip14-money'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/money', function (req, res) {
+    req.session['pip14-money'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/checkYourAnswers');
+    }
+  });
+
+  /*******************
+  checkYourAnswers
+  *******************/
+  app.get('/pip14/checkYourAnswers', function (req, res) {
+      res.render('pip14/checkYourAnswers', {
+        answers : req.session['pip14-checkYourAnswers'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/checkYourAnswers', function (req, res) {
+    req.session['pip14-checkYourAnswers'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/additionalInfo');
+    }
+  });
+
+  /*******************
+  additionalInfo
+  *******************/
+  app.get('/pip14/additionalInfo', function (req, res) {
+      res.render('pip14/additionalInfo', {
+        answers : req.session['pip14-additionalInfo'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/additionalInfo', function (req, res) {
+    req.session['pip14-additionalInfo'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/declaration');
+    }
+  });
+
+  /*******************
+  declaration
+  *******************/
+  app.get('/pip14/declaration', function (req, res) {
+      res.render('pip14/declaration', {
+        answers : req.session['pip14-declaration'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip14/declaration', function (req, res) {
+    req.session['pip14-declaration'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip14/check-and-change');
+    } else {
+      res.redirect('/pip14/thankYou');
+    }
+  });
+
+  /*******************
+  thankYou
+  *******************/
+  app.get('/pip14/thankYou', function (req, res) {
+      res.render('pip14/thankYou', {
+        answers : req.session['pip14-thankYou'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
 
 };
