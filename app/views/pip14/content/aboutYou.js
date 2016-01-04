@@ -571,7 +571,7 @@ var data = [ {
       "wouldNotLabel"    : "You would not go to somewhere you have never been",
       "question3"        : "Explain how your condition would affect you getting to somewhere you have never been.",
       "helpTextHd"       : "Include if:",
-      "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","it your condition would affect how long it takes you to get somewhere","getting somewhere you have never been would have an effect on your condition"],
+      "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","if your condition would affect how long it takes you to get somewhere","getting somewhere you have never been would have an effect on your condition"],
       "backLink"         : "/pip14/localJourney"
     },
   ],
