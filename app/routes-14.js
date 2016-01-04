@@ -569,7 +569,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/gettingOut');
+      res.redirect('/pip14/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking');
     }
   });
 
@@ -612,7 +612,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip14/check-and-change');
     } else {
-      res.redirect('/pip14/localJourney');
+      res.redirect('/pip14/summaryMain?show=understanding&next=localJourney&back=mixing');
     }
   });
 

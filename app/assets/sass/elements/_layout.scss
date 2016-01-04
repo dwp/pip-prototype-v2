@@ -17,7 +17,7 @@
   @extend %site-width-container;
   @extend %contain-floats;
   padding-bottom: $gutter;
-  
+
   @include media(desktop) {
     padding-bottom: $gutter*3;
   }
@@ -68,4 +68,8 @@
 
 .column-two-thirds {
   @include grid-column(2/3);
+}
+
+.column-three-quarters {
+  @include grid-column(3/4);
 }

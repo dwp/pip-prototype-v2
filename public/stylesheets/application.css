@@ -877,6 +877,20 @@ hr {
   }
 }
 
+.column-three-quarters {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-three-quarters {
+    float: left;
+    width: 75%;
+  }
+}
+
 #global-breadcrumb ol {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
@@ -2113,4 +2127,21 @@ fieldset .panel-indent {
 
 .list-user-input .remove {
   float: right;
+}
+
+.highlighted-event {
+  background-color: #28a197;
+  color: #fff;
+  float: none;
+  text-align: center;
+  padding: 1em 2em 1em 2em;
+  margin: 50px auto 10px;
+  width: 80%;
+}
+
+.highlighted-event h1 {
+  background: url("../images/tick.png") no-repeat 0 0;
+  height: 80px;
+  margin-bottom: 0;
+  padding: 20px 0 0 80px;
 }

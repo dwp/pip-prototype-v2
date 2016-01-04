@@ -500,7 +500,7 @@ var data = [ {
       "question4"        : "Explain how your condition affects you getting out or walking about.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
-      "backLink"         : "/pip14/eatingAndDrinking"
+      "backLink"         : "/pip14/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
     },
   ],
   "mixing" : [
@@ -549,7 +549,7 @@ var data = [ {
       "otherWayLabel"    : "in another way",
       "question3"        : "Explain how your condition would affect you planning a local journey.",
       "q3HintText"       : "Include if it would take you a long time to plan a local journey.",
-      "backLink"         : "/pip14/mixing"
+      "backLink"         : "/pip14/summaryMain?show=understanding&next=localJourney&back=mixing"
     },
   ],
   "somewhereNeverBeenBefore" : [
@@ -673,12 +673,16 @@ var data = [ {
   ],
   "thankYou" : [
     {
-      "heading"          : "Submit",
-      "listHeading"      : "By sending this application you agree:",
-      "list"             : ["the information in this application is complete and correct as far as you know","to <a href='#'>report any changes to your circumstances</a>"],
-      "disclaimer"       : "You could be prosecuted or have to pay a fine if you deliberately give false or incomplete information, or don’t report changes. Your Personal Independence Payment may also be stopped or reduced.",
-      "submit"           : "I agree - send me application",
-      "backLink"         : "/pip14/additionalInfo"
+      "heading"          : "Your application has been sent",
+      "heading2"         : "Send more information",
+      "p1"               : "You said you’re going to send information about the effects of your condition. Write your National Insurance number on each page you send and post it in the next two weeks. If you don’t, a decision will be made without it.",
+      "postTo"           : "Post to:",
+      "address"          : ["Address 1","Address 2","City","Postcode"],
+      "heading3"         : "What happens next?",
+      "p2"               : "You'll get sent a letter telling you the decision. You might be asked to meet with a healthcare professional to discuss how your condition affects you in more detail.",
+      "p3"               : "You must <a href='#'>report any change to your circumstances</a>, including if you come out of hospital.",
+      "p4"               : "If you have any queries about your claim, phone 0345 850 3322. You’ll need your National Insurance number.",
+      "button"           : "Return to GOV.UK"
     },
   ],
 
