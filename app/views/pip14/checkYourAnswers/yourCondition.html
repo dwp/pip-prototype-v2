@@ -1,36 +1,35 @@
 <!-- condition details -->
 <div class="column-full">
   <div class="answers-cont">
-
     <h2 class="heading-medium">{{question.conditionHd}}</h2>
+
     <ul class="column-two-thirds">
-      <li>
-        <h3 class="heading-small">Condition 1</h3>
-        <ul>
+      {% set conditionVars = cycler("condition1", "condition2", "condition3", "condition4", "condition5", "condition6", "condition7", "condition8", "condition9", "condition10") %}
+      {% set startedVars = cycler("started1", "started2", "started3", "started4", "started5", "started6", "started7", "started8", "started9", "started10") %}
+
+      {% for i in range(1, 11) -%}
+
+        {% set condition = conditionVars.next() %}
+        {% set started = startedVars.next() %}
+
+        {% if loop.first or conditionDetails[condition] %}
           <li>
-            <span class="question">{{question.conditionName}}</span>
-            <span class="answer">{{conditionDetails.condition1}} -</span>
+            <h3 class="heading-small">Condition {{i}}</h3>
+            <ul>
+              <li>
+                <span class="question">{{question.conditionName}}</span>
+                <span class="answer">{{conditionDetails[condition]}}</span>
+              </li>
+              <li>
+                <span class="question">{{question.conditionWhen}}</span>
+                <span class="answer">{{conditionDetails[started]}}</span>
+              </li>
+            </ul>
           </li>
-          <li>
-            <span class="question">{{question.conditionWhen}}</span>
-            <span class="answer">{{conditionDetails.started1}}</span>
-          </li>
-        </ul>
-      </li>
-        <li>
-          <h3 class="heading-small">Condition 2</h3>
-          <ul>
-            <li>
-              <span class="question">{{question.conditionName}}</span>
-              <span class="answer">{{conditionDetails.name}}</span>
-            </li>
-            <li>
-              <span class="question">{{question.conditionWhen}}</span>
-              <span class="answer">{{conditionDetails.name}}</span>
-            </li>
-          </ul>
-        </li>
+        {% endif %}
+
+      {% endfor %}
     </ul>
-    <a href="/pip14/helper?edit=true">{{question.changeLinkTxt}}</a>
+    <a href="/pip14/conditionDetails?edit=true">{{question.changeLinkTxt}}</a>
   </div>
 </div>

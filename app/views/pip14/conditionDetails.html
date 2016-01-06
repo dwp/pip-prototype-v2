@@ -18,22 +18,32 @@
 					{{ elements.header(page,question) }}
 
 					<ul class="list-user-input">
+						{% set conditionVars = cycler("condition1", "condition2", "condition3", "condition4", "condition5", "condition6", "condition7", "condition8", "condition9", "condition10") %}
+				    {% set startedVars = cycler("started1", "started2", "started3", "started4", "started5", "started6", "started7", "started8", "started9", "started10") %}
+
 						{% for i in range(1, 11) -%}
-							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first %} js-hidden {% endif %}">
-								<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
-								{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 
-									{% set condition = "condition" + i %}
-									{% set conditionAnswer = answers.condition %}
-									{{ elements.genericInputList(condition,question.conditionHd, answers.condition1,"condtion-1") }}
+							{% set condition = conditionVars.next() %}
+							{% set started = startedVars.next() %}
 
-									{% set started = "started" + i %}
-									{% set startedAnswer = answers.started1 %}
-									{{ elements.genericInputList(started,question.startedHd, answers.started1,"started-1") }}
+							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers[condition] %} js-hidden {% endif %}"
+
+							>
+								<h2 class="heading-small">{{ question.rowHd }} {{i}} </h2>
+
+									{% if not loop.first %}
+										<a href="#" class="remove">{{ question.removeLink }}</a>
+									{% endif %}
+
+									{{ elements.genericInputList(condition,question.conditionHd, answers[condition],"condtion-1") }}
+
+									{{ elements.genericInputList(started,question.startedHd, answers[started],"started-1") }}
 
 							</li>
 						{% endfor %}
+
 						<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+
 					</ul>
 
 					{{ elements.submit(page,question) }}
