@@ -1,7 +1,8 @@
 module.exports = function (app) {
 
-  var styleguide = require('./views/pip14/content/styleguide'),
-      aboutYou   = require('./views/pip14/content/aboutYou');
+  var styleguide        = require('./views/pip14/content/styleguide'),
+      aboutYou          = require('./views/pip14/content/aboutYou'),
+      checkYourAnswers  = require('./views/pip14/content/checkYourAnswers');
 
   app.get('/pip14/styleguide', function (req, res) {
     res.render('pip14/styleguide', {
@@ -36,7 +37,7 @@ module.exports = function (app) {
     req.session['pip14-helper'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/aboutYou');
     }
@@ -57,7 +58,7 @@ module.exports = function (app) {
     req.session['pip14-aboutYou'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/contactDetails');
     }
@@ -78,7 +79,7 @@ module.exports = function (app) {
     req.session['pip14-contactDetails'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/contactPref');
     }
@@ -99,7 +100,7 @@ module.exports = function (app) {
     req.session['pip14-contactPref'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/currentWhereabouts');
     }
@@ -120,7 +121,7 @@ module.exports = function (app) {
     req.session['pip14-currentWhereabouts'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/nationality');
     }
@@ -141,7 +142,7 @@ module.exports = function (app) {
     req.session['pip14-nationality'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/paymentsFromAbroad');
     }
@@ -162,7 +163,7 @@ module.exports = function (app) {
     req.session['pip14-paymentsFromAbroad'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/summaryMain?show=yourCondition&next=conditionDetails&back=paymentsFromAbroad');
     }
@@ -183,7 +184,7 @@ module.exports = function (app) {
     req.session['pip14-conditionDetails'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/medications');
     }
@@ -210,7 +211,7 @@ module.exports = function (app) {
          res.redirect('/pip14/manageMedications');
        }
      } else if (req.param('edit')) {
-       res.redirect('/pip14/check-and-change');
+       res.redirect('/pip14/checkYourAnswers');
      } else {
        res.redirect('/pip14/treatments');
      }
@@ -231,7 +232,7 @@ module.exports = function (app) {
     req.session['pip14-manageMedications'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/treatments');
     }
@@ -252,7 +253,7 @@ module.exports = function (app) {
     req.session['pip14-treatments'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/sideEffects');
     }
@@ -273,7 +274,7 @@ module.exports = function (app) {
     req.session['pip14-sideEffects'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/conditionAffects');
     }
@@ -294,7 +295,7 @@ module.exports = function (app) {
     req.session['pip14-conditionAffects'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/monitoringCondition');
     }
@@ -315,7 +316,7 @@ module.exports = function (app) {
     req.session['pip14-monitoringCondition'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/healthcareprofessional');
     }
@@ -336,7 +337,7 @@ module.exports = function (app) {
     req.session['pip14-healthcareprofessional'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/submitEvidence');
     }
@@ -357,7 +358,7 @@ module.exports = function (app) {
     req.session['pip14-submitEvidence'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/specialAids');
     }
@@ -378,7 +379,7 @@ module.exports = function (app) {
     req.session['pip14-specialAids'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/sight');
     }
@@ -399,7 +400,7 @@ module.exports = function (app) {
     req.session['pip14-sight'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/speech');
     }
@@ -420,7 +421,7 @@ module.exports = function (app) {
     req.session['pip14-speech'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/hearing');
     }
@@ -441,7 +442,7 @@ module.exports = function (app) {
     req.session['pip14-hearing'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/summaryMain?show=yourHome&next=gettingUp&back=hearing');
     }
@@ -462,7 +463,7 @@ module.exports = function (app) {
     req.session['pip14-gettingUp'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/toilet');
     }
@@ -483,7 +484,7 @@ module.exports = function (app) {
     req.session['pip14-toilet'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/washing');
     }
@@ -504,7 +505,7 @@ module.exports = function (app) {
     req.session['pip14-washing'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/gettingDressed');
     }
@@ -525,7 +526,7 @@ module.exports = function (app) {
     req.session['pip14-gettingDressed'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/hotMeal');
     }
@@ -546,7 +547,7 @@ module.exports = function (app) {
     req.session['pip14-hotMeal'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/eatingAndDrinking');
     }
@@ -567,7 +568,7 @@ module.exports = function (app) {
     req.session['pip14-eatingAndDrinking'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking');
     }
@@ -588,7 +589,7 @@ module.exports = function (app) {
     req.session['pip14-gettingOut'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/mixing');
     }
@@ -610,7 +611,7 @@ module.exports = function (app) {
     req.session['pip14-mixing'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/summaryMain?show=understanding&next=localJourney&back=mixing');
     }
@@ -631,7 +632,7 @@ module.exports = function (app) {
     req.session['pip14-localJourney'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/somewhereNeverBeenBefore');
     }
@@ -652,7 +653,7 @@ module.exports = function (app) {
     req.session['pip14-somewhereNeverBeenBefore'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/somewhereYouKnow');
     }
@@ -673,7 +674,7 @@ module.exports = function (app) {
     req.session['pip14-somewhereYouKnow'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/understanding');
     }
@@ -694,7 +695,7 @@ module.exports = function (app) {
     req.session['pip14-understanding'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/money');
     }
@@ -715,7 +716,7 @@ module.exports = function (app) {
     req.session['pip14-money'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/checkYourAnswers');
     }
@@ -725,10 +726,46 @@ module.exports = function (app) {
   checkYourAnswers
   *******************/
   app.get('/pip14/checkYourAnswers', function (req, res) {
+    console.error(req.session['pip14-conditionDetails']);
       res.render('pip14/checkYourAnswers', {
-        answers : req.session['pip14-checkYourAnswers'],
-        'edit'  : req.param('edit'),
-        data    : aboutYou.getTableData()
+        answers                  : req.session['pip14-checkYourAnswers'],
+        'edit'                   : req.param('edit'),
+        data                     : aboutYou.getTableData(),
+        dataCheckChange          : checkYourAnswers.getTableData(),
+        helper                   : req.session['pip14-helper'],
+        aboutYou                 : req.session['pip14-aboutYou'],
+        contactDetails           : req.session['pip14-contactDetails'],
+        contactPref              : req.session['pip14-contactPref'],
+        currentWhereabouts       : req.session['pip14-currentWhereabouts'],
+        nationality              : req.session['pip14-nationality'],
+        paymentsFromAbroad       : req.session['pip14-paymentsFromAbroad'],
+        conditionDetails         : req.session['pip14-conditionDetails'],
+        medications              : req.session['pip14-medications'],
+        manageMedications        : req.session['pip14-manageMedications'],
+        treatments               : req.session['pip14-treatments'],
+        sideEffects              : req.session['pip14-sideEffects'],
+        conditionAffects         : req.session['pip14-conditionAffects'],
+        monitoringCondition      : req.session['pip14-monitoringCondition'],
+        healthcareprofessional   : req.session['pip14-healthcareprofessional'],
+        submitEvidence           : req.session['pip14-submitEvidence'],
+        specialAids              : req.session['pip14-specialAids'],
+        gettingAround            : req.session['pip14-gettingAround'],
+        sight                    : req.session['pip14-sight'],
+        speech                   : req.session['pip14-speech'],
+        hearing                  : req.session['pip14-hearing'],
+        gettingUp                : req.session['pip14-gettingUp'],
+        toilet                   : req.session['pip14-toilet'],
+        washing                  : req.session['pip14-washing'],
+        gettingDressed           : req.session['pip14-gettingDressed'],
+        hotMeal                  : req.session['pip14-hotMeal'],
+        eatinganddrinking        : req.session['pip14-eatinganddrinking'],
+        gettingOut               : req.session['pip14-gettingOut'],
+        mixing                   : req.session['pip14-mixing'],
+        localJourney             : req.session['pip14-localJourney'],
+        somewhereNeverBeenBefore : req.session['pip14-somewhereNeverBeenBefore'],
+        somewhereYouKnow         : req.session['pip14-somewhereYouKnow'],
+        understanding            : req.session['pip14-understanding'],
+        money                    : req.session['pip14-money']
       });
   });
 
@@ -736,7 +773,7 @@ module.exports = function (app) {
     req.session['pip14-checkYourAnswers'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/additionalInfo');
     }
@@ -757,7 +794,7 @@ module.exports = function (app) {
     req.session['pip14-additionalInfo'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/declaration');
     }
@@ -778,7 +815,7 @@ module.exports = function (app) {
     req.session['pip14-declaration'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip14/check-and-change');
+      res.redirect('/pip14/checkYourAnswers');
     } else {
       res.redirect('/pip14/thankYou');
     }

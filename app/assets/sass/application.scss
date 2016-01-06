@@ -176,3 +176,67 @@ fieldset .panel-indent {
   margin-bottom: 0;
   padding:20px 0 0 80px;
 }
+
+
+/***************************
+check and change
+****************************/
+
+.answers-cont {
+  border-bottom:1px solid $border-colour;
+  float: left;
+  margin-bottom: 20px;
+  width:100%;
+}
+
+.answers-cont h2 {
+  border-bottom: 3px solid $border-colour;
+  margin:0 0 0.53em;
+}
+
+.answers-cont .column-two-thirds {
+  padding-left:0;
+}
+
+.answers-cont .question {
+  color: $secondary-text-colour;
+  float:left;
+  width:50%;
+}
+
+.answers-cont .answer {
+  float:left;
+  width:50%;
+}
+
+.answers-cont li {
+  float:left;
+  margin-bottom: 13px;
+  width:100%;
+}
+
+.answers-cont li:last-child {
+  margin-bottom: 11px;
+}
+
+.answers-cont li:not(:last-child) {
+  border-bottom:1px solid $border-colour;
+  padding-bottom: 12px;
+}
+
+.answers-cont li h3 {
+  border-bottom: 1px solid $border-colour;
+  color: $secondary-text-colour;
+  font-weight:700;
+  margin: 2px 0 12px;
+  padding-bottom: 8px;
+}
+
+.answers-cont li ul .question{
+  padding-left: 22px;
+  @include box-sizing (border-box);
+}
+
+.answers-cont li ul li:last-child {
+  margin-bottom: 0;
+}

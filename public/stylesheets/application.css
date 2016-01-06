@@ -891,6 +891,20 @@ hr {
   }
 }
 
+.column-full {
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@media (min-width: 641px) {
+  .column-full {
+    float: left;
+    width: 100%;
+  }
+}
+
 #global-breadcrumb ol {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
@@ -2144,4 +2158,68 @@ fieldset .panel-indent {
   height: 80px;
   margin-bottom: 0;
   padding: 20px 0 0 80px;
+}
+
+/***************************
+check and change
+****************************/
+.answers-cont {
+  border-bottom: 1px solid #bfc1c3;
+  float: left;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.answers-cont h2 {
+  border-bottom: 3px solid #bfc1c3;
+  margin: 0 0 0.53em;
+}
+
+.answers-cont .column-two-thirds {
+  padding-left: 0;
+}
+
+.answers-cont .question {
+  color: #6f777b;
+  float: left;
+  width: 50%;
+}
+
+.answers-cont .answer {
+  float: left;
+  width: 50%;
+}
+
+.answers-cont li {
+  float: left;
+  margin-bottom: 13px;
+  width: 100%;
+}
+
+.answers-cont li:last-child {
+  margin-bottom: 11px;
+}
+
+.answers-cont li:not(:last-child) {
+  border-bottom: 1px solid #bfc1c3;
+  padding-bottom: 12px;
+}
+
+.answers-cont li h3 {
+  border-bottom: 1px solid #bfc1c3;
+  color: #6f777b;
+  font-weight: 700;
+  margin: 2px 0 12px;
+  padding-bottom: 8px;
+}
+
+.answers-cont li ul .question {
+  padding-left: 22px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.answers-cont li ul li:last-child {
+  margin-bottom: 0;
 }

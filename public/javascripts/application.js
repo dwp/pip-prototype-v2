@@ -329,4 +329,8 @@ $(document).ready(function() {
     }
 	});
 
+  $('.showLegal').click(function(){
+    $('#legalDetails').toggle();
+  });
+
 });

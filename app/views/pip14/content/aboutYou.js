@@ -111,7 +111,7 @@ var data = [ {
       "page"             : "8",
       "heading"          : "Your conditions and disabilities",
       "introText"        : "List all the conditions or disabilities you have that affect your life and when they started to affect you.",
-      "rowHd"            : "condition",
+      "rowHd"            : "Condition",
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
@@ -644,14 +644,6 @@ var data = [ {
       "backLink"         : "/pip14/understanding"
     },
   ],
-  "checkYourAnswers" : [
-    {
-      "page"             : "34",
-      "heading"          : "Check your answers",
-      "introText"        : "You can check all the answers you’ve given and change them if you need to.",
-      "backLink"         : "/pip14/money"
-    },
-  ],
   "additionalInfo" : [
     {
       "page"             : "35",
@@ -665,7 +657,7 @@ var data = [ {
       "page"             : "36",
       "heading"          : "Declaration",
       "listHeading"      : "By sending this application you agree:",
-      "list"             : ["the information in this application is complete and correct as far as you know","to <a href='#'>report any changes to your circumstances</a>"],
+      "list"             : ["the information in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
       "disclaimer"       : "You could be prosecuted or have to pay a fine if you deliberately give false or incomplete information, or don’t report changes. Your Personal Independence Payment may also be stopped or reduced.",
       "submit"           : "I agree - send me application",
       "backLink"         : "/pip14/additionalInfo"
@@ -680,7 +672,7 @@ var data = [ {
       "address"          : ["Address 1","Address 2","City","Postcode"],
       "heading3"         : "What happens next?",
       "p2"               : "You'll get sent a letter telling you the decision. You might be asked to meet with a healthcare professional to discuss how your condition affects you in more detail.",
-      "p3"               : "You must <a href='#'>report any change to your circumstances</a>, including if you come out of hospital.",
+      "p3"               : "You must <a href='#' rel='external'>report any change to your circumstances</a>, including if you come out of hospital.",
       "p4"               : "If you have any queries about your claim, phone 0345 850 3322. You’ll need your National Insurance number.",
       "button"           : "Return to GOV.UK"
     },

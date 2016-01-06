@@ -73,3 +73,7 @@
 .column-three-quarters {
   @include grid-column(3/4);
 }
+
+.column-full {
+  @include grid-column(1/1);
+}

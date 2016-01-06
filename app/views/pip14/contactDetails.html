@@ -29,7 +29,7 @@
 					<fieldset class="form-group">
 						<label class="block-label" for="radio-1" data-target="correspondenceAddress">
 			        <input id="radio-1" type="checkbox" name="radioCorrespondence" value="Yes" {% if answers.radioCorrespondence == 'Yes' %} checked=checked {% endif %}>
-							Post any letters to a different address - {{answers.radioCorrespondence}}
+							Post any letters to a different address
 			      </label>
 						<div class="panel-indent {% if answers.radioCorrespondence != 'Yes' %} js-hidden {% endif %}" id="correspondenceAddress">
 							<legend class="form-label">Send letters to:</legend>

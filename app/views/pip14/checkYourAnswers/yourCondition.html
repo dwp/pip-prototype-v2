@@ -1,0 +1,36 @@
+<!-- condition details -->
+<div class="column-full">
+  <div class="answers-cont">
+
+    <h2 class="heading-medium">{{question.conditionHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <h3 class="heading-small">Condition 1</h3>
+        <ul>
+          <li>
+            <span class="question">{{question.conditionName}}</span>
+            <span class="answer">{{conditionDetails.condition1}} -</span>
+          </li>
+          <li>
+            <span class="question">{{question.conditionWhen}}</span>
+            <span class="answer">{{conditionDetails.started1}}</span>
+          </li>
+        </ul>
+      </li>
+        <li>
+          <h3 class="heading-small">Condition 2</h3>
+          <ul>
+            <li>
+              <span class="question">{{question.conditionName}}</span>
+              <span class="answer">{{conditionDetails.name}}</span>
+            </li>
+            <li>
+              <span class="question">{{question.conditionWhen}}</span>
+              <span class="answer">{{conditionDetails.name}}</span>
+            </li>
+          </ul>
+        </li>
+    </ul>
+    <a href="/pip14/helper?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>

@@ -8,23 +8,29 @@
 
 {% import "pip14/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.checkYourAnswers %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.checkYourAnswers %}
 <main id="content" role="main">
 
 	<div class="grid-row">
-			<div class="column-two-thirds">
+			<form action="/pip14/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
 
-				<form action="/pip14/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<div class="column-two-thirds">
 					{{ elements.header(page,question) }}
+				</div>
 
+				{% include "./checkYourAnswers/aboutYou.html" %}
+
+				<div class="column-two-thirds">
 					{{ elements.submit(page,question) }}
+				</div>
 
-        </form>
-			</div>
+      </form>
 	</div>
 
 </main>
 
+{% endfor %}
 {% endfor %}
 {% endfor %}
 {% endblock %}
