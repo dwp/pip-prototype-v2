@@ -201,7 +201,9 @@ check and change
 .answers-cont .question {
   color: $secondary-text-colour;
   float:left;
+  padding-right:2%;
   width:50%;
+  @include box-sizing (border-box);
 }
 
 .answers-cont .answer {
@@ -239,4 +241,10 @@ check and change
 
 .answers-cont li ul li:last-child {
   margin-bottom: 0;
+}
+
+.answers-cont li .list-bullet li{
+  border:none;
+  margin:0;
+  padding-bottom:4px;
 }

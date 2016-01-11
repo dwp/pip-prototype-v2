@@ -18,18 +18,18 @@
 					{{ elements.header(page,question) }}
 					{% set seq = [
 						{"id":"location1", "label":"hospital", "value":"hospital", "showPanel":"details"},
-						{"id":"location2", "label":"care or nursing home", "value":"care or nursing home", "showPanel":"details"},
+						{"id":"location2", "label":"a care or nursing home", "value":"a care or nursing home", "showPanel":"details"},
 						{"id":"location3", "label":"sheltered housing", "value":"sheltered housing", "showPanel":"details"},
-						{"id":"location4", "label":"residential college", "value":"residential college", "showPanel":"details"},
-						{"id":"location5", "label":"hostel", "value":"hostel", "showPanel":"details"},
-						{"id":"location6", "label":"hospice", "value":"hospice", "showPanel":"details"},
-						{"id":"location7", "label":"you are currently not staying in any of these", "value":"you are currently not staying in any of these", "hidePanel":"details"}
+						{"id":"location4", "label":"a residential college", "value":"a residential college", "showPanel":"details"},
+						{"id":"location5", "label":"a hostel", "value":"a hostel", "showPanel":"details"},
+						{"id":"location6", "label":"a hospice", "value":"a hospice", "showPanel":"details"},
+						{"id":"location7", "label":"You are not currently staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
 					] %}
 					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
 
 					<div class="form-group panel-indent
 					{% if not answers.optionsName  or answers.optionsName == 'you are currently not staying in any of these' %}js-hidden{% endif %}" id="details">
-						{{ elements.genericInput('when',question.question2, answers.when,question.q2HintText) }}
+						{{ elements.genericInput('when',question.question2, answers.when) }}
 
 						<fieldset class="form-group">
 							<legend class="form-label">{{ question.question3 }}</legend>

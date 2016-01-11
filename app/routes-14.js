@@ -726,7 +726,6 @@ module.exports = function (app) {
   checkYourAnswers
   *******************/
   app.get('/pip14/checkYourAnswers', function (req, res) {
-    console.error(req.session['pip14-conditionDetails']);
       res.render('pip14/checkYourAnswers', {
         answers                  : req.session['pip14-checkYourAnswers'],
         'edit'                   : req.param('edit'),
@@ -749,7 +748,6 @@ module.exports = function (app) {
         healthcareprofessional   : req.session['pip14-healthcareprofessional'],
         submitEvidence           : req.session['pip14-submitEvidence'],
         specialAids              : req.session['pip14-specialAids'],
-        gettingAround            : req.session['pip14-gettingAround'],
         sight                    : req.session['pip14-sight'],
         speech                   : req.session['pip14-speech'],
         hearing                  : req.session['pip14-hearing'],

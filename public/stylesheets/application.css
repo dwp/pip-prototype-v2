@@ -2182,7 +2182,11 @@ check and change
 .answers-cont .question {
   color: #6f777b;
   float: left;
+  padding-right: 2%;
   width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .answers-cont .answer {
@@ -2222,4 +2226,10 @@ check and change
 
 .answers-cont li ul li:last-child {
   margin-bottom: 0;
+}
+
+.answers-cont li .list-bullet li {
+  border: none;
+  margin: 0;
+  padding-bottom: 4px;
 }

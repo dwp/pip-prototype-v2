@@ -22,7 +22,7 @@
 						{"id":"affect2", "label":"making sure you have enough medication", "value":"making sure you have enough medication", "showPanel":"details"},
 						{"id":"affect3", "label":"getting medication out of the packaging", "value":"getting medication out of the packaging", "showPanel":"details"},
 						{"id":"affect4", "label":"swallowing", "value":"swallowing", "showPanel":"details"},
-						{"id":"affect5", "label":"￼in another way", "value":"other", "showPanel":"details",
+						{"id":"affect5", "label":"￼in another way", "value":"in another way", "showPanel":"details",
 							"target"         : "target2",
 							"textarea"       : true,
 							"textareaId"     : "textreadId2",
@@ -39,18 +39,25 @@
 
 						{% set seq2  = [
 							{"id":"howOften", "value":question.howoften1},
-							{"id":"howOften", "value":question.howoften2,"showPanel":"tellUsHowOften"}
+							{"id":"howOften", "value":question.howoften2},
+							{"id":"howOften", "value":question.howoften3},
+							{"id":"howOften", "value":question.howoften4,"showPanel":"tellUsHowOften"}
 						] %}
 						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2) }}
 						<div class="form-group panel-indent {% if answers.howOften != question.howoften2 %}js-hidden{% endif %}" id="tellUsHowOften">
-							{{ elements.textarea('howOftenDetails',question.textareaQ,answers.howOftenDetails) }}
+							{{ elements.textarea('howOftenDetails',question.ownWords,answers.howOftenDetails) }}
 						</div>
 
 						{% set seq3 = [
-							{"id":"checkbox-1", "label":"Someone helps me", "value":"Someone helps me"},
-							{"id":"checkbox-2", "label":"I use an aid to hel pme", "value":"I use an aid to help me"},
-							{"id":"checkbox-3", "label":"I manage it on my own with difficulty", "value":"I manage it on my own with difficulty"},
-							{"id":"checkbox-4", "label":"I avoid it completely", "value":"I avoid it completely"}
+							{"id":"checkbox-1", "label":"Someone needs to remind you to take it", "value":"Someone needs to remind you to take it"},
+							{"id":"checkbox-2", "label":"Someone needs to help you take it", "value":"Someone needs to help you take it"},
+							{"id":"checkbox-3", "label":"You rely on aids or something else to help", "value":"You rely on aids or something else to help"},
+							{"id":"checkbox-4", "label":"You manage on your own, but with difficulty", "value":"You manage on your own, but with difficulty"},
+							{"id":"checkbox-5", "label":"In another way", "value":"In another way",
+								"target"        : "target3",
+								"textbox"       : true,
+								"textboxId"     : "textboxId3",
+								"textboxAnswer" : answers.textboxId3}
 						] %}
 						{{ elements.checkbox('manageNow',"checkbox",question.question3,'',seq3,answers,answers.manageNow) }}
 

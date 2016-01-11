@@ -26,22 +26,18 @@
           <div class="form-group panel-indent {% if answers.takingMedication != 'Yes' %}js-hidden{% endif %}" id="medications">
 						<ul class="list-user-input">
 							{% for i in range(1, 11) -%}
-								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first %} js-hidden {% endif %}">
+
+								<li id="condition-row-{{i}}" class="condition-row  {% if not loop.first and not answers['medication' + i] %} js-hidden {% endif %}">
 									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
-									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 
-										{% set medication = "medication" + i %}
-										{% set conditionAnswer = answers.medication %}
-										{{ elements.genericInputList(medication,question.medicationHd, conditionAnswer,"medication-1") }}
+										{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 
-										{% set dosage = "dosage" + i %}
-										{% set startedAnswer = answers.dosage %}
-										{{ elements.genericInputList(dosage,question.dosageHd, answers.dosage,"dosage-1",question.dosageHintText) }}
+										{{ elements.genericInputList("medication" + i,question.medicationHd, answers["medication" + i],"medication-1") }}
+										{{ elements.genericInputList("dosage" + i,question.dosageHd, answers["dosage" + i],"dosage-1",question.dosageHintText) }}
+										{{ elements.genericInputList("often" + i,question.oftenHd, answers["often" + i],"often-1",question.oftenHintText) }}
 
-										{% set often = "often" + i %}
-										{% set startedAnswer = answers.often %}
-										{{ elements.genericInputList(often,question.oftenHd, answers.often,"often-1",question.oftenHintText) }}
 								</li>
+
 							{% endfor %}
 							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
 						</ul>

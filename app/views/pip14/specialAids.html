@@ -17,56 +17,55 @@
 				<form action="/pip14/specialAids{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-
 						{% set seq = [
 							{"id":"specialAid1", "label":question.homeLabel, "value":question.homeLabel,
 								"target"         : "specialAidHome",
 								"textarea"       : true,
-								"textareaId"     : "textreadId1",
+								"textareaId"     : "textareaId1",
 								"textareaLabel"  : question.homeTextareaQ,
-								"textareaAnswer" : answers.textreadId1
+								"textareaAnswer" : answers.textareaId1
 							},
 							{"id":"specialAid2", "label":question.stairsLabel, "value":question.stairsLabel,
 								"target"         : "specialAidStairs",
 								"textarea"       : true,
-								"textareaId"     : "textreadId2",
+								"textareaId"     : "textareaId2",
 								"textareaLabel"  : question.stairsTextareaQ,
-								"textareaAnswer" : answers.textreadId2
+								"textareaAnswer" : answers.textareaId2
 							},
 							{"id":"specialAid3", "label":question.kitchenLabel, "value":question.kitchenLabel,
 								"target"         : "specialAidKitchen",
 								"textarea"       : true,
-								"textareaId"     : "textreadId3",
+								"textareaId"     : "textareaId3",
 								"textareaLabel"  : question.kitchenTextareaQ,
-								"textareaAnswer" : answers.textreadId3
+								"textareaAnswer" : answers.textareaId3
 							},
 							{"id":"specialAid4", "label":question.loungeLabel, "value":question.loungeLabel,
 								"target"         : "specialAidLounge",
 								"textarea"       : true,
-								"textareaId"     : "textreadId4",
+								"textareaId"     : "textareaId4",
 								"textareaLabel"  : question.loungeTextareaQ,
-								"textareaAnswer" : answers.textreadId4
+								"textareaAnswer" : answers.textareaId4
 							},
 							{"id":"specialAid5", "label":question.bedroomLabel, "value":question.bedroomLabel,
 								"target"         : "specialAidBedroom",
 								"textarea"       : true,
-								"textareaId"     : "textreadId5",
+								"textareaId"     : "textareaId5",
 								"textareaLabel"  : question.bedroomTextareaQ,
-								"textareaAnswer" : answers.textreadId5
+								"textareaAnswer" : answers.textareaId5
 							},
 							{"id":"specialAid6", "label":question.bathroomLabel, "value":question.bathroomLabel,
 								"target"         : "specialAidBathroom",
 								"textarea"       : true,
-								"textareaId"     : "textreadId6",
+								"textareaId"     : "textareaId6",
 								"textareaLabel"  : question.bathroomTextareaQ,
-								"textareaAnswer" : answers.textreadId6
+								"textareaAnswer" : answers.textareaId6
 							},
 							{"id":"specialAid7", "label":question.outsideLabel, "value":question.outsideLabel,
 								"target"         : "specialAidOutside",
 								"textarea"       : true,
-								"textareaId"     : "textreadId7",
+								"textareaId"     : "textareaId7",
 								"textareaLabel"  : question.outsideTextareaQ,
-								"textareaAnswer" : answers.textreadId7
+								"textareaAnswer" : answers.textareaId7
 							}
 						] %}
 						{{ elements.checkbox('optionsName',"checkbox",question.question,question.qHintText,seq,answers,answers.optionsName) }}

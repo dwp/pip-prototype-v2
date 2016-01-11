@@ -6,7 +6,7 @@
     </span>
     {{question.heading}}</h1>
 </header>
-<p class="lede">{{ question.introText }}</p>
+<p class="lede">{{ question.introText|safe }}</p>
 {% endmacro %}
 
 {% macro submit(data,questions,backLink) %}
@@ -116,7 +116,7 @@
 </fieldset>
 {% endmacro %}
 
-{% macro textarea(id,label,answer,hintText,helpTextHd,reveleaingHelpText,maxlength=1500,characterCount=true) %}
+{% macro textarea(id,label,answer,hintText,helpTextHd,reveleaingHelpText,maxlength=1500,characterCount) %}
 <div class="form-group">
   <label for="{{ id }}">
     <span class="form-label">
@@ -134,9 +134,9 @@
       {% endfor %}
     </ul>
   {% endif %}
-  <textarea  {% if characterCount == true %} maxlength="{{ maxlength }}" {% endif %} class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}">{{answer}}</textarea>
+  <textarea  {% if characterCount != false %} maxlength="{{ maxlength }}" {% endif %} class="form-control form-control-3-4" id="{{ id }}" name="{{ id }}">{{answer}}</textarea>
 
-  {% if characterCount == true %}
+  {% if characterCount != false %}
     <span class="font-xsmall form-control-3-4 character-count"><span class="char-count">{{ maxlength }}</span> characters left</span>
   {% endif %}
 </div>

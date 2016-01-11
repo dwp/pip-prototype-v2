@@ -17,13 +17,9 @@
 				<form action="/pip14/submitEvidence{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{% set seq  = [
-						{"id":"anyInforamtion","value":"Yes","showPanel":"medicalInfoDetails"},
-						{"id":"anyInforamtion", "value":"No"}
-					] %}
-					{{ elements.radioSelect('anyInforamtion',question.question,"",answers.anyInforamtion,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.anyInforamtion != 'Yes' %}js-hidden{% endif %}" id="medicalInfoDetails">
+
+					<div class="form-group panel-indent}" id="medicalInfoDetails">
 						{% set seq2 = [
 							{"id":"medicalItem1", "label":"Medical reports", "value":"Medical reports"},
 			        {"id":"medicalItem2", "label":"Your care or treatment plans", "value":"Your care or treatment plans"},
@@ -35,17 +31,19 @@
 								"target"         : "target2",
 								"textarea"       : true,
 								"textareaId"     : "textreadId2",
-								"textareaLabel"  : "Tell us the details",
+								"textareaLabel"  : "Only send information that describes the effect of your condition. Do not send appointment letters or fact sheets.",
 								"textareaAnswer" : answers.textreadId2
-							}
+							},
+							{"id":"medicalItem8", "label":"You are not sending any information", "value":"You are not sending any information", "hidePanel":"details"}
 			      ] %}
 						{{ elements.checkbox('optionsName',"checkbox",question.question2,'',seq2,answers,answers.optionsName) }}
 
 						{% set seq3  = [
 							{"id":"delivery","value":"Scan and email"},
+							{"id":"delivery","value":"Photograph then email"},
 							{"id":"delivery", "value":"Post","showPanel":"postToAddress"}
 						] %}
-						{{ elements.radioSelect('delivery',question.question,"",answers.delivery,seq3) }}
+						{{ elements.radioSelect('delivery',question.question3,"",answers.delivery,seq3) }}
 						<div class="form-group panel-indent {% if answers.delivery != 'Post' %}js-hidden{% endif %}" id="postToAddress">
 							<p>The address you should send the information to is:</p>
 							<ul>
@@ -56,7 +54,7 @@
 								<li>Postcode</li>
 							</ul>
 							<br />
-							<p>Make sure you enclose your National Insurance number so the information you send is assigned to your claim.</p>
+							<p>The address will be at the end of the application. Write your National Insurance number on everything you send.</p>
 						</div>
 
 					</div>

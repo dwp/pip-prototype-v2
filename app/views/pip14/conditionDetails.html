@@ -18,15 +18,9 @@
 					{{ elements.header(page,question) }}
 
 					<ul class="list-user-input">
-						{% set conditionVars = cycler("condition1", "condition2", "condition3", "condition4", "condition5", "condition6", "condition7", "condition8", "condition9", "condition10") %}
-				    {% set startedVars = cycler("started1", "started2", "started3", "started4", "started5", "started6", "started7", "started8", "started9", "started10") %}
-
 						{% for i in range(1, 11) -%}
 
-							{% set condition = conditionVars.next() %}
-							{% set started = startedVars.next() %}
-
-							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers[condition] %} js-hidden {% endif %}"
+							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['condition' + i] %} js-hidden {% endif %}"
 
 							>
 								<h2 class="heading-small">{{ question.rowHd }} {{i}} </h2>
@@ -35,9 +29,9 @@
 										<a href="#" class="remove">{{ question.removeLink }}</a>
 									{% endif %}
 
-									{{ elements.genericInputList(condition,question.conditionHd, answers[condition],"condtion-1") }}
+									{{ elements.genericInputList("condition" + i,question.conditionHd, answers["condition" + i],"condtion-1") }}
 
-									{{ elements.genericInputList(started,question.startedHd, answers[started],"started-1") }}
+									{{ elements.genericInputList("started" + i,question.startedHd, answers["started" + i],"started-1") }}
 
 							</li>
 						{% endfor %}

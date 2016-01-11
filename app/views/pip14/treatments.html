@@ -26,17 +26,13 @@
           <div class="form-group panel-indent {% if answers.treatments != 'Yes' %}js-hidden{% endif %}" id="medications">
 						<ul class="list-user-input">
 							{% for i in range(1, 11) -%}
-								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first %} js-hidden {% endif %}">
+								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['treatment' + i] %} js-hidden {% endif %}">
 									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
 									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 
-										{% set treatment = "treatment" + i %}
-										{% set conditionAnswer = answers.treatment %}
-										{{ elements.genericInputList(treatment,question.treatmentHd, conditionAnswer,"treatment-1") }}
+										{{ elements.genericInputList("treatment" + i,question.treatmentHd, answers["treatment" + i] ,"treatment-1") }}
 
-										{% set often = "often" + i %}
-										{% set startedAnswer = answers.often %}
-										{{ elements.genericInputList(often,question.oftenHd, answers.often,"often-1") }}
+										{{ elements.genericInputList("often" + i,question.oftenHd, answers["often" + i] ,"often-1") }}
 								</li>
 							{% endfor %}
 							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
