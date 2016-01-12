@@ -243,3 +243,108 @@ open
 {{ checkbox(id,"radio",question,'',seq2,answers,optionAnswer) }}
 {% endfor %}
 {% endmacro %}
+
+<!-- check your answers macros -->
+{% macro doesYourCondition(question,answer,pageKey,page) %}
+<li>
+  <span class="question">{{question[pageKey + "Does"]}}</span>
+  <span class="answer">
+    {% if answer.optionsName|length < 8 %}
+    <ul class="list-bullet">
+      {% for answerOption in answer.optionsName %}
+        <li>
+          {{answerOption}}
+          {% if answerOption|lower == 'in another way' or answerOption|lower == 'something else' %}
+            - {{answer.textboxId2}}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      {{answer.optionsName}}
+      {% if answer.optionsName|lower == 'in another way' or answer.optionsName|lower == 'something else' %}
+        - {{answer.textboxId2}}
+      {% endif %}
+    {% endif %}
+  </span>
+</li>
+{% endmacro %}
+
+{% macro conditionOften(question,answer,pageKey,page) %}
+<li>
+  <span class="question">{{question[pageKey + "Often"]}}</span>
+  <span class="answer">
+    {% if answer.frequencyOption == 'Explain how often in your own words' %}
+      {{answer.ownWords}}
+    {% else %}
+      {{answer.frequencyOption}}
+    {% endif %}
+  </span>
+</li>
+{% endmacro %}
+
+{% macro conditionAffect(question,answer,pageKey,page) %}
+<li>
+  <span class="question">{{question[pageKey + "When"]}}</span>
+  <span class="answer">
+    {% if answer.conditionAffect|length < 10 %}
+    <ul class="list-bullet">
+      {% for affects in answer.conditionAffect %}
+        <li>
+          {{affects}}
+          {% if affects|lower == 'in another way' %}
+            - {{answer.conditionAffectOther}}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      {{answer.conditionAffect}}
+      {% if answer.conditionAffect|lower == 'in another way' %}
+        - {{answer.conditionAffectOther}}
+      {% endif %}
+    {% endif %}
+  </span>
+</li>
+{% endmacro %}
+
+{% macro conditionExplainHow(question,answer,pageKey,page) %}
+<li>
+  <span class="question">{{question[pageKey + "How"]}}</span>
+  <span class="answer">{{answer.howDoes}}</span>
+</li>
+{% endmacro %}
+
+<!-- check your answers -->
+{% macro yourHomeAnswers(question,answer,pageKey,page) %}
+{% for pageKeyContent in page[pageKey]%}
+  <div class="column-full">
+    <div class="answers-cont">
+      <h2 class="heading-medium">{{question[pageKey + "Hd"]}}</h2>
+      <ul class="column-two-thirds">
+
+        {% if question[pageKey + "Does"] %}
+          {{ doesYourCondition(question,answer,pageKey,page) }}
+        {% endif %}
+
+        {% if answer.optionsName != pageKeyContent.doesntLabel %}
+
+          {% if question[pageKey + "Often"] %}
+            {{ conditionOften(question,answer,pageKey,page) }}
+          {% endif %}
+
+          {% if question[pageKey + "When"] %}
+            {{ conditionAffect(question,answer,pageKey,page) }}
+          {% endif %}
+
+          {% if question[pageKey + "How"] %}
+            {{ conditionExplainHow(question,answer,pageKey,page) }}
+          {% endif %}
+
+        {% endif %}
+      </ul>
+      <a href="/pip14/{{pageKey}}?edit=true">{{question.changeLinkTxt}}</a>
+    </div>
+  </div>
+{% endfor %}
+{% endmacro %}

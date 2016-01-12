@@ -133,6 +133,92 @@ var data = [ {
       "hearingWhich"       : "Which of these apply?",
       "hearingHow"         : "Explain how your condition affects your hearing",
 
+      /* getting up */
+      "gettingUpHd"        : "Getting up and moving around",
+      "gettingUpDoes"      : "Your condition affects you:",
+      "gettingUpOften"     : "How often does your condition affect you moving around your home?",
+      "gettingUpWhen"      : "When your condition affects you, how do you get up and move around your home?",
+      "gettingUpHow"       : "Explain how your condition affects you getting up and moving around.",
+
+      /* toilet */
+      "toiletHd"           : "Using the toilet",
+      "toiletDoes"         : "Does your condition affect you:",
+      "toiletOften"        : "How often does your condition affect you using the toilet?",
+      "toiletWhen"         : "When your condition affects you, how do you use the toilet?",
+      "toiletHow"          : "Explain how your condition affects you using the toilet.",
+
+      /* washing */
+      "washingHd"          : "Washing yourself",
+      "washingDoes"        : "Does your condition affect you:",
+      "washingOften"       : "How often does your condition affect you washing yourself?",
+      "washingWhen"        : "When your condition affects you, how do you wash?",
+      "washingHow"         : "Explain how your condition affects you washing",
+
+      /* gettingDressed */
+      "gettingDressedHd"    : "Getting dressed",
+      "gettingDressedDoes"  :  "Does your condition affect you:",
+      "gettingDressedOften" : "How often does your condition affect you getting dressed?",
+      "gettingDressedWhen"  : "When your condition affects you, how do you get dressed?",
+      "gettingDressedHow"   : "Explain how your condition affects you getting dressed.",
+
+      /* hotMeal */
+      "hotMealHd"           : "Making a hot meal from fresh ingredients",
+      "hotMealDoes"         : "Does your condition affect you:",
+      "hotMealOften"        : "How often does your condition affect you making a hot meal from fresh ingredients?",
+      "hotMealWhen"         : "When your condition affects you, how do you prepare and cook a hot meal from fresh ingredients?",
+      "hotMealHow"          : "Explain how your condition affects you preparing or cooking a hot meal from fresh ingredients.",
+
+      /* eatingAndDrinking */
+      "eatingAndDrinkingHd"    : "Eating and drinking",
+      "eatingAndDrinkingDoes"  : "Does your condition affect you:",
+      "eatingAndDrinkingOften" : "How often does your condition affect you eating or drinking?",
+      "eatingAndDrinkingWhen"  : "When your condition affects you, how do you eat and drink?",
+      "eatingAndDrinkingHow"   : "Explain how your condition affects you eating or drinking.",
+
+      /* gettingOut */
+      "gettingOutHd"           : "Getting out and walking about",
+      "gettingOutDoes"         : "Does your condition affect you:",
+      "gettingOutOften"        : "How often does your condition affect you getting out and walking about?",
+      "gettingOutWhen"         : "When your condition affects you, how do you get out and walking about?",
+      "gettingOutHow"          : "Explain how your condition affects you getting out or walking about.",
+
+      /* mixing */
+      "mixingHd"               : "Mixing with other people",
+      "mixingDoes"             : "Does your condition affect you:",
+      "mixingOften"            : "How often does your condition affect you mixing with people?",
+      "mixingWhen"             : "When your condition affects you, how do you mix with people?",
+      "mixingHow"              : "Explain how your condition affects you mixing with people.",
+
+      /* localJourney */
+      "localJournHd"           : "Planning a local journey",
+      "localJournWould"        : "Would your condition affect you planning a local journey to somewhere you’ve never been before?",
+      "localJournWhen"         : "How would you plan a local journey?",
+      "localJournHow"          : "Explain how your condition would affect you planning a local journey.",
+
+      /* somewhereNeverBeenBefore */
+      "somewhereNeverBeenBeforeHd"      : "Getting somewhere you have never been",
+      "somewhereNeverBeenBeforeDoes"    : "Would your condition affect you:",
+      "somewhereNeverBeenBeforeWhen"    : "How would you get to somewhere you have never been?",
+      "somewhereNeverBeenBeforeHow"     : "Explain how your condition would affect you getting to somewhere you",
+
+      /* somewhereYouKnow */
+      "somewhereYouKnowHd"              : "Getting somewhere you know",
+      "somewhereYouKnowDoes"            : "Would your condition affect you:",
+      "somewhereYouKnowWhen"            : "How would you get to somewhere you know?",
+      "somewhereYouKnowHow"             : "Explain how your condition affects you getting somewhere you know.",
+
+      /* understanding */
+      "understandingHd"                 : "Understanding written information",
+      "understandingDoes"               : "Does your condition affect your understanding of:",
+      "understandingWhen"               : "How do you work out what they mean?",
+      "understandingHow"                : "Explain how your condition affects you understanding written information.",
+
+      /* money */
+      "moneyHd"                         : "Dealing with money",
+      "moneyDoes"                       : "Does your condition affect you:",
+      "moneyWhen"                       : "How do you deal with money?",
+      "moneyHow"                        : "Explain how your condition affects you dealing with money.",
+
     },
   ]
 }];

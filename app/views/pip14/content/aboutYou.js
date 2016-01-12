@@ -593,7 +593,7 @@ var data = [ {
       "relySomeoneLabel" : "You rely on someone to guide you",
       "relyGuideLabel"   : "You rely on an assistance dog or something else to help you find your way",
       "ownLabel"         : "You manage on your own, but with difficulty",
-      "question3"        : "How would you get to somewhere you know?",
+      "question3"        : "Explain how your condition affects you getting somewhere you know.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","your condition affects how long it takes you to get there","getting somewhere has an effect on your condition"],
       "backLink"         : "/pip14/somewhereNeverBeenBefore"

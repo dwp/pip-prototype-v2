@@ -727,8 +727,6 @@ module.exports = function (app) {
   *******************/
   app.get('/pip14/checkYourAnswers', function (req, res) {
       res.render('pip14/checkYourAnswers', {
-        answers                  : req.session['pip14-checkYourAnswers'],
-        'edit'                   : req.param('edit'),
         data                     : aboutYou.getTableData(),
         dataCheckChange          : checkYourAnswers.getTableData(),
         helper                   : req.session['pip14-helper'],
@@ -756,7 +754,7 @@ module.exports = function (app) {
         washing                  : req.session['pip14-washing'],
         gettingDressed           : req.session['pip14-gettingDressed'],
         hotMeal                  : req.session['pip14-hotMeal'],
-        eatinganddrinking        : req.session['pip14-eatinganddrinking'],
+        eatingAndDrinking        : req.session['pip14-eatingAndDrinking'],
         gettingOut               : req.session['pip14-gettingOut'],
         mixing                   : req.session['pip14-mixing'],
         localJourney             : req.session['pip14-localJourney'],
