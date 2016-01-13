@@ -14,7 +14,11 @@ router.get('/examples/template-data', function (req, res) {
 module.exports = {
   bind : function (app) {
 
-  require('./routes-13')(app);
+    app.get('/', function (req, res) {
+      res.render('index');
+    });
+
+
   require('./routes-14')(app);
   }
 };
