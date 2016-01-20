@@ -653,7 +653,7 @@ var data = [ {
       "elseLabel"        : "something else",
       "doesntLabel"      : "Your condition does not affect your understanding of written information",
       "question2"        : "How do you work out what they mean?",
-      "relySomeoneLabel" : "You rely on somoene to explain things to you",
+      "relySomeoneLabel" : "You rely on someone to explain things to you",
       "relyRemindLabel"  : "You rely on someone to remind you what things mean",
       "ownLabel"         : "You manage on your own, but with difficulty",
       "otherWayLabel"    : "In another way",

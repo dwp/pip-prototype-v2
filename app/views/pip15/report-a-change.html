@@ -1,26 +1,18 @@
-{{<govuk_template}}
+{% extends "layout.html" %}
 
-{{$head}}
-  {{>includes/head}}
-{{/head}}
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
 
-{{$propositionHeader}}
-
-{{/propositionHeader}}
-
-{{$headerClass}}with-proposition{{/headerClass}}
-
-{{$content}}
+{% block content %}
 <main id="content" role="main">
-
-{{>includes/phase_banner}}
 
 <div class="grid-row">
 	<div class="column-two-thirds">
 	    <h1 class="form-title heading-xlarge">
 	      Personal Independence Payment (<abbr>PIP</abbr>)
 	    </h1>
-	    
+
 		<aside>
 			<div class="inner">
 				<nav role="navigation" class="page-navigation" aria-label="parts to this guide">
@@ -48,24 +40,29 @@
 				</nav>
 			</div>
 		</aside>
-	    
+
 	    <div class="inner-block">
 		    <header>
 		    	<h1 class="heading-medium">5. Report a change in circumstances</h1>
 		    </header>
 			<article>
-				<p>Phone the enquiry line if:</p>
-				
+				<p>You must call if:</p>
+
 				<ul class="list-bullet">
-					<li>your personal details change</li>
-					<li>the help you need or your condition changes</li>
-					<li>you go into hospital or a care home for more than 4 weeks</li>
-					<li>you go abroad for more than 13 weeks</li>
-					<li>you go to prison</li>
+          <li>your personal details change, eg your name, address or doctor</li>
+          <li>your condition or the help you need changes</li>
+          <li>you stay overnight in a hospital or care home </li>
+          <li>you go abroad for more than 13 weeks</li>
+          <li>you’re imprisoned or held in detention</li>
 				</ul>
 
+        <div class="panel-indent">
+          <p>You could have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes.</p>
+          <p>Your Personal Independence Payment may also be stopped or reduced.</p>
+        </div>
+
 				<h3 class="heading-small">Personal Independence Payment enquiry line</h3>
-				
+
 				<p>Telephone: 0345 850 3322<br>
 				Textphone: 0345 601 6677<br>
 				Monday to Friday, 8am to 6pm<br>
@@ -78,7 +75,7 @@
 						<li class="previous">
             				<a href="apply" rel="prev" title="Navigate to previous part">
               					<span class="pagination-label">Previous </span> <span class="pagination-part-title">Apply</span>
-              				</a>          
+              				</a>
               			</li>
 
     				</ul>
@@ -87,40 +84,40 @@
 
 	    </div>
 	</div>
-	
+
 	<div class="column-third">
 		<div>
 			<h2 class="heading-medium" style="border-top: 10px solid #005ea5; padding-top: 15px;">Carers and disability benefits</h2>
-		
+
 			<nav role="navigation" aria-labelledby="parent-subsection">
 				<ul class="font-xsmall" style="list-style-type: none;">
 					<li style="padding-bottom: 0.7em;">
 						<a href="http://www.gov.uk/pip-checker">Check how Personal Independence Payment (PIP) affects you</a>
 					</li>
-					
+
 					<li style="padding-bottom: 0.7em;">
 						<a href="http://www.gov.uk/dla-disability-living-allowance-benefit">Disability Living Allowance (DLA) for adults</a>
 					</li>
-					
+
 					<li style="padding-bottom: 0.7em;">
 						<a href="http://www.gov.uk/disability-living-allowance-children">Disability Living Allowance (DLA) for children</a>
 					</li>
-					
+
 					<li style="padding-bottom: 0.7em;">
 						<a href="http://www.gov.uk/financial-help-disabled">Financial help if you're disabled</a>
 					</li>
-					
-					
+
+
 					<li class="related-topic">
 						<a href="http://www.gov.uk/browse/benefits/disability" title="More in Carers and disability benefits">More<span class="visuallyhidden">in Carers and disability benefits</span></a>
 					</li>
 				</ul>
 			</nav>
 		</div>
-		
+
 		<div>
 			<h2 class="heading-medium">Benefits</h2>
-			
+
 			<nav role="navigation" aria-labelledby="parent-section">
 				<ul class="font-xsmall" style="list-style-type: none;">
 					<li style="padding-bottom: 0.7em;">
@@ -132,10 +129,10 @@
 				</ul>
 			</nav>
 		</div>
-		
+
 		<div>
 			<h2 class="heading-medium">Elsewhere on GOV.UK</h2>
-			
+
 			<nav role="navigation" aria-labelledby="parent-other">
 				<ul class="font-xsmall" style="list-style-type: none;">
 					<li style="padding-bottom: 0.7em;">
@@ -147,10 +144,10 @@
 				</ul>
 			</nav>
 		</div>
-		
+
 		<div>
 			<h2 class="heading-medium">Elsewhere on the web</h2>
-			
+
 			<nav role="navigation" aria-labelledby="related-external-links">
 				<ul class="font-xsmall" style="list-style-type: none;">
 					<li style="padding-bottom: 0.7em;">
@@ -159,19 +156,14 @@
 				</ul>
 			</nav>
 		</div>
-		
+
 		<div class="inner group">
 			<a class="return-to-top font-xsmall" href="#content">Return to top ↑</a>
 		</div>
-		
+
 	</div>
 </div>
 
 </main><!-- / #page-container -->
-{{/content}}
 
-{{$bodyEnd}}
-  {{>includes/elements_scripts}}
-{{/bodyEnd}}
-
-{{/govuk_template}}
+{% endblock %}
