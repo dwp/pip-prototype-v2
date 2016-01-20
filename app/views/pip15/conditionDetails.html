@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip15/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.conditionDetails %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip15/conditionDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					<ul class="list-user-input">
+						{% for i in range(1, 11) -%}
+
+							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['condition' + i] %} js-hidden {% endif %}"
+
+							>
+								<h2 class="heading-small">{{ question.rowHd }} {{i}} </h2>
+
+									{% if not loop.first %}
+										<a href="#" class="remove">{{ question.removeLink }}</a>
+									{% endif %}
+
+									{{ elements.genericInputList("condition" + i,question.conditionHd, answers["condition" + i],"condtion-1") }}
+
+									{{ elements.genericInputList("started" + i,question.startedHd, answers["started" + i],"started-1") }}
+
+							</li>
+						{% endfor %}
+
+						<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+
+					</ul>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

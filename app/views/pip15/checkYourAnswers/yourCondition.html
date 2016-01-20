@@ -1,0 +1,453 @@
+<!-- condition details -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.conditionHd}}</h2>
+
+    <ul class="column-two-thirds">
+
+      {% for i in range(1, 11) -%}
+
+        {% if loop.first or conditionDetails["condition" + i] %}
+          <li>
+            <h3 class="heading-small">Condition {{i}}</h3>
+            <ul>
+              <li>
+                <span class="question">{{question.conditionName}}</span>
+                <span class="answer">{{conditionDetails["condition" + i]}}</span>
+              </li>
+              <li>
+                <span class="question">{{question.conditionWhen}}</span>
+                <span class="answer">{{conditionDetails["started" + i]}}</span>
+              </li>
+            </ul>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+    <a href="/pip15/conditionDetails?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- medicatins -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.medicationHd}}</h2>
+
+    <ul class="column-two-thirds">
+
+      {% for i in range(1, 11) -%}
+
+        {% if loop.first or medications["medication" + i] %}
+          <li>
+            <h3 class="heading-small">Medication {{i}}</h3>
+            <ul>
+              <li>
+                <span class="question">{{question.medicationName}}</span>
+                <span class="answer">{{medications["medication" + i]}}</span>
+              </li>
+              <li>
+                <span class="question">{{question.medicationDosage}}</span>
+                <span class="answer">{{medications["dosage" + i]}}</span>
+              </li>
+              <li>
+                <span class="question">{{question.medicationOften}}</span>
+                <span class="answer">{{medications["often" + i]}}</span>
+              </li>
+            </ul>
+          </li>
+        {% endif %}
+
+      {% endfor %}
+    </ul>
+    <a href="/pip15/medications?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- manage medications -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.manageMedsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.manageMedsWhat}}</span>
+        <span class="answer">
+          {% if manageMedications.conditionAffect|length < 10 %}
+          <ul class="list-bullet">
+            {% for affects in manageMedications.conditionAffect %}
+              <li>
+                {{affects}}
+                {% if affects == 'in another way' %}
+                  - {{manageMedications.textreadId2}}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            {{manageMedications.conditionAffect}}
+            {% if manageMedications.conditionAffect == 'in another way' %}
+              - {{manageMedications.textreadId2}}
+            {% endif %}
+          {% endif %}
+        </span>
+      </li>
+      {% if manageMedications.conditionAffect != 'Your condition does not affect you taking your medication' %}
+        <li>
+          <span class="question">{{question.manageMedsOften}}</span>
+          <span class="answer">
+            {{manageMedications.howOften}}
+            {% if manageMedications.howOftenDetails %}
+              - {{manageMedications.howOftenDetails}}
+            {% endif %}
+          </span>
+        </li>
+        <li>
+          <span class="question">{{question.manageMedsNow}}</span>
+          <span class="answer">
+            {% if manageMedications.manageNow|length < 10 %}
+            <ul class="list-bullet">
+              {% for affects in manageMedications.manageNow %}
+                <li>{{affects}}</li>
+              {% endfor %}
+            </ul>
+            {% else %}
+              {{manageMedications.manageNow}}
+            {% endif %}
+          </span>
+        </li>
+        <li>
+          <span class="question">{{question.manageMedsDetails}}</span>
+          <span class="answer">{{manageMedications.moreDetails}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/manageMedications?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- treatments -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.treatmentsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.treatmentsHaving}}</span>
+        <span class="answer">{{treatments.treatments}}</span>
+      </li>
+      {% if treatments.treatments == 'Yes' %}
+        {% for i in range(1, 11) -%}
+
+          {% if loop.first or treatments["treatment" + i] %}
+            <li>
+              <h3 class="heading-small">Treatment {{i}}</h3>
+              <ul>
+                <li>
+                  <span class="question">{{question.treatmentsName}}</span>
+                  <span class="answer">{{treatments["treatment" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.treatmentsOften}}</span>
+                  <span class="answer">{{treatments["often" + i]}}</span>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+
+        {% endfor %}
+        <li>
+          <span class="question">{{question.treatmentsAtHome}}</span>
+          <span class="answer">{{treatments.atHome}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/treatments?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- manageTreatments -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.manageTreatHd}}</h2>
+    <a href="/pip15/manageTreatments?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- side effects -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.sideEffectsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.sideEffectsHave}}</span>
+        <span class="answer">{{sideEffects.anySideEffects}}</span>
+      </li>
+      {% if sideEffects.anySideEffects == 'Yes' %}
+        <li>
+          <span class="question">{{question.sideEffectsGet}}</span>
+          <span class="answer">{{sideEffects.sideEffects}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/sideEffects?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- condition affects -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.cAffectsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.cAffectsVary}}</span>
+        <span class="answer">{{conditionAffects.conditionAffects}}</span>
+      </li>
+      {% if conditionAffects.conditionAffects == 'Yes' %}
+        <li>
+          <span class="question">{{question.cAffectsHowDo}}</span>
+          <span class="answer">{{conditionAffects.howConditionEffects}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.cAffectsHowOften}}</span>
+          <span class="answer">{{conditionAffects.howOftenConditionAffects}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/conditionAffects?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- monitoring Condition -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.mConditionHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.mConditionDoNeed}}</span>
+        <span class="answer">{{monitoringCondition.monitored}}</span>
+      </li>
+      {% if monitoringCondition.monitored == 'Yes' %}
+        <li>
+          <span class="question">{{question.mConditionRoughly}}</span>
+          <span class="answer">{{monitoringCondition.howManyHours}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.mConditionWhy}}</span>
+          <span class="answer">{{monitoringCondition.whyNeedMonitoring}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.mConditionHow}}</span>
+          <span class="answer">{{monitoringCondition.howHelpToMonitor}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/monitoringCondition?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- hcp -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.hcpHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.hcpContact}}</span>
+        <span class="answer">{{healthcareprofessional.contactHcp}}</span>
+      </li>
+      {% if healthcareprofessional.contactHcp == 'Yes' %}
+        {% for i in range(1, 11) -%}
+          {% if loop.first or healthcareprofessional["name" + i] %}
+            <li>
+              <h3 class="heading-small">Professional {{i}}</h3>
+              <ul>
+                <li>
+                  <span class="question">{{question.hcpName}}</span>
+                  <span class="answer">{{healthcareprofessional["name" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpAddress}}</span>
+                  <span class="answer">{{healthcareprofessional["profession" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpNumber}}</span>
+                  <span class="answer">{{healthcareprofessional["address" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpLastSeen}}</span>
+                  <span class="answer">{{healthcareprofessional["phone" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpLastSeen}}</span>
+                  <span class="answer">{{healthcareprofessional["lastSeen" + i]}}</span>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </ul>
+    <a href="/pip15/healthcareprofessional?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- submit evidence -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.evidenceHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.evidenceHave}}</span>
+        <span class="answer">{{submitEvidence.anyInforamtion}}</span>
+      </li>
+      {% if submitEvidence.anyInforamtion == 'Yes' %}
+        <li>
+          <span class="question">{{question.evidenceWhich}}</span>
+          <span class="answer">
+            {% if submitEvidence.optionsName|length < 10 and submitEvidence.optionsName != 'other' %}
+            <ul class="list-bullet">
+              {% for evidence in submitEvidence.optionsName %}
+                <li>
+                  {{evidence}}
+                  {% if evidence == 'other' %}
+                    - {{submitEvidence.textreadId2}}
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+            {% else %}
+              {{submitEvidence.optionsName}}
+              {% if submitEvidence.optionsName == 'other' %}
+                - {{submitEvidence.textreadId2}}
+              {% endif %}
+            {% endif %}
+          </span>
+        </li>
+        <li>
+          <span class="question">{{question.evidenceHow}}</span>
+          <span class="answer">{{submitEvidence.delivery}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/specialAids?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- special aids -->
+<!--
+***********************
+***********************
+***********************
+
+not finished - need to show textarea answers
+
+***********************
+***********************
+***********************
+-->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.specAidsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.specAidsWhere}}</span>
+        <span class="answer">
+          {% if specialAids.optionsName|length < 10 and specialAids.optionsName != 'Outside' %}
+          <ul class="list-bullet">
+            {% for specialAid in specialAids.optionsName %}
+              <li>{{specialAid}}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            {{specialAids.optionsName}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.specAidsOther}}</span>
+        <span class="answer">{{specialAids.anythingElse}}</span>
+      </li>
+    </ul>
+    <a href="/pip15/specialAids?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- your sight -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.sightHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.sightDoes}}</span>
+        <span class="answer">{{sight.sight}}</span>
+      </li>
+      {% if sight.sight == 'Yes' %}
+      <li>
+        <span class="question">{{question.sightRoughly}}</span>
+        <span class="answer">{{sight.howOften}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.sightHowDoes}}</span>
+        <span class="answer">{{sight.howDoes}}</span>
+      </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/sight?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- your speech -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.speechHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.speechDoes}}</span>
+        <span class="answer">{{speech.speech}}</span>
+      </li>
+      {% if speech.speech == 'Yes' %}
+      <li>
+        <span class="question">{{question.speechRoughly}}</span>
+        <span class="answer">{{speech.howOften}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.speechHowDoes}}</span>
+        <span class="answer">{{speech.howDoes}}</span>
+      </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/speech?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- your hearing -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.hearingHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.hearingDoes}}</span>
+        <span class="answer">{{hearing.hearing}}</span>
+      </li>
+      {% if hearing.hearing == 'Yes' %}
+      <li>
+        <span class="question">{{question.hearingWhich}}</span>
+        <span class="answer">
+          {% if hearing.optionsName|length < 10 %}
+          <ul class="list-bullet">
+            {% for hearingOption in hearing.optionsName %}
+              <li>{{hearingOption}}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+            {{hearing.optionsName}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.hearingHow}}</span>
+        <span class="answer">{{hearing.howDoes}}</span>
+      </li>
+      {% endif %}
+    </ul>
+    <a href="/pip15/hearing?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>

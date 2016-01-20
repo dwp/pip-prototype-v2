@@ -2233,3 +2233,14 @@ check and change
   margin: 0;
   padding-bottom: 4px;
 }
+
+/**********************
+Pip-15
+***********************/
+.pip-15 .answers-cont {
+  margin-bottom: 35px;
+}
+
+.pip-15 .answers-cont .column-two-thirds {
+  display: none;
+}

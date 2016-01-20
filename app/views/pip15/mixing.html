@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip15/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.mixing %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip15/mixing{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"affect1", "label":question.youDontKnowLabel, "value":question.youDontKnowLabel, "showPanel":"details"},
+						{"id":"affect2", "label":question.youKnowLabel, "value":question.youKnowLabel, "showPanel":"details"},
+						{"id":"affect3", "label":question.convosLabel, "value":question.convosLabel, "showPanel":"details"},
+						{"id":"affect4", "label":question.longConvoLabel, "value":question.longConvoLabel, "showPanel":"details"},
+						{"id":"affect5", "label":question.whatToSayLabel, "value":question.whatToSayLabel, "showPanel":"details"},
+						{"id":"affect6", "label":question.behaveToYouLabel, "value":question.behaveToYouLabel, "showPanel":"details"},
+						{"id":"affect7", "label":question.actingLabel, "value":question.actingLabel, "showPanel":"details"},
+						{"id":"affect9", "label":question.otherWayLabel, "value":question.otherWayLabel, "showPanel":"details",
+							"target"        : "target2",
+							"textbox"       : true,
+							"textboxId"     : "textboxId2",
+							"textboxAnswer" : answers.textboxId2
+						},
+						{"id":"affect10", "label":question.doesntLabel, "value":question.doesntLabel, "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
+
+						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
+
+						{% set seq = [
+							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel},
+							{id:"conditionAffect4",label:question.relyLabel,value:question.relyLabel},
+							{id:"conditionAffect5",label:question.superviseLabel,value:question.superviseLabel},
+							{id:"conditionAffect6",label:question.ownLabel,value:question.ownLabel},
+							{"id":"conditionAffect7", "label":question.otherWayLabel, "value":question.otherWayLabel,
+								"target"         : "conditionAffectOther",
+								"textarea"       : true,
+								"textareaId"     : "conditionAffectOther",
+								"textareaLabel"  : "",
+								"textareaAnswer" : answers.conditionAffectOther
+							}
+						] %}
+						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,'',seq,answers,answers.conditionAffect) }}
+
+						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

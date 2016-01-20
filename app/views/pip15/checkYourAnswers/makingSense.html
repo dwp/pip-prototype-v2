@@ -1,0 +1,32 @@
+<!-- local journey -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.localJournHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.localJournWould}}</span>
+        <span class="answer">{{localJourney.planLocalJourney}}</span>
+      </li>
+      {% if localJourney.planLocalJourney != 'No' %}
+
+        {{ elements.conditionAffect(question,localJourney,"localJourn",page) }}
+
+        {{ elements.conditionExplainHow(question,localJourney,"localJourn",page) }}
+
+      {% endif %}
+    </ul>
+    <a href="/pip15/localJourney?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- somewhereNeverBeenBefore -->
+{{ elements.yourHomeAnswers(question,somewhereNeverBeenBefore,"somewhereNeverBeenBefore",page) }}
+
+<!-- somewhereYouKnow -->
+{{ elements.yourHomeAnswers(question,somewhereYouKnow,"somewhereYouKnow",page) }}
+
+<!-- understanding -->
+{{ elements.yourHomeAnswers(question,understanding,"understanding",page) }}
+
+<!-- money -->
+{{ elements.yourHomeAnswers(question,money,"money",page) }}
