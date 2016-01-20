@@ -230,9 +230,9 @@ var data = [ {
     {
       "page"             : "16",
       "heading"          : "Information you can send",
-      "introText"        : "<p>If this was a real application we'd ask if you could send in any information that could give more detail about the effects of your condition.</p><p>Because this is a test application, don't send us any information.</p><p>But, we want to know what you could send if this was real.</p>",
+      "introText"        : "<p>It can help your application if you send information that gives more detail about your condition.</p><p>You need to send this within the next 2 weeks or a decision will be made without it. We can not return any paperwork, so send photocopies if you can.</p><p>Only send what you have to hand - nothing you have to pay to get hold of.</p>",
       "question"         : "Tell us which of the following you already have to hand and would have been able to post to us quickly:",
-      "question2"        : "Which of the following are you able to send us?",
+      "question2"        : "You will send:",
       "q2HintText"       : "You can tick as many of these as you like",
       "question3"        : "How will you send the information?",
       "backLink"         : "/pip15/healthcareprofessional"
