@@ -12,6 +12,19 @@ module.exports = function (app) {
   });
 
   /*******************
+  reset answers
+  *******************/
+  app.get('/pip15/reset', function (req, res) {
+      res.render('pip15/reset');
+  });
+
+  app.post('/pip15/reset', function (req, res) {
+    req.session.destroy();
+    res.redirect('/pip15/apply');
+
+  });
+
+  /*******************
   summaryMain
   *******************/
   app.get('/pip15/summaryMain', function (req, res) {
