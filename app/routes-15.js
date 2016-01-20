@@ -52,7 +52,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/aboutYou');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -73,7 +73,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/contactDetails');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -94,7 +94,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/contactPref');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -115,7 +115,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/currentWhereabouts');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -136,7 +136,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/nationality');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -157,7 +157,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/paymentsFromAbroad');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -178,7 +178,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/summaryMain?show=yourCondition&next=conditionDetails&back=paymentsFromAbroad');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -199,7 +199,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/medications');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -226,7 +226,7 @@ module.exports = function (app) {
      } else if (req.param('edit')) {
        res.redirect('/pip15/checkYourAnswers');
      } else {
-       res.redirect('/pip15/treatments');
+       res.redirect('/pip15/checkYourAnswers');
      }
   });
 
@@ -247,7 +247,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/treatments');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -274,7 +274,7 @@ module.exports = function (app) {
      } else if (req.param('edit')) {
        res.redirect('/pip15/checkYourAnswers');
      } else {
-       res.redirect('/pip15/sideEffects');
+       res.redirect('/pip15/checkYourAnswers');
      }
 
   });
@@ -296,7 +296,7 @@ module.exports = function (app) {
   if (req.param('edit')) {
        res.redirect('/pip15/checkYourAnswers');
      } else {
-       res.redirect('/pip15/sideEffects');
+       res.redirect('/pip15/checkYourAnswers');
      }
 
   });
@@ -318,7 +318,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/conditionAffects');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -339,7 +339,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/monitoringCondition');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -358,9 +358,9 @@ module.exports = function (app) {
     req.session['pip15-monitoringCondition'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip15/monitoringCondition');
+      res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/healthcareprofessional');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -381,7 +381,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/submitEvidence');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -402,7 +402,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/specialAids');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -423,7 +423,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/sight');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -444,7 +444,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/speech');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -465,7 +465,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/hearing');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -486,7 +486,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/summaryMain?show=yourHome&next=gettingUp&back=hearing');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -507,7 +507,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/toilet');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -528,7 +528,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/washing');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -549,7 +549,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/gettingDressed');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -570,7 +570,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/hotMeal');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -591,7 +591,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/eatingAndDrinking');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -612,7 +612,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -633,7 +633,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/mixing');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -655,7 +655,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/summaryMain?show=understanding&next=localJourney&back=mixing');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -676,7 +676,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/somewhereNeverBeenBefore');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -697,7 +697,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/somewhereYouKnow');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -718,7 +718,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/understanding');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
@@ -739,7 +739,7 @@ module.exports = function (app) {
     if (req.param('edit')) {
       res.redirect('/pip15/checkYourAnswers');
     } else {
-      res.redirect('/pip15/money');
+      res.redirect('/pip15/checkYourAnswers');
     }
   });
 
