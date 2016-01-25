@@ -203,7 +203,7 @@ var data = [ {
     {
       "page"             : "14",
       "heading"          : "Managing your condition",
-      "question"         : "Do you rely on someone to help you manage your treatment or therapy at home?",
+      "question"         : "Do you rely on someone to monitor your condition most days because, if they do not, you could be at risk, or a danger to yourself or others?",
       "question2"        : "Roughly how many hours a week do you rely on them to help monitor your condition?",
       "question3"        : "Why do you rely on someone to monitor your condition?",
       "question4"        : "How do they monitor your condition?",
