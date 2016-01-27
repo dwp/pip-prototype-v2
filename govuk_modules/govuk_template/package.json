@@ -1,6 +1,6 @@
 {
   "name": "govuk_template_mustache",
-  "version": "0.16.1",
+  "version": "0.16.2",
   "description": "{{ mustache }} packaged version of the GOV.UK template",
   "keywords": [
     "alphagov",
@@ -21,11 +21,11 @@
     "type": "git",
     "url": "http://github.com/alphagov/govuk_template_mustache.git"
   },
-  "gitHead": "d94a99fc3639181ac353ebf0c37e65c937d98067",
+  "gitHead": "3dbedccea78decf4e521a329095d8c13a7642b86",
   "homepage": "https://github.com/alphagov/govuk_template_mustache",
-  "_id": "govuk_template_mustache@0.16.1",
+  "_id": "govuk_template_mustache@0.16.2",
   "scripts": {},
-  "_shasum": "2c11dc0a7acb76b5c25940d2ed211b522b88820e",
+  "_shasum": "e1c0bb244fb244803893ed43d16b9688cb348a43",
   "_from": "govuk_template_mustache@>=0.16.0 <0.17.0",
   "_npmVersion": "1.4.28",
   "_npmUser": {
@@ -39,9 +39,9 @@
     }
   ],
   "dist": {
-    "shasum": "2c11dc0a7acb76b5c25940d2ed211b522b88820e",
-    "tarball": "http://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.1.tgz"
+    "shasum": "e1c0bb244fb244803893ed43d16b9688cb348a43",
+    "tarball": "http://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.2.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.1.tgz"
+  "_resolved": "https://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.2.tgz"
 }
