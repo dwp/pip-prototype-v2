@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip16/elements.html" as elements %}
+{% for page in data %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.checkYourAnswers %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<form action="/pip16/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form pip-15">
+
+				<div class="column-two-thirds">
+					{{ elements.header(page,question) }}
+				</div>
+
+				{% include "./checkYourAnswers/aboutYou.html" %}
+				{% include "./checkYourAnswers/yourCondition.html" %}
+				{% include "./checkYourAnswers/yourHome.html" %}
+				{% include "./checkYourAnswers/outAndAbout.html" %}
+				{% include "./checkYourAnswers/makingSense.html" %}
+
+				<div class="column-two-thirds">
+					{{ elements.submit(page,question) }}
+				</div>
+
+      </form>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

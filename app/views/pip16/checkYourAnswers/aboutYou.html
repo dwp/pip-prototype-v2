@@ -1,0 +1,197 @@
+<!-- helper -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.helperHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.helperName}}</span>
+        <span class="answer">{{helper.name}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.helperRel}}</span>
+        <span class="answer">{{helper.relationship}}</san>
+      </li>
+    </ul>
+    <a href="/pip16/helper?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- aboutYou -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.aboutYouHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.aboutYouName}}</span>
+        <span class="answer">{{aboutYou.firstName}} {{aboutYou.middleName}} {{aboutYou.surname}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouDOB}}</span>
+        <span class="answer">{{aboutYou.dobDay}}/{{aboutYou.dobMonth}}/{{aboutYou.dobYear}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouNINO}}</span>
+        <span class="answer">{{aboutYou.nino}}</span>
+      </li>
+    </ul>
+    <a href="/pip16/aboutYou?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- contact details -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.detaialsHD}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.detailsAddress}}</span>
+        <span class="answer">
+          {% if contactDetails.address1 %} {{contactDetails.address1}}<br/> {% endif %}
+          {% if contactDetails.address2 %} {{contactDetails.address2}}<br/> {% endif %}
+          {% if contactDetails.address3 %} {{contactDetails.address3}}<br/> {% endif %}
+          {% if contactDetails.postcode %} {{contactDetails.postcode}} {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsCAddress}}</span>
+        <span class="answer">
+          {% if contactDetails.correspondenceAddress1 %} {{contactDetails.correspondenceAddress1}}<br/> {% endif %}
+          {% if contactDetails.correspondenceAddress2 %} {{contactDetails.correspondenceAddress2}}<br/> {% endif %}
+          {% if contactDetails.correspondenceAddress3 %} {{contactDetails.correspondenceAddress3}}<br/> {% endif %}
+          {% if contactDetails.correspondencePostcode %} {{contactDetails.correspondencePostcode}} {% endif %}
+        </span>
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsPhone}}</span>
+        <span class="answer">{{contactDetails.phone}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsPhoneAlt}}</span>
+        <span class="answer">{{contactDetails.altPhone}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsEmail}}</span>
+        <span class="answer">{{contactDetails.email}}</span>
+      </li>
+    </ul>
+    <a href="/pip16/contactDetails?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- contact preferences -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.prefHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.prefSMS}}</span>
+        <span class="answer">{{contactPref.smsContact}}</span>
+      </li>
+      {% if contactPref.smsContact == 'Yes' %}
+        <li>
+          <span class="question">{{question.prefMobile}}</span>
+          <span class="answer">{{contactPref.mobile}}</span>
+        </li>
+      {% endif %}
+      <li>
+        <span class="question">{{question.prefComms}}</span>
+        <span class="answer">{{contactPref.optionsName}}
+        {% if contactPref.optionsName == 'Other' %}
+          - {{contactPref.textreadId2}}
+        {% endif %}
+        </span>
+      </li>
+    </ul>
+    <a href="/pip16/contactPref?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- currentWhereabouts -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.whereHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.whereCurrently}}</span>
+        <span class="answer">
+          {% if currentWhereabouts.optionsName != 'you are currently not staying in any of these' %}
+            {{currentWhereabouts.optionsName}}
+          {% endif %}
+        </span>
+      </li>
+      {% if currentWhereabouts.optionsName != 'you are currently not staying in any of these' %}
+      <li>
+        <span class="question">{{question.whereDateIn}}</span>
+        <span class="answer">{{currentWhereabouts.when}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.whereAddress}}</span>
+        <span class="answer">
+          {% if currentWhereabouts.address1 %} {{currentWhereabouts.address1}}<br/> {% endif %}
+          {% if currentWhereabouts.address2 %} {{currentWhereabouts.address2}}<br/> {% endif %}
+          {% if currentWhereabouts.address3 %} {{currentWhereabouts.address3}}<br/> {% endif %}
+          {% if currentWhereabouts.postcode %} {{currentWhereabouts.postcode}} {% endif %}
+        </span>
+      </li>
+      {% endif %}
+    </ul>
+    <a href="/pip16/currentWhereabouts?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- nationality -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.nationalityHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.nationalityCurrent}}</span>
+        <span class="answer">
+          {% if nationality.nationality == 'Other' %}
+            {{nationality.otherNationality}}
+          {% else %}
+            {{nationality.nationality}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.nationalityLiving}}</span>
+        <span class="answer">{{nationality.countryLiving}}
+          {% if nationality.countryLiving == 'No' %}
+            - {{nationality.countryLivingOther}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.nationalityAbroad}}</span>
+        <span class="answer">{{nationality.livingAbroad}}</span>
+      </li>
+    </ul>
+    <a href="/pip16/nationality?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- payments from abroad -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.paymentsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.paymentsAbroad}}</span>
+        <span class="answer">{{paymentsFromAbroad.workedAbroad}}</span>
+      </li>
+      {% if paymentsFromAbroad.workedAbroad == 'Yes' %}
+        <li>
+          <span class="question">{{question.paymentsBenefits}}</span>
+          <span class="answer">{{paymentsFromAbroad.benefitsAbroadPayment}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.paymentsNi}}</span>
+          <span class="answer">{{paymentsFromAbroad.payInsuranceAbroad}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip16/paymentsFromAbroad?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>

@@ -19,7 +19,7 @@
   "main": "views/layouts/govuk_template.html",
   "repository": {
     "type": "git",
-    "url": "http://github.com/alphagov/govuk_template_mustache.git"
+    "url": "git+ssh://git@github.com/alphagov/govuk_template_mustache.git"
   },
   "gitHead": "d94a99fc3639181ac353ebf0c37e65c937d98067",
   "homepage": "https://github.com/alphagov/govuk_template_mustache",
@@ -43,5 +43,6 @@
     "tarball": "http://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.1.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.1.tgz"
+  "_resolved": "https://registry.npmjs.org/govuk_template_mustache/-/govuk_template_mustache-0.16.1.tgz",
+  "readme": "ERROR: No README data found!"
 }

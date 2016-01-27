@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip16/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.understanding %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip16/understanding{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"affect1", "label":question.wordsLabel, "value":question.wordsLabel, "showPanel":"details"},
+						{"id":"affect2", "label":question.sentencesLabel, "value":question.sentencesLabel, "showPanel":"details"},
+						{"id":"affect3", "label":question.symbolsLabel, "value":question.symbolsLabel, "showPanel":"details"},
+						{"id":"affect4", "label":question.datesLabel, "value":question.datesLabel, "showPanel":"details"},
+						{"id":"affect5", "label":question.signsLabel, "value":question.signsLabel, "showPanel":"details"},
+						{"id":"affect9", "label":question.elseLabel, "value":question.elseLabel, "showPanel":"details",
+							"target"        : "target2",
+							"textbox"       : true,
+							"textboxId"     : "textboxId2",
+							"textboxAnswer" : answers.textboxId2
+						},
+						{"id":"affect10", "label":question.doesntLabel, "value":question.doesntLabel, "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
+
+						{% set seq = [
+							{id:"conditionAffect1",label:question.relySomeoneLabel,value:question.relySomeoneLabel},
+							{id:"conditionAffect2",label:question.relyRemindLabel,value:question.relyRemindLabel},
+							{id:"conditionAffect3",label:question.ownLabel,value:question.ownLabel},
+							{"id":"conditionAffect6", "label":question.otherWayLabel, "value":question.otherWayLabel,
+								"target"         : "conditionAffectOther",
+								"textarea"       : true,
+								"textareaId"     : "conditionAffectOther",
+								"textareaLabel"  : "",
+								"textareaAnswer" : answers.conditionAffectOther
+							}
+						] %}
+						{{ elements.checkbox('conditionAffect',"checkbox",question.question2,'',seq,answers,answers.conditionAffect) }}
+
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
