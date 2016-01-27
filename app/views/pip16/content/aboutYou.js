@@ -70,11 +70,10 @@ var data = [ {
   "currentWhereabouts" : [
     {
       "page"             : "5",
-      "heading"          : "Your current whereabouts",
+      "heading"          : "Where you are now",
       "question"         : "Are you currently staying in:",
-      "question2"        : "When did you go in?",
-      "q2HintText"       : "eg yesterday or 23/11/2015",
-      "question3"        : "What’s the address?",
+      "question2"        : "When did you start staying there?",
+      "question3"        : "The address",
       "question4"        : "Postcode",
       "backLink"         : "/pip16/contactPref"
     }
@@ -121,7 +120,7 @@ var data = [ {
   "medications" : [
     {
       "page"             : "9",
-      "heading"          : "Your medications",
+      "heading"          : "Your medication",
       "question"         : "Are you currently taking any medication?",
       "rowHd"            : "Medication",
       "medicationHd"     : "Name of medication",
@@ -144,7 +143,7 @@ var data = [ {
       "howoften2"        : "More than half the time",
       "howoften3"        : "Less than half the time",
       "howoften4"        : "Explain how often in your own words",
-      "ownWords"         : "If you can, tell us roughly how many days out of a week or month you’re affected",
+      "ownWords"         : "Tell us roughly how many days out of a week or month you’re affected",
       "question3"        : "How do you manage your medication?",
       "question4"        : "Explain how your condition affects you taking your medication.",
       "helpTextHd"       : "Include if:",
@@ -193,9 +192,8 @@ var data = [ {
       "heading"          : "Changes to your condition",
       "question"         : "Do the effects of your condition change or vary?",
       "qHintText"        : "This includes if some days, weeks or months are worse than others.",
-      "question2"        : "How do the effects of your condition change or very?",
-      "question3"        : "How often do the effects of your condition change or vary?",
-      "q3HintText"       : "If you can, tell us roughly how many days out of a week or month",
+      "question3"        : "How do the effects of your condition change or vary?",
+      "q3HintText"       : "If you can, tell us roughly how many days out of a week or month you're affected",
       "backLink"         : "/pip16/sideEffects"
     },
   ],
