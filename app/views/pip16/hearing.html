@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip16/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.hearing %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip16/hearing{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"hearing","value":"Yes","showPanel":"hearingDetails"},
+						{"id":"hearing", "value":"No"}
+					] %}
+					{{ elements.radioSelect('hearing',question.question,"",answers.hearing,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.hearing != 'Yes' %}js-hidden{% endif %}" id="hearingDetails">
+						{% set seq = [
+							{"id":"hearing1", "label":question.hearingAidLabel, "value":question.hearingAidLabel},
+							{"id":"hearing2", "label":question.2hearingAidLabel, "value":question.2hearingAidLabel},
+							{"id":"hearing3", "label":question.implantLabel, "value":question.implantLabel},
+							{"id":"hearing4", "label":question.somethingLabel, "value":question.somethingLabel,
+								"target"         : "hearingSomething",
+								"textarea"       : true,
+								"textareaId"     : "textreadId1",
+								"textareaLabel"  : question.somethingTxtQ,
+								"textareaAnswer" : answers.textreadId1
+							},
+							{"id":"hearing5", "label":question.someoneLabel, "value":question.someoneLabel,
+								"target"         : "hearingSomeone",
+								"textarea"       : true,
+								"textareaId"     : "textreadId2",
+								"textareaLabel"  : question.someoneTxtQ,
+								"textareaAnswer" : answers.textreadId2
+							},
+							{"id":"hearing6", "label":question.cantHearLabel, "value":question.cantHearLabel,
+								"target"         : "hearingCantHear",
+								"textarea"       : true,
+								"textareaId"     : "textreadId3",
+								"textareaLabel"  : question.cantHearTxtQ,
+								"textareaAnswer" : answers.textreadId3
+							}
+						] %}
+						{{ elements.checkbox('optionsName',"checkbox",question.question2,question.qHintText,seq,answers,answers.optionsName) }}
+
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
