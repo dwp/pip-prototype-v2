@@ -20,9 +20,7 @@
 					<ul class="list-user-input">
 						{% for i in range(1, 11) -%}
 
-							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['condition' + i] %} js-hidden {% endif %}"
-
-							>
+							<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['condition' + i] %} js-hidden {% endif %}">
 								<h2 class="heading-small">{{ question.rowHd }} {{i}} </h2>
 
 									{% if not loop.first %}

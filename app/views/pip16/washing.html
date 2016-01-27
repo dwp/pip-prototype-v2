@@ -39,8 +39,6 @@
 					<div class="form-group panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
 
-						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
-
 						{% set seq = [
 							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel},
 							{id:"conditionAffect2",label:question.helpLabel,value:question.helpLabel},
@@ -56,6 +54,8 @@
 							}
 						] %}
 						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,'',seq,answers,answers.conditionAffect) }}
+
+						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
 
 						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
 					</div>
