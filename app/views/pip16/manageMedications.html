@@ -32,7 +32,7 @@
 						},
 						{"id":"affect6", "label":"Your condition does not affect you taking your medication", "value":"Your condition does not affect you taking your medication", "hidePanel":"details"}
 					] %}
-					{{ elements.checkbox('conditionAffect',"checkbox",question.question,'',seq,answers,answers.conditionAffect,"check-uncheck") }}
+					{{ elements.checkbox('conditionAffect',"checkbox",question.question,page.tickAll,seq,answers,answers.conditionAffect,"check-uncheck") }}
 
 					<div class="form-group panel-indent
 					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">

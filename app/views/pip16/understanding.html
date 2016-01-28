@@ -31,7 +31,7 @@
 						},
 						{"id":"affect10", "label":question.doesntLabel, "value":question.doesntLabel, "hidePanel":"details"}
 					] %}
-					{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
+					{{ elements.checkbox('optionsName',"checkbox",question.question,page.tickAll,seq,answers,answers.optionsName,"check-uncheck") }}
 
 					<div class="form-group panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">

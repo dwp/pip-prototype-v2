@@ -52,10 +52,10 @@
 								"textareaAnswer" : answers.conditionAffectOther
 							}
 						] %}
-						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,'',seq,answers,answers.conditionAffect) }}
+						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,page.tickAll,seq,answers,answers.conditionAffect) }}
 
 						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
-						
+
 						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
 					</div>
 

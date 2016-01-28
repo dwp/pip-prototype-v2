@@ -25,7 +25,6 @@
 			        {"id":"medicalItem2", "label":"Your care or treatment plans", "value":"Your care or treatment plans"},
 			        {"id":"medicalItem3", "label":"Medical test results (including sight and hearing tests)", "value":"Medical test results"},
 			        {"id":"medicalItem4", "label":"Your hospital discharge letters", "value":"Your hospital discharge letters"},
-			        {"id":"medicalItem5", "label":"Reports from a Prison Service Disability Employment Advisor", "value":"Reports from a Prison Service Disability Employment Advisor"},
 			        {"id":"medicalItem6", "label":"Education, Health and Care Plans", "value":"Education, Health and Care Plans"},
 			        {"id":"medicalItem7", "label":"Other", "value":"other",
 								"target"         : "target2",
@@ -45,7 +44,7 @@
 						] %}
 						{{ elements.radioSelect('delivery',question.question3,"",answers.delivery,seq3) }}
 						<div class="form-group panel-indent {% if answers.delivery != 'Post' %}js-hidden{% endif %}" id="postToAddress">
-							
+
 							<p>The address will be at the end of the application. Write your National Insurance number on everything you send.</p>
 						</div>
 
