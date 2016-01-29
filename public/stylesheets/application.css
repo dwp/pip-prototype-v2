@@ -2410,10 +2410,43 @@ Pip-15
   margin-bottom: 35px;
 }
 
-/**********************
-  screenshots
-  .js-hidden {
-    display: block !important;
-  }
+.pip-15 .answers-cont .column-two-thirds {
+  display: none;
+}
 
-  ***********************/
+/**********************
+Pip-16
+***********************/
+.pip-16 .heading-highlight {
+  background: #28a197;
+  /* Fallback for older browsers without RGBA-support */
+  background: rgba(40, 161, 151, 0.25);
+  margin: 0;
+  padding: 10px 15px 8px 15px;
+}
+
+.pip-16 .checkYourAnswersCont ul li {
+  padding: 10px 0 8px;
+}
+
+.pip-16 .checkYourAnswersCont ul li:nth-child(even) {
+  background: #f8f8f8;
+}
+
+.pip-16 .answer-this {
+  background: url(../images/empty-tick.png) no-repeat 3px 2px;
+  padding-left: 30px;
+}
+
+.pip-16 .change-this {
+  background: url(../images/cya-tick.png) no-repeat 3px 3px;
+  padding-left: 30px;
+}
+
+/**********************
+screenshots
+.js-hidden {
+  display: block !important;
+}
+
+***********************/

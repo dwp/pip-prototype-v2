@@ -1,7 +1,7 @@
 {% macro header(page,question) %}
 <header>
   <h1 class="form-title heading-xlarge">
-    
+
     {{question.heading}}</h1>
 </header>
 <p class="lede">{{ question.introText|safe }}</p>
@@ -345,4 +345,15 @@ open
     </div>
   </div>
 {% endfor %}
+{% endmacro %}
+
+<!-- enter/change answers for non-linear in pip16 -->
+{% macro EnterChangeAnswers(question,pageKey) %}
+<div class"column-third">
+  {% if question %}
+    <a href="{{pageKey}}" class="change-this">change your answers</a>
+  {% else %}
+    <a href="{{pageKey}}" class="answer-this">enter your answers</a>
+  {% endif %}
+</div>
 {% endmacro %}
