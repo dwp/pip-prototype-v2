@@ -5,7 +5,7 @@ var path       = require('path'),
     favicon    = require('serve-favicon'),
     app        = express(),
     basicAuth  = require('basic-auth-connect'),
-    port       = (process.env.PORT || 3001),
+    port       = (process.env.PORT || 3000),
     bodyParser = require('body-parser'),
     session    = require('express-session'),
     // Grab environment variables specified in Procfile or as Heroku config vars

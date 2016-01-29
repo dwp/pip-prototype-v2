@@ -9,6 +9,9 @@
 
 {% macro submit(data,questions,backLink) %}
 <div id="submit-group" class="form-group">
+    {% if questions.warningMsg %}
+      <p>{{questions.warningMsg}}</p>
+    {% endif %}
     <input type="submit" class="button"
     value="{% if questions.submit %} {{questions.submit}} {% else %} {{data.continue}} {% endif %}"
     name="saveAndcontinue">
