@@ -3,8 +3,8 @@ var data = [ {
   "maxPages"           : "36",
   "title"              : "Title of page",
   "introText"          : "Introduction paragraph which should be over two or three lines maximum ideally. Maybe two or three sentences.",
-  "continue"           : "Save and continue",
-  "saveExit"           : "Save and come back later",
+  "continue"           : "Save and go to next question",
+  "saveExit"           : "Save and return to menu",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
   "frequency"          : [
@@ -23,6 +23,7 @@ var data = [ {
       "question"         : "Is someone helping you fill in this application?",
       "question2"        : "The name of the person helping you",
       "question3"        : "Their relationship to you",
+      "question4"        : "Why they are helping you",
       "backLink"         : "/pip16/summaryMain"
     },
   ],
