@@ -4,7 +4,7 @@ var data = [ {
       "page"               : "34",
       "heading"            : "Your application",
       "changeLinkTxt"      : "Answer this question",
-      "introText"          : "We need to know how your condition affects you, so you’ll be asked about:",
+      "introText"          : "You must answer every section.",
       "warningMsg"        : "You will not be able to change your answers after you send your application.",
       "backLink"           : "/pip16/money",
 
