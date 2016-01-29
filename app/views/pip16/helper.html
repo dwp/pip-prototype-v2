@@ -27,7 +27,7 @@
           <div class="form-group panel-indent {% if answers.helper != 'Yes' %}js-hidden{% endif %}" id="helperDetails">
             {{ elements.genericInput('name',question.question2, answers.name) }}
             {{ elements.genericInput('relationship',question.question3, answers.relationship, question.q3HintText) }}
-	          {{ elements.genericInput('why',question.question4, answers.why) }}
+	          {{ elements.textarea('why',question.question4, answers.why) }}
           </div>
 
           {{ elements.submit(page,question) }}
