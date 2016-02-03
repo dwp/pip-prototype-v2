@@ -38,15 +38,43 @@ module.exports = function(grunt){
       govuk: {
         files: [{
           expand: true,
-          cwd: 'node_modules/govuk_frontend_toolkit',
+          cwd: 'node_modules/govuk_frontend_toolkit/',
           src: '**',
           dest: 'govuk_modules/govuk_frontend_toolkit/'
         },
         {
           expand: true,
-          cwd: 'node_modules/govuk_template_mustache/',
+          cwd: 'node_modules/govuk_template_mustache/assets/',
           src: '**',
-          dest: 'govuk_modules/govuk_template/'
+          dest: 'govuk_modules/govuk_template/assets/'
+        },
+        {
+          expand: true,
+          cwd: 'node_modules/govuk_template_jinja/views/layouts/',
+          src: '**',
+          dest: 'govuk_modules/govuk_template_jinja/views/layouts/'
+        },
+        {
+          expand: true,
+          cwd: 'node_modules/govuk-elements-sass/public/sass/',
+          src: ['**', '!node_modules', '!elements-page.scss', '!elements-page-ie6.scss', '!elements-page-ie7.scss', '!elements-page-ie8.scss', '!main.scss', '!main-ie6.scss', '!main-ie7.scss', '!main-ie8.scss', '!prism.scss'],
+          dest: 'govuk_modules/govuk-elements-sass/'
+        }]
+      },
+      govuk_template_jinja: {
+        files: [{
+          expand: true,
+          cwd: 'govuk_modules/govuk_template_jinja/views/layouts/',
+          src: '**',
+          dest: 'lib/'
+        }]
+      },
+      govuk_elements: {
+        files: [{
+          expand: true,
+          cwd: 'govuk_modules/govuk-elements-sass',
+          src: ['**'],
+          dest: 'app/assets/sass/'
         }]
       },
     },
@@ -74,7 +102,7 @@ module.exports = function(grunt){
       dev: {
         script: 'server.js',
         options: {
-          ext: 'js,html',
+          ext: 'js, json',
           ignore: ['node_modules/**', 'app/assets/**', 'public/**'],
           args: grunt.option.flags()
         }
@@ -82,12 +110,12 @@ module.exports = function(grunt){
     },
 
     concurrent: {
-        target: {
-            tasks: ['watch', 'nodemon'],
-            options: {
-                logConcurrentOutput: true
-            }
+      target: {
+        tasks: ['watch', 'nodemon'],
+        options: {
+          logConcurrentOutput: true
         }
+      }
     }
   });
 
@@ -97,7 +125,6 @@ module.exports = function(grunt){
     'grunt-contrib-clean',
     'grunt-sass',
     'grunt-nodemon',
-    'grunt-text-replace',
     'grunt-concurrent'
   ].forEach(function (task) {
     grunt.loadNpmTasks(task);
@@ -113,6 +140,14 @@ module.exports = function(grunt){
     'generate-assets',
     'concurrent:target'
   ]);
+
+  grunt.registerTask(
+    'test',
+    'default',
+    function () {
+      grunt.log.writeln('Test that the app runs');
+    }
+  );
 
   grunt.event.on('watch', function(action, filepath, target) {
 

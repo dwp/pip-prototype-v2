@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.speech %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip17/speech{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"speech","value":"Yes","showPanel":"speechDetails"},
+						{"id":"speech", "value":"No"}
+					] %}
+					{{ elements.radioSelect('speech',question.question,"",answers.speech,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.speech != 'Yes' %}js-hidden{% endif %}" id="speechDetails">
+						{{ elements.genericInput('howOften',question.question2, answers.howOften) }}
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes) }}
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

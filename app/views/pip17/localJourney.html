@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.localJourney %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip17/localJourney{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"planLocalJourney","value":"Yes","showPanel":"localJourneyDetails"},
+						{"id":"planLocalJourney", "value":"No"}
+					] %}
+					{{ elements.radioSelect('planLocalJourney',question.question,"",answers.planLocalJourney,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.planLocalJourney != 'Yes' %}js-hidden{% endif %}" id="localJourneyDetails">
+
+						{% set seq = [
+							{id:"conditionAffect4",label:question.relyLabel,value:question.relyLabel},
+							{id:"conditionAffect5",label:question.helpLabel,value:question.helpLabel},
+							{id:"conditionAffect6",label:question.ownLabel,value:question.ownLabel},
+							{"id":"conditionAffect7", "label":question.otherWayLabel, "value":question.otherWayLabel,
+								"target"         : "conditionAffectOther",
+								"textarea"       : true,
+								"textareaId"     : "conditionAffectOther",
+								"textareaLabel"  : "",
+								"textareaAnswer" : answers.conditionAffectOther
+							}
+						] %}
+						{{ elements.checkbox('conditionAffect',"checkbox",question.question2,page.tickAll,seq,answers,answers.conditionAffect) }}
+
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes,question.q3HintText) }}
+
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

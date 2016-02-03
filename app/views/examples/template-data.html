@@ -1,16 +1,31 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}Example of using variables in pages{% endblock %}
+{% block page_title %}
+  Example of using variables in pages
+{% endblock %}
 
 {% block content %}
 <main id="content" role="main">
-  <h1 class="heading-xlarge">Example of using variables in pages</h1>
-  <dl>
-    <dt style="font-weight: bold; display: inline;">'name' variable: </dt>
-    <dd style="display: inline">{{ name }}</dd>
-  </dl>
+
+  {% include "includes/breadcrumb_examples.html" %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Passing data into pages
+      </h1>
+
+      <p>
+        The example route defined in <code class="code">/routes.js</code> is passing the string '{{ name }}' to this page, via the variable called 'name'.
+      </p>
+
+      <p>
+        Have a look at the source for this page in your text editor to see how it works: <code class="code">/app/views/examples/template-data.html</code>
+      </p>
+
+    </div>
+  </div>
+
 </main>
 {% endblock %}
-
-
-

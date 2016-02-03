@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.helper %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip17/helper{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+          {{ elements.header(page,question) }}
+
+          {% set seq  = [
+						{"id":"helper","value":"Yes","showPanel":"helperDetails"},
+						{"id":"helper", "value":"No"}
+					] %}
+					{{ elements.radioSelect('helper',question.question,"",answers.helper,seq,"inline") }}
+
+          <div class="form-group panel-indent {% if answers.helper != 'Yes' %}js-hidden{% endif %}" id="helperDetails">
+            {{ elements.genericInput('name',question.question2, answers.name) }}
+            {{ elements.genericInput('relationship',question.question3, answers.relationship, question.q3HintText) }}
+	          {{ elements.textarea('why',question.question4, answers.why) }}
+          </div>
+
+          {{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

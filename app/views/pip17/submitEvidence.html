@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.submitEvidence %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip17/submitEvidence{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+
+
+					<div class="form-group panel-indent}" id="medicalInfoDetails">
+						{% set seq2 = [
+							{"id":"medicalItem1", "label":"Medical reports", "value":"Medical reports"},
+			        {"id":"medicalItem2", "label":"Your care or treatment plans", "value":"Your care or treatment plans"},
+			        {"id":"medicalItem3", "label":"Medical test results (including sight and hearing tests)", "value":"Medical test results"},
+			        {"id":"medicalItem4", "label":"Your hospital discharge letters", "value":"Your hospital discharge letters"},
+			        {"id":"medicalItem6", "label":"Education, Health and Care Plans", "value":"Education, Health and Care Plans"},
+			        {"id":"medicalItem7", "label":"Other", "value":"other",
+								"target"         : "target2",
+								"textarea"       : true,
+								"textareaId"     : "textreadId2",
+								"textareaLabel"  : "Only send information that describes the effect of your condition. Do not send appointment letters or fact sheets.",
+								"textareaAnswer" : answers.textreadId2
+							},
+							{"id":"medicalItem8", "label":"You are not sending any information", "value":"You are not sending any information", "hidePanel":"details"}
+			      ] %}
+						{{ elements.checkbox('optionsName',"checkbox",question.question2,'',seq2,answers,answers.optionsName) }}
+
+						{% set seq3  = [
+							{"id":"delivery","value":"Scan and email"},
+							{"id":"delivery","value":"Photograph then email"},
+							{"id":"delivery", "value":"Post","showPanel":"postToAddress"}
+						] %}
+						{{ elements.radioSelect('delivery',question.question3,"",answers.delivery,seq3) }}
+						<div class="form-group panel-indent {% if answers.delivery != 'Post' %}js-hidden{% endif %}" id="postToAddress">
+
+							<p>Write your National Insurance number on everything you send, and post to:</p>
+						<p> [address]</p>
+						</div>
+
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

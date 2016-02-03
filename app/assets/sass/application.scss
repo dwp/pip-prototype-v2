@@ -1,22 +1,9 @@
 // Import GOV.UK elements, this will import the frontend toolkit and some base styles.
-// Take a look at elements.scss to see which files are imported.
-@import 'elements';
+// Take a look in _govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
 
-// Set up your main content area <main id="content">
-// This will give you a full width content block
-// See elements _layout.scss line 7.
-
-// If you need it, set up your grid layout - refer to the grid layout usage example
-// See elements _layout.scss line 28.
-
-// If you need a phase banner, put this inside the main content area
-// See elements _layout.scss line 22.
-.phase-banner-alpha  {
-  @include phase-banner(beta); // Change this to (beta) for a beta banner
-}
-.phase-tag-alpha {
-  @include phase-tag(beta); // Change this to (beta) for a beta tag
-}
+// Take a look at patterns.scss to see which files are imported.
+@import 'patterns';
 
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
@@ -32,6 +19,25 @@
     background: $white;
   }
 }
+
+// Related links
+// (These styles will be moved to GOV.UK elements, duplicating here for now.)
+.related-links {
+  margin-top: $gutter;
+  border-top: 10px solid $govuk-blue;
+  padding-top: 5px;
+
+  .heading-medium {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
@@ -438,3 +444,34 @@ screenshots
 }
 
 ***********************/
+.column-full {
+  @include grid-column(1/1);
+}
+
+.button {
+  margin:0 15px 15px 0;
+}
+
+// Indented panels with a grey left hand border
+.panel-indent {
+  @extend %contain-floats;
+  clear: both;
+  border-left: 4px solid $border-colour;
+
+  padding: 10px 0 10px $gutter-half;
+  margin: ($gutter $gutter-half $gutter*1.5 0);
+
+  legend {
+    margin-top: 0;
+  }
+
+  // Remove bottom margin on last paragraph
+  p:only-child,
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+}

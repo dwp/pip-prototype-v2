@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.paymentsFromAbroad %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip17/paymentsFromAbroad{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id" : "workedAbroad", "value":"Yes","showPanel":"benefitsAbroad"},
+						{"id" : "workedAbroad", "value":"No"}
+					] %}
+					{{ elements.radioSelect('workedAbroad',question.question,question.qHintText,answers.workedAbroad,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.workedAbroad != 'Yes' %}js-hidden{% endif %}" id="benefitsAbroad">
+						<p>
+							{{question.countriesIntro}} <br />
+							{{question.countries}}
+						</p>
+
+						{% set seq2  = [
+							{"id":"benefitsAbroadPayment","value":"Yes"},
+							{"id":"benefitsAbroadPayment", "value":"No"}
+						] %}
+						{{ elements.radioSelect('benefitsAbroadPayment',question.question2,"",answers.benefitsAbroadPayment,seq2,"inline") }}
+
+						{% set seq3  = [
+							{"id":"payInsuranceAbroad","value":"Yes"},
+							{"id":"payInsuranceAbroad", "value":"No"}
+						] %}
+						{{ elements.radioSelect('payInsuranceAbroad',question.question3,"",answers.payInsuranceAbroad,seq3,"inline") }}
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

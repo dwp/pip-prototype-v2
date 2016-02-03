@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip17/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.thankYou %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+		<div class="highlighted-event">
+			<h1 class="heading-xlarge">{{question.heading}}</h1>
+		</div>
+
+		<div class="column-two-thirds">
+			<h2 class="heading-medium">{{question.heading2}}</h2>
+			<p>{{question.p1}}</p>
+			<p>{{question.postTo}}</p>
+			<ul>
+				{% for item in question.address %}
+					<li>{{item}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+
+		<div class="column-two-thirds">
+			<h2 class="heading-medium">{{question.heading3}}</h2>
+			<p>{{question.p2}}</p>
+			<div class="panel-indent">
+				<p>{{question.p3 | safe}}</p>
+			</div>
+			<p>{{question.p4}}</p>
+			<a href="http://www.gov.uk" class="button">{{question.button}}</a>
+		</div>
+
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
