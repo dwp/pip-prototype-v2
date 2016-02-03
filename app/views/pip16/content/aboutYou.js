@@ -19,11 +19,11 @@ var data = [ {
     {
       "page"             : "1",
       "heading"          : "Help with your application",
-      "introText"        : "You'll be asked questions that need detailed answers about the effects of your condition.  It might help if you asked a friend, family member or support organisation to help you.",
+      "introText"        : "You'll be asked questions that need detailed answers about the effects of your condition.  It could help if you asked a friend, family member or support organisation to help you.",
       "question"         : "Is someone helping you fill in this application?",
       "question2"        : "The name of the person helping you",
       "question3"        : "Their relationship to you",
-      "question4"        : "Why they are helping you",
+      "question4"        : "Why they're helping you",
       "backLink"         : "/pip16/summaryMain"
     },
   ],
@@ -296,6 +296,8 @@ var data = [ {
       "someoneTxtQ"      : "Explain how they help you",
       "cantHearLabel"    : "You can not hear at all",
       "cantHearTxtQ"     : "Explain how you communicate",
+      "manageLabel"      : "You manage in a different way",
+      "manageTxtQ"       : "Explain how you manage",
       "question3"        : "Explain how your condition affects your hearing.",
       "helpTextHd"       : "Include if the effects change depending on:",
       "helpText"         : ["where you are","what you’re doing"],
