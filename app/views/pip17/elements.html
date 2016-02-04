@@ -22,6 +22,15 @@
 </div>
 {% endmacro %}
 
+{% macro returnToMenu(data,questions,backlink) %}
+<div id="submit-group" class="form-group">
+    <input type="submit" class="button" value="{{data.saveExit}}" name="saveAndMenu" class="exit-link">
+    {% if backLink != false %}
+      <a href="{{questions.backLink}}" class="link-back">{{data.backText}}</a>
+    {% endif %}
+</div>
+{% endmacro %}
+
 {% macro textInput (id,answer) %}
 <div class="form-group" id="form-group-{{ id }}">
   <input type="text" class="form-control " id="{{ id }}" name="{{ id }}" value="{{ answer }}">
