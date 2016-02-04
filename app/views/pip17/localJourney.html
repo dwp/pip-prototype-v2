@@ -17,30 +17,24 @@
 				<form action="/pip17/localJourney{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{% set seq  = [
-						{"id":"planLocalJourney","value":"Yes","showPanel":"localJourneyDetails"},
-						{"id":"planLocalJourney", "value":"No"}
-					] %}
-					{{ elements.radioSelect('planLocalJourney',question.question,"",answers.planLocalJourney,seq,"inline") }}
-
-					<div class="form-group panel-indent {% if answers.planLocalJourney != 'Yes' %}js-hidden{% endif %}" id="localJourneyDetails">
-
 						{% set seq = [
-							{id:"conditionAffect4",label:question.relyLabel,value:question.relyLabel},
-							{id:"conditionAffect5",label:question.helpLabel,value:question.helpLabel},
-							{id:"conditionAffect6",label:question.ownLabel,value:question.ownLabel},
-							{"id":"conditionAffect7", "label":question.otherWayLabel, "value":question.otherWayLabel,
+							{id:"conditionAffect4",label:question.relyLabel,value:question.relyLabel,"showPanel":"details"},
+							{id:"conditionAffect5",label:question.helpLabel,value:question.helpLabel, "showPanel":"details"},
+							{id:"conditionAffect6",label:question.ownLabel,value:question.ownLabel, "showPanel":"details"},
+							{"id":"conditionAffect7", "label":question.otherWayLabel, "value":question.otherWayLabel,"showPanel":"details",
 								"target"         : "conditionAffectOther",
 								"textarea"       : true,
 								"textareaId"     : "conditionAffectOther",
 								"textareaLabel"  : "",
 								"textareaAnswer" : answers.conditionAffectOther
-							}
+							},
+							{"id":"affect10", "label":question.noLabel, "value":question.noLabel, "hidePanel":"details"}
 						] %}
-						{{ elements.checkbox('conditionAffect',"checkbox",question.question2,page.tickAll,seq,answers,answers.conditionAffect) }}
+						{{ elements.checkbox('optionsName',"checkbox",question.question2,page.tickAll,seq,answers,answers.optionsName,"check-uncheck") }}
 
+						<div class="form-group panel-indent
+						 {% if not answers.optionsName  or answers.optionsName == question.noLabel %}js-hidden{% endif %}" id="details">
 						{{ elements.textarea("howDoes",question.question3,answers.howDoes,question.q3HintText) }}
-
 					</div>
 
 					{{ elements.submit(page,question) }}
