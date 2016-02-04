@@ -177,7 +177,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip17/checkYourAnswers');
     } else {
-      res.redirect('/pip17/conditionDetails');
+      res.redirect('/pip17/checkYourAnswers');
     }
   });
 
@@ -485,7 +485,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip17/checkYourAnswers');
     } else {
-      res.redirect('/pip17/gettingUp');
+      res.redirect('/pip17/checkYourAnswers');
     }
   });
 
@@ -611,7 +611,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip17/checkYourAnswers');
     } else {
-      res.redirect('/pip17/gettingOut');
+      res.redirect('/pip17/checkYourAnswers');
     }
   });
 
@@ -654,7 +654,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip17/checkYourAnswers');
     } else {
-      res.redirect('/pip17/localJourney');
+      res.redirect('/pip17/checkYourAnswers');
     }
   });
 
