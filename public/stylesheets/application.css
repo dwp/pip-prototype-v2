@@ -720,7 +720,7 @@ p {
 }
 
 .link:hover {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 .link:active {
@@ -1366,7 +1366,7 @@ details summary {
 }
 
 details summary:hover {
-  color: #2e8aca;
+  color: #2b8cc4;
 }
 
 details summary:focus {

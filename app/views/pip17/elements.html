@@ -154,7 +154,9 @@
   {% set savedAnswer = '' %}
 
   {% if item.hidePanel %}
-    <p class="form-block">or</p>
+    {% if item.showOr != 'false' %}
+      <p class="form-block">or</p>
+    {% endif %}
   {% endif %}
     <label class="block-label" for="{{ item.id }}"
       {% if item.textarea or item.textbox %}
