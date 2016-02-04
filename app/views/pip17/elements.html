@@ -195,7 +195,7 @@
         {% endif %}
       {% endfor %}
       >
-      {{ item.label }}
+      {{ item.label|safe }}
     </label>
     {% if item.textarea %}
       <fieldset id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false"
