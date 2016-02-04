@@ -19,12 +19,10 @@
 
 					{% set seq = [
 						{"id":"affect1", "label":question.motivatedLabel, "value":question.motivatedLabel, "showPanel":"details"},
-						{"id":"affect2", "label":question.distanceLabel, "value":question.distanceLabel, "showPanel":"details"},
+						{"id":"affect2", "label":question.distanceLabel, "value":question.distanceLabel, "hidePanel":"details"},
 						{"id":"affect3", "label":question.carLabel, "value":question.carLabel, "showPanel":"details"},
 						{"id":"affect4", "label":question.streetLabel, "value":question.streetLabel, "showPanel":"details"},
-						{"id":"affect5", "label":question.shopLabel, "value":question.shopLabel, "showPanel":"details"},
-						{"id":"affect6", "label":question.supermarketLabel, "value":question.supermarketLabel, "showPanel":"details"},
-						{"id":"affect7", "label":question.townLabel, "value":question.townLabel, "showPanel":"details"},
+						{"id":"affect5", "label":question.anxiousLabel, "value":question.anxiousLabel, "showPanel":"details"},
 						{"id":"affect9", "label":question.otherWayLabel, "value":question.otherWayLabel, "showPanel":"details",
 							"target"        : "target2",
 							"textbox"       : true,
@@ -38,25 +36,10 @@
 					<div class="form-group panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
 
-						{% set seq = [
-							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel},
-							{id:"conditionAffect2",label:question.helpLabel,value:question.helpLabel},
-							{id:"conditionAffect4",label:question.relyLabel,value:question.relyLabel},
-							{id:"conditionAffect5",label:question.manageLabel,value:question.manageLabel},
-							{id:"conditionAffect6",label:question.dontLabel,value:question.dontLabel},
-							{"id":"conditionAffect7", "label":question.otherWayLabel, "value":question.otherWayLabel,
-								"target"         : "conditionAffectOther",
-								"textarea"       : true,
-								"textareaId"     : "conditionAffectOther",
-								"textareaLabel"  : "",
-								"textareaAnswer" : answers.conditionAffectOther
-							}
-						] %}
-						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,'',seq,answers,answers.conditionAffect) }}
+					 {{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
 
 						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
 
-						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
 					</div>
 
 
