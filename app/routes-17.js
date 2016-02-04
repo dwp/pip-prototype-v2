@@ -696,7 +696,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip17/checkYourAnswers');
     } else {
-      res.redirect('/pip17/somewhereYouKnow');
+      res.redirect('/pip17/understanding');
     }
   });
 
