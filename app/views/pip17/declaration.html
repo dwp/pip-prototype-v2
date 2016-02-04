@@ -40,7 +40,10 @@
 						<p>{{question.disclaimer}}</p>
 					</div>
 
-					{{ elements.submit(page,question) }}
+					<div id="submit-group" class="form-group">
+						<input type="submit" class="button" value="{{question.submit}}" name="saveAndMenu">
+						<a href="/pip17/additionalInfo" class="link-back">Back</a>
+					</div>
 
         </form>
 			</div>
