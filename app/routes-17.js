@@ -49,7 +49,7 @@ module.exports = function (app) {
   app.post('/pip17/helper', function (req, res) {
     req.session['pip17-helper'] = req.body;
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#helper');
     } else {
       res.redirect('/pip17/aboutYou');
     }
@@ -70,7 +70,7 @@ module.exports = function (app) {
     req.session['pip17-aboutYou'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#aboutYou');
     } else {
       res.redirect('/pip17/contactDetails');
     }
@@ -91,7 +91,7 @@ module.exports = function (app) {
     req.session['pip17-contactDetails'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#contactDetails');
     } else {
       res.redirect('/pip17/contactPref');
     }
@@ -112,7 +112,7 @@ module.exports = function (app) {
     req.session['pip17-contactPref'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#contactPref');
     } else {
       res.redirect('/pip17/currentWhereabouts');
     }
@@ -133,7 +133,7 @@ module.exports = function (app) {
     req.session['pip17-currentWhereabouts'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#currentWhereabouts');
     } else {
       res.redirect('/pip17/nationality');
     }
@@ -154,7 +154,7 @@ module.exports = function (app) {
     req.session['pip17-nationality'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#nationality');
     } else {
       res.redirect('/pip17/paymentsFromAbroad');
     }
@@ -175,9 +175,9 @@ module.exports = function (app) {
     req.session['pip17-paymentsFromAbroad'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#paymentsFromAbroad');
     } else {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#paymentsFromAbroad');
     }
   });
 
@@ -196,7 +196,7 @@ module.exports = function (app) {
     req.session['pip17-conditionDetails'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#conditionDetails');
     } else {
       res.redirect('/pip17/medications');
     }
@@ -223,7 +223,7 @@ module.exports = function (app) {
          res.redirect('/pip17/manageMedications');
        }
      } else if (req.body.saveAndMenu) {
-       res.redirect('/pip17/checkYourAnswers');
+       res.redirect('/pip17/checkYourAnswers#medications');
      } else {
        res.redirect('/pip17/treatments');
      }
@@ -244,7 +244,7 @@ module.exports = function (app) {
     req.session['pip17-manageMedications'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#manageMedications');
     } else {
       res.redirect('/pip17/treatments');
     }
@@ -271,7 +271,7 @@ module.exports = function (app) {
          res.redirect('/pip17/manageTreatments');
        }
      } else if (req.body.saveAndMenu) {
-       res.redirect('/pip17/checkYourAnswers');
+       res.redirect('/pip17/checkYourAnswers#treatments');
      } else {
        res.redirect('/pip17/sideEffects');
      }
@@ -293,7 +293,7 @@ module.exports = function (app) {
     req.session['pip17-manageTreatments'] = req.body;
 
   if (req.body.saveAndMenu) {
-       res.redirect('/pip17/checkYourAnswers');
+       res.redirect('/pip17/checkYourAnswers#manageTreatments');
      } else {
        res.redirect('/pip17/sideEffects');
      }
@@ -315,7 +315,7 @@ module.exports = function (app) {
     req.session['pip17-sideEffects'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#sideEffects');
     } else {
       res.redirect('/pip17/conditionAffects');
     }
@@ -336,7 +336,7 @@ module.exports = function (app) {
     req.session['pip17-conditionAffects'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#conditionAffects');
     } else {
       res.redirect('/pip17/monitoringCondition');
     }
@@ -357,7 +357,7 @@ module.exports = function (app) {
     req.session['pip17-monitoringCondition'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#monitoringCondition');
     } else {
       res.redirect('/pip17/healthcareprofessional');
     }
@@ -378,7 +378,7 @@ module.exports = function (app) {
     req.session['pip17-healthcareprofessional'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#healthcareprofessional');
     } else {
       res.redirect('/pip17/submitEvidence');
     }
@@ -399,7 +399,7 @@ module.exports = function (app) {
     req.session['pip17-submitEvidence'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#submitEvidence');
     } else {
       res.redirect('/pip17/specialAids');
     }
@@ -420,7 +420,7 @@ module.exports = function (app) {
     req.session['pip17-specialAids'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#specialAids');
     } else {
       res.redirect('/pip17/sight');
     }
@@ -441,7 +441,7 @@ module.exports = function (app) {
     req.session['pip17-sight'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#sight');
     } else {
       res.redirect('/pip17/speech');
     }
@@ -462,7 +462,7 @@ module.exports = function (app) {
     req.session['pip17-speech'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#speech');
     } else {
       res.redirect('/pip17/hearing');
     }
@@ -483,9 +483,9 @@ module.exports = function (app) {
     req.session['pip17-hearing'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#hearing');
     } else {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#hearing');
     }
   });
 
@@ -504,7 +504,7 @@ module.exports = function (app) {
     req.session['pip17-gettingUp'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#gettingUp');
     } else {
       res.redirect('/pip17/toilet');
     }
@@ -525,7 +525,7 @@ module.exports = function (app) {
     req.session['pip17-toilet'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#toilet');
     } else {
       res.redirect('/pip17/washing');
     }
@@ -546,7 +546,7 @@ module.exports = function (app) {
     req.session['pip17-washing'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#washing');
     } else {
       res.redirect('/pip17/gettingDressed');
     }
@@ -567,7 +567,7 @@ module.exports = function (app) {
     req.session['pip17-gettingDressed'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#gettingDressed');
     } else {
       res.redirect('/pip17/hotMeal');
     }
@@ -588,7 +588,7 @@ module.exports = function (app) {
     req.session['pip17-hotMeal'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#hotMeal');
     } else {
       res.redirect('/pip17/eatingAndDrinking');
     }
@@ -609,9 +609,9 @@ module.exports = function (app) {
     req.session['pip17-eatingAndDrinking'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#eatingAndDrinking');
     } else {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#eatingAndDrinking');
     }
   });
 
@@ -630,7 +630,7 @@ module.exports = function (app) {
     req.session['pip17-gettingOut'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#gettingOut');
     } else {
       res.redirect('/pip17/mixing');
     }
@@ -652,9 +652,9 @@ module.exports = function (app) {
     req.session['pip17-mixing'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#mixing');
     } else {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#mixing');
     }
   });
 
@@ -673,7 +673,7 @@ module.exports = function (app) {
     req.session['pip17-localJourney'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#localJourney');
     } else {
       res.redirect('/pip17/somewhereNeverBeenBefore');
     }
@@ -694,7 +694,7 @@ module.exports = function (app) {
     req.session['pip17-somewhereNeverBeenBefore'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#somewhereNeverBeenBefore');
     } else {
       res.redirect('/pip17/understanding');
     }
@@ -715,7 +715,7 @@ module.exports = function (app) {
     req.session['pip17-somewhereYouKnow'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#somewhereYouKnow');
     } else {
       res.redirect('/pip17/understanding');
     }
@@ -736,7 +736,7 @@ module.exports = function (app) {
     req.session['pip17-understanding'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#understanding');
     } else {
       res.redirect('/pip17/money');
     }
@@ -757,9 +757,9 @@ module.exports = function (app) {
     req.session['pip17-money'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#money');
     } else {
-      res.redirect('/pip17/checkYourAnswers');
+      res.redirect('/pip17/checkYourAnswers#money');
     }
   });
 

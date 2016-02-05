@@ -363,7 +363,7 @@ open
 
 <!-- enter/change answers for non-linear in pip17 -->
 {% macro EnterChangeAnswers(question,pageKey) %}
-<div class"column-third">
+<div id="{{pageKey}}" class"column-third">
   {% if question %}
     <a href="{{pageKey}}" class="change-this">change your answers</a>
   {% else %}
