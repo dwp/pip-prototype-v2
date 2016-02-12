@@ -28,7 +28,7 @@ var data = [ {
       "detailsEmail"       : "Email address",
 
       /* contact preferences */
-      "prefHd"             : "Contact preferences",
+      "prefHd"             : "How you want to be contacted",
       "prefSMS"            : "SMS updates",
       "prefMobile"         : "Mobile number",
       "prefCall"           : "Happy for us to call",
