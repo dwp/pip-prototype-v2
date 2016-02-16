@@ -187,7 +187,7 @@ var data = [ {
       "gettingOutHow"          : "Explain how your condition affects you getting out or walking about.",
 
       /* mixing */
-      "mixingHd"               : "Mixing with other people",
+      "mixingHd"               : "Mixing with people",
       "mixingDoes"             : "Does your condition affect you:",
       "mixingOften"            : "How often does your condition affect you mixing with people?",
       "mixingWhen"             : "When your condition affects you, how do you mix with people?",

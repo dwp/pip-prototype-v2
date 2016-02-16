@@ -37,17 +37,6 @@
 					<div class="form-group panel-indent
 					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
 
-						{% set seq2  = [
-							{"id":"howOften", "value":question.howoften1},
-							{"id":"howOften", "value":question.howoften2},
-							{"id":"howOften", "value":question.howoften3},
-							{"id":"howOften", "value":question.howoften4,"showPanel":"tellUsHowOften"}
-						] %}
-						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2) }}
-						<div class="form-group panel-indent {% if answers.howOften != question.howoften2 %}js-hidden{% endif %}" id="tellUsHowOften">
-							{{ elements.textarea('howOftenDetails',question.ownWords,answers.howOftenDetails) }}
-						</div>
-
 						{% set seq3 = [
 							{"id":"checkbox-1", "label":"Someone needs to remind you to take it", "value":"Someone needs to remind you to take it"},
 							{"id":"checkbox-2", "label":"Someone needs to help you take it", "value":"Someone needs to help you take it"},
@@ -60,6 +49,17 @@
 								"textboxAnswer" : answers.textboxId3}
 						] %}
 						{{ elements.checkbox('manageNow',"checkbox",question.question3,'',seq3,answers,answers.manageNow) }}
+
+						{% set seq2  = [
+							{"id":"howOften", "value":question.howoften1},
+							{"id":"howOften", "value":question.howoften2},
+							{"id":"howOften", "value":question.howoften3},
+							{"id":"howOften", "value":question.howoften4,"showPanel":"tellUsHowOften"}
+						] %}
+						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2) }}
+						<div class="form-group panel-indent {% if answers.howOften != question.howoften2 %}js-hidden{% endif %}" id="tellUsHowOften">
+							{{ elements.textarea('howOftenDetails',question.ownWords,answers.howOftenDetails) }}
+						</div>
 
 						{{ elements.textarea('moreDetails',question.question4,answers.moreDetails,"",question.helpTextHd,question.helpText) }}
 
