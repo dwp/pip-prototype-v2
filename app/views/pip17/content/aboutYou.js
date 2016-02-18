@@ -156,7 +156,7 @@ var data = [ {
     {
       "page"             : "11",
       "heading"          : "Your treatments and therapies",
-      "introText"        : "Treatments and therapies can include chemotherapy, physiotherapy, medical massages or dialysis.",
+      "introText"        : "Treatments and therapies can include chemotherapy, physiotherapy, dialysis or, medical massages or exercises.",
       "question"         : "Are you having, or do you have planned, any treatment or therapy?",
       "rowHd"            : "Treatment or therapy",
       "treatmentHd"      : "Name of treatment or therapy",
@@ -183,7 +183,7 @@ var data = [ {
       "page"             : "12",
       "heading"          : "Side effects",
       "question"         : "Do you get side effects from any medication, treatment or therapy?",
-      "question2"        : "Describe the side effects you get.",
+      "question2"        : "Describe the side effects you get and how often you get them.",
       "backLink"         : "/pip17/treatments"
     },
   ],
