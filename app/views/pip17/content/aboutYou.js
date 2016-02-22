@@ -201,7 +201,7 @@ var data = [ {
   "monitoringCondition" : [
     {
       "page"             : "14",
-      "heading"          : "Managing your condition",
+      "heading"          : "Monitoring your condition",
       "question"         : "Do you rely on someone to monitor your condition most days because, if they do not, you could be at risk, or a danger to yourself or others?",
       "question2"        : "How many hours a week do you rely on them to help monitor your condition?",
       "question3"        : "Explain why you rely on someone to monitor your condition?",

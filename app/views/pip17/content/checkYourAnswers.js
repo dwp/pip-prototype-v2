@@ -64,7 +64,7 @@ var data = [ {
       "medicationOften"    : "How often you take it",
 
       /* managing medications */
-      "manageMedsHd"       : "Managing your medication",
+      "manageMedsHd"       : "Taking your medication",
       "manageMedsQ"        : "Do you have difficulty managing your medication?",
       "manageMedsWhat"     : "What aspects do you have difficulty managing?",
       "manageMedsOften"    : "How often does your condition affect you managing your medication?",

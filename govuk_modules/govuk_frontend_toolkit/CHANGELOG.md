@@ -1,7 +1,3 @@
-# 4.6.1
-
-- Use the Sass variable $light-blue for link active and hover colours (PR #242)
-
 # 4.6.0
 
 - Add breadcrumb styles, separator images and documentation (PR #236)
