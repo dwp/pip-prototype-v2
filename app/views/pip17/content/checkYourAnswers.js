@@ -48,9 +48,9 @@ var data = [ {
 
       /* paymentsFromAbroad */
       "paymentsHd"         : "Payments from abroad",
-      "paymentsAbroad"     : "Have you or any of your close family worked abroad or been paid benefits from outside the United Kingdom?",
-      "paymentsBenefits"   : "Have you or your close family claimed or been paid any benefits or pensions from any of these countries since your claim date?",
-      "paymentsNi"         : "Have you or your close family worked or paid national insurance in any of these countries since your claim date?",
+      "paymentsAbroad"     : "Are you or any of your close family working abroad or paying benefits from outside the United Kingdom?",
+      "paymentsBenefits"   : "Are you or your close family claiming or being paid any benefits or pensions from any of these countries?",
+      "paymentsNi"         : "Are you or your close family working or paying National Insurance in any of these countries?",
 
       /* conditionDetails */
       "conditionHd"        : "Your conditions and disabilities",
