@@ -35,9 +35,9 @@ var data = [ {
       "prefComms"          : "Communication preferences",
 
       /* currentWhereabouts */
-      "whereHd"            : "Your current whereabouts",
+      "whereHd"            : "Where you are now",
       "whereCurrently"     : "Your currently staying in",
-      "whereDateIn"        : "Date you went in",
+      "whereDateIn"        : "When you started staying there",
       "whereAddress"       : "Address",
 
       /* nationality */

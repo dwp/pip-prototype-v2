@@ -239,7 +239,7 @@ var data = [ {
     {
       "page"              : "17",
       "heading"           : "Aids and adaptations",
-      "question"          : "Where do have to use aids or adaptations?",
+      "question"          : "Where do you have to use aids or adaptations?",
       "qHintText"         : "Include any aids or adaptations you need but have not got yet. Include aids you have adapted or made yourself.",
       "homeLabel"         : "Getting in and out of your home",
       "homeTextareaQ"     : "List the aids or adaptations you have to use to get in or out of your home.",
@@ -274,7 +274,7 @@ var data = [ {
       "helpText"         : ["how light it is","where you are"],
       "question4"        : "Are you registered:",
       "blindLabel"       : "blind",
-      "partiallyLabel"   : "partially blind",
+      "partiallyLabel"   : "partially sighted",
       "neitherLabel"     : "neither",
       "allTime"          : "Is your sight affected all the time?",
       "backLink"         : "/pip17/specialAids"
@@ -717,8 +717,8 @@ var data = [ {
       "p1"               : "You said you’re going to send information about the effects of your condition. Write your National Insurance number on each page you send and post it before [date in two weeks]. If you do not send it before then, a decision could be made without it.",
       "postTo"           : "Post to:",
       "address"          : ["Freepost DWP PIP 3","Mail Handling Site A","Wolverhampton","WV98 1AD"],
-      "heading3"         : "What happens next?",
-      "p2"               : "You'll get a letter in the next 4 weeks. It will either tell you the decision, or invite you to meet a medical professional.",
+      "heading3"         : "What happens next",
+      "p2"               : "You'll get a letter in the next 4 weeks. It will either tell you a decision, or invite you to meet a medical professional.",
       "p3"               : "You must <a href='#' rel='external'>report any change to your circumstances</a>.",
       "p4"               : "If you have any queries about your claim, phone 0345 850 3322. You’ll need your National Insurance number.",
       "button"           : "Return to GOV.UK"
