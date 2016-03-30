@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip18/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.additionalInfo %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip18/additionalInfo{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+					{{ elements.textarea("additionalInfo","",answers.additionalInfo,"","","",3000) }}
+
+					<div id="submit-group" class="form-group">
+						<input type="submit" class="button" value="Save and continue" name="saveAndMenu">
+						<a href="/pip18/checkYourAnswers" class="link-back">Back</a>
+					</div>
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

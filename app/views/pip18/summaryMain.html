@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip18/elements.html" as elements %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<header>
+				  <h1 class="form-title heading-xlarge">What we’ll ask you</h1>
+				</header>
+				<p class="lede">We need to know how your condition affects you, so you’ll be asked about the following:</p>
+
+				<details class="help-text" {% if show == 'aboutYou' %} open {% endif %}>
+	        <summary><span class="summary">About you</span></summary>
+	          <ul class="list-bullet">
+	            <li>help with your application</li>
+	            <li>nationality and where you live</li>
+	            <li>payments from abroad</li>
+	          </ul>
+	      </details>
+
+	      <details class="help-text" {% if show == 'yourCondition' %} open {% endif %}>
+	        <summary><span class="summary">You and your condition</span></summary>
+	        <ul id="yourAndYourCondition" class=" list-bullet">
+	          <li>your conditions and disabilities</li>
+	          <li>your medication</li>
+	          <li>your treatments and therapy</li>
+	          <li>side effects</li>
+	          <li>changes in your condition</li>
+	          <li>monitoring your condition</li>
+	          <li>professionals who know about your condition</li>
+	          <li>information you can send</li>
+	          <li>any aids and adaptations you have</li>
+	          <li>seeing, speaking and hearing</li>
+	        </ul>
+	      </details>
+
+	      <details class="help-text" {% if show == 'yourHome' %} open {% endif %}>
+	        <summary><span class="summary">You and your home</span></summary>
+	          <ul class=" list-bullet">
+	            <li>moving around your home</li>
+	            <li>using the toilet</li>
+	            <li>washing yourself</li>
+	            <li>getting dressed </li>
+	            <li>making a hot meal from fresh ingredients</li>
+	            <li>eating and drinking</li>
+	          </ul>
+	      </details>
+
+	      <details class="help-text" {% if show == 'gettingOut' %} open {% endif %}>
+	        <summary><span class="summary">Getting out and about</span></summary>
+	          <ul class=" list-bullet">
+	            <li>getting out and walking about</li>
+	            <li>mixing with people</li>
+	          </ul>
+	      </details>
+
+	      <details class="help-text" {% if show == 'understanding' %} open {% endif %}>
+	        <summary><span class="summary">Making sense of things</span></summary>
+	          <ul class=" list-bullet">
+	            <li>planning a local journey</li>
+	            <li>getting somewhere you have never been</li>
+	            <li>getting somewhere you know</li>
+	            <li>understanding written information</li>
+	            <li>dealing with money</li>
+	          </ul>
+	      </details>
+		<br />
+		      <div >
+						<p>You'll have chance to check and change your answers at the end.</p>
+        		<p class="panel-indent">Include as much information as you can in your answers.</p>
+		      </div>
+
+		      <a href="{{next}}" class="button">Continue</a>
+					<a href="{{back}}" class="link-back">Back</a>
+
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endblock %}

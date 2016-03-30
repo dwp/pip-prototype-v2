@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip18/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.aboutYou %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip18/{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

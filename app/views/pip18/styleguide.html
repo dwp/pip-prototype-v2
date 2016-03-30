@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip18/elements.html" as elements %}
+{% for data in data %}
+{% for questions in data.helper %}
+<main id="content" role="main">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip18/styleguide" method="post" class="form">
+
+					<header>
+	          <h1 class="form-title heading-xlarge">
+							<span class="section-progress">
+							  Page {{data.page}} of {{data.maxPages}}
+							</span>
+							{{data.title}}</h1>
+	        </header>
+
+					<p class="lede">{{data.introText}}</p>
+
+					{{ elements.genericInput('name','Full name', "") }}
+
+					<fieldset>
+						<legend class="form-label">Address</legend>
+						{{ elements.textInput('address1','') }}
+						{{ elements.textInput('address2','') }}
+						{{ elements.textInput('address3','') }}
+					</fieldset>
+
+					{{ elements.genericInput('howManyHours','How many hours?', "", "","form-control-1-8") }}
+
+					{{ elements.textarea('id','Texarea Label') }}
+
+					{% set seq  = [
+						{"id":"question-Yes","value":"Yes","showPanel":"questionDetails"},
+						{"id":"question-No", "value":"No"}
+					] %}
+					{{ elements.radioSelect('question',"Question copy?","","",seq,"inline") }}
+
+					<div class="panel-indent js-hidden" id="questionDetails">
+						{% set seq2 = [
+							{"id":"checkbox-1", "label":"label", "value":"value1","target":"target1","textarea":true,"textareaId":"textreadId1","textareaLabel":"Textarea label"},
+							{"id":"checkbox-2", "label":"label", "value":"value2"},
+							{"id":"checkbox-3", "label":"label", "value":"value3"},
+							{"id":"checkbox-4", "label":"Anything else", "value":"other","target":"target2","textarea":true,"textareaId":"textreadId2","textareaLabel":"Tell us the details"}
+						] %}
+						{{ elements.checkbox('id-radio',"checkbox",'Question copy?','Hint text',seq2) }}
+					</div>
+
+					<div class="border-bottom">&nbsp;</div>
+
+					<br />
+
+					<div class="form-group">
+						<a href="#" class="secondary-button">Button</a>
+					</div>
+
+					{% set seq3 = [
+						{"listItem" : "if you rely on any aids or adaptations to use the toilet"},
+						{"listItem" : "if you rely on someone to help you, supervise you or remind you to use the toilet"},
+						{"listItem" : "if you can do some parts but not others"},
+						{"listItem" : "If it takes a long time"}
+					] %}
+					{{ elements.helpText("What to include in your answer","Include as much information as you can, such as:",seq3) }}
+
+					<br />
+
+					{{ elements.submit(data,questions,false) }}
+
+				</form>
+			</div>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
