@@ -7,7 +7,7 @@
 <p class="lede">{{ question.introText|safe }}</p>
 {% endmacro %}
 
-{% macro submit(data,questions,backLink) %}
+{% macro submit(data,questions,backLink,showReturnToMenu) %}
 <div id="submit-group" class="form-group">
     {% if questions.warningMsg %}
       <p>{{questions.warningMsg}}</p>
@@ -15,7 +15,9 @@
     <input type="submit" class="button"
     value="{% if questions.submit %} {{questions.submit}} {% else %} {{data.continue}} {% endif %}"
     name="saveAndcontinue">
-    <input type="submit" value="{{data.saveExit}}" name="saveAndMenu" class="exit-link">
+    {% if showReturnToMenu != false %}
+      <input type="submit" value="{{data.saveExit}}" name="saveAndMenu" class="exit-link">
+    {% endif %}
     {% if backLink != false %}
       <a href="{{questions.backLink}}" class="link-back">{{data.backText}}</a>
     {% endif %}
