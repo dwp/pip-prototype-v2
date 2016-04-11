@@ -2675,3 +2675,10 @@ Helpline number
     margin-top: 0;
   }
 }
+
+/*********************
+PIP18
+**********************/
+.pip18 textarea.form-control-3-4 {
+  height: 400px;
+}

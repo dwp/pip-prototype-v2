@@ -10,7 +10,7 @@
 {% for page in data %}
 {% for checkYourAnswers in dataCheckChange %}
 {% for question in checkYourAnswers.checkYourAnswers %}
-<main id="content" role="main">
+<main id="content" role="main" class="pip18">
 
 	<div class="grid-row">
 			<form action="/pip18/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form pip-16">
@@ -21,39 +21,16 @@
 
 				<div class="column-full checkYourAnswersCont">
 
-	        <h2 class="heading-medium heading-highlight"><span class="h2">About you</span></h2>
+	        <h2 id="aboutYou" class="heading-medium heading-highlight"><span class="h2">About you</span></h2>
 	          <ul>
 	            <li>
-								<div class="column-two-thirds">1 - Help with your application</div>
+								<div class="column-two-thirds">1 - Personal Details</div>
 								{{ elements.EnterChangeAnswers(helper,"helper") }}
 							</li>
-							<li>
-								<div class="column-two-thirds">2 - About you</div>
-								{{ elements.EnterChangeAnswers(aboutYou,"aboutYou") }}
-							</li>
-							<li>
-								<div class="column-two-thirds">3 - Your contact details</div>
-								{{ elements.EnterChangeAnswers(contactDetails,"contactDetails") }}
-							</li>
-							<li>
-								<div class="column-two-thirds">4 - Contact preferences</div>
-								{{ elements.EnterChangeAnswers(contactPref,"contactPref") }}
-							</li>
-							<li>
-								<div class="column-two-thirds">5 - Where you are now</div>
-								{{ elements.EnterChangeAnswers(currentWhereabouts,"currentWhereabouts") }}
-							</li>
-	            <li>
-								<div class="column-two-thirds">6 - Nationality and where you live</div>
-								{{ elements.EnterChangeAnswers(nationality,"nationality") }}
-							</li>
-	            <li>
-								<div class="column-two-thirds">7 - Payments from abroad</div>
-								{{ elements.EnterChangeAnswers(paymentsFromAbroad,"paymentsFromAbroad") }}
-							</li>
+
 	          </ul>
 
-	        <h2 class="heading-medium heading-highlight"><span class="h2">You and your condition</span></h2>
+	        <h2 id="yourCondition" class="heading-medium heading-highlight"><span class="h2">You and your condition</span></h2>
 	        <ul>
 	          <li>
 							<div class="column-two-thirds">8 - Your conditions and disabilities</div>
@@ -110,7 +87,7 @@
 	        </ul>
 
 
-	        <h2 class="heading-medium heading-highlight"><span class="h2">You and your home</span></h2>
+	        <h2 id="yourHome" class="heading-medium heading-highlight"><span class="h2">You and your home</span></h2>
 	          <ul>
 	            <li>
 								<div class="column-two-thirds">21 - Getting up and moving around</div>
@@ -139,7 +116,7 @@
 	          </ul>
 
 
-	        <h2 class="heading-medium heading-highlight"><span class="h2">Getting out and about</span></h2>
+	        <h2 id="gettingOut" class="heading-medium heading-highlight"><span class="h2">Getting out and about</span></h2>
 	          <ul>
 	            <li>
 								<div class="column-two-thirds">27 - Getting out and about</div>
@@ -152,7 +129,7 @@
 	          </ul>
 
 
-	        <h2 class="heading-medium heading-highlight"><span class="h2">Making sense of things</span></h2>
+	        <h2 id="makingSense" class="heading-medium heading-highlight"><span class="h2">Making sense of things</span></h2>
 	          <ul>
 	            <li>
 								<div class="column-two-thirds">29 - Planning a local journey</div>

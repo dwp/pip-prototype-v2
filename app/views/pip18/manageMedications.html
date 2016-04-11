@@ -9,7 +9,7 @@
 {% import "pip18/elements.html" as elements %}
 {% for page in data %}
 {% for question in page.manageMedications %}
-<main id="content" role="main">
+<main id="content" role="main" class="pip18">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
@@ -38,11 +38,11 @@
 					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
 
 						{% set seq3 = [
-							{"id":"checkbox-1", "label":"Someone needs to remind you to take it", "value":"Someone needs to remind you to take it"},
-							{"id":"checkbox-2", "label":"Someone needs to help you take it", "value":"Someone needs to help you take it"},
-							{"id":"checkbox-3", "label":"You rely on aids or something else to help", "value":"You rely on aids or something else to help"},
-							{"id":"checkbox-4", "label":"You manage without help, but with difficulty", "value":"You manage on your own, but with difficulty"},
-							{"id":"checkbox-5", "label":"In another way", "value":"In another way",
+							{"id":"checkbox-1", "label":question.remindsMe, "value":question.remindsMe, "helpText":question.remindsMeHelp},
+							{"id":"checkbox-2", "label":question.helpsTakeIt, "value":question.helpsTakeIt, "helpText":question.helpsTakeItHelp},
+							{"id":"checkbox-3", "label":question.relyOnAids, "value":question.relyOnAids, "helpText":question.relyOnHelp},
+							{"id":"checkbox-4", "label":question.manage, "value":question.manage, "helpText":question.manageHelp},
+							{"id":"checkbox-5", "label":question.otherWay, "value":question.otherWay,
 								"target"        : "target3",
 								"textbox"       : true,
 								"textboxId"     : "textboxId3",

@@ -182,4 +182,43 @@ $(document).ready(function() {
   $('.showLegal').click(function(){
     $('#legalDetails').toggle();
   });
+
+
+  $( "input[name='manageNow']" ).click(function(){
+    var test = $(this).data("helptext");
+    var id = $(this).attr("id");
+    if (test){
+      if ($(this).is(':checked')) {
+        if($('li#howOften-list').length) {
+          $( '<li id="'+id+'" class="testCheckbox" data-number=" ' + id +'">' + test + '</li>' ).insertBefore($("li#howOften-list"));
+        } else {
+          $('#explain-how').append('<li id="'+id+'" class="testCheckbox" data-number=" ' + id +'">' + test + '</li>')
+        }
+      } else {
+        $('li#' + id ).remove();
+      }
+      $(".testCheckbox").sort(function (a, b) {
+        return a.id > b.id;
+      }).each(function () {
+          var elem = $(this);
+          elem.remove();
+          if($('li#howOften-list').length) {
+            $(elem).insertBefore($("li#howOften-list"));
+          } else {
+          $(elem).appendTo("#explain-how");
+        }
+      });
+    }
+  });
+
+  $("input[name='howOften']").click(function() {
+    if ($(this).val() !== $('#howOften input:first').val()) {
+      if ( !$('li#howOften-list').length) {
+        $('#explain-how').append('<li id="howOften-list">How often is it? Can you complete the task on the other days or do you still have different difficulties - tell us about them.</li>')
+      }
+    } else {
+      $('li#howOften-list').remove();
+    }
+  })
+
 });
