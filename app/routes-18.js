@@ -175,9 +175,9 @@ module.exports = function (app) {
     req.session['pip18-paymentsFromAbroad'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip18/checkYourAnswers#paymentsFromAbroad');
+      res.redirect('/pip18/checkYourAnswers#aboutYou');
     } else {
-      res.redirect('/pip18/checkYourAnswers#paymentsFromAbroad');
+      res.redirect('/pip18/checkYourAnswers#aboutYou');
     }
   });
 
