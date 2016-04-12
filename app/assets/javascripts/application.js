@@ -185,25 +185,25 @@ $(document).ready(function() {
 
 
   $( "input[name='manageNow']" ).click(function(){
-    var test = $(this).data("helptext");
-    var id = $(this).attr("id");
-    if (test){
+    var helptext = $(this).data("helptext"),
+        id       = $(this).attr("id");
+    if (helptext){
       if ($(this).is(':checked')) {
         if($('li#howOften-list').length) {
-          $( '<li id="'+id+'" class="testCheckbox" data-number=" ' + id +'">' + test + '</li>' ).insertBefore($("li#howOften-list"));
+          $( '<li id="'+id+'" class="helptextListItem" data-number="' + id +'">' + helptext + '</li>' ).insertBefore($("li#howOften-list"));
         } else {
-          $('#explain-how').append('<li id="'+id+'" class="testCheckbox" data-number=" ' + id +'">' + test + '</li>')
+          $('#explain-how').append('<li id="'+id+'" class="helptextListItem" data-number=" ' + id +'">' + helptext + '</li>')
         }
       } else {
         $('li#' + id ).remove();
       }
-      $(".testCheckbox").sort(function (a, b) {
+      $(".helptextListItem").sort(function (a, b) {
         return a.id > b.id;
       }).each(function () {
           var elem = $(this);
           elem.remove();
-          if($('li#howOften-list').length) {
-            $(elem).insertBefore($("li#howOften-list"));
+          if($('li#howOften-listitem').length) {
+            $(elem).insertBefore($("li#howOften-listitem"));
           } else {
           $(elem).appendTo("#explain-how");
         }
@@ -211,13 +211,13 @@ $(document).ready(function() {
     }
   });
 
-  $("input[name='howOften']").click(function() {
+  $("input[name='howOften'], input[name='frequencyOption']").click(function() {
     if ($(this).val() !== $('#howOften input:first').val()) {
-      if ( !$('li#howOften-list').length) {
-        $('#explain-how').append('<li id="howOften-list">How often is it? Can you complete the task on the other days or do you still have different difficulties - tell us about them.</li>')
+      if ( !$('li#howOften-listitem').length) {
+        $('#explain-how').append('<li id="howOften-listitem">' + $('#howOften').data('freqhelptext') + '</li>')
       }
     } else {
-      $('li#howOften-list').remove();
+      $('li#howOften-listitem').remove();
     }
   })
 

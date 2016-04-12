@@ -7,6 +7,7 @@ var data = [ {
   "saveExit"           : "Save and return to menu",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
+  "freqHelpText"       : "How often is it? Can you complete the task on the other days or do you still have different difficulties - tell us about them.",
   "helpline"           : [
     {
     "p1"               : "If you need any help call:",
@@ -355,7 +356,9 @@ var data = [ {
       "question2"        : "How often does your condition affect you moving around your home?",
       "question3"        : "How do you get up and move around your home?",
       "encourageLabel"   : "Someone has to encourage you to get out of bed",
+      "encourageHelpTxt" : "encourage help how?",
       "helpLabel"        : "Someone has to help you move",
+      "someoneHelpText"  : "How does someone help you?",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
       "question4"        : "Explain how your condition affects you getting up and moving around.",

@@ -2679,6 +2679,6 @@ Helpline number
 /*********************
 PIP18
 **********************/
-.pip18 textarea.form-control-3-4 {
+.pip18 #explain-how + textarea.form-control-3-4 {
   height: 400px;
 }

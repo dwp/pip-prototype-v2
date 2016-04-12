@@ -106,8 +106,12 @@
 </fieldset>
 {% endmacro %}
 
-{% macro radioSelect(id,question,hintText,answer,radioOptions,inline) %}
-<fieldset id="{{ id }}" class="form-group {% if inline %}inline{% endif %}">
+{% macro radioSelect(id,question,hintText,answer,radioOptions,inline,freqHelpText) %}
+<fieldset id="{{ id }}" class="form-group {% if inline %}inline{% endif %}"
+{% if freqHelpText %}
+  data-freqhelptext="{{freqHelpText}}"
+{% endif %}
+>
   <legend for="{{ id }}">
     <span class="frequency-question">{{ question }}</span>
     {% if hintText %}
@@ -182,7 +186,7 @@
       >
       <input id="{{ item.id }}" name="{{ id }}"
       {% if item.helpText %}
-        data-helpText=" {{ loop.index }}-{{item.helpText}}"
+        data-helpText="{{item.helpText}}"
       {% endif %}
 
       type="{{ type }}" value="{{ item.value }}"

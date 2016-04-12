@@ -56,7 +56,7 @@
 							{"id":"howOften", "value":question.howoften3},
 							{"id":"howOften", "value":question.howoften4,"showPanel":"tellUsHowOften"}
 						] %}
-						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2) }}
+						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2,"",page.freqHelpText) }}
 						<div class="form-group panel-indent {% if answers.howOften != question.howoften2 %}js-hidden{% endif %}" id="tellUsHowOften">
 							{{ elements.textarea('howOftenDetails',question.ownWords,answers.howOftenDetails) }}
 						</div>
