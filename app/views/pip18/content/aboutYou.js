@@ -120,6 +120,14 @@ var data = [ {
       "backLink"         : "/pip18/nationality"
     },
   ],
+  "bankDetails" : [
+    {
+      "page"             : "8",
+      "heading"          : "Bank details",
+      "introText"        : "If your claim is successful, money will be paid into your bank account. If you give your details now this could stop delays in the future.",
+      "backLink"         : "/pip18/paymentsFromAbroad"
+    }
+  ],
   "conditionDetails" : [
     {
       "page"             : "8",
