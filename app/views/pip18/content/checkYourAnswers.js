@@ -32,7 +32,7 @@ var data = [ {
       "prefSMS"            : "SMS updates",
       "prefMobile"         : "Mobile number",
       "prefCall"           : "Happy for us to call",
-      "prefComms"          : "Communication preferences",
+      "prefComms"          : "How you want to be contacted",
 
       /* currentWhereabouts */
       "whereHd"            : "Where you are now",
@@ -44,7 +44,7 @@ var data = [ {
       "nationalityHd"      : "Nationality and where you live",
       "nationalityCurrent" : "Current nationality",
       "nationalityLiving"  : "Living in England, Scotland or Wales?",
-      "nationalityAbroad"  : "Have you been out of the country for more than 1 year during last 3 years?",
+      "nationalityAbroad"  : "Have you been out of the country for more than 4 weeks during last 3 years?",
 
       /* paymentsFromAbroad */
       "paymentsHd"         : "Payments from abroad",
@@ -110,9 +110,9 @@ var data = [ {
 
       /* submitEvidence */
       "evidenceHd"         : "Information you can send",
-      "evidenceHave"       : "Do you have medical information you’re able to send us?",
-      "evidenceWhich"      : "Which of the following are you able to send us?",
-      "evidenceHow"        : "How will you be sending us the information?",
+      "evidenceHave"       : "Do you have medical information you’re able to send?",
+      "evidenceWhich"      : "Which of the following are you able to send?",
+      "evidenceHow"        : "How will you be sending the information?",
 
       /* speical aids */
       "specAidsHd"         : "Aids and adaptations",
@@ -121,14 +121,14 @@ var data = [ {
 
       /* sight */
       "sightHd"            : "Your sight",
-      "sightDoes"          : "Does your condition affect your eyesight?",
-      "sightRoughly"       : "Roughly how often is it affected?",
+      "sightDoes"          : "Does your condition affect your sight?",
+      "sightRoughly"       : "Roughly how often is your sight affected?",
       "sightHowDoes"       : "How does your condition affect your sight?",
 
       /* speech */
       "speechHd"           : "Your speech",
       "speechDoes"         : "Does your condition affect your speech?",
-      "speechRoughly"      : "Roughly how often is it affected?",
+      "speechRoughly"      : "Roughly how often is your speech affected?",
       "speechHowDoes"      : "How does your condition affect your speech?",
 
       /* hearing */
@@ -184,7 +184,7 @@ var data = [ {
       "gettingOutDoes"         : "Does your condition affect you:",
       "gettingOutOften"        : "How often does your condition affect you getting out and walking about?",
       "gettingOutWhen"         : "When your condition affects you, how do you get out and walking about?",
-      "gettingOutHow"          : "Explain how your condition affects you getting out or walking about.",
+      "gettingOutHow"          : "Explain how your condition affects you getting out or about.",
 
       /* mixing */
       "mixingHd"               : "Mixing with people",

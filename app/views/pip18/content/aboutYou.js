@@ -33,7 +33,7 @@ var data = [ {
     {
       "page"             : "1",
       "heading"          : "Help with your application",
-      "introText"        : "You'll be asked questions that need detailed answers about the effects of your condition.  It could help if you asked a friend, family member or support organisation to help you.",
+      "introText"        : "Many people find it helps to have someone with them to complete their application.",
       "question"         : "Is someone helping you fill in this application?",
       "question2"        : "The name of the person helping you",
       "question3"        : "Their relationship to you",
@@ -46,7 +46,7 @@ var data = [ {
       "page"             : "2",
       "heading"          : "About you",
       "question"         : "First name",
-      "question2"        : "Middle name",
+      "question2"        : "Middle name(s)",
       "question3"        : "Last name",
       "question4"        : "Your date of birth",
       "question5"        : "National Insurance number",
@@ -101,8 +101,8 @@ var data = [ {
       "question2"        : "Your nationality",
       "question3"        : "Do you currently live in England, Scotland or Wales?",
       "question4"        : "Where you live",
-      "question5"        : "Have you been out of England, Scotland or Wales for more than a year in the last 3 years?",
-      "q5HintText"       : "This could be one trip or a number of trips adding up to a year.",
+      "question5"        : "Have you been out of England, Scotland or Wales for more than 4 weeks in the last 3 years?",
+      "q5HintText"       : "This could be one trip or a number of trips adding up to 4 weeks.",
       "backLink"         : "/pip18/currentWhereabouts"
     },
   ],
@@ -152,7 +152,7 @@ var data = [ {
       "page"             : "10",
       "heading"          : "Managing your medication",
       "question"         : "Does your condition affect you:",
-      "question2"        : "How often does your condition affect you managing your medication?",
+      "question2"        : "How often does your condition affect how you manage your medication?",
       "howoften1"        : "At least once a day",
       "howoften2"        : "More than half the time",
       "howoften3"        : "Less than half the time",
@@ -168,7 +168,7 @@ var data = [ {
       "manage"           : "You manage without help, but with difficulty",
       "manageHelp"       : "How much difficulty?",
       "otherWay"         : "In another way",
-      "question4"        : "Explain how your condition affects you managing your medication.",
+      "question4"        : "In your own words, describe how you manage your medication on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["you could end up at risk","what you’re able to do depends on the type of day you’re having"],
       "backLink"         : "/pip18/medications"
@@ -226,7 +226,7 @@ var data = [ {
       "heading"          : "Monitoring your condition",
       "question"         : "Does someone need to monitor your condition most days because, if they do not, you could be at risk, or a danger to yourself or others?",
       "question2"        : "How many hours does someone need to help monitor your condition?",
-      "question3"        : "Explain why someone needs to monitor your condition?",
+      "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day",
       "question4"        : "How do they monitor your condition?",
       "backLink"         : "/pip18/treatments"
     },
@@ -292,7 +292,7 @@ var data = [ {
       "qHintText"        : "If your sight is fine when you wear glasses, choose 'no'.",
       "question2"        : "How often is your sight affected?",
       "qHintText2"       : "Include how many days out of each week or month you're affected.",
-      "question3"        : "Explain how your sight is affected.",
+      "question3"        : "In your own words, describe how your sight is affected.",
       "helpTextHd"       : "Explain if your level of sight changes depending on:",
       "helpText"         : ["how light it is","where you are"],
       "question4"        : "Are you registered:",
@@ -311,7 +311,7 @@ var data = [ {
       "question2"        : "Does your condition affect your speech all the time?",
       "question3"        : "How often is your speech affected?",
       "qHintText3"       : "Include how many days out of each week or month you're affected.",
-      "question4"        : "Explain how your condition affects your speech.",
+      "question4"        : "In your own words, describe how your speech is affected on a typical day.",
       "helpTextHd"       : "Include if your speech changes depending on:",
       "helpText"         : ["where you are","what you’re doing","who you’re with"],
       "backLink"         : "/pip18/sight"
@@ -334,7 +334,7 @@ var data = [ {
       "cantHearTxtQ"     : "Explain how you communicate",
       "manageLabel"      : "You manage in a different way",
       "manageTxtQ"       : "Explain how you manage",
-      "question3"        : "Explain how your condition affects your hearing.",
+      "question3"        : "In your own words, describe how your hearing is affected.",
       "helpTextHd"       : "Include if the effects change depending on:",
       "helpText"         : ["where you are","what you’re doing"],
       "backLink"         : "/pip18/speech"
@@ -361,7 +361,7 @@ var data = [ {
       "someoneHelpText"  : "How does someone help you?",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you getting up and moving around.",
+      "question4"        : "In your own words, describe how you get up and move around on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
       "backLink"         : "/pip18/summaryMain?show=yourHome&next=gettingUp&back=hearing"
@@ -385,7 +385,7 @@ var data = [ {
       "helpLabel"        : "Someone has to help you manage your catheter or stoma",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you using the toilet.",
+      "question4"        : "In your own words, describe you manage to use the toilet on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","it takes a long time","using the toilet has an effect on your condition"],
       "frequency"          : [
@@ -420,7 +420,7 @@ var data = [ {
       "helpLabel"        : "Someone has to wash you, supervise you or help you",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you washing.",
+      "question4"        : "In your own words, describe how you wash yourself on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","washing yourself has an effect on your condition"],
       "frequency"          : [
@@ -455,7 +455,7 @@ var data = [ {
       "helpLabel"        : "Someone has to help you to get dressed or changed",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you getting dressed or changed.",
+      "question4"        : "In your own words, describe how you gett dressed or changed on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting dressed has an effect on your condition"],
       "frequency"          : [
@@ -500,7 +500,7 @@ var data = [ {
       "helpLabel"        : "Someone would have to supervise you, help you or cook for you",
       "relyLabel"        : "You would rely on aids or something else to help",
       "manageLabel"      : "You would manage without help, but with difficulty",
-      "question4"        : "Explain how your condition would affect you preparing or cooking a hot meal from fresh ingredients.",
+      "question4"        : "In your own words, describe you would prepare and cook a hot meal from fresh ingredients on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","cooking a meal has an effect on your condition"],
       "backLink"         : "/pip18/washing"
@@ -535,7 +535,7 @@ var data = [ {
       "helpLabel"        : "Someone has to supervise or help you to eat or drink",
       "relyLabel"        : "You rely on aids or something else to help",
       "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you eating or drinking.",
+      "question4"        : "In your own words, describe how you eat or drink on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["eating or drinking takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","eating or drinking has an effect on your condition"],
       "backLink"         : "/pip18/hotMeal"
@@ -562,7 +562,7 @@ var data = [ {
           "ownWords"       : "Explain how often in your own words"
         },
       ],
-      "question4"        : "Explain how your condition affects you getting out or walking about.",
+      "question4"        : "In your own words, describe how you get out and about on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
       "backLink"         : "/pip18/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
@@ -598,7 +598,7 @@ var data = [ {
       "relyLabel"        : "Someone has to explain things to you",
       "superviseLabel"   : "Someone has to supervise you",
       "ownLabel"         : "You manage without help, but with difficulty",
-      "question4"        : "Explain how your condition affects you mixing with people.",
+      "question4"        : "In your own words, describe how you mix with people if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","mixing with people could put you or others at risk","if mixing with people has an effect on your condition"],
       "backLink"         : "/pip18/eatingAndDrinking"
@@ -615,7 +615,7 @@ var data = [ {
       "ownLabel"         : "You would manage without help, but with difficulty",
       "otherWayLabel"    : "In another way",
       "noLabel"          : "Your condition would <span class='bold-small'>not</span> affect you planning a local journey",
-      "question3"        : "Explain how your condition would affect you planning a local journey.",
+      "question3"        : "In your own words, describe how you would plan a local journey if you had to.",
       "q3HintText"       : "Include if it would take you a long time to plan a local journey.",
       "backLink"         : "/pip18/summaryMain?show=understanding&next=localJourney&back=mixing"
     },
@@ -639,7 +639,7 @@ var data = [ {
       "relySomeoneLabel" : "Someone would have to be with you",
       "relyGuideLabel"   : "You would rely on an assistance dog or something else to help you find your way",
       "ownLabel"         : "You would manage without help, but with difficulty",
-      "question3"        : "Explain how your condition would affect you following a route.",
+      "question3"        : "In your own words, describe how you would follow a route if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you can do depends if you have been to the place before","what you can do depends on the type of day you’re having","you risk having an accident or hurting yourself","your condition would affect how long it takes you to get somewhere","getting somewhere you have never been would have an effect on your condition"],
       "backLink"         : "/pip18/localJourney"
@@ -662,7 +662,7 @@ var data = [ {
       "relySomeoneLabel" : "Someone would have to get you there or guide you",
       "relyGuideLabel"   : "You would rely on an assistance dog or something else to help you find your way",
       "ownLabel"         : "You would manage without help, but with difficulty",
-      "question3"        : "Explain how your condition affects you getting somewhere you know.",
+      "question3"        : "In your own words, describe how you would get somewhere you know.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","your condition affects how long it takes you to get there","getting somewhere has an effect on your condition"],
       "backLink"         : "/pip18/somewhereNeverBeenBefore"
@@ -685,7 +685,7 @@ var data = [ {
       "relyRemindLabel"  : "Someone has to remind you what things mean",
       "ownLabel"         : "You manage without help, but with difficulty",
       "otherWayLabel"    : "In another way",
-      "question3"        : "Explain how your condition affects you understanding written information.",
+      "question3"        : "In your own words, describe how you go about understanding written information.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it can take you a long time to work out what things mean","not understanding things puts you at risk"],
       "backLink"         : "/pip18/somewhereYouKnow"
@@ -710,7 +710,7 @@ var data = [ {
       "legalLabel"       : "Someone legally has to deal with money for you",
       "ownLabel"         : "You would manage without help, but with difficulty",
       "otherWayLabel"    : "In another way",
-      "question3"        : "Explain how your condition affects you dealing with money.",
+      "question3"        : "In your own words, describe how you would deal with money if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","it can take a long time to work things out","you could end up at risk"],
       "backLink"         : "/pip18/understanding"
@@ -739,7 +739,7 @@ var data = [ {
     {
       "heading"          : "Your application has been sent",
       "heading2"         : "Send more information",
-      "p1"               : "You said you’re going to send information about the effects of your condition. Write your National Insurance number on each page you send and post it before [date in two weeks]. If you do not send it before then, a decision could be made without it.",
+      "p1"               : "You said you’re going to send information about the effects of your condition. Write your full name and National Insurance number on each page you send and post it before [date in two weeks]. If you do not send it before then, a decision could be made without it.",
       "postTo"           : "Post to:",
       "address"          : ["Freepost DWP PIP 3","Mail Handling Site A","Wolverhampton","WV98 1AD"],
       "heading3"         : "What happens next",

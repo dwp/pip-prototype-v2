@@ -4,7 +4,7 @@ var data = [ {
       "page"               : "34",
       "heading"            : "Your application",
       "changeLinkTxt"      : "Answer this question",
-      "introText"          : "You must answer every section.",
+      "introText"          : "You can answer the questions in any order, but you must answer every question. You can save any answers you enter and return to your application any time before [date].",
       "warningMsg"        : "You will not be able to change your answers after you send your application.",
       "backLink"           : "/pip17/money",
 
@@ -68,7 +68,7 @@ var data = [ {
       "manageMedsQ"        : "Do you have difficulty managing your medication?",
       "manageMedsWhat"     : "What aspects do you have difficulty managing?",
       "manageMedsOften"    : "How often does your condition affect you managing your medication?",
-      "manageMedsNow"      : "How do you manage your medication now?",
+      "manageMedsNow"      : "In your own words, describe how you manage your medication on a typical day.",
       "manageMedsDetails"  : "More details about how your condition affects you managing your medication",
 
       /* treatments */
@@ -116,8 +116,8 @@ var data = [ {
 
       /* speical aids */
       "specAidsHd"         : "Aids and adaptations",
-      "specAidsWhere"      : "Where do you rely on aids, adaptations or anything else to make things easier for you?",
-      "specAidsOther"      : "List anything else you have with you all or most of the time to make things easier for you.",
+      "specAidsWhere"      : "Where do you rely on aids or adaptations?",
+      "specAidsOther"      : "List anything else you have with you all or most of the time",
 
       /* sight */
       "sightHd"            : "Your sight",
