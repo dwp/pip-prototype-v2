@@ -16,78 +16,33 @@
 
 				<form action="/pip18/bankDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
-          <div class="" id="add-bank-details">
-              <div class="form-group" id="form-group-accountHoldersName">
 
-               <label class="form-label-bold" for="accountHoldersName">
+          {{ elements.genericInput('accountName',question.question, answers.accountName) }}
 
+          <div class="form-group ">
+      			<fieldset>
+              <legend class="">Sort code</legend>
+                <div id="sortCode" class="form-date">
+                  <div class="form-group form-group-day">
+                    <input id="sortCode1" type="text" class="sort-code form-control " name="sortCode1" maxlength="2" value="">
+                  </div>
+                  <div class="form-group form-group-day">
+                    <input id="sortCode2" type="text" class="sort-code form-control " name="sortCode2" maxlength="2" value="">
+                  </div>
+                  <div class="form-group form-group-day">
+                    <input id="sortCode3" type="text" class="sort-code form-control " name="sortCode3" maxlength="2" value="">
+                  </div>
+      				  </div>
+      			</fieldset>
+      		</div>
 
-          Account holder name
+          {{ elements.genericInput('accountNumber',question.question3, answers.accountNumber) }}
+          {{ elements.genericInput('buildingSociety',question.question4, answers.buildingSociety) }}
 
-               </label>
+          {{ elements.returnToMenu(page,question) }}
 
-
-                  <input type="text" class="form-control
-          " id="accountHoldersName" name="accountHoldersName" value="">
-                </div>
-
-          		<div class="form-group ">
-          			<fieldset>
-
-          				<legend class="heading-medium">
-          				Sort code</legend>
-
-
-
-
-          				<div id="sortCode" class="form-date">
-
-          <div class="form-group form-group-day">
-          <input id="sortCode1" type="text" class="sort-code form-control " name="sortCode1" maxlength="2" value="">
-          </div>
-
-          <div class="form-group form-group-day">
-          <input id="sortCode2" type="text" class="sort-code form-control " name="sortCode2" maxlength="2" value="">
-          </div>
-
-          <div class="form-group form-group-day">
-          <input id="sortCode3" type="text" class="sort-code form-control " name="sortCode3" maxlength="2" value="">
-          </div>
-
-          					</div>
-          			</fieldset>
-          		</div>
-              <div class="form-group" id="form-group-accountNumber">
-
-               <label class="form-label-bold" for="accountNumber">
-
-
-          Account number
-
-               </label>
-
-
-                  <input type="text" class="form-control
-          " id="accountNumber" name="accountNumber" value="">
-                </div>
-              <div class="form-group" id="form-group-referenceNumber">
-
-               <label class="form-label-bold" for="referenceNumber">
-
-
-          Building society roll or reference number
-
-               </label>
-
-
-                  <input type="text" class="form-control
-          " id="referenceNumber" name="referenceNumber" value="">
-                </div>
-          				</div>
-					{{ elements.returnToMenu(page,question) }}
-
-        </form>
-			</div>
+      </form>
+    </div>
 			{{ elements.helpline(page) }}
 	</div>
 
