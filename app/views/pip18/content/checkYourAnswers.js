@@ -4,7 +4,7 @@ var data = [ {
       "page"               : "34",
       "heading"            : "Your application",
       "changeLinkTxt"      : "Answer this question",
-      "introText"          : "You must answer every section.",
+      "introText"          : "You can answer the questions in any order, but you must answer every question. You can save any answers you enter and return to them before [DATE].",
       "warningMsg"        : "You will not be able to change your answers after you send your application.",
       "backLink"           : "/pip18/money",
 
@@ -14,7 +14,7 @@ var data = [ {
       "helperRel"          : "Relationship",
 
       /* About You */
-      "aboutYouHd"         : "About You",
+      "aboutYouHd"         : "About you",
       "aboutYouName"       : "Full name",
       "aboutYouDOB"        : "Date of birth",
       "aboutYouNINO"       : "National Insurance number",
@@ -116,8 +116,8 @@ var data = [ {
 
       /* speical aids */
       "specAidsHd"         : "Aids and adaptations",
-      "specAidsWhere"      : "Where do you rely on aids, adaptations or anything else to make things easier for you?",
-      "specAidsOther"      : "List anything else you have with you all or most of the time to make things easier for you.",
+      "specAidsWhere"      : "Where do you rely on aids or adaptations?",
+      "specAidsOther"      : "List anything else you have with you all or most of the time.",
 
       /* sight */
       "sightHd"            : "Your sight",

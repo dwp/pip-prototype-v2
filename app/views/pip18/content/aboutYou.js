@@ -7,6 +7,9 @@ var data = [ {
   "saveExit"           : "Save and return to menu",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
+  "relyOnHelp"         : "what you use to help and how it helps",
+  "relyOnHelpRec"      : "if someone recommended or gave you the aids",
+  "helpsTakeItHelp"    : "what things the person does to help you.",
   "freqHelpText"       : "How often is it? Can you complete the task on the other days or do you still have different difficulties - tell us about them.",
   "helpline"           : [
     {
@@ -61,6 +64,7 @@ var data = [ {
       "question2"        : "Postcode",
       "question3"        : "Postcode",
       "question4"        : "Your phone number",
+      "q4HintText"       : "Enter the number you can be contacted on 9am to 5pm, Monday to Friday"
       "question5"        : "Alternative phone number",
       "question6"        : "Email address",
       "backLink"         : "/pip18/aboutYou"
@@ -174,15 +178,16 @@ var data = [ {
       "remindsMe"        : "Someone needs to remind you to take it",
       "remindsMeHelp"    : "How do they remind or prompt you",
       "helpsTakeIt"      : "Someone needs to help you take it",
-      "helpsTakeItHelp"  : "How do they help? What do they do?",
+      "helpsTakeItHelp"  : "what things the person does to help you.",
       "relyOnAids"       : "You rely on aids or something else to help",
-      "relyOnHelp"       : "What aids? What else? Were the aids recommended? By Whom? Why do you need them?",
+      "relyOnHelp"       : "what you use to help and how it helps",
+      "relyOnHelpRec"    : "if someone recommended or gave you the aids",
       "manage"           : "You manage without help, but with difficulty",
-      "manageHelp"       : "How much difficulty?",
+      "manageHelp"       : "what difficulty you have.",
       "otherWay"         : "In another way",
       "question4"        : "In your own words, describe how you manage your medication on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["you could end up at risk","what you’re able to do depends on the type of day you’re having"],
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["if you could end up at risk","if what you’re able to do depends on the type of day you’re having"],
       "backLink"         : "/pip18/medications"
     },
   ],
@@ -197,7 +202,8 @@ var data = [ {
       "oftenHd"          : "When or how often",
       "removeLink"       : "Remove this",
       "question2"        : "Do you have treatment or therapy at your home?",
-      "backLink"         : "/pip18/manageMedications"
+      "backLink"         : "/pip18/manageMedications",
+
     },
   ],
   "manageTreatments" : [
