@@ -78,7 +78,7 @@
 
   <label class="form-checkbox" for="checkbox-telephone-number">
     <input id="checkbox-telephone-number" name="textPhone" type="checkbox" value="true" {% if answerTextPhone == 'true' %} checked=checked {% endif %}>
-    You need to be contacted using a text phone
+    You have hearing difficulties and need to be contacted using a text phone
   </label>
 </div>
 {% endmacro %}
@@ -187,6 +187,9 @@
       <input id="{{ item.id }}" name="{{ id }}"
       {% if item.helpText %}
         data-helpText="{{item.helpText}}"
+      {% endif %}
+      {% if item.helpText2 %}
+        data-helpText2="{{item.helpText2}}"
       {% endif %}
 
       type="{{ type }}" value="{{ item.value }}"

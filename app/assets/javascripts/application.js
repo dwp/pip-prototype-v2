@@ -185,17 +185,25 @@ $(document).ready(function() {
 
 
   $( "input[name='manageNow']" ).click(function(){
-    var helptext = $(this).data("helptext"),
-        id       = $(this).attr("id");
+    var helptext  = $(this).data("helptext"),
+        helptext2 = $(this).data("helptext2"),
+        id        = $(this).attr("id");
+
     if (helptext){
       if ($(this).is(':checked')) {
         if($('li#howOften-list').length) {
           $( '<li id="'+id+'" class="helptextListItem" data-number="' + id +'">' + helptext + '</li>' ).insertBefore($("li#howOften-list"));
+          if (helptext2) {
+            $( '<li id="'+id+'" class="helptextListItem" data-number="' + id +'-2">' + helptext2 + '</li>' ).insertBefore($("li#howOften-list"));
+          }
         } else {
           $('#explain-how').append('<li id="'+id+'" class="helptextListItem" data-number=" ' + id +'">' + helptext + '</li>')
+          if (helptext2) {
+            $('#explain-how').append('<li id="'+id+'-2" class="helptextListItem" data-number=" ' + id +'">' + helptext2 + '</li>')
+          }
         }
       } else {
-        $('li#' + id ).remove();
+        $('li#' + id + ', li#' + id + '-2' ).remove();
       }
       $(".helptextListItem").sort(function (a, b) {
         return a.id > b.id;

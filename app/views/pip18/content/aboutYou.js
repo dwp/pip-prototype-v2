@@ -64,7 +64,7 @@ var data = [ {
       "question2"        : "Postcode",
       "question3"        : "Postcode",
       "question4"        : "Your phone number",
-      "q4HintText"       : "Enter the number you can be contacted on 9am to 5pm, Monday to Friday"
+      "q4HintText"       : "Enter the number you can be contacted on 9am to 5pm, Monday to Friday",
       "question5"        : "Alternative phone number",
       "question6"        : "Email address",
       "backLink"         : "/pip18/aboutYou"
@@ -180,8 +180,6 @@ var data = [ {
       "helpsTakeIt"      : "Someone needs to help you take it",
       "helpsTakeItHelp"  : "what things the person does to help you.",
       "relyOnAids"       : "You rely on aids or something else to help",
-      "relyOnHelp"       : "what you use to help and how it helps",
-      "relyOnHelpRec"    : "if someone recommended or gave you the aids",
       "manage"           : "You manage without help, but with difficulty",
       "manageHelp"       : "what difficulty you have.",
       "otherWay"         : "In another way",
