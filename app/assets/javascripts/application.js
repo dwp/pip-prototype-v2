@@ -212,13 +212,16 @@ $(document).ready(function() {
   });
 
   $("input[name='howOften'], input[name='frequencyOption']").click(function() {
-    if ($(this).val() !== $('#howOften input:first').val()) {
-      if ( !$('li#howOften-listitem').length) {
-        $('#explain-how').append('<li id="howOften-listitem">' + $('#howOften').data('freqhelptext') + '</li>')
+    var helptext = $('#howOften').data('freqhelptext');
+    if (helptext){
+      if ($(this).val() !== $('#howOften input:first').val()) {
+        if ( !$('li#howOften-listitem').length) {
+          $('#explain-how').append('<li id="howOften-listitem">' + $('#howOften').data('freqhelptext') + '</li>')
+        }
+      } else {
+        $('li#howOften-listitem').remove();
       }
-    } else {
-      $('li#howOften-listitem').remove();
-    }
+    };
   })
 
 });

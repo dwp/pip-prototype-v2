@@ -125,6 +125,10 @@ var data = [ {
       "page"             : "8",
       "heading"          : "Bank details",
       "introText"        : "If your claim is successful, money will be paid into your bank account. If you give your details now this could stop delays in the future.",
+      "question"         : "Account holder name",
+      "question2"        : "Sort code",
+      "question3"        : "Account number",
+      "question4"        : "Building society roll or reference number",
       "backLink"         : "/pip18/paymentsFromAbroad"
     }
   ],
