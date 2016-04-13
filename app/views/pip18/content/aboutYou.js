@@ -178,7 +178,6 @@ var data = [ {
       "remindsMe"        : "Someone needs to remind you to take it",
       "remindsMeHelp"    : "How do they remind or prompt you",
       "helpsTakeIt"      : "Someone needs to help you take it",
-      "helpsTakeItHelp"  : "what things the person does to help you.",
       "relyOnAids"       : "You rely on aids or something else to help",
       "manage"           : "You manage without help, but with difficulty",
       "manageHelp"       : "what difficulty you have.",
