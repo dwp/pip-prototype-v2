@@ -506,3 +506,49 @@ PIP18
 .pip18 #explain-how + textarea.form-control-3-4 {
   height:400px;
 }
+
+//check your answers
+.pip18 .checkYourAnswersCont h2 {
+  margin: 0;
+  float: left;
+  width: 30%;
+}
+
+.pip18 .checkYourAnswersCont ul {
+  float: left;
+  width:65%;
+  margin-top: 3px;
+}
+
+.pip18 .checkYourAnswersCont ul li {
+  margin-bottom: 15px;
+}
+
+.pip18 .checkYourAnswersCont ul li:last-child {
+  margin:0;
+}
+
+.pip18 .checkYourAnswersCont > div {
+  border-top: 2px solid $border-colour;
+  padding:15px 0;
+}
+
+.checkYourAnswersCont > div:first-child {
+  border-top :4px solid $border-colour;
+}
+
+.checkYourAnswersCont > div:last-child {
+  border:0;
+}
+
+.pip18 .answer-this {
+  background: url(../images/grey_tick.png) no-repeat 3px 2px;
+  background-size: 22px 22px;
+  padding-left: 30px;
+}
+
+.pip18 .change-this {
+  background: url(../images/black_tick.png) no-repeat 3px 3px;
+  background-size: 22px 22px;
+  padding-left: 30px;
+}

@@ -5,6 +5,8 @@ var data = [ {
   "introText"          : "Introduction paragraph which should be over two or three lines maximum ideally. Maybe two or three sentences.",
   "continue"           : "Save and go to next question",
   "saveExit"           : "Save and return to menu",
+  "enterAnswer"        : "enter your answer",
+  "changeAnswer"       : "change",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
   "relyOnHelp"         : "what you use to help and how it helps",

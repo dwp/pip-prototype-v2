@@ -377,12 +377,12 @@ open
 {% endmacro %}
 
 <!-- enter/change answers for non-linear in pip18 -->
-{% macro EnterChangeAnswers(question,pageKey) %}
+{% macro EnterChangeAnswers(question,pageKey,page) %}
 <div id="{{pageKey}}" class"column-third">
   {% if question %}
-    <a href="{{pageKey}}" class="change-this">change your answers</a>
+    <a href="{{pageKey}}" class="change-this">{{ page.changeAnswer}}</a>
   {% else %}
-    <a href="{{pageKey}}" class="answer-this">enter your answers</a>
+    <a href="{{pageKey}}" class="answer-this">{{ page.enterAnswer  }}</a>
   {% endif %}
 </div>
 {% endmacro %}
