@@ -177,27 +177,6 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip18/checkYourAnswers#aboutYou');
     } else {
-      res.redirect('/pip18/bankDetails');
-    }
-  });
-
-  /*******************
-  bankDetails
-  *******************/
-  app.get('/pip18/bankDetails', function (req, res) {
-      res.render('pip18/bankDetails', {
-        answers : req.session['pip18-bankDetails'],
-        'edit'  : req.body.saveAndMenu,
-        data    : aboutYou.getTableData()
-      });
-  });
-
-  app.post('/pip18/bankDetails', function (req, res) {
-    req.session['pip18-bankDetails'] = req.body;
-
-    if (req.body.saveAndMenu) {
-      res.redirect('/pip18/checkYourAnswers#aboutYou');
-    } else {
       res.redirect('/pip18/checkYourAnswers#aboutYou');
     }
   });
@@ -845,7 +824,28 @@ module.exports = function (app) {
 
   app.post('/pip18/additionalInfo', function (req, res) {
     req.session['pip18-additionalInfo'] = req.body;
-    res.redirect('/pip18/declaration');
+    res.redirect('/pip18/bankDetails');
+  });
+
+  /*******************
+  bankDetails
+  *******************/
+  app.get('/pip18/bankDetails', function (req, res) {
+      res.render('pip18/bankDetails', {
+        answers : req.session['pip18-bankDetails'],
+        'edit'  : req.body.saveAndMenu,
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip18/bankDetails', function (req, res) {
+    req.session['pip18-bankDetails'] = req.body;
+
+    if (req.body.saveAndMenu) {
+      res.redirect('/pip18/checkYourAnswers#aboutYou');
+    } else {
+      res.redirect('/pip18/thankYou');
+    }
   });
 
   /*******************
@@ -861,7 +861,7 @@ module.exports = function (app) {
 
   app.post('/pip18/declaration', function (req, res) {
     req.session['pip18-declaration'] = req.body;
-    res.redirect('/pip18/thankYou');
+    res.redirect('/pip18/checkYourAnswers');
   });
 
   /*******************

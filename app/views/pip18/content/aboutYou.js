@@ -133,7 +133,7 @@ var data = [ {
       "question2"        : "Sort code",
       "question3"        : "Account number",
       "question4"        : "Building society roll or reference number",
-      "backLink"         : "/pip18/paymentsFromAbroad"
+      "backLink"         : "/pip18/additionalInfo"
     }
   ],
   "conditionDetails" : [
@@ -743,11 +743,11 @@ var data = [ {
     {
       "page"             : "36",
       "heading"          : "Declaration",
-      "listHeading"      : "By sending this application you agree:",
-      "list"             : ["the information in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
+      "listHeading"      : "By continuing this application you agree:",
+      "list"             : ["the information you will enter in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
       "disclaimer"       : "You might have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes. Your Personal Independence Payment may also be stopped or reduced.",
-      "submit"           : "I agree - send my application",
-      "backLink"         : "/pip18/additionalInfo"
+      "submit"           : "I agree - continue my application",
+      "backLink"         : "/pip18/apply"
     },
   ],
   "thankYou" : [
