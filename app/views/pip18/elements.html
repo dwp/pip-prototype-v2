@@ -158,8 +158,15 @@
 </div>
 {% endmacro %}
 
-{% macro checkbox(id,type,question,hintText,checkboxOptions,answers,optionAnswers,fieldsetClass) %}
-<fieldset id="{{ id }}" class="form-group {% if fieldsetClass %} {{ fieldsetClass }} {% endif %}">
+{% macro checkbox(id,type,question,hintText,checkboxOptions,answers,optionAnswers,fieldsetClass,dayshelptext,freqHelpText) %}
+<fieldset id="{{ id }}" class="form-group {% if fieldsetClass %} {{ fieldsetClass }} {% endif %}"
+  {% if dayshelptext %}
+    data-dayshelptext="{{dayshelptext}}"
+  {% endif %}
+  {% if freqHelpText %}
+    data-freqhelptext="{{freqHelpText}}"
+  {% endif %}
+>
   <legend>{{ question }}</legend>
   {% if hintText %}
     <p class="form-hint">{{ hintText }}</p>
@@ -254,7 +261,7 @@ open
 {% endmacro %}
 
 
-{% macro frequency(frequencyList,id,question,answers,optionAnswer) %}
+{% macro frequency(frequencyList,id,question,answers,optionAnswer,dayshelptext,freqHelpText) %}
 {% for frequency in frequencyList %}
 {% set seq2 = [
   {"id":"freq1", "label":frequency.allTime, "value":frequency.allTime },
@@ -267,7 +274,7 @@ open
     "textboxAnswer" : answers.ownWords
   }
 ] %}
-{{ checkbox(id,"radio",question,'',seq2,answers,optionAnswer) }}
+{{ checkbox(id,"radio",question,'',seq2,answers,optionAnswer,"",dayshelptext,freqHelpText) }}
 {% endfor %}
 {% endmacro %}
 

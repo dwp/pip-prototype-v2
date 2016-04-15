@@ -197,37 +197,42 @@ $(document).ready(function() {
             $( '<li id="'+id+'" class="helptextListItem" data-number="' + id +'-2">' + helptext2 + '</li>' ).insertBefore($("li#howOften-list"));
           }
         } else {
-          $('#explain-how').append('<li id="'+id+'" class="helptextListItem" data-number=" ' + id +'">' + helptext + '</li>')
+          $('#explain-how').prepend('<li id="'+id+'" class="helptextListItem" data-number=" ' + id +'">' + helptext + '</li>')
           if (helptext2) {
-            $('#explain-how').append('<li id="'+id+'-2" class="helptextListItem" data-number=" ' + id +'">' + helptext2 + '</li>')
+            $('#explain-how').prepend('<li id="'+id+'-2" class="helptextListItem" data-number=" ' + id +'">' + helptext2 + '</li>')
           }
         }
       } else {
         $('li#' + id + ', li#' + id + '-2' ).remove();
       }
       $(".helptextListItem").sort(function (a, b) {
-        return a.id > b.id;
+        return a.id < b.id;
       }).each(function () {
           var elem = $(this);
           elem.remove();
-          if($('li#howOften-listitem').length) {
-            $(elem).insertBefore($("li#howOften-listitem"));
-          } else {
-          $(elem).appendTo("#explain-how");
-        }
+          $(elem).prependTo("#explain-how");
       });
     }
   });
 
   $("input[name='howOften'], input[name='frequencyOption']").click(function() {
-    var helptext = $('#howOften').data('freqhelptext');
-    if (helptext){
-      if ($(this).val() !== $('#howOften input:first').val()) {
-        if ( !$('li#howOften-listitem').length) {
-          $('#explain-how').append('<li id="howOften-listitem">' + $('#howOften').data('freqhelptext') + '</li>')
-        }
+    var dayshelptext = $('#howOften').data('dayshelptext'),
+        freqhelptext = $('#howOften').data('freqhelptext');
+    if (dayshelptext || freqhelptext){
+      if ($(this).val() !== $('#howOften input[name="howOften"]:first').val()) {
+          $('li.howOften-listitem').remove();
+          if ($('.helptextListItem').length) {
+            $('.helptextListItem').append('<li class="howOften-listitem">' + freqhelptext + '</li>')
+            $('.helptextListItem').append('<li id="dayshelptext" class="howOften-listitem">' + dayshelptext + '</li>')
+          } else {
+            $('#explain-how').prepend('<li class="howOften-listitem">' + freqhelptext + '</li>')
+            $('#explain-how').prepend('<li id="dayshelptext" class="howOften-listitem">' + dayshelptext + '</li>')
+          }
+          if ($(this).val() === $('#howOften input[name="howOften"]:last').val()) {
+            $('#dayshelptext').remove();
+          }
       } else {
-        $('li#howOften-listitem').remove();
+        $('li.howOften-listitem').remove();
       }
     };
   })

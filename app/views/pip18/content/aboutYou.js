@@ -12,7 +12,8 @@ var data = [ {
   "relyOnHelp"         : "what you use to help and how it helps",
   "relyOnHelpRec"      : "if someone recommended or gave you the aids",
   "helpsTakeItHelp"    : "what things the person does to help you.",
-  "freqHelpText"       : "How often is it? Can you complete the task on the other days or do you still have different difficulties - tell us about them.",
+  "dayshelptext"       : "roughly how many days out of a month you're affected",
+  "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies",
   "helpline"           : [
     {
     "p1"               : "If you need any help call:",
@@ -264,6 +265,13 @@ var data = [ {
       "backLink"         : "/pip18/monitoringCondition"
     },
   ],
+  "hcpConsent" : [
+    {
+      "page"             : "X",
+      "heading"          : "HCP Consent",
+      "introText"        : ""
+    }
+  ],
   "submitEvidence" : [
     {
       "page"             : "16",
@@ -347,7 +355,7 @@ var data = [ {
       "somethingTxtQ"    : "Explain what your rely on",
       "someoneLabel"     : "You rely on someone to help you communicate",
       "someoneTxtQ"      : "Explain how they help you",
-      "cantHearLabel"    : "You can not hear at all",
+      "cantHearLabel"    : "You cannot hear at all",
       "cantHearTxtQ"     : "Explain how you communicate",
       "manageLabel"      : "You manage in a different way",
       "manageTxtQ"       : "Explain how you manage",
@@ -385,26 +393,32 @@ var data = [ {
     },
   ],
   "toilet" : [
-    {
+   {
       "page"             : "22",
       "heading"          : "Using the toilet",
       "introText"        : "This question is about using the toilet, not getting to the toilet. If you have difficulty climbing stairs to get to the toilet, or undressing to use it, you’ll have chance to explain this in other questions.",
       "question"         : "Does your condition affect you:",
       "onOffLabel"       : "getting on or off the toilet",
+      "        1 and 2        "           : "if you get breathless, or have difficulty with balance or dizziness",
       "cleaningLabel"    : "cleaning yourself",
       "bladderLabel"     : "controlling your bladder",
       "bowelLabel"       : "controlling your bowel",
+      "       3               "         : "what level of control you have and examples of how that affects you",
       "otherWayLabel"    : "in another way",
       "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you using the toilet",
       "question2"        : "How often does your condition affect you using the toilet?",
       "question3"        : "How do you use the toilet?",
       "encourageLabel"   : "Someone has to encourage you to use the toilet",
       "helpLabel"        : "Someone has to help you manage your catheter or stoma",
+      "                    "              : "what things the person does to help you",
       "relyLabel"        : "You rely on aids or something else to help",
+      "                        "       : "what you use to help and how it helps",
+      "                        "    : "if someone recommended or gave you the aids",
       "manageLabel"      : "You manage without help, but with difficulty",
+      "                               "        : "what difficulty you have",
       "question4"        : "In your own words, describe you manage to use the toilet on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","it takes a long time","using the toilet has an effect on your condition"],
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["if what you’re able to do depends on the type of day you’re having","any accidents you risk having","if it takes a long time","if using the toilet has an effect on your condition"],
       "frequency"          : [
         {
           "allTime"        : "At least once a day",
@@ -434,13 +448,17 @@ var data = [ {
       "question2"        : "How often does your condition affect you washing yourself?",
       "question3"        : "How do you wash yourself?",
       "encourageLabel"   : "Someone has to encourage you to wash",
+      "encourageMeHelp"  : "what the other person does to encourage you",
       "helpLabel"        : "Someone has to wash you, supervise you or help you",
+      "washHelp"         : "what things the person does to help you",
       "relyLabel"        : "You rely on aids or something else to help",
+      "relyOnHelp"       : "what you use to help and how it helps",
       "manageLabel"      : "You manage without help, but with difficulty",
+      "difficultyHelp"   : "what difficulty you have",
       "question4"        : "In your own words, describe how you wash yourself on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","washing yourself has an effect on your condition"],
-      "frequency"          : [
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
+      "frequency"        : [
         {
           "allTime"        : "Every time you wash yourself",
           "moreHalf"       : "More than half the time",
@@ -452,15 +470,17 @@ var data = [ {
     },
   ],
   "gettingDressed" : [
-    {
+     {
       "page"             : "24",
       "heading"          : "Getting dressed",
       "question"         : "Does your condition affect you:",
       "motivatedLabel"   : "being motivated to get dressed or changed",
       "knowingLabel"     : "choosing suitable clothes eg for the weather",
       "shoesLabel"       : "putting on shoes or socks",
+      "1 and 2"          : "if you get breathless, or have difficulty with balance or dizziness",
       "lacesLabel"       : "tying shoe laces",
       "buttonsLabel"     : "fastening buttons or using zips",
+      "3"                :  "if you avoid certain types of clothes or fastenings",
       "braLabel"         : "fastening a bra",
       "jumperLabel"      : "putting on jumpers or t-shirts",
       "trousersLabel"    : "putting on trousers or skirts",
@@ -469,12 +489,17 @@ var data = [ {
       "question2"        : "How often does your condition affect you getting dressed or changed?",
       "question3"        : "How do you get dressed or changed?",
       "encourageLabel"   : "Someone has to encourage you to get dressed or changed",
+      "4"                : "what the other person does to encourage you",
       "helpLabel"        : "Someone has to help you to get dressed or changed",
+      "5"                : "what things the person does to help you",
       "relyLabel"        : "You rely on aids or something else to help",
+      "6"                : "what you use to help and how it helps",
+      "7"                : "if someone recommended or gave you the aids",
       "manageLabel"      : "You manage without help, but with difficulty",
+      "8"                : "what difficulty you have",
       "question4"        : "In your own words, describe how you gett dressed or changed on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting dressed has an effect on your condition"],
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if getting dressed has an effect on your condition"],
       "frequency"          : [
         {
           "allTime"        : "Every time you get dressed",
@@ -520,69 +545,47 @@ var data = [ {
       "question4"        : "In your own words, describe you would prepare and cook a hot meal from fresh ingredients on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","cooking a meal has an effect on your condition"],
-      "backLink"         : "/pip18/washing"
+      "backLink"         : "/pip18/gettingDressed"
     },
   ],
   "eatingAndDrinking" : [
-    {
-      "page"             : "26",
-      "heading"          : "Eating and drinking",
-      "question"         : "Does your condition affect you:",
-      "motivatedLabel"   : "being motivated to eat or drink",
-      "knowingWhenLabel" : "knowing when to eat or drink",
-      "knowingMuchLabel" : "knowing how much to eat or drink",
-      "cuttingLabel"     : "cutting up food",
-      "holdingLabel"     : "holding cutlery",
-      "mouthLabel"       : "putting food or drink in your mouth",
-      "chewingLabel"     : "chewing food",
-      "swallowingLabel"  : "swallowing",
-      "otherWayLabel"    : "in another way",
-      "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you eating or drinking",
-      "question2"        : "How often does your condition affect you eating or drinking?",
-      "frequency"          : [
-        {
-          "allTime"        : "Every time you eat or drink",
-          "moreHalf"       : "More than half the time",
-          "lessHalf"       : "Less than half the time",
-          "ownWords"       : "Explain how often in your own words"
-        },
-      ],
-      "question3"        : "How do you eat and drink?",
-      "encourageLabel"   : "Someone has to encourage or remind you to eat or drink",
-      "helpLabel"        : "Someone has to supervise or help you to eat or drink",
-      "relyLabel"        : "You rely on aids or something else to help",
-      "manageLabel"      : "You manage without help, but with difficulty",
-      "question4"        : "In your own words, describe how you eat or drink on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["eating or drinking takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","eating or drinking has an effect on your condition"],
-      "backLink"         : "/pip18/hotMeal"
-    },
-  ],
-  "gettingOut" : [
-    {
-      "page"             : "27",
-      "heading"          : "Getting out and about",
-      "question"         : "Which of the following affects you getting out and about?",
-      "motivatedLabel"   : "You have to use a wheelchair",
-      "distanceLabel"    : "You have 2 prosthetic legs",
-      "carLabel"         : "You rely on aids to walk",
-      "streetLabel"      : "You rely on someone to help you walk",
-      "anxiousLabel"     : "You get anxious about going out",
-      "otherWayLabel"    : "You want to explain in your own words ",
-      "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you getting out or about",
-      "question2"        : "How often does your condition affect you getting out and walking about?",
-      "frequency"          : [
-        {
-          "allTime"        : "Every time you need to go out",
-          "moreHalf"       : "More than half the time",
-          "lessHalf"       : "Less than half the time",
-          "ownWords"       : "Explain how often in your own words"
-        },
-      ],
-      "question4"        : "In your own words, describe how you get out and about on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
-      "backLink"         : "/pip18/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
+   {
+     "page"             : "26",
+     "heading"          : "Eating and drinking",
+     "question"         : "Does your condition affect you:",
+     "motivatedLabel"   : "being motivated to eat or drink",
+     "knowingWhenLabel" : "knowing when to eat or drink",
+     "knowingMuchLabel" : "knowing how much to eat or drink",
+     "cuttingLabel"     : "cutting up food",
+     "holdingLabel"     : "holding cutlery",
+     "mouthLabel"       : "putting food or drink in your mouth",
+     "chewingLabel"     : "chewing food",
+     "swallowingLabel"  : "swallowing",
+     "otherWayLabel"    : "in another way",
+     "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you eating or drinking",
+     "question2"        : "How often does your condition affect you eating or drinking?",
+     "frequency"          : [
+       {
+         "allTime"        : "Every time you eat or drink",
+         "moreHalf"       : "More than half the time",
+         "lessHalf"       : "Less than half the time",
+         "ownWords"       : "Explain how often in your own words"
+       },
+     ],
+     "question3"        : "How do you eat and drink?",
+     "encourageLabel"   : "Someone has to encourage or remind you to eat or drink",
+     ""                 : "what the other person does to encourage or remind you",
+     "helpLabel"        : "Someone has to supervise or help you to eat or drink",
+     ""                 : "what things the person does to help you",
+     "relyLabel"        : "You rely on aids or something else to help",
+     ""                 : "what you use to help and how it helps",
+     ""                 : "if someone recommended or gave you the aids",
+     "manageLabel"      : "You manage without help, but with difficulty",
+     ""                 : "what difficulty you have",
+     "question4"        : "In your own words, describe how you eat or drink on a typical day.",
+     "helpTextHd"       : "Include:",
+     "helpText"         : ["if eating or drinking takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if eating or drinking has an effect on your condition"],
+     "backLink"         : "/pip18/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
     },
   ],
   "mixing" : [

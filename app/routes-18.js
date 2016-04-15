@@ -378,9 +378,31 @@ module.exports = function (app) {
     req.session['pip18-healthcareprofessional'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip18/checkYourAnswers#yourCondition');
+      res.redirect('/pip18/hcpConsent#yourCondition');
     } else {
       res.redirect('/pip18/submitEvidence');
+    }
+  });
+
+  /*******************
+  HCP Consent
+  *******************/
+  app.get('/pip18/hcpConsent', function (req, res) {
+      res.render('pip18/hcpConsent', {
+        hcps    : req.session['pip18-healthcareprofessional'],
+        answers : req.session['pip18-hcpConsent'],
+        'edit'  : req.body.saveAndMenu,
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip18/hcpConsent', function (req, res) {
+    req.session['pip18-hcpConsent'] = req.body;
+
+    if (req.body.saveAndMenu) {
+      res.redirect('/pip18/checkYourAnswers#yourCondition');
+    } else {
+      res.redirect('/pip18/specialAids');
     }
   });
 
