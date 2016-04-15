@@ -222,8 +222,8 @@ $(document).ready(function() {
       if ($(this).val() !== $('#howOften input[name="howOften"]:first').val()) {
           $('li.howOften-listitem').remove();
           if ($('.helptextListItem').length) {
-            $('.helptextListItem').append('<li class="howOften-listitem">' + freqhelptext + '</li>')
-            $('.helptextListItem').append('<li id="dayshelptext" class="howOften-listitem">' + dayshelptext + '</li>')
+            $('.helptextListItem:last').append('<li class="howOften-listitem">' + freqhelptext + '</li>')
+            $('.helptextListItem:last').append('<li id="dayshelptext" class="howOften-listitem">' + dayshelptext + '</li>')
           } else {
             $('#explain-how').prepend('<li class="howOften-listitem">' + freqhelptext + '</li>')
             $('#explain-how').prepend('<li id="dayshelptext" class="howOften-listitem">' + dayshelptext + '</li>')

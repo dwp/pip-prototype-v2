@@ -106,8 +106,11 @@
 </fieldset>
 {% endmacro %}
 
-{% macro radioSelect(id,question,hintText,answer,radioOptions,inline,freqHelpText) %}
+{% macro radioSelect(id,question,hintText,answer,radioOptions,inline,dayshelptext,freqHelpText) %}
 <fieldset id="{{ id }}" class="form-group {% if inline %}inline{% endif %}"
+{% if dayshelptext %}
+  data-dayshelptext="{{dayshelptext}}"
+{% endif %}
 {% if freqHelpText %}
   data-freqhelptext="{{freqHelpText}}"
 {% endif %}
