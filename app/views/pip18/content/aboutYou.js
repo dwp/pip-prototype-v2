@@ -9,11 +9,13 @@ var data = [ {
   "changeAnswer"       : "change",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
+  "remindsMeHelp"      : "what the other person does to remind you",
   "relyOnHelp"         : "what you use to help and how it helps",
   "relyOnHelpRec"      : "if someone recommended or gave you the aids",
   "helpsTakeItHelp"    : "what things the person does to help you.",
   "dayshelptext"       : "roughly how many days out of a month you're affected",
   "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies",
+  "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies.",
   "helpline"           : [
     {
     "p1"               : "If you need any help call:",
@@ -22,8 +24,8 @@ var data = [ {
     "p4"               : "Or text:",
     "p5"               : "07867 687 141",
     "p6"               : "Texts are charged at your standard rate",
-    "p7"               : "Mon to Thurs: 8.30am - 5pm",
-    "p8"               : "Friday: 8.30am - 4:30pm",
+    "p7"               : "Mon to Thurs: 8.30am to 5pm",
+    "p8"               : "Friday: 8.30am to 4:30pm",
     "p9"               : "Closed public holidays."
     },
   ],
@@ -39,10 +41,10 @@ var data = [ {
     {
       "page"             : "1",
       "heading"          : "Help with your application",
-      "introText"        : "Many people find it helps to have someone with them to complete their application.",
+      "introText"        : "Many people find it helps to have someone with them to fill in their application.",
       "question"         : "Is someone helping you fill in this application?",
       "question2"        : "The name of the person helping you",
-      "question3"        : "Their relationship to you",
+      "question3"        : "How you know them",
       "question4"        : "Why they're helping you",
       "backLink"         : "/pip18/summaryMain"
     },
@@ -179,11 +181,12 @@ var data = [ {
       "ownWords"         : "Include how many days out of a week or month you’re affected",
       "question3"        : "How do you manage your medication?",
       "remindsMe"        : "Someone needs to remind you to take it",
-      "remindsMeHelp"    : "How do they remind or prompt you",
+      "remindsMeHelp"    : "what the other person does to remind you",
       "helpsTakeIt"      : "Someone needs to help you take it",
+      "helpsTakeItHelp"  : "what things the person does to help you",
       "relyOnAids"       : "You rely on aids or something else to help",
       "manage"           : "You manage without help, but with difficulty",
-      "manageHelp"       : "what difficulty you have.",
+      "manageHelp"       : "what difficulty you have",
       "otherWay"         : "In another way",
       "question4"        : "In your own words, describe how you manage your medication on a typical day.",
       "helpTextHd"       : "Include:",
@@ -381,7 +384,7 @@ var data = [ {
       "question2"        : "How often does your condition affect you moving around your home?",
       "question3"        : "How do you get up and move around your home?",
       "encourageLabel"   : "Someone has to encourage you to get out of bed",
-      "encourageHelpTxt" : "encourage help how?",
+      "encourageHelpTxt" : "how they",
       "helpLabel"        : "Someone has to help you move",
       "someoneHelpText"  : "How does someone help you?",
       "relyLabel"        : "You rely on aids or something else to help",
@@ -459,6 +462,11 @@ var data = [ {
       "helpTextHd"       : "Include:",
       "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
       "frequency"        : [
+      "difficultyHelp"   : "what difficulty you have"
+      "question4"        : "In your own words, describe how you wash yourself on a typical day.",
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
+      "frequency"          : [
         {
           "allTime"        : "Every time you wash yourself",
           "moreHalf"       : "More than half the time",
@@ -497,7 +505,7 @@ var data = [ {
       "7"                : "if someone recommended or gave you the aids",
       "manageLabel"      : "You manage without help, but with difficulty",
       "8"                : "what difficulty you have",
-      "question4"        : "In your own words, describe how you gett dressed or changed on a typical day.",
+      "question4"        : "In your own words, describe how you get dressed or changed on a typical day.",
       "helpTextHd"       : "Include:",
       "helpText"         : ["how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if getting dressed has an effect on your condition"],
       "frequency"          : [
