@@ -550,7 +550,7 @@ var data = [ {
       "helpLabel"        : "Someone would have to supervise you, help you or cook for you",
       "relyLabel"        : "You would rely on aids or something else to help",
       "manageLabel"      : "You would manage without help, but with difficulty",
-      "question4"        : "In your own words, describe you would prepare and cook a hot meal from fresh ingredients on a typical day.",
+      "question4"        : "In your own words, describe how you would prepare and cook a hot meal from fresh ingredients on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","cooking a meal has an effect on your condition"],
       "backLink"         : "/pip18/gettingDressed"
