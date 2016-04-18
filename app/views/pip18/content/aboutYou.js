@@ -596,6 +596,33 @@ var data = [ {
      "backLink"         : "/pip18/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
     },
   ],
+  "gettingOut" : [
+    {
+      "page"             : "27",
+      "heading"          : "Getting out and about",
+      "question"         : "Which of the following affects you getting out and about?",
+      "motivatedLabel"   : "You have to use a wheelchair",
+      "distanceLabel"    : "You have 2 prosthetic legs",
+      "carLabel"         : "You rely on aids to walk",
+      "streetLabel"      : "You rely on someone to help you walk",
+      "anxiousLabel"     : "You get anxious about going out",
+      "otherWayLabel"    : "You want to explain in your own words ",
+      "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you getting out or about",
+      "question2"        : "How often does your condition affect you getting out and walking about?",
+      "frequency"          : [
+        {
+          "allTime"        : "Every time you need to go out",
+          "moreHalf"       : "More than half the time",
+          "lessHalf"       : "Less than half the time",
+          "ownWords"       : "Explain how often in your own words"
+        },
+      ],
+      "question4"        : "In your own words, describe how you get out and walk about on a typical day.",
+      "helpTextHd"       : "Include if:",
+      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
+      "backLink"         : "/pip17/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
+    },
+  ],
   "mixing" : [
     {
       "page"             : "28",
