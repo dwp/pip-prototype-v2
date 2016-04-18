@@ -247,7 +247,7 @@ var data = [ {
       "heading"          : "Monitoring your condition",
       "question"         : "Does someone need to monitor your condition most days because, if they do not, you could be at risk, or a danger to yourself or others?",
       "question2"        : "How many hours does someone need to help monitor your condition?",
-      "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day",
+      "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day.",
       "question4"        : "How do they monitor your condition?",
       "backLink"         : "/pip18/treatments"
     },
@@ -461,7 +461,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your condition affects you washing yourself on a typical day.",
       "helpTextHd"       : "Include:",
       "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
-      "difficultyHelp"   : "what difficulty you have>>
+      "difficultyHelp"   : "what difficulty you have",
       "question4"        : "In your own words, describe how your condition affects you washing yourself on a typical day.",
       "helpTextHd"       : "Include:",
       "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
@@ -569,6 +569,7 @@ var data = [ {
      "chewingLabel"     : "chewing food",
      "swallowingLabel"  : "swallowing",
      "otherWayLabel"    : "in another way",
+     "otherWayLabel2"   : "In another way",
      "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you eating or drinking",
      "question2"        : "How often does your condition affect you eating or drinking?",
      "frequency"          : [
