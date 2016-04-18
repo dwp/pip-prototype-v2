@@ -461,8 +461,7 @@ var data = [ {
       "question4"        : "In your own words, describe how you wash yourself on a typical day.",
       "helpTextHd"       : "Include:",
       "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
-      "frequency"        : [
-      "difficultyHelp"   : "what difficulty you have"
+      "difficultyHelp"   : "what difficulty you have",
       "question4"        : "In your own words, describe how you wash yourself on a typical day.",
       "helpTextHd"       : "Include:",
       "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
