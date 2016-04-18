@@ -479,7 +479,7 @@ var data = [ {
   "gettingDressed" : [
      {
       "page"             : "24",
-      "heading"          : "Getting dressed",
+      "heading"          : "Getting dressed and changed",
       "question"         : "Does your condition affect you:",
       "motivatedLabel"   : "being motivated to get dressed or changed",
       "knowingLabel"     : "choosing suitable clothes eg for the weather",
