@@ -236,7 +236,7 @@ var data = [ {
       "heading"          : "Changes to your condition",
       "question"         : "Do the effects of your condition change or vary?",
       "qHintText"        : "This includes if some days, weeks or months are worse than others.",
-      "question3"        : "Explain how the effects of your condition change or vary",
+      "question3"        : "Explain how the effects of your condition change or vary.",
       "q3HintText"       : "Include how many days out of a week or month you're affected.",
       "backLink"         : "/pip18/sideEffects"
     },
@@ -608,7 +608,7 @@ var data = [ {
       "anxiousLabel"     : "You get anxious about going out",
       "otherWayLabel"    : "You want to explain in your own words ",
       "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you getting out or about",
-      "question2"        : "How often does your condition affect you getting out and walking about?",
+      "question2"        : "How often does your condition affect you getting out and about?",
       "frequency"          : [
         {
           "allTime"        : "Every time you need to go out",
