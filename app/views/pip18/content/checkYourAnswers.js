@@ -159,11 +159,11 @@ var data = [ {
       "washingHow"         : "Explain how your condition affects you washing",
 
       /* gettingDressed */
-      "gettingDressedHd"    : "Getting dressed",
+      "gettingDressedHd"    : "Getting dressed or changed",
       "gettingDressedDoes"  :  "Does your condition affect you:",
-      "gettingDressedOften" : "How often does your condition affect you getting dressed?",
-      "gettingDressedWhen"  : "When your condition affects you, how do you get dressed?",
-      "gettingDressedHow"   : "Explain how your condition affects you getting dressed.",
+      "gettingDressedOften" : "How often does your condition affect you getting dressed or changed?",
+      "gettingDressedWhen"  : "When your condition affects you, how do you get dressed or changed?",
+      "gettingDressedHow"   : "Explain how your condition affects you getting dressed or changed.",
 
       /* hotMeal */
       "hotMealHd"           : "Making a hot meal from fresh ingredients",
