@@ -17,8 +17,7 @@
 				<form action="/pip19/hcpConsent{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					<p>The following people may be asked for information about your claim. This could include personal and medical information:</p>
-{{hcpNu}}
+
 						{% set multipleHcps = "" %}
 						{% for i in range(1, 11) -%}
 							{% if loop.index > 0 and hcps['name' + i] %}
@@ -35,20 +34,22 @@
 
 					{% if hcps.name2 %}
 						{% set seq  = [
-							{"id":"helper","value":"That's Ok"},
-							{"id":"helper", "value":"That's not Ok","showPanel":"helperDetails"}
+							{"id":"consent","value":question.ok},
+							{"id":"consent", "value":question.notOk,"showPanel":"notContactDetails"}
 						] %}
-						{{ elements.radioSelect('helper',question.question,"",answers.helper,seq) }}
-
-						<div class="form-group panel-indent {% if answers.helper != 'Yes' %}js-hidden{% endif %}" id="helperDetails">
-							{{ elements.textarea('why',"Who should not be contacted for information about your claim?", answers.why) }}
-						</div>
 					{% else %}
 						{% set seq  = [
-							{"id":"helper","value":"That's Ok"},
-							{"id":"helper", "value":"That's not Ok"}
+							{"id":"consent","value":question.ok},
+							{"id":"consent", "value":question.notOk}
 						] %}
-						{{ elements.radioSelect('helper',question.question,"",answers.helper,seq) }}
+					{% endif %}
+
+					{{ elements.radioSelect('consent',question.question,"",answers.consent,seq) }}
+
+					{% if hcps.name2 %}
+						<div class="form-group panel-indent {% if answers.consent != question.notOk %}js-hidden{% endif %}" id="notContactDetails">
+							{{ elements.textarea('why',question.question1, answers.why) }}
+						</div>
 					{% endif %}
 
 					  {{ elements.submit(page,question,true,false) }}

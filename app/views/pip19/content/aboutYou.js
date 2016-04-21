@@ -273,7 +273,10 @@ var data = [ {
     {
       "page"             : "X",
       "heading"          : "People who might be contacted",
-      "introText"        : "",
+      "introText"        : "The following people may be asked for information about your claim. This could include personal and medical information:",
+      "ok"               : "That's OK",
+      "notOk"            : "That's not OK",
+      "question1"        : "Who should not be contacted for information about your claim?",
       "submit"           : "Save and continue",
       "backLink"         : "/pip19/bankDetails"
     }
