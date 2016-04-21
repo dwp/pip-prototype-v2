@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip19/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.currentWhereabouts %}
+<main id="content" role="main" class="pip19">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip19/currentWhereabouts{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+					{% set seq = [
+						{"id":"location1", "label":"hospital", "value":"hospital", "showPanel":"details"},
+						{"id":"location2", "label":"a care or nursing home", "value":"a care or nursing home", "showPanel":"details"},
+						{"id":"location3", "label":"sheltered housing", "value":"sheltered housing", "showPanel":"details"},
+						{"id":"location4", "label":"a residential college", "value":"a residential college", "showPanel":"details"},
+						{"id":"location5", "label":"a hostel", "value":"a hostel", "showPanel":"details"},
+						{"id":"location6", "label":"a hospice", "value":"a hospice", "showPanel":"details"},
+						{"id":"location7", "label":"You are <span class='bold-small'>not</span> currently staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					{% if not answers.optionsName  or answers.optionsName == 'you are currently not staying in any of these' %}js-hidden{% endif %}" id="details">
+						{{ elements.genericInput('when',question.question2, answers.when) }}
+
+						<fieldset class="form-group">
+							<legend class="form-label">{{ question.question3 }}</legend>
+							{{ elements.textInput('address1',answers.address1) }}
+							{{ elements.textInput('address2',answers.address2) }}
+							{{ elements.textInput('address3',answers.address3) }}
+						</fieldset>
+
+						{{ elements.genericInput('postcode',question.question4, answers.postcode) }}
+					</div>
+
+					{{ elements.submit(page,question,true,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -378,7 +378,7 @@ module.exports = function (app) {
     req.session['pip18-healthcareprofessional'] = req.body;
 
     if (req.body.saveAndMenu) {
-      res.redirect('/pip18/hcpConsent#yourCondition');
+      res.redirect('/pip18/specialAids#yourCondition');
     } else {
       res.redirect('/pip18/submitEvidence');
     }

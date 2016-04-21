@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip19/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.contactPref %}
+<main id="content" role="main" class="pip19">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip19/contactPref{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq2  = [
+						{"id":"callContact","value":"Yes","showPanel":"callContactPanel"},
+						{"id":"callContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('callContact',question.question3,"",answers.callContact,seq2,"inline") }}
+
+					{% set seq3 = [
+						{"id":"checkbox-1", "label": question.checkbox1, "value":question.checkbox1},
+						{"id":"checkbox-2", "label": question.checkbox2, "value":question.checkbox2},
+						{"id":"checkbox-3", "label": question.checkbox3, "value":question.checkbox3},
+						{"id":"checkbox-4", "label": question.checkbox4, "value":"Other",
+							"target"         : "target2",
+							"textarea"       : true,
+							"textareaId"     : "textreadId2",
+							"textareaLabel"  : question.textareaQ,
+							"textareaAnswer" : answers.textreadId2,
+							"hintText"       : question.textareaHintText
+						}
+					] %}
+
+					<div class="form-group panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
+						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
+					</div>
+
+					{% set seq  = [
+						{"id":"smsContact","value":"Yes","showPanel":"smsContactPanel"},
+						{"id":"smsContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('smsContact',question.question,"",answers.smsContact,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="smsContactPanel">
+            {{ elements.genericInput('mobile',question.question2, answers.mobile) }}
+          </div>
+
+					{{ elements.submit(page,question,true,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

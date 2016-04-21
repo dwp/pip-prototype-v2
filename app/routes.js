@@ -25,5 +25,6 @@ module.exports = {
   require('./routes-16')(app);
   require('./routes-17')(app);
   require('./routes-18')(app);
+  require('./routes-19')(app);
   }
 };

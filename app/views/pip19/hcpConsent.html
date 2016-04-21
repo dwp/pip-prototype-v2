@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip19/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.hcpConsent %}
+<main id="content" role="main" class="pip19">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip19/{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% for i in range(1, 11) -%}
+						{% if hcps["name" + i] %}
+							{{hcps["name" + i]}} <br />--
+						{% endif %}
+						{% if hcps["profession" + i] %}
+							{{hcps["profession" + i]}} <br />-
+						{% endif %}
+					{% endfor %}
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

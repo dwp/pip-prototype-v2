@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip19/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.bankDetails %}
+<main id="content" role="main" class="pip19">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip19/bankDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+          {{ elements.genericInput('accountName',question.question, answers.accountName) }}
+
+          <div class="form-group ">
+      			<fieldset>
+              <legend class="">Sort code</legend>
+                <div id="sortCode" class="form-date">
+                  <div class="form-group form-group-day">
+                    <input id="sortCode1" type="text" class="sort-code form-control " name="sortCode1" maxlength="2" value="">
+                  </div>
+                  <div class="form-group form-group-day">
+                    <input id="sortCode2" type="text" class="sort-code form-control " name="sortCode2" maxlength="2" value="">
+                  </div>
+                  <div class="form-group form-group-day">
+                    <input id="sortCode3" type="text" class="sort-code form-control " name="sortCode3" maxlength="2" value="">
+                  </div>
+      				  </div>
+      			</fieldset>
+      		</div>
+
+          {{ elements.genericInput('accountNumber',question.question3, answers.accountNumber) }}
+          {{ elements.genericInput('buildingSociety',question.question4, answers.buildingSociety) }}
+
+          {{ elements.submit(page,question,true,false) }}
+
+      </form>
+    </div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
