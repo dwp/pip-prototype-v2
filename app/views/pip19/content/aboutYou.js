@@ -18,7 +18,7 @@ var data = [ {
   "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies.",
   "helpline"           : [
     {
-    "p1"               : "If you need any help call:",
+    "p1"               : "If you need help call:",
     "p2"               : "0113 2327118",
     "p3"               : "Calls charged at local rate from landlines, calls from mobiles may cost more.",
     "p4"               : "Or text:",
