@@ -840,11 +840,15 @@ module.exports = function (app) {
 
   app.post('/pip19/bankDetails', function (req, res) {
     req.session['pip19-bankDetails'] = req.body;
-
     if (req.body.saveAndMenu) {
       res.redirect('/pip19/checkYourAnswers#aboutYou');
     } else {
-      res.redirect('/pip19/hcpConsent');
+      hcps = req.session['pip19-healthcareprofessional'];
+      if ( !hcps || !hcps['name1']) {
+        res.redirect('/pip19/declaration2');
+     } else {
+        res.redirect('/pip19/hcpConsent');
+      }
     }
   });
 
