@@ -256,8 +256,8 @@ var data = [ {
     {
       "page"             : "15",
       "heading"          : "Professionals who know about your condition",
-      "introText"        : "It could help us get the information we need if we’re able to contact professionals who will share details about the effects of your condition with us. They could be your counsellor, key worker, doctor or anyone else who has information about the effects of your condition.",
-      "question"         : "Do you agree to us contacting professionals who will share information about your condition with us?",
+      "introText"        : "Enter details of professionals who could give information about how your condition affects you.",
+      "question"         : "They could be your doctor, support worker, carer or anyone else who has information about the effects of your condition.",
       "rowHd"            : "Professional",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
