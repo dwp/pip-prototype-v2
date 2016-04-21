@@ -385,28 +385,6 @@ module.exports = function (app) {
   });
 
   /*******************
-  HCP Consent
-  *******************/
-  app.get('/pip19/hcpConsent', function (req, res) {
-      res.render('pip19/hcpConsent', {
-        hcps    : req.session['pip19-healthcareprofessional'],
-        answers : req.session['pip19-hcpConsent'],
-        'edit'  : req.body.saveAndMenu,
-        data    : aboutYou.getTableData()
-      });
-  });
-
-  app.post('/pip19/hcpConsent', function (req, res) {
-    req.session['pip19-hcpConsent'] = req.body;
-
-    if (req.body.saveAndMenu) {
-      res.redirect('/pip19/checkYourAnswers#yourCondition');
-    } else {
-      res.redirect('/pip19/specialAids');
-    }
-  });
-
-  /*******************
   submitEvidence
   *******************/
   app.get('/pip19/submitEvidence', function (req, res) {
@@ -866,12 +844,12 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip19/checkYourAnswers#aboutYou');
     } else {
-      res.redirect('/pip19/thankYou');
+      res.redirect('/pip19/hcpConsent');
     }
   });
 
   /*******************
-  declaration
+  declaration at start
   *******************/
   app.get('/pip19/declaration', function (req, res) {
       res.render('pip19/declaration', {
@@ -884,6 +862,41 @@ module.exports = function (app) {
   app.post('/pip19/declaration', function (req, res) {
     req.session['pip19-declaration'] = req.body;
     res.redirect('/pip19/checkYourAnswers');
+  });
+
+  /*******************
+  HCP Consent
+  *******************/
+  app.get('/pip19/hcpConsent', function (req, res) {
+      res.render('pip19/hcpConsent', {
+        hcps    : req.session['pip19-healthcareprofessional'],
+        answers : req.session['pip19-hcpConsent'],
+        'edit'  : req.body.saveAndMenu,
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip19/hcpConsent', function (req, res) {
+    req.session['pip19-hcpConsent'] = req.body;
+
+    if (req.body.saveAndMenu) {
+      res.redirect('/pip19/checkYourAnswers#yourCondition');
+    } else {
+      res.redirect('/pip19/declaration2');
+    }
+  });
+
+  /*******************
+  declaration at end
+  *******************/
+  app.get('/pip19/declaration2', function (req, res) {
+      res.render('pip19/declaration2', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip19/declaration2', function (req, res) {
+    res.redirect('/pip19/thankYou');
   });
 
   /*******************

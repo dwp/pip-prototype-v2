@@ -17,13 +17,8 @@
 				<form action="/pip19/healthcareprofessional{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{% set seq  = [
-						{"id":"contactHcp","value":"Yes","showPanel":"hcpDetails"},
-						{"id":"contactHcp", "value":"No"}
-					] %}
-					{{ elements.radioSelect('contactHcp',question.question,"",answers.contactHcp,seq,"inline") }}
-
-					<div class="form-group panel-indent {% if answers.contactHcp != 'Yes' %}js-hidden{% endif %}" id="hcpDetails">
+					<div class="form-group">
+						<p>{{question.question}}</p>
 						<ul class="list-user-input">
 							{% for i in range(1, 11) -%}
 
@@ -46,17 +41,6 @@
 							{% endfor %}
 							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
 						</ul>
-						<details class="help-text form-group">
-		          <summary><span class="summary">What happens if you decide we cannot contact them?</span></summary>
-		          <div class="panel-indent">
-		            <p>
-		              If at any point you change your mind about allowing us to contact the professionals you’ve listed, tell us:
-		            </p>
-		            <p>Telephone: <span class="tel">0345 850 3322</span></p>
-		            <p>Textphone: <span class="tel">0345 601 6677</span></p>
-		            <p>Monday to Friday, 8am to 6pm</p>
-		          </div>
-		        </details>
           </div>
 
 					{{ elements.submit(page,question) }}

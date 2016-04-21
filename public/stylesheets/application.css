@@ -2727,3 +2727,15 @@ PIP18
   background-size: 22px 22px;
   padding-left: 30px;
 }
+
+/*********************
+PIP19
+**********************/
+.pip19 .hcp-list {
+  margin: 10px 0;
+  padding-bottom: 10px;
+}
+
+.pip19 .hcp-list.seperator {
+  border-bottom: 1px solid #bfc1c3;
+}

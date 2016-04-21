@@ -138,6 +138,7 @@ var data = [ {
       "question2"        : "Sort code",
       "question3"        : "Account number",
       "question4"        : "Building society roll or reference number",
+      "submit"           : "Save and continue",
       "backLink"         : "/pip19/additionalInfo"
     }
   ],
@@ -271,8 +272,10 @@ var data = [ {
   "hcpConsent" : [
     {
       "page"             : "X",
-      "heading"          : "HCP Consent",
-      "introText"        : ""
+      "heading"          : "People who might be contacted",
+      "introText"        : "",
+      "submit"           : "Save and continue",
+      "backLink"         : "/pip19/bankDetails"
     }
   ],
   "submitEvidence" : [
@@ -776,6 +779,7 @@ var data = [ {
       "page"             : "35",
       "heading"          : "Additional information",
       "introText"        : "Include anything else that explains how your condition or disability affects you.",
+      "submit"           : "Save and continue",
       "backLink"         : "/pip19/checkYourAnswers"
     },
   ],
@@ -788,6 +792,17 @@ var data = [ {
       "disclaimer"       : "You might have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes. Your Personal Independence Payment may also be stopped or reduced.",
       "submit"           : "I agree - continue my application",
       "backLink"         : "/pip19/apply"
+    },
+  ],
+  "declaration2" : [
+    {
+      "page"             : "x",
+      "heading"          : "Declaration",
+      "listHeading"      : "By submitting this application you agree:",
+      "list"             : ["the information you will enter in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
+      "disclaimer"       : "You might have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes. Your Personal Independence Payment may also be stopped or reduced.",
+      "submit"           : "I agree - submit my application",
+      "backLink"         : "/pip19/hcpConsent"
     },
   ],
   "thankYou" : [
