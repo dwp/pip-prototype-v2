@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip20/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.healthcareprofessional %}
+<main id="content" role="main" class="pip20">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip20/healthcareprofessional{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					<div class="form-group">
+						<p>{{question.question}}</p>
+						<ul class="list-user-input">
+							{% for i in range(1, 11) -%}
+
+								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['name' + i] %} js-hidden {% endif %}">
+
+									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
+									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
+
+										{{ elements.genericInputList("name" + i,question.nameHd, answers["name" + i]) }}
+
+										{{ elements.genericInputList("profession" + i,question.professionHd, answers["profession" + i]) }}
+
+										{{ elements.textarea("address" + i,question.addressHd, answers["address" + i],"","","",false) }}
+
+										{{ elements.genericInputList("phone" + i,question.phoneHd, answers["phone" + i]) }}
+
+										{{ elements.genericInputList("lastSeen" + i,question.lastSeenHd, answers["lastSeen" + i]) }}
+
+								</li>
+							{% endfor %}
+							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+						</ul>
+          </div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

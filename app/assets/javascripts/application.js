@@ -147,7 +147,9 @@ $(document).ready(function() {
 		if (hide) {
 			$('#' + hide).hide();
 			$('.check-uncheck :checkbox:checked').each(function() {
+        console.log($(this).parent())
 				if($(this).parent().data('show')) {
+
 					$(this).attr('checked', false).parent().removeClass('selected');
 					if ($(this).parent().attr('data-target')) {
             $(this).parent().next().hide();

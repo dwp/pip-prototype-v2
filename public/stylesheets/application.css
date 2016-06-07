@@ -1,3 +1,10 @@
+/**********************
+screenshots
+.js-hidden {
+  display: block !important;
+}
+
+***********************/
 @font-face {
   font-family: GDS-Logo;
   src: local("HelveticaNeue"), local("Helvetica Neue"), local("Arial"), local("Helvetica");
@@ -2607,13 +2614,6 @@ Pip-16
   padding-left: 30px;
 }
 
-/**********************
-screenshots
-.js-hidden {
-  display: block !important;
-}
-
-***********************/
 .column-full {
   padding: 0 15px;
   -webkit-box-sizing: border-box;
