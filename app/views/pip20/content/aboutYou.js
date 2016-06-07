@@ -66,7 +66,7 @@ var data = [ {
       "question3"        : "Last name",
       "question4"        : "Your date of birth",
       "question5"        : "National Insurance number",
-      "backLink"         : "/pip20/helper"
+      "backLink"         : "/pip20/appointee"
     },
   ],
   "contactDetails" : [
@@ -159,7 +159,7 @@ var data = [ {
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip20/summaryMain?show=yourCondition&next=conditionDetails&back=paymentsFromAbroad"
+      "backLink"         : "/pip20/declaration"
     },
   ],
   "medications" : [

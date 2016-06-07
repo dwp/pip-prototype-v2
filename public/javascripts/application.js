@@ -239,4 +239,15 @@ $(document).ready(function() {
     };
   })
 
+  /*$(".form-declaration").submit(function(e){
+    $('input[type="checkbox"]').each(function(){
+      if ($(this).is(':checked') === false) {
+        console.log('3')
+        $('#error-msg').removeClass('js-hidden')
+        $("html, body").animate({ scrollTop: 0 });
+        e.preventDefault();
+      }
+    })
+  })*/
+
 });
