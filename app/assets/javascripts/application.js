@@ -239,7 +239,7 @@ $(document).ready(function() {
     };
   })
 
-  /*$(".form-declaration").submit(function(e){
+  $(".form-declaration").submit(function(e){
     $('input[type="checkbox"]').each(function(){
       if ($(this).is(':checked') === false) {
         console.log('3')
@@ -248,6 +248,6 @@ $(document).ready(function() {
         e.preventDefault();
       }
     })
-  })*/
+  })
 
 });
