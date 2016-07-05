@@ -1534,7 +1534,7 @@ legend .form-label-bold {
   }
 }
 
-.form-control {
+.form-control, .tt-suggestion {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1550,14 +1550,14 @@ legend .form-label-bold {
 }
 
 @media (min-width: 641px) {
-  .form-control {
+  .form-control, .tt-suggestion {
     font-size: 19px;
     line-height: 1.3157894737;
   }
 }
 
 @media (min-width: 641px) {
-  .form-control {
+  .form-control, .tt-suggestion {
     width: 50%;
   }
 }
@@ -1736,7 +1736,7 @@ input[type=number] {
   font-weight: bold;
 }
 
-.error .form-control {
+.error .form-control, .error .tt-suggestion {
   border: 4px solid #b10e1e;
 }
 
@@ -2059,6 +2059,35 @@ input[type=number] {
   text-align: right;
   font-weight: bold;
   padding-right: 0;
+}
+
+/* Typeahead */
+.tt-menu {
+  width: 50%;
+  background-color: #dee0e2;
+  border: 2px solid #bfc1c3;
+  box-sizing: border-box;
+}
+
+.tt-suggestion {
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.tt-suggestion:hover {
+  background-color: #2b8cc4;
+  color: #f8f8f8;
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+.tt-cursor {
+  background-color: #2b8cc4;
+  color: #f8f8f8;
 }
 
 .unbranded {
@@ -2738,4 +2767,8 @@ PIP19
 
 .pip19 .hcp-list.seperator {
   border-bottom: 1px solid #bfc1c3;
+}
+
+.pip21 .twitter-typeahead {
+  margin-top: 10px;
 }

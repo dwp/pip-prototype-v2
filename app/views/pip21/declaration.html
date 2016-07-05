@@ -1,4 +1,4 @@
-{% extends "layout.html" %} {% block pageTitle %} GOV.UK prototyping kit {% endblock %} {% block content %} {% import "pip21/elements.html" as elements %} {% for page in data %} {% for question in page.declaration %}
+{% extends "layout.html" %} {% block pageTitle %} GOV.UK prototyping kit {% endblock %} {% block content %} {% import "pip21/macros/elements.html" as elements %} {% for page in data %} {% for question in page.declaration %}
 <main id="content" role="main" class="pip21">
 
 	<div class="grid-row">

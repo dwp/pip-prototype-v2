@@ -12,6 +12,8 @@ screenshots
 // Take a look at patterns.scss to see which files are imported.
 @import 'patterns';
 
+@import 'typeahead';
+
 // If you need to create a page as part of your journey, but without GOV.UK branding
 // See localhost:3000/examples/unbranded/
 .unbranded {
@@ -562,4 +564,8 @@ PIP19
 
 .pip19 .hcp-list.seperator {
   border-bottom: 1px solid $border-colour;
+}
+
+.pip21 .twitter-typeahead {
+  margin-top:10px;
 }
