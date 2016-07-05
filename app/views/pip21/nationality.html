@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip21/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.nationality %}
+<main id="content" role="main" class="pip21">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip21/nationality{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"nationality","value":"British"},
+						{"id":"nationality", "value":"Other","showPanel":"otherNationality"}
+					] %}
+					{{ elements.radioSelect('nationality',question.question,"",answers.nationality,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
+            {{ elements.genericInput('otherNationality',question.question2, answers.otherNationality) }}
+          </div>
+
+					{% set seq2  = [
+						{"id":"countryLiving","value":"Yes"},
+						{"id":"countryLiving", "value":"No","showPanel":"otherCountry"}
+					] %}
+					{{ elements.radioSelect('countryLiving',question.question3,"",answers.countryLiving,seq2,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.countryLiving != 'No' %}js-hidden{% endif %}" id="otherCountry">
+            {{ elements.genericInput('countryLivingOther',question.question4, answers.countryLivingOther) }}
+          </div>
+
+					{% set seq3  = [
+						{"id":"livingAbroad", "value":"Yes"},
+						{"id":"livingAbroad", "value":"No"}
+					] %}
+					{{ elements.radioSelect('livingAbroad',question.question5,question.q5HintText,answers.livingAbroad,seq3,"inline") }}
+
+
+					{{ elements.submit(page,question,true,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

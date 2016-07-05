@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip21/elements.html" as elements %}
+{% for page in data %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.checkYourAnswers %}
+<main id="content" role="main" class="pip21 pip18">
+
+	<div class="grid-row">
+			<form action="/pip21/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+				<div class="column-two-thirds">
+					{{ elements.header(page,question) }}
+				</div>
+
+				<div class="column-full checkYourAnswersCont">
+
+					<div class="column-full">
+	        	<h2 id="aboutYou" class="heading-medium heading-highlight"><span class="h2">Help with your application</span></h2>
+	          <ul>
+	            <li>
+								<div class="column-two-thirds">Helper details</div>
+								{{ elements.EnterChangeAnswers(appointee,"appointee",page) }}
+							</li>
+
+	          </ul>
+					</div>
+
+					<div class="column-full">
+	        	<h2 id="aboutYou" class="heading-medium heading-highlight"><span class="h2">About you</span></h2>
+	          <ul>
+	            <li>
+								<div class="column-two-thirds">Personal details</div>
+								{{ elements.EnterChangeAnswers(aboutYou,"aboutYou",page) }}
+							</li>
+
+	          </ul>
+					</div>
+
+					<div class="column-full">
+		        <h2 id="yourCondition" class="heading-medium heading-highlight"><span class="h2">You and your condition</span></h2>
+		        <ul>
+		          <li>
+								<div class="column-two-thirds">Your conditions and disabilities</div>
+								{{ elements.EnterChangeAnswers(conditionDetails,"conditionDetails",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Your medication</div>
+								{{ elements.EnterChangeAnswers(medications,"medications",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Managing your medication</div>
+								{{ elements.EnterChangeAnswers(manageMedications,"manageMedications",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Your treatments and therapy</div>
+								{{ elements.EnterChangeAnswers(treatments,"treatments",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Side effects</div>
+								{{ elements.EnterChangeAnswers(sideEffects,"sideEffects",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Changes in your condition</div>
+								{{ elements.EnterChangeAnswers(conditionAffects,"conditionAffects",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Monitoring your condition</div>
+								{{ elements.EnterChangeAnswers(monitoringCondition,"monitoringCondition",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Professionals who know about your condition</div>
+								{{ elements.EnterChangeAnswers(healthcareprofessional,"healthcareprofessional",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Information you can send</div>
+								{{ elements.EnterChangeAnswers(submitEvidence,"submitEvidence",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Any aids and adaptations you have</div>
+								{{ elements.EnterChangeAnswers(specialAids,"specialAids",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Your sight</div>
+								{{ elements.EnterChangeAnswers(sight,"sight",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Your speech</div>
+								{{ elements.EnterChangeAnswers(speech,"speech",page) }}
+							</li>
+		          <li>
+								<div class="column-two-thirds">Your hearing</div>
+								{{ elements.EnterChangeAnswers(hearing,"hearing",page) }}
+							</li>
+		        </ul>
+					</div>
+
+					<div class="column-full">
+		        <h2 id="yourHome" class="heading-medium heading-highlight"><span class="h2">You and your home</span></h2>
+		          <ul>
+		            <li>
+									<div class="column-two-thirds">Getting up and moving around</div>
+									{{ elements.EnterChangeAnswers(gettingUp,"gettingUp",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Using the toilet</div>
+									{{ elements.EnterChangeAnswers(toilet,"toilet",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Washing yourself</div>
+									{{ elements.EnterChangeAnswers(washing,"washing",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Getting dressed </div>
+									{{ elements.EnterChangeAnswers(gettingDressed,"gettingDressed",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Making a hot meal from fresh ingredients</div>
+									{{ elements.EnterChangeAnswers(hotMeal,"hotMeal",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Eating and drinking</div>
+									{{ elements.EnterChangeAnswers(eatingAndDrinking,"eatingAndDrinking",page) }}
+								</li>
+		          </ul>
+					</div>
+
+					<div class="column-full">
+		        <h2 id="gettingOut" class="heading-medium heading-highlight"><span class="h2">Getting out and about</span></h2>
+		          <ul>
+		            <li>
+									<div class="column-two-thirds">Getting out and about</div>
+									{{ elements.EnterChangeAnswers(gettingOut,"gettingOut",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Mixing with people</div>
+									{{ elements.EnterChangeAnswers(mixing,"mixing",page) }}
+								</li>
+		          </ul>
+					</div>
+
+					<div class="column-full">
+						<h2 id="makingSense" class="heading-medium heading-highlight"><span class="h2">Making sense of things</span></h2>
+		          <ul>
+		            <li>
+									<div class="column-two-thirds">Planning a local journey</div>
+									{{ elements.EnterChangeAnswers(localJourney,"localJourney",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Following a route</div>
+									{{ elements.EnterChangeAnswers(somewhereNeverBeenBefore,"somewhereNeverBeenBefore",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Understanding written information</div>
+									{{ elements.EnterChangeAnswers(understanding,"understanding",page) }}
+								</li>
+		            <li>
+									<div class="column-two-thirds">Dealing with money</div>
+									{{ elements.EnterChangeAnswers(money,"money",page) }}
+								</li>
+		          </ul>
+					</div>
+
+						<div class="column-two-thirds">
+							<div id="submit-group" class="form-group">
+								<p>You will not be able to change your answers after you send your application.</p>
+						    <input type="submit" class="button" value="Save and go to next question" name="saveAndMenu">
+						    <a href="/pip21/money" class="link-back">Back</a>
+							</div>
+						</div>
+
+			</div>
+
+
+      </form>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endblock %}
