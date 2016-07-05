@@ -805,14 +805,13 @@ var data = [ {
       "backLink"         : "/pip21/paymentsFromAbroad"
     },
   ],
-  "declaration2" : [
+  "submitApplication" : [
     {
       "page"             : "x",
-      "heading"          : "Declaration",
-      "listHeading"      : "By submitting this application you agree:",
-      "list"             : ["the information you will enter in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
-      "disclaimer"       : "You might have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes. Your Personal Independence Payment may also be stopped or reduced.",
-      "submit"           : "I agree - submit my application",
+      "heading"          : "Submit your application",
+      "p1"               : "You have now answered all the questions on the application and you are now able to send it",
+      "p2"               : "You will not be able to change your answers after you send your application.",
+      "submit"           : "Send my application",
       "backLink"         : "/pip21/hcpConsent"
     },
   ],

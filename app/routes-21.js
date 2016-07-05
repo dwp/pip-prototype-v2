@@ -862,7 +862,7 @@ module.exports = function (app) {
     } else {
       hcps = req.session['pip21-healthcareprofessional'];
       if ( !hcps || !hcps['name1']) {
-        res.redirect('/pip21/declaration2');
+        res.redirect('/pip21/submitApplication');
      } else {
         res.redirect('/pip21/hcpConsent');
       }
@@ -887,20 +887,20 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip21/checkYourAnswers#yourCondition');
     } else {
-      res.redirect('/pip21/declaration2');
+      res.redirect('/pip21/submitApplication');
     }
   });
 
   /*******************
   declaration at end
   *******************/
-  app.get('/pip21/declaration2', function (req, res) {
-      res.render('pip21/declaration2', {
+  app.get('/pip21/submitApplication', function (req, res) {
+      res.render('pip21/submitApplication', {
         data    : aboutYou.getTableData()
       });
   });
 
-  app.post('/pip21/declaration2', function (req, res) {
+  app.post('/pip21/submitApplication', function (req, res) {
     res.redirect('/pip21/thankYou');
   });
 
