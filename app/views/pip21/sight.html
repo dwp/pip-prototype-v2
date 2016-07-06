@@ -31,11 +31,7 @@
 		] %}
 		{{ elements.checkbox('optionsName',"radio",question.question4,"",seq,answers,answers.optionsName) }}
 
-		{% set seq  = [
-			{"id":"allTime","value":"Yes"},
-			{"id":"allTime", "value":"No","showPanel":"allTimeDetails"}
-		] %}
-		{{ elements.radioSelect('allTime',question.allTime,"",answers.allTime,seq,"inline") }}
+	
 					<div class="form-group panel-indent {% if answers.allTime != 'No' %}js-hidden{% endif %}" id="allTimeDetails">
 						{{ elements.genericInput('howOften',question.question2, answers.howOften, question.qHintText2) }}
 						</div>
