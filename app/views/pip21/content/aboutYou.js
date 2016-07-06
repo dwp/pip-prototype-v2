@@ -161,7 +161,7 @@ var data = [ {
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip21/declaration"
+      "backLink"         : "/pip21/checkYourAnswers#aboutYou"
     },
   ],
   "medications" : [
@@ -260,7 +260,7 @@ var data = [ {
       "question2"        : "How many hours does someone need to help monitor your condition?",
       "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day.",
       "question4"        : "How do they monitor your condition?",
-      "backLink"         : "/pip21/treatments"
+      "backLink"         : "/pip21/conditionAffects"
     },
   ],
   "healthcareprofessional" : [
@@ -409,7 +409,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your condition affects you getting up and moving around on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
-      "backLink"         : "/pip21/summaryMain?show=yourHome&next=gettingUp&back=hearing"
+      "backLink"         : "/pip21/checkYourAnswers#yourCondition"
     },
   ],
   "toilet" : [
@@ -610,7 +610,7 @@ var data = [ {
      "question4"        : "In your own words, describe how your condition affects you eating or drinking on a typical day.",
      "helpTextHd"       : "Include:",
      "helpText"         : ["if eating or drinking takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if eating or drinking has an effect on your condition"],
-     "backLink"         : "/pip21/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
+     "backLink"         : "/pip21/hotMeal"
     },
   ],
   "gettingOut" : [
@@ -638,7 +638,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your condition affects you getting out and about on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
-      "backLink"         : "/pip17/summaryMain?show=gettingOut&next=gettingOut&back=eatingAndDrinking"
+      "backLink"         : "/pip21/checkYourAnswers#yourHome"
     },
   ],
   "mixing" : [
@@ -690,7 +690,7 @@ var data = [ {
       "noLabel"          : "Your condition would <span class='bold-small'>not</span> affect you planning a local journey",
       "question3"        : "In your own words, describe how you would plan a local journey if you had to.",
       "q3HintText"       : "Include if it would take you a long time to plan a local journey.",
-      "backLink"         : "/pip21/summaryMain?show=understanding&next=localJourney&back=mixing"
+      "backLink"         : "/pip21/checkYourAnswers#gettingOut"
     },
   ],
   "somewhereNeverBeenBefore" : [
@@ -761,7 +761,7 @@ var data = [ {
       "question3"        : "In your own words, describe how you go about understanding written information.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it can take you a long time to work out what things mean","not understanding things puts you at risk"],
-      "backLink"         : "/pip21/somewhereYouKnow"
+      "backLink"         : "/pip21/somewhereNeverBeenBefore"
     },
   ],
   "money" : [
@@ -795,7 +795,7 @@ var data = [ {
       "heading"          : "Additional information",
       "introText"        : "Include anything else that explains how your condition or disability affects you.",
       "submit"           : "Save and continue",
-      "backLink"         : "/pip21/money"
+      "backLink"         : "/pip21/checkYourAnswers#additionalInfo"
     },
   ],
   "declaration" : [
