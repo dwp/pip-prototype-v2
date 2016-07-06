@@ -625,7 +625,8 @@ var data = [ {
       "anxiousLabel"     : "You get anxious about going out",
       "otherWayLabel"    : "You want to explain in your own words ",
       "doesntLabel"      : "Your condition does <span class='bold-small'>not</span> affect you getting out or about",
-      "question2"        : "How often does your condition affect you getting out and about?",
+      "question2"        : "How far can you walk without stopping?",
+      "question3"        : "How often does your condition affect you getting out and about?",
       "frequency"          : [
         {
           "allTime"        : "Every time you need to go out",
@@ -673,7 +674,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your confition would affect you mixing with people if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","mixing with people could put you or others at risk","if mixing with people has an effect on your condition"],
-      "backLink"         : "/pip21/eatingAndDrinking"
+      "backLink"         : "/pip21/gettingOut"
     },
   ],
   "localJourney" : [

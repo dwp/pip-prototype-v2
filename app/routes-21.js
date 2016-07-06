@@ -790,7 +790,7 @@ module.exports = function (app) {
     if (req.body.saveAndMenu) {
       res.redirect('/pip21/checkYourAnswers#makingSense');
     } else {
-      res.redirect('/pip21/checkYourAnswers#makingSense');
+      res.redirect('/pip21/additionalInfo');
     }
   });
 
