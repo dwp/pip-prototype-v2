@@ -819,13 +819,14 @@ module.exports = function (app) {
         somewhereNeverBeenBefore : req.session['pip21-somewhereNeverBeenBefore'],
         somewhereYouKnow         : req.session['pip21-somewhereYouKnow'],
         understanding            : req.session['pip21-understanding'],
-        money                    : req.session['pip21-money']
+        money                    : req.session['pip21-money'],
+        additionalInfo           : req.session['pip21-additionalInfo']
       });
   });
 
   app.post('/pip21/checkYourAnswers', function (req, res) {
     req.session['pip21-checkYourAnswers'] = req.body;
-    res.redirect('/pip21/additionalInfo');
+    res.redirect('/pip21/bankDetails');
   });
 
   /*******************
@@ -841,7 +842,7 @@ module.exports = function (app) {
 
   app.post('/pip21/additionalInfo', function (req, res) {
     req.session['pip21-additionalInfo'] = req.body;
-    res.redirect('/pip21/bankDetails');
+    res.redirect('/pip21/checkYourAnswers#additionalInfo');
   });
 
   /*******************

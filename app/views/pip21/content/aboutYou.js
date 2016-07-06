@@ -15,11 +15,12 @@ var data = [ {
   "helpsTakeItHelp"    : "what things the person does to help you.",
   "dayshelptext"       : "roughly how many days out of a month you're affected",
   "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies",
-  "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies.",
+  "postTo"             : "Post to:",
+  "address"            : ["Freepost DWP PIP 3","Mail Handling Site A","Wolverhampton","WV98 1AD"],
   "helpline"           : [
     {
     "p1"               : "If you need help call:",
-    "p2"               : "0113 2327118",
+    "p2"               : "0345 850 3322",
     "p3"               : "Calls charged at local rate from landlines, calls from mobiles may cost more.",
     "p4"               : "Or text:",
     "p5"               : "07867 687 141",
@@ -147,7 +148,7 @@ var data = [ {
       "question3"        : "Account number",
       "question4"        : "Building society roll or reference number",
       "submit"           : "Save and continue",
-      "backLink"         : "/pip21/additionalInfo"
+      "backLink"         : "/pip21/checkYourAnswers"
     }
   ],
   "conditionDetails" : [
@@ -297,6 +298,7 @@ var data = [ {
       "question"         : "You will send your:",
       "q2HintText"       : "Tick all that apply",
       "question3"        : "How will you send the information?",
+      "youAreNotLabel"   : "You are <span class='bold-small'>not</span> sending any information",
       "backLink"         : "/pip21/healthcareprofessional"
     },
   ],
@@ -791,7 +793,7 @@ var data = [ {
       "heading"          : "Additional information",
       "introText"        : "Include anything else that explains how your condition or disability affects you.",
       "submit"           : "Save and continue",
-      "backLink"         : "/pip21/checkYourAnswers"
+      "backLink"         : "/pip21/money"
     },
   ],
   "declaration" : [
@@ -812,7 +814,7 @@ var data = [ {
       "p1"               : "You have now answered all the questions on the application and you are now able to send it",
       "p2"               : "You will not be able to change your answers after you send your application.",
       "submit"           : "Send my application",
-      "backLink"         : "/pip21/hcpConsent"
+      "backLink"         : "/pip21/bankDetails"
     },
   ],
   "thankYou" : [
@@ -821,7 +823,6 @@ var data = [ {
       "heading2"         : "Send more information",
       "p1"               : "You said you’re going to send information about the effects of your condition. Write your full name and National Insurance number on each page you send and post it before [date in two weeks]. If you do not send it before then, a decision could be made without it.",
       "postTo"           : "Post to:",
-      "address"          : ["Freepost DWP PIP 3","Mail Handling Site A","Wolverhampton","WV98 1AD"],
       "heading3"         : "What happens next",
       "p2"               : "You'll get a letter in the next 4 weeks. It will either tell you a decision, or invite you to meet a medical professional.",
       "p3"               : "You must <a href='#' rel='external'>report any change to your circumstances</a>.",

@@ -19,9 +19,9 @@
 		<div class="column-two-thirds">
 			<h2 class="heading-medium">{{question.heading2}}</h2>
 			<p>{{question.p1}}</p>
-			<p>{{question.postTo}}</p>
+			<p>{{page.postTo}}</p>
 			<ul>
-				{% for item in question.address %}
+				{% for item in page.address %}
 					<li>{{item}}</li>
 				{% endfor %}
 			</ul>
