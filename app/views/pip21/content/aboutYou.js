@@ -62,6 +62,7 @@ var data = [ {
     {
       "page"             : "2",
       "heading"          : "About you",
+      "introText"        : "If you’re filling in this form for someone else, tell us about <span class='bold-medium'>them</span>, not you",
       "question"         : "First name",
       "question2"        : "Middle name(s)",
       "question3"        : "Last name",
@@ -806,6 +807,15 @@ var data = [ {
       "submit"           : "I agree - continue my application",
       "backLink"         : "/pip21/paymentsFromAbroad"
     },
+  ],
+  "completionDate" : [
+    {
+      "heading"          : "Completion Date",
+      "p1"               : "You have until (date) to complete your application." ,
+      "p2"               : "You can save and return to the application as often as you like before (date)",
+      "submit"           : "Continue",
+      "backLink"         : "/pip21/declaration"
+    }
   ],
   "submitApplication" : [
     {

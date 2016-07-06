@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip21/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.completionDate %}
+<main id="content" role="main" class="pip21">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip21/completionDate{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					<div class="form-group">
+						<p>{{question.p1}}</p>
+						<p>{{question.p2}}</p>
+					</div>
+
+					{{ elements.submit(page,question,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

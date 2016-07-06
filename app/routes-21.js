@@ -195,6 +195,20 @@ module.exports = function (app) {
 
   app.post('/pip21/declaration', function (req, res) {
     req.session['pip21-declaration'] = req.body;
+    res.redirect('/pip21/completionDate');
+    //checkYourAnswers#aboutYou'
+  });
+
+  /*******************
+  completion date
+  *******************/
+  app.get('/pip21/completionDate', function (req, res) {
+      res.render('pip21/completionDate', {
+        data     : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip21/completionDate', function (req, res) {
     res.redirect('/pip21/checkYourAnswers#aboutYou');
   });
 
