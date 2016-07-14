@@ -2772,3 +2772,31 @@ PIP19
 .pip21 .twitter-typeahead {
   margin-top: 10px;
 }
+
+/*********************
+PIP21
+**********************/
+.pip21 .border-top {
+  border-top: 3px solid #28A197;
+}
+
+.pip21 #progress {
+  margin-top: 30px;
+}
+
+.pip21 #progress h3 {
+  margin-top: 20px;
+}
+
+.pip21 #progress ul li {
+  margin-bottom: 12px;
+}
+
+.pip21 #progress .change-this,
+.pip21 #progress .answer-this {
+  background-position: 0 0;
+}
+
+.pip21 #progress .progress-q {
+  opacity: 0.5;
+}
