@@ -41,10 +41,10 @@
 
 
 						{% set seq = [
-							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel},
-							{id:"conditionAffect2",label:question.helpLabel,value:question.helpLabel},
-							{id:"conditionAffect3",label:question.relyLabel,value:question.relyLabel},
-							{id:"conditionAffect4",label:question.manageLabel,value:question.manageLabel},
+							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel,"helpText":page.remindsMeHelp},
+							{id:"conditionAffect2",label:question.helpLabel,value:question.helpLabel, "helpText":page.helpFromSomeone, "helpText2":page.helpFromSomeoneRec},
+							{id:"conditionAffect3",label:question.relyLabel,value:question.relyLabel, "helpText":page.relyOnHelp, "helpText2":page.relyOnHelpRec},
+							{id:"conditionAffect4",label:question.manageLabel,value:question.manageLabel, "helpText":page.difficultiesManage},
 							{"id":"conditionAffect6", "label":question.otherWayLabel, "value":question.otherWayLabel,
 								"target"         : "conditionAffectOther",
 								"textarea"       : true,
@@ -53,11 +53,11 @@
 								"textareaAnswer" : answers.conditionAffectOther
 							}
 						] %}
-						{{ elements.checkbox('conditionAffect',"checkbox",question.question3,'',seq,answers,answers.conditionAffect) }}
+						{{ elements.checkbox('manageNow',"checkbox",question.question3,'',seq,answers,answers.manageNow) }}
 
-						{{ elements.frequency(question.frequency,"frequencyOption",question.question2,answers,answers.frequencyOption)}}
+						{{ elements.frequency(question.frequency,"howOften",question.question2,answers,answers.howOften,page.dayshelptext,page.freqHelpText)}}
 
-						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+						{{ elements.textarea("howOftenDetails",question.question4,answers.howOftenDetails,"",question.helpTextHd,question.helpText) }}
 					</div>
 
 

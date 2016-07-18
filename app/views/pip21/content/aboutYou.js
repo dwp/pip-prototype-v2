@@ -9,10 +9,15 @@ var data = [ {
   "changeAnswer"       : "change",
   "backText"           : "Back",
   "tickAll"            : "Tick all that apply",
-  "remindsMeHelp"      : "what the other person does to remind you",
-  "relyOnHelp"         : "what you use to help and how it helps",
+  "remindsMeHelp"      : "what the other person does to remind or encourage you",
+  "relyOnHelp"         : "what you use to help and why you use it",
   "relyOnHelpRec"      : "if someone recommended or gave you the aids",
+  "helpFromSomeone"    : "what things the person does to help you",
+  "helpFromSomeoneRec" : "if there's anything that prevents you from using aids",
   "helpsTakeItHelp"    : "what things the person does to help you.",
+  "difficultiesManage" : "what difficulties you have and how you manage",
+  "explainHelp"        : "what they explain and how they explain it",
+  "superviseHelp"      : "who supervises you and how are you supervised",
   "dayshelptext"       : "roughly how many days out of a month you're affected",
   "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies",
   "postTo"             : "Post to:",
@@ -408,7 +413,7 @@ var data = [ {
       "manageLabel"      : "You manage without help, but with difficulty",
       "question4"        : "In your own words, describe how your condition affects you getting up and moving around on a typical day.",
       "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
+      "helpText"         : ["it takes a long time, tell us how long it takes","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
       "backLink"         : "/pip21/checkYourAnswers#yourCondition"
     },
   ],
@@ -438,7 +443,7 @@ var data = [ {
       "                               "        : "what difficulty you have",
       "question4"        : "In your own words, describe how your condition affects you using the toilet on a typical day.",
       "helpTextHd"       : "Include:",
-      "helpText"         : ["if what you’re able to do depends on the type of day you’re having","any accidents you risk having","if it takes a long time","if using the toilet has an effect on your condition"],
+      "helpText"         : ["if what you’re able to do depends on the type of day you’re having","any accidents you risk having","if it takes a long time, tell us how long it takes","if using the toilet has an effect on your condition"],
       "frequency"          : [
         {
           "allTime"        : "At least once a day",
@@ -447,6 +452,7 @@ var data = [ {
           "ownWords"       : "Explain how often in your own words"
         },
       ],
+    
       "backLink"         : "/pip21/gettingUp"
     },
   ],
@@ -477,11 +483,11 @@ var data = [ {
       "difficultyHelp"   : "what difficulty you have",
       "question4"        : "In your own words, describe how your condition affects you washing yourself on a typical day.",
       "helpTextHd"       : "Include:",
-      "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
+      "helpText"         : ["if it takes a long time, tell us how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
       "difficultyHelp"   : "what difficulty you have",
       "question4"        : "In your own words, describe how your condition affects you washing yourself on a typical day.",
       "helpTextHd"       : "Include:",
-      "helpText"         : ["if it takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
+      "helpText"         : ["if it takes a long time, tell us how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if washing yourself has an effect on your condition"],
       "frequency"          : [
         {
           "allTime"        : "Every time you wash yourself",
@@ -523,7 +529,7 @@ var data = [ {
       "8"                : "what difficulty you have",
       "question4"        : "In your own words, describe how your condition affects you getting dressed or changed on a typical day.",
       "helpTextHd"       : "Include:",
-      "helpText"         : ["how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if getting dressed has an effect on your condition"],
+      "helpText"         : ["if it takes a long time, tell us how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if getting dressed has an effect on your condition"],
       "frequency"          : [
         {
           "allTime"        : "Every time you get dressed",
@@ -567,8 +573,8 @@ var data = [ {
       "relyLabel"        : "You would rely on aids or something else to help",
       "manageLabel"      : "You would manage without help, but with difficulty",
       "question4"        : "In your own words, describe how your condition affects you preparing and cooking a hot meal from fresh ingredients on a typical day.",
-      "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","cooking a meal has an effect on your condition"],
+      "helpTextHd"       : "Include:",
+      "helpText"         : ["if it takes a long time, tell us how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if cooking a meal has an effect on your condition"],
       "backLink"         : "/pip21/gettingDressed"
     },
   ],
@@ -609,7 +615,7 @@ var data = [ {
      ""                 : "what difficulty you have",
      "question4"        : "In your own words, describe how your condition affects you eating or drinking on a typical day.",
      "helpTextHd"       : "Include:",
-     "helpText"         : ["if eating or drinking takes a long time","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if eating or drinking has an effect on your condition"],
+     "helpText"         : ["if eating or drinking takes a long time, tell us how long it takes","if what you’re able to do depends on the type of day you’re having","if you risk having an accident or hurting yourself","if eating or drinking has an effect on your condition"],
      "backLink"         : "/pip21/hotMeal"
     },
   ],
@@ -637,7 +643,7 @@ var data = [ {
       ],
       "question4"        : "In your own words, describe how your condition affects you getting out and about on a typical day.",
       "helpTextHd"       : "Include if:",
-      "helpText"         : ["it takes a long time","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
+      "helpText"         : ["it takes a long time, tell us how long it takes","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
       "backLink"         : "/pip21/checkYourAnswers#yourHome"
     },
   ],

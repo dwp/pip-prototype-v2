@@ -1,3 +1,49 @@
+# 4.13.0
+
+- Make headings block-level by default (PR #200). If you are styling elements you want to be inline with heading includes, you’ll need to explicitly make them inline in your CSS.
+
+# 4.12.0
+
+- Increase button padding to match padding from GOV.UK elements (PR #275).
+If you have UI which depends on the padding set by the button mixin in the frontend toolkit and this is not overridden by button padding set by GOV.UK elements, this change will affect it.
+
+# 4.11.0
+
+- Remove the GDS-Logo font-face definition (PR #272)
+- Move the @viewport statements to govuk_template (PR #272). If you upgrade to this version of govuk_frontend_toolkit and you’re also using govuk_template you’ll need to upgrade that to at least 0.17.2 to maintain compatibility with desktop IE10 in snap mode.
+
+# 4.10.0
+
+- Allow New Transport font stack to be overridden by apps using `$toolkit-font-stack`
+and `$toolkit-font-stack-tabular` (PR #230)
+
+# 4.9.1
+
+- Fix phase banner alignment (PR #266)
+
+# 4.9.0
+
+- Add websafe organisation colours
+- Split colours into two files with backwards-compatible colours.scss replacement
+
+# 4.8.2
+
+- Add GOV.UK lint to lint scss files (PR #260)
+- Remove reference to old colour palette (PR #256)
+- Fix link to GOV.UK elements - tabular data
+
+# 4.8.1
+
+- Update DEFRA brand colour to new green (PR #249)
+
+# 4.8.0
+
+- Pass cohort name to analytics when using multivariate test (PR #251)
+
+# 4.7.0
+
+- Add 'mailto' tracking to GOV.UK Analytics (PR #244)
+
 # 4.6.1
 
 - Use the Sass variable $light-blue for link active and hover colours (PR #242)

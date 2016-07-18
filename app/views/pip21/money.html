@@ -38,10 +38,10 @@
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
 
 						{% set seq = [
-							{id:"conditionAffect1",label:question.relySomeoneLabel,value:question.relySomeoneLabel},
-							{id:"conditionAffect2",label:question.relyRemindLabel,value:question.relyRemindLabel},
+							{id:"conditionAffect1",label:question.relySomeoneLabel,value:question.relySomeoneLabel, "helpText":page.explainHelp},
+							{id:"conditionAffect2",label:question.relyRemindLabel,value:question.relyRemindLabel, "helpText":page.remindsMeHelp},
 							{id:"conditionAffect4",label:question.legalLabel,value:question.legalLabel},
-							{id:"conditionAffect3",label:question.ownLabel,value:question.ownLabel},
+							{id:"conditionAffect3",label:question.ownLabel,value:question.ownLabel, "helpText":page.difficultiesManage},
 							{"id":"conditionAffect6", "label":question.otherWayLabel, "value":question.otherWayLabel,
 								"target"         : "conditionAffectOther",
 								"textarea"       : true,
@@ -50,7 +50,7 @@
 								"textareaAnswer" : answers.conditionAffectOther
 							}
 						] %}
-						{{ elements.checkbox('conditionAffect',"checkbox",question.question2,'',seq,answers,answers.conditionAffect) }}
+						{{ elements.checkbox('manageNow',"checkbox",question.question2,'',seq,answers,answers.manageNow) }}
 
 						{{ elements.textarea("howDoes",question.question3,answers.howDoes,"",question.helpTextHd,question.helpText) }}
 					</div>
