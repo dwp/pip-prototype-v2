@@ -18,13 +18,11 @@
 					{{ elements.header(page,question) }}
 
 
-      <fieldset>
 				{% set seq  = [
 					{"id":"helper","value":"Bank Account","showPanel":"bank-details"},
 					{"id":"helper", "value":"Building society account","showPanel":"building-society-details"}
 				] %}
 				{{ elements.radioSelect('bank',question.question,"",answers.bank,seq) }}
-      </fieldset>
 
       <div class="js-hidden" id="bank-details">
         <div class="form-group">
@@ -71,12 +69,22 @@
       <div class="js-hidden" id="building-society-details">
         <div class="form-group">
           <fieldset>
-            <label class="form-label-bold" for="bs-society-roll">
-              Building society roll or reference number
-              <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
-            </label>
-
-            <input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll">
+						<div class="form-group">
+		          <fieldset>
+		            <label class="form-label-bold" for="account-number">
+		              Account holder name
+		            </label>
+		            <input type="text" class="form-control" id="account-number" name="account-number">
+		          </fieldset>
+		        </div>
+						<div class="form-group">
+		          <fieldset>
+		            <label class="form-label-bold" for="bs-society-roll">
+		              Building society roll or reference number
+		              <span class="form-hint">If your building society uses a roll or reference number, you will find it on your passbook</span>
+		            </label>
+								<input type="text" class="form-control" id="bs-society-roll" name="bs-society-roll">
+						</div>
           </fieldset>
         </div>
       </div>

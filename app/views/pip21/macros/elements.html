@@ -1,3 +1,4 @@
+
 {% macro header(page,question) %}
 <header>
   <h1 class="form-title heading-xlarge">
@@ -403,7 +404,7 @@ open
 {% macro helpline(page) %}
 {% for helpline in page.helpline %}
 <div class="column-third">
-  <div id="ad-helpline" class="">
+  <div id="ad-helpline" class="border-top">
     <p>{{helpline.p1}}</p>
     <h3 class="heading-medium tel">{{helpline.p2}}</h3>
     <p class="form-hint">{{helpline.p3}}</p>
@@ -411,6 +412,7 @@ open
     <p>{{helpline.p8}}</p>
     <p>{{helpline.p9}}</p>
   </div>
+
 </div>
 {% endfor %}
 {% endmacro %}
