@@ -452,7 +452,7 @@ var data = [ {
           "ownWords"       : "Explain how often in your own words"
         },
       ],
-    
+
       "backLink"         : "/pip21/gettingUp"
     },
   ],
@@ -818,7 +818,7 @@ var data = [ {
   "completionDate" : [
     {
       "heading"          : "Completion Date",
-      "p1"               : "You have until (date) to complete your application." ,
+      "p1"               : "You have until <strong>(date)</strong> to complete your application." ,
       "p2"               : "You can save and return to the application as often as you like before (date)",
       "submit"           : "Continue",
       "backLink"         : "/pip21/declaration"
