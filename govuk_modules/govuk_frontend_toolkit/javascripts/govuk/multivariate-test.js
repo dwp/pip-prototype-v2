@@ -1,8 +1,7 @@
-(function(global) {
+(function() {
   "use strict";
-
-  var $ = global.jQuery;
-  var GOVUK = global.GOVUK || {};
+  window.GOVUK = window.GOVUK || {};
+  var $ = window.$;
 
   // A multivariate test framework
   //
@@ -78,7 +77,9 @@
     if (this.customDimensionIndex) {
       GOVUK.analytics.setDimension(
         this.customDimensionIndex,
-        this.cookieName() + "__" + cohort
+        this.cookieName(),
+        cohort,
+        2 // session level
       );
     }
   };
@@ -131,7 +132,5 @@
     return "multivariatetest_cohort_" + this.name;
   };
 
-  GOVUK.MultivariateTest = MultivariateTest;
-
-  global.GOVUK = GOVUK;
-})(window);
+  window.GOVUK.MultivariateTest = MultivariateTest;
+}());

@@ -1,7 +1,6 @@
-(function(global) {
+(function() {
   "use strict";
-
-  var GOVUK = global.GOVUK || {};
+  window.GOVUK = window.GOVUK || {};
 
   var GoogleAnalyticsUniversalTracker = function(id, cookieDomain) {
     configureProfile(id, cookieDomain);
@@ -21,7 +20,7 @@
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(global,document,'script','//www.google-analytics.com/analytics.js','ga');
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   };
 
   // https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
@@ -141,12 +140,10 @@
   };
 
   function sendToGa() {
-    if (typeof global.ga === "function") {
-      ga.apply(global, arguments);
+    if (typeof window.ga === "function") {
+      ga.apply(window, arguments);
     }
   }
 
   GOVUK.GoogleAnalyticsUniversalTracker = GoogleAnalyticsUniversalTracker;
-
-  global.GOVUK = GOVUK;
-})(window);
+})();

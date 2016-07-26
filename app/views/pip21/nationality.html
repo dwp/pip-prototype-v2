@@ -28,10 +28,10 @@
 						{"id":"countryLiving","value":"Yes"},
 						{"id":"countryLiving", "value":"No","showPanel":"otherCountry"}
 					] %}
-					{{ elements.genericInput('countryLiving',question.question3,answers.countryLiving,"","") }}
+					{{ elements.radioSelect('countryLive',question.question3,"",answers.countryLive,seq2,"inline") }}
 
 					<div class="form-group panel-indent {% if answers.countryLiving != 'No' %}js-hidden{% endif %}" id="otherCountry">
-            {{ elements.genericInput('countryLivingOther',question.question4, answers.countryLivingOther) }}
+            {{ elements.genericInput('countryLiving',question.question4, answers.countryLivingOther) }}
           </div>
 
 					{% set seq3  = [
