@@ -2,11 +2,12 @@ var data = [ {
   "checkYourAnswers" : [
     {
       "page"               : "34",
-      "heading"            : "Your application",
+      "heading"            : "Check your answers",
       "changeLinkTxt"      : "Answer this question",
-      "introText"          : "You can answer the questions in any order, but you must answer every question. You can save any answers you enter and return to them before [DATE].",
-      "warningMsg"        : "You will not be able to change your answers after you send your application.",
+      "introText"          : "You can check all the answers you’ve given and change them if you need to.",
+      "warningMsg"         : "You will not be able to change your answers after you send your application.",
       "backLink"           : "/pip21/money",
+      "submit"             : "Send my application",
 
       /* Helper  */
       "helperHd"           : "Helper details",
@@ -80,6 +81,10 @@ var data = [ {
 
       /* manageTreatments */
       "manageTreatHd"      : "Managing your treatments",
+      "manageDoesSomone"   : "Does someone need to help you manage your treatment or therapy at home?",
+      "manageHours"        : "How many hours a week they help you",
+      "manageWhy"          : "Why does someone need to help you manage your treatment or therapy at home?",
+      "manageHow"          : "How does someone help you manage your treatment or therapy at home?",
 
       /* side effects */
       "sideEffectsHd"      : "Side effects",
@@ -150,6 +155,7 @@ var data = [ {
       "toiletOften"        : "How often does your condition affect you using the toilet?",
       "toiletWhen"         : "When your condition affects you, how do you use the toilet?",
       "toiletHow"          : "Explain how your condition affects you using the toilet.",
+      "toiletManageNow"    : "How do you use the toilet?",
 
       /* washing */
       "washingHd"          : "Washing yourself",

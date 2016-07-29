@@ -164,10 +164,34 @@
   </div>
 </div>
 
-<!-- manageTreatments -->
+<!-- manageTreatments manageDoesSomone
+manageHours
+manageWhy
+manageHow
+-->
 <div class="column-full">
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.manageTreatHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.manageDoesSomone}}</span>
+        <span class="answer">{{manageTreatments.monitored}}</span>
+      </li>
+      {% if manageTreatments.monitored == 'Yes' %}
+        <li>
+          <span class="question">{{question.manageHours}}</span>
+          <span class="answer">{{manageTreatments.howManyHours}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.manageWhy}}</span>
+          <span class="answer">{{manageTreatments.whyNeedMonitoring}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.manageHow}}</span>
+          <span class="answer">{{manageTreatments.howHelpToMonitor}}</span>
+        </li>
+      {% endif %}
+    </ul>
     <a href="/pip21/manageTreatments?edit=true">{{question.changeLinkTxt}}</a>
   </div>
 </div>

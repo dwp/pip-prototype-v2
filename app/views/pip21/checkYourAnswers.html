@@ -13,7 +13,7 @@
 <main id="content" role="main" class="pip21 pip18">
 
 	<div class="grid-row">
-			<form action="/pip14/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
+			<form action="/pip21/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
 
 				<div class="column-two-thirds">
 					{{ elements.header(page,question) }}
@@ -26,7 +26,7 @@
 				{% include "./checkYourAnswers/makingSense.html" %}
 
 				<div class="column-two-thirds">
-					{{ elements.submit(page,question) }}
+					{{ elements.submit(page,question,false,false,false) }}
 				</div>
 
       </form>

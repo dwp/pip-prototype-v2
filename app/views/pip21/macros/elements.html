@@ -317,6 +317,31 @@ open
 </li>
 {% endmacro %}
 
+{% macro manageNow(question,answer,pageKey,page) %}
+<li>
+  <span class="question">{{question[pageKey + "ManageNow"]}}</span>
+  <span class="answer">
+    {% if answer.manageNow|length < 8 %}
+    <ul class="list-bullet">
+      {% for answerOption in answer.manageNow %}
+        <li>
+          {{answerOption}}
+          {% if answerOption|lower == 'in another way' or answerOption|lower == 'something else' %}
+            - {{answer.textboxId2}}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+      {{answer.manageNow}}
+      {% if answer.manageNow|lower == 'in another way' or answer.manageNow|lower == 'something else' %}
+        - {{answer.textboxId2}}
+      {% endif %}
+    {% endif %}
+  </span>
+</li>
+{% endmacro %}
+
 {% macro conditionOften(question,answer,pageKey,page) %}
 <li>
   <span class="question">{{question[pageKey + "Often"]}}</span>
@@ -358,7 +383,7 @@ open
 {% macro conditionExplainHow(question,answer,pageKey,page) %}
 <li>
   <span class="question">{{question[pageKey + "How"]}}</span>
-  <span class="answer">{{answer.howDoes}}</span>
+  <span class="answer">{{answer.howOftenDetails}}</span>
 </li>
 {% endmacro %}
 
@@ -376,12 +401,12 @@ open
 
         {% if answer.optionsName != pageKeyContent.doesntLabel %}
 
-          {% if question[pageKey + "Often"] %}
-            {{ conditionOften(question,answer,pageKey,page) }}
+          {% if question[pageKey + "ManageNow"] %}
+            {{ manageNow(question,answer,pageKey,page) }}
           {% endif %}
 
-          {% if question[pageKey + "When"] %}
-            {{ conditionAffect(question,answer,pageKey,page) }}
+          {% if question[pageKey + "Often"] %}
+            {{ conditionOften(question,answer,pageKey,page) }}
           {% endif %}
 
           {% if question[pageKey + "How"] %}

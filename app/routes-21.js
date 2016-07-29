@@ -961,6 +961,7 @@ module.exports = function (app) {
         medications              : req.session['pip21-medications'],
         manageMedications        : req.session['pip21-manageMedications'],
         treatments               : req.session['pip21-treatments'],
+        manageTreatments         : req.session['pip21-manageTreatments'],
         sideEffects              : req.session['pip21-sideEffects'],
         conditionAffects         : req.session['pip21-conditionAffects'],
         monitoringCondition      : req.session['pip21-monitoringCondition'],
@@ -995,6 +996,7 @@ module.exports = function (app) {
   checkYourAnswers
   *******************/
   app.get('/pip21/checkYourAnswers', function (req, res) {
+    console.log(req.session['pip21-toilet']);
       res.render('pip21/checkYourAnswers', {
         data                     : aboutYou.getTableData(),
         dataCheckChange          : checkYourAnswers.getTableData(),
@@ -1010,6 +1012,7 @@ module.exports = function (app) {
         medications              : req.session['pip21-medications'],
         manageMedications        : req.session['pip21-manageMedications'],
         treatments               : req.session['pip21-treatments'],
+        manageTreatments         : req.session['pip21-manageTreatments'],
         sideEffects              : req.session['pip21-sideEffects'],
         conditionAffects         : req.session['pip21-conditionAffects'],
         monitoringCondition      : req.session['pip21-monitoringCondition'],
