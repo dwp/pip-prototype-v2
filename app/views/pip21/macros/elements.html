@@ -8,14 +8,20 @@
 <p class="lede">{{ question.introText|safe }}</p>
 {% endmacro %}
 
-{% macro submit(data,questions,backLink,showReturnToMenu) %}
+{% macro submit(data,questions,backLink,showReturnToMenu,showAnswerLater) %}
 <div id="submit-group" class="form-group">
+
     {% if questions.warningMsg %}
       <p>{{questions.warningMsg}}</p>
     {% endif %}
     <input type="submit" class="button"
     value="{% if questions.submit %} {{questions.submit}} {% else %} {{data.continue}} {% endif %}"
     name="saveAndcontinue">
+
+    {% if showAnswerLater != false %}
+      <input type="submit" class="button" id="skipQuestion" value="{{data.skipQuestion}}" name="skipQuestion">
+    {% endif %}
+
     {% if showReturnToMenu != false %}
       <input type="submit" value="{{data.saveExit}}" name="saveAndMenu" class="exit-link">
     {% endif %}
@@ -393,11 +399,7 @@ open
 <!-- enter/change answers for non-linear in pip21 -->
 {% macro EnterChangeAnswers(question,pageKey,page) %}
 <div id="{{pageKey}}" class"column-third">
-  {% if question %}
-    <a href="{{pageKey}}" class="change-this">{{ page.changeAnswer}}</a>
-  {% else %}
-    <a href="{{pageKey}}" class="answer-this">{{ page.enterAnswer  }}</a>
-  {% endif %}
+  <a href="{{pageKey}}?skippedQ=true" class="answer-this">{{ page.enterAnswer }}</a>
 </div>
 {% endmacro %}
 

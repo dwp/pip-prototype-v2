@@ -2804,3 +2804,14 @@ PIP21
 .pip21 #otherCountry {
   margin-top: 0;
 }
+
+.pip21 #skipQuestion {
+  background: #dee0e2;
+  box-shadow: 0 2px 0 #bfc1c3;
+  color: #0b0c0c;
+  margin-left: -5px;
+}
+
+.pip21 .exit-link {
+  display: block;
+}

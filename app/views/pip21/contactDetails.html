@@ -47,7 +47,11 @@
 					{{ elements.genericInput('altPhone',question.question5, answers.altPhone) }}
 					{{ elements.genericInput('email',question.question6, answers.email) }}
 
-					{{ elements.submit(page,question,true,false) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

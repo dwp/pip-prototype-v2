@@ -38,7 +38,7 @@
 
 					<div class="form-group panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
-					 
+
 
 						{% set seq = [
 							{id:"conditionAffect1",label:question.encourageLabel,value:question.encourageLabel, "helpText":question.encourageMeHelp},
@@ -60,8 +60,11 @@
 						{{ elements.textarea("howOftenDetails",question.question4,answers.howOftenDetails,"",question.helpTextHd,question.helpText) }}
 					</div>
 
-
-					{{ elements.submit(page,question) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

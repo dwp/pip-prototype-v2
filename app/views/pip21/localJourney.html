@@ -37,7 +37,11 @@
 						{{ elements.textarea("howDoes",question.question3,answers.howDoes,question.q3HintText) }}
 					</div>
 
-					{{ elements.submit(page,question) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

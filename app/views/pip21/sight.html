@@ -31,14 +31,18 @@
 		] %}
 		{{ elements.checkbox('optionsName',"radio",question.question4,"",seq,answers,answers.optionsName) }}
 
-	
+
 					<div class="form-group panel-indent {% if answers.allTime != 'No' %}js-hidden{% endif %}" id="allTimeDetails">
 						{{ elements.genericInput('howOften',question.question2, answers.howOften, question.qHintText2) }}
 						</div>
 						{{ elements.textarea("howDoes",question.question3,answers.howDoes, "", question.helpTextHd,question.helpText) }}
 					</div>
 
-					{{ elements.submit(page,question) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

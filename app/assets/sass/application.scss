@@ -602,3 +602,14 @@ PIP21
 .pip21 #otherCountry {
   margin-top:0;
 }
+
+.pip21 #skipQuestion {
+  background: $grey-3;
+  box-shadow: 0 2px 0 $grey-2;
+  color: $black;
+  margin-left: -5px;
+}
+
+.pip21 .exit-link {
+  display: block;
+}

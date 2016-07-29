@@ -73,7 +73,11 @@
 
 						{{ elements.textarea("anythingElse",question.question2,answers.anythingElse,question.q2HintText) }}
 
-					{{ elements.submit(page,question) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

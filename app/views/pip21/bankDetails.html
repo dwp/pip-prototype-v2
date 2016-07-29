@@ -19,8 +19,10 @@
 
 
 				{% set seq  = [
-					{"id":"helper","value":"Bank Account","showPanel":"bank-details"},
-					{"id":"helper", "value":"Building society account","showPanel":"building-society-details"}
+					{"id":"account-1","value":"Bank account","showPanel":"bank-details"},
+					{"id":"account-2", "value":"Building society account","showPanel":"building-society-details"},
+					{"id":"account-3", "value":"Credit Union account","showPanel":"bank-details"},
+					{"id":"account-4", "value":"I don't have any of these"}
 				] %}
 				{{ elements.radioSelect('bank',question.question,"",answers.bank,seq) }}
 
@@ -77,6 +79,30 @@
 		            <input type="text" class="form-control" id="account-number" name="account-number">
 		          </fieldset>
 		        </div>
+
+						<div class="form-group">
+							<legend class="form-label-bold">Sort code</legend>
+
+			        <div class="form-date form-group">
+			          <fieldset>
+			            <div class="form-group form-group-day">
+			              <label for="sort-code-1"></label>
+			              <input class="form-control" id="sort-code-1" maxlength="2" name="sort-code-1" type="text" />
+			            </div>
+
+			            <div class="form-group form-group-month">
+			              <label for="sort-code-2"></label>
+			              <input class="form-control" id="sort-code-2" maxlength="2"  name="sort-code-2" type="text" />
+			            </div>
+
+			            <div class="form-group form-group-month">
+			              <label for="sort-code-3"></label>
+			              <input class="form-control" id="sort-code-3" maxlength="2"  name="sort-code-3" type="text" />
+			            </div>
+			          </fieldset>
+			        </div>
+						</div>
+
 						<div class="form-group">
 		          <fieldset>
 		            <label class="form-label-bold" for="bs-society-roll">
@@ -90,9 +116,12 @@
       </div>
 
 
+			{% if answers.skipQuestion.length or edit %}
+				{{ elements.returnToMenu(page,question) }}
+			{% else %}
+				{{ elements.submit(page,question,true,true) }}
+			{% endif%}
 
-
-          {{ elements.submit(page,question,true,false) }}
 
       </form>
     </div>

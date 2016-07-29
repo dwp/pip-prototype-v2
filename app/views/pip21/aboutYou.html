@@ -26,7 +26,11 @@
 					{{ elements.genericInput('nino',question.question5, answers.nino) }}
 
 
-					{{ elements.submit(page,question,true,false) }}
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
 
         </form>
 			</div>

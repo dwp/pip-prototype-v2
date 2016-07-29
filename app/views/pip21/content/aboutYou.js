@@ -8,6 +8,7 @@ var data = [ {
   "enterAnswer"        : "enter your answer",
   "changeAnswer"       : "change",
   "backText"           : "Back",
+  "skipQuestion"       : "Answer later",
   "tickAll"            : "Tick all that apply",
   "remindsMeHelp"      : "what the other person does to remind or encourage you",
   "relyOnHelp"         : "what you use to help and why you use it",
@@ -106,14 +107,15 @@ var data = [ {
       "backLink"         : "/pip21/contactDetails"
     },
   ],
-  "currentWhereabouts" : [
+  "bankDetails" : [
     {
-      "page"             : "5",
-      "heading"          : "Where you are now",
-      "question"         : "Are you currently staying in:",
-      "question2"        : "When did you start staying there?",
-      "question3"        : "The address",
-      "question4"        : "Postcode",
+      "page"             : "8",
+      "heading"          : "How you want to receive payment",
+      "introText"        : "If your claim is successful, money will be paid into your account. If you give your details now this could stop delays in the future.",
+      "question"         : "How would you like to get paid?",
+      "question2"        : "Sort code",
+      "question3"        : "Account number",
+      "question4"        : "Building society roll or reference number",
       "backLink"         : "/pip21/contactPref"
     }
   ],
@@ -127,8 +129,19 @@ var data = [ {
       "question4"        : "Where you live",
       "question5"        : "Have you been out of England, Scotland or Wales for more than 4 weeks in the last 3 years?",
       "q5HintText"       : "This could be one trip or a number of trips adding up to 4 weeks.",
-      "backLink"         : "/pip21/currentWhereabouts"
+      "backLink"         : "/pip21/bankDetails"
     },
+  ],
+  "currentWhereabouts" : [
+    {
+      "page"             : "5",
+      "heading"          : "Where you are now",
+      "question"         : "Are you currently staying in:",
+      "question2"        : "When did you start staying there?",
+      "question3"        : "The address",
+      "question4"        : "Postcode",
+      "backLink"         : "/pip21/nationality"
+    }
   ],
   "paymentsFromAbroad" : [
     {
@@ -141,21 +154,8 @@ var data = [ {
       "countries"        : "Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Gibraltar, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden and Switzerland.",
       "question2"        : "Are you or your close family claiming or being paid any benefits or pensions from any of these countries?",
       "question3"        : "Are you or your close family working or paying National Insurance in any of these countries?",
-      "backLink"         : "/pip21/nationality"
+      "backLink"         : "/pip21/currentWhereabouts"
     },
-  ],
-  "bankDetails" : [
-    {
-      "page"             : "8",
-      "heading"          : "Bank details",
-      "introText"        : "If your claim is successful, money will be paid into your bank account. If you give your details now this could stop delays in the future.",
-      "question"         : "How would you like to get paid?",
-      "question2"        : "Sort code",
-      "question3"        : "Account number",
-      "question4"        : "Building society roll or reference number",
-      "submit"           : "Save and continue",
-      "backLink"         : "/pip21/checkYourAnswers"
-    }
   ],
   "conditionDetails" : [
     {
@@ -166,7 +166,7 @@ var data = [ {
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip21/checkYourAnswers#aboutYou"
+      "backLink"         : "/pip21/paymentsFromAbroad#aboutYou"
     },
   ],
   "medications" : [
@@ -414,7 +414,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your condition affects you getting up and moving around on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time, tell us how long it takes","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","moving around has an effect on your condition"],
-      "backLink"         : "/pip21/checkYourAnswers#yourCondition"
+      "backLink"         : "/pip21/hearing"
     },
   ],
   "toilet" : [
@@ -644,7 +644,7 @@ var data = [ {
       "question4"        : "In your own words, describe how your condition affects you getting out and about on a typical day.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["it takes a long time, tell us how long it takes","what you’re able to do depends on the type of day you’re having","you risk having an accident or hurting yourself","getting out or walking about has an effect on your condition"],
-      "backLink"         : "/pip21/checkYourAnswers#yourHome"
+      "backLink"         : "/pip21/eatingAndDrinking"
     },
   ],
   "mixing" : [
@@ -696,7 +696,7 @@ var data = [ {
       "noLabel"          : "Your condition would <span class='bold-small'>not</span> affect you planning a local journey",
       "question3"        : "In your own words, describe how you would plan a local journey if you had to.",
       "q3HintText"       : "Include if it would take you a long time to plan a local journey.",
-      "backLink"         : "/pip21/checkYourAnswers#gettingOut"
+      "backLink"         : "/pip21/mixing"
     },
   ],
   "somewhereNeverBeenBefore" : [
@@ -801,7 +801,7 @@ var data = [ {
       "heading"          : "Additional information",
       "introText"        : "Include anything else that explains how your condition or disability affects you.",
       "submit"           : "Save and continue",
-      "backLink"         : "/pip21/checkYourAnswers#additionalInfo"
+      "backLink"         : "/pip21/money"
     },
   ],
   "declaration" : [
