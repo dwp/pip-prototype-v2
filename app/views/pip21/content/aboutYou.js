@@ -818,8 +818,8 @@ var data = [ {
   "completionDate" : [
     {
       "heading"          : "Completion Date",
-      "p1"               : "You have until <strong>(date)</strong> to complete your application." ,
-      "p2"               : "You can save and return to the application as often as you like before <strong>(date)</strong>",
+      "p1"               : "You have until <strong>17/9/2016</strong> to complete your application." ,
+      "p2"               : "You can save and return to the application as often as you like before <strong>17/9/2016</strong>",
       "submit"           : "Continue",
       "backLink"         : "/pip21/declaration"
     }
