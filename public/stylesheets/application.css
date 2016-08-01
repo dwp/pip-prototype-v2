@@ -2815,3 +2815,15 @@ PIP21
 .pip21 .exit-link {
   display: block;
 }
+
+.pip21 .keep-a-copy {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.icon-file {
+  background: url(../images/icon-file-download.png) no-repeat;
+  background-size: 25px 30px;
+  padding-left: 31px;
+}
