@@ -327,7 +327,7 @@ open
         <li>
           {{answerOption}}
           {% if answerOption|lower == 'in another way' or answerOption|lower == 'something else' %}
-            - {{answer.textboxId2}}
+            - {{answer.conditionAffectOther}}
           {% endif %}
         </li>
       {% endfor %}
@@ -335,7 +335,7 @@ open
     {% else %}
       {{answer.manageNow}}
       {% if answer.manageNow|lower == 'in another way' or answer.manageNow|lower == 'something else' %}
-        - {{answer.textboxId2}}
+        - {{answer.conditionAffectOther}}
       {% endif %}
     {% endif %}
   </span>

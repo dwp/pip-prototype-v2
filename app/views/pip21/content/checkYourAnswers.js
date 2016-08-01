@@ -71,6 +71,7 @@ var data = [ {
       "manageMedsOften"    : "How often does your condition affect you managing your medication?",
       "manageMedsNow"      : "How do you manage your medication now?",
       "manageMedsDetails"  : "More details about how your condition affects you managing your medication",
+      "manageMedsManageNow" : "How do you manage your medication?",
 
       /* treatments */
       "treatmentsHd"       : "Your treatments and therapies",
@@ -154,7 +155,7 @@ var data = [ {
       "toiletDoes"         : "Does your condition affect you:",
       "toiletOften"        : "How often does your condition affect you using the toilet?",
       "toiletWhen"         : "When your condition affects you, how do you use the toilet?",
-      "toiletHow"          : "Explain how your condition affects you using the toilet.",
+      "toiletHow"          : "Describe how your condition affects you using the toilet on a typical day.",
       "toiletManageNow"    : "How do you use the toilet?",
 
       /* washing */
