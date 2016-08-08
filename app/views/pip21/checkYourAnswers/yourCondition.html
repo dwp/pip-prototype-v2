@@ -273,11 +273,6 @@ manageHow
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.hcpHd}}</h2>
     <ul class="column-two-thirds">
-      <li>
-        <span class="question">{{question.hcpContact}}</span>
-        <span class="answer">{{healthcareprofessional.contactHcp}}</span>
-      </li>
-      {% if healthcareprofessional.contactHcp == 'Yes' %}
         {% for i in range(1, 11) -%}
           {% if loop.first or healthcareprofessional["name" + i] %}
             <li>
@@ -307,7 +302,6 @@ manageHow
             </li>
           {% endif %}
         {% endfor %}
-      {% endif %}
     </ul>
     <a href="/pip21/healthcareprofessional?edit=true">{{question.changeLinkTxt}}</a>
   </div>
@@ -372,6 +366,9 @@ not finished - need to show textarea answers
     <h2 class="heading-medium">{{question.specAidsHd}}</h2>
     <ul class="column-two-thirds">
       <li>
+      =-  {{ specialAids }}
+    </li>
+    <li>
         <span class="question">{{question.specAidsWhere}}</span>
         <span class="answer">
           {% if specialAids.optionsName|length < 10 and specialAids.optionsName != 'Outside' %}

@@ -3,11 +3,10 @@ var data = [ {
     {
       "page"               : "34",
       "heading"            : "Check your answers",
-      "changeLinkTxt"      : "Answer this question",
+      "changeLinkTxt"      : "Change your answer",
       "introText"          : "You can check all the answers you’ve given and change them if you need to.",
-      "warningMsg"         : "You will not be able to change your answers after you send your application.",
       "backLink"           : "/pip21/money",
-      "submit"             : "Send my application",
+      "submit"             : "Continue",
 
       /* Helper  */
       "helperHd"           : "Helper details",

@@ -996,7 +996,6 @@ module.exports = function (app) {
   checkYourAnswers
   *******************/
   app.get('/pip21/checkYourAnswers', function (req, res) {
-    console.log(req.session['pip21-toilet']);
       res.render('pip21/checkYourAnswers', {
         data                     : aboutYou.getTableData(),
         dataCheckChange          : checkYourAnswers.getTableData(),
@@ -1040,7 +1039,16 @@ module.exports = function (app) {
 
   app.post('/pip21/checkYourAnswers', function (req, res) {
     req.session['pip21-checkYourAnswers'] = req.body;
-    res.redirect('/pip21/bankDetails');
+    if (req.body.saveAndMenu) {
+      res.redirect('/pip21/unansweredQuestions#aboutYou');
+    } else {
+      hcps = req.session['pip21-healthcareprofessional'];
+      if ( !hcps || !hcps['name1']) {
+        res.redirect('/pip21/submitApplication');
+     } else {
+        res.redirect('/pip21/hcpConsent');
+      }
+    }
   });
 
   /*******************
@@ -1083,11 +1091,9 @@ module.exports = function (app) {
   app.post('/pip21/hcpConsent', function (req, res) {
     req.session['pip21-hcpConsent'] = req.body;
 
-    if (req.body.saveAndMenu) {
-      res.redirect('/pip21/unansweredQuestions#yourCondition');
-    } else {
+
       res.redirect('/pip21/submitApplication');
-    }
+
   });
 
   /*******************
@@ -1116,3 +1122,52 @@ module.exports = function (app) {
 
 
 };
+
+/* user journey
+
+appointee
+aboutYou
+contactDetails
+contactPref
+bankDetails
+nationality
+currentWhereabouts
+paymentsFromAbroad
+declaration
+completionDate
+
+conditionDetails
+medications
+manageMedications
+treatments
+manageTreatments
+sideEffects
+conditionAffects
+monitoringCondition
+healthcareprofessional
+submitEvidence
+specialAids
+sight
+speech
+hearing
+gettingUp
+toilet
+washing
+gettingDressed
+hotMeal
+eatingAndDrinking
+gettingOut
+mixing
+localJourney
+somewhereNeverBeenBefore
+understanding
+money
+additionalInfo
+
+unansweredQuestions
+checkYourAnswers
+hcpConsent
+submitApplication
+thankYou
+
+*/

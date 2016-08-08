@@ -831,7 +831,7 @@ var data = [ {
       "p1"               : "You have now answered all the questions on the application and you are now able to send it",
       "p2"               : "You will not be able to change your answers after you send your application.",
       "submit"           : "Send my application",
-      "backLink"         : "/pip21/bankDetails"
+      "backLink"         : "/pip21/checkYourAnswers"
     },
   ],
   "thankYou" : [
