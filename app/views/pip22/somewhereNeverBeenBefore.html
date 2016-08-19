@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip22/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.somewhereNeverBeenBefore %}
+<main id="content" role="main" class="pip22">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip22/somewhereNeverBeenBefore{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"affect1", "label":question.somewhereNeverLabel, "value":question.somewhereNeverLabel, "showPanel":"details"},
+						{"id":"affect2", "label":question.somewhereKnowLabel, "value":question.somewhereKnowLabel, "showPanel":"details"},
+						{"id":"affect3", "label":question.knowingLabel, "value":question.knowingLabel, "showPanel":"details"},
+						{"id":"affect4", "label":question.publicLabel, "value":question.publicLabel, "showPanel":"details"},
+						{"id":"affect5", "label":question.askingHelpLabel, "value":question.askingHelpLabel, "showPanel":"details"},
+						{"id":"affect6", "label":question.lostLabel, "value":question.lostLabel, "showPanel":"details"},
+						{"id":"affect9", "label":question.dealingLabel, "value":question.dealingLabel, "showPanel":"details"},
+						{"id":"affect7", "label":question.mapsLabel, "value":question.mapsLabel, "showPanel":"details"},
+						{"id":"affect8", "label":question.otherWayLabel, "value":question.otherWayLabel, "showPanel":"details",
+							"target"        : "target2",
+							"textbox"       : true,
+							"textboxId"     : "textboxId2",
+							"textboxAnswer" : answers.textboxId2
+						},
+						{"id":"affect10", "label":question.doesntLabel, "value":question.doesntLabel, "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('optionsName',"checkbox",question.question,page.tickAll,seq,answers,answers.optionsName,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
+
+						{% set seq = [
+							{id:"conditionAffect1",label:question.relySomeoneLabel,value:question.relySomeoneLabel},
+							{id:"conditionAffect2",label:question.relyGuideLabel,value:question.relyGuideLabel},
+							{id:"conditionAffect3",label:question.ownLabel,value:question.ownLabel},
+							{"id":"conditionAffect6", "label":question.otherWayLabel, "value":question.otherWayLabel,
+								"target"         : "conditionAffectOther",
+								"textarea"       : true,
+								"textareaId"     : "conditionAffectOther",
+								"textareaLabel"  : "",
+								"textareaAnswer" : answers.conditionAffectOther
+							}
+						] %}
+						{{ elements.checkbox('conditionAffect',"checkbox",question.question2,'',seq,answers,answers.conditionAffect) }}
+
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

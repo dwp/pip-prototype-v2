@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip22/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.hcpConsent %}
+<main id="content" role="main" class="pip22">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip22/hcpConsent{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+
+						{% set multipleHcps = "" %}
+						{% for i in range(1, 11) -%}
+							{% if loop.index > 0 and hcps['name' + i] %}
+								<ul class="hcp-list seperator">
+							{% endif %}
+								{% if hcps["name" + i] %} <li>{{hcps["name" + i]}} </li> {% endif %}
+								{% if hcps["profession" + i] %} <li>{{hcps["profession" + i]}} </li> {% endif %}
+								{% if hcps["address" + i] %} <li>{{hcps["address" + i]}} </li> {% endif %}
+								{% if hcps["phone" + i] %} <li>{{hcps["phone" + i]}} </li>{% endif %}
+							{% if loop.index > 0 and hcps['name' + i] %}
+								</ul>
+							{% endif %}
+						{% endfor %}
+
+					{% if hcps.name2 %}
+						{% set seq  = [
+							{"id":"consent","value":question.ok},
+							{"id":"consent", "value":question.notOk,"showPanel":"notContactDetails"}
+						] %}
+					{% else %}
+						{% set seq  = [
+							{"id":"consent","value":question.ok},
+							{"id":"consent", "value":question.notOk}
+						] %}
+					{% endif %}
+
+					{{ elements.radioSelect('consent',question.question,"",answers.consent,seq) }}
+
+					{% if hcps.name2 %}
+						<div class="form-group panel-indent {% if answers.consent != question.notOk %}js-hidden{% endif %}" id="notContactDetails">
+							{{ elements.textarea('why',question.question1, answers.why) }}
+						</div>
+					{% endif %}
+
+					  {{ elements.submit(page,question,true,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

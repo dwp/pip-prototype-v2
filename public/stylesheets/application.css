@@ -2805,7 +2805,7 @@ PIP21
   margin-top: 0;
 }
 
-.pip21 #skipQuestion {
+#skipQuestion {
   background: #dee0e2;
   box-shadow: 0 2px 0 #bfc1c3;
   color: #0b0c0c;
