@@ -244,7 +244,7 @@ var data = [ {
     {
       "page"             : "11",
       "heading"          : "Your treatments and therapies",
-      "introText"        : "Treatments and therapies can include chemotherapy, physiotherapy, dialysis or, medical massages or exercises.",
+      "introText"        : "Treatments and therapies can include chemotherapy, physiotherapy, dialysis, or medical massages or exercises.",
       "question"         : "Are you having, or do you have planned, any treatment or therapy?",
       "rowHd"            : "Treatment or therapy",
       "treatmentHd"      : "Name of treatment or therapy",
