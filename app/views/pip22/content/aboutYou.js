@@ -410,7 +410,7 @@ var data = [ {
       "somethingTxtQ"    : "Explain what your rely on",
       "someoneLabel"     : "You rely on someone to help you communicate",
       "someoneTxtQ"      : "Explain how they help you",
-      "cantHearLabel"    : "You cannot hear at all",
+      "cantHearLabel"    : "You can't hear at all",
       "cantHearTxtQ"     : "Explain how you communicate",
       "manageLabel"      : "You manage in a different way",
       "manageTxtQ"       : "Explain how you manage",
