@@ -20,7 +20,7 @@ var data = [ {
   "explainHelp"        : "what they explain and how they explain it",
   "superviseHelp"      : "who supervises you and how are you supervised",
   "dayshelptext"       : "roughly how many days out of a month you're affected",
-  "freqHelpText"       : "the difference between what you can do and cannot do when your condition varies",
+  "freqHelpText"       : "the difference between what you can and can't do when your condition varies",
   "postTo"             : "Post to:",
   "address"            : ["Freepost DWP PIP 3","Mail Handling Site A","Wolverhampton","WV98 1AD"],
   "helpline"           : [
@@ -31,9 +31,9 @@ var data = [ {
     "p4"               : "Or text:",
     "p5"               : "07867 687 141",
     "p6"               : "Texts are charged at your standard rate",
-    "p7"               : "Mon to Thurs: 8.30am to 5pm",
-    "p8"               : "Friday: 8.30am to 4:30pm",
-    "p9"               : "Closed public holidays."
+    "p7"               : "Monday to Thursday 8.30am to 5pm",
+    "p8"               : "Friday 8.30am to 4:30pm",
+    "p9"               : "Closed public holidays"
     },
   ],
   "frequency"          : [
@@ -55,11 +55,11 @@ var data = [ {
       "helperNameQ"      : "The name of the person helping you",
       "knowThemQ"        : "How you know them",
       "whyHelpQ"         : "Why they're helping you",
-      "appointeeQ"       : "You are completing this application on their behalf because:",
+      "appointeeQ"       : "You're completing this application on their behalf because:",
       "POWlabel"         : "you are their registered Power of Attorney",
       "deputyLabel"      : "you Deputy for them under a court of law",
       "regAppointee"     : "you are their registered Appointee",
-      "canNotManage"     : "they cannot manage own affairs",
+      "canNotManage"     : "they can't manage their own affairs",
       "other"            : "other",
       "backLink"         : "/pip22/apply"
     },
@@ -97,7 +97,7 @@ var data = [ {
       "heading"          : "How you want to be contacted",
       "question"         : "Do you want to get text messages about the progress of your claim?",
       "question2"        : "Mobile number",
-      "question3"        : "You will get your decision letter in the post. Do you need this in a different format for example braille, large print or audio CD?",
+      "question3"        : "You'll get your decision letter in the post. Do you need this in a different format - like braille, large print or audio CD?",
       "checkbox1"        : "Large print (16 point)",
       "checkbox2"        : "Braille",
       "checkbox3"        : "Audio CD",
@@ -113,7 +113,7 @@ var data = [ {
       "heading"          : "How you want to receive payment",
       "introText"        : "If your claim is successful, money will be paid into your account. If you give your details now this could stop delays in the future.",
       "question"         : "How would you like to get paid?",
-      "options"          : ["Bank account","Building society account","Credit Union account","I don't have any of these"],
+      "options"          : ["Bank account","Building society account","Credit union account","I don't have any of these"],
       "backLink"         : "/pip22/contactPref"
     }
   ],
@@ -130,18 +130,18 @@ var data = [ {
   "buildingSociety" : [
     {
       "page"              : "x",
-      "heading"           : "Building Society account details",
+      "heading"           : "Building society account details",
       "accountName"       : "Account holder name",
       "sortCode"          : "Sort code",
       "accountNumber"     : "Building society roll or reference number",
-      "accountNumberHint" : "If your building society uses a roll or reference number, you will find it on your passbook",
+      "accountNumberHint" : "If you have one, this will be on your passbook",
       "backLink"          : "/pip22/bankDetails"
     }
   ],
   "creditUnion" : [
     {
       "page"             : "x",
-      "heading"          : "Credit Union account details",
+      "heading"          : "Credit union account details",
       "accountName"      : "Account holder name",
       "sortCode"         : "Sort code",
       "accountNumber"    : "Account number",
@@ -291,7 +291,7 @@ var data = [ {
     {
       "page"             : "14",
       "heading"          : "Monitoring your condition",
-      "question"         : "Does someone need to monitor your condition most days because, if they do not, you could be at risk, or a danger to yourself or others?",
+      "question"         : "Does someone need to monitor your condition most days because, if they don't, you could be at risk, or a danger to yourself or others?",
       "question2"        : "How many hours does someone need to help monitor your condition?",
       "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day.",
       "question4"        : "How do they monitor your condition?",
@@ -404,10 +404,10 @@ var data = [ {
       "question"         : "Does your condition affect your hearing?",
       "question2"        : "Tick all that apply:",
       "hearingAidLabel"  : "You need a hearing aid",
-      "2hearingAidLabel" : "You need two hearing aids",
+      "2hearingAidLabel" : "You need 2 hearing aids",
       "implantLabel"     : "You need a cochlear implant",
       "somethingLabel"   : "You rely on something else",
-      "somethingTxtQ"    : "Explain what your rely on",
+      "somethingTxtQ"    : "Explain what you rely on",
       "someoneLabel"     : "You rely on someone to help you communicate",
       "someoneTxtQ"      : "Explain how they help you",
       "cantHearLabel"    : "You can't hear at all",
@@ -707,7 +707,7 @@ var data = [ {
       "relyLabel"        : "Someone has to explain things to you",
       "superviseLabel"   : "Someone has to supervise you",
       "ownLabel"         : "You manage without help, but with difficulty",
-      "question4"        : "In your own words, describe how your confition would affect you mixing with people if you had to.",
+      "question4"        : "In your own words, describe how your condition would affect you mixing with people if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","mixing with people could put you or others at risk","if mixing with people has an effect on your condition"],
       "backLink"         : "/pip22/gettingOut"
@@ -717,7 +717,7 @@ var data = [ {
     {
       "page"             : "29",
       "heading"          : "Planning a local journey",
-      "introText"        : "This question is about how you would plan to get to somewhere local that you’ve never been before - it’s not about getting there. If you would not plan a journey yourself, explain whether you could if you had to.",
+      "introText"        : "This question is about how you would plan to get to somewhere local that you’ve never been before - it’s not about getting there. If you wouldn't plan a journey yourself, explain whether you could if you had to.",
       "question2"        : "How would you plan a local journey to somewhere you’ve never been before?",
       "relyLabel"        : "Someone else would have to plan the journey",
       "helpLabel"        : "Someone would have to help you understand maps or bus timetables",
@@ -804,7 +804,7 @@ var data = [ {
     {
       "page"             : "33",
       "heading"          : "Dealing with money",
-      "introText"        : "If you do not deal with money or bills, explain whether you could if you had to.",
+      "introText"        : "If you don't deal with money or bills, explain whether you could if you had to.",
       "question"         : "Does your condition affect you:",
       "motivatedLabel"   : "being motivated to pay bills",
       "billsLabel"       : "understanding bills",
@@ -819,7 +819,7 @@ var data = [ {
       "legalLabel"       : "Someone legally has to deal with money for you",
       "ownLabel"         : "You would manage without help, but with difficulty",
       "otherWayLabel"    : "In another way",
-      "question3"        : "In your own words, describe how you would dealing with money, if you had to.",
+      "question3"        : "In your own words, describe how you would deal with money, if you had to.",
       "helpTextHd"       : "Include if:",
       "helpText"         : ["what you’re able to do depends on the type of day you’re having","it can take a long time to work things out","you could end up at risk"],
       "backLink"         : "/pip22/understanding"
@@ -847,9 +847,9 @@ var data = [ {
   ],
   "completionDate" : [
     {
-      "heading"          : "Completion Date",
-      "p1"               : "You have until <strong>17/9/2016</strong> to complete your application." ,
-      "p2"               : "You can save and return to the application as often as you like before <strong>17/9/2016</strong>",
+      "heading"          : "Completion date",
+      "p1"               : "You have until <strong>17 September 2016</strong> to complete your application." ,
+      "p2"               : "You can save and return to the application as often as you like before <strong>17 September 2016</strong>",
       "submit"           : "Continue",
       "backLink"         : "/pip22/declaration"
     }
