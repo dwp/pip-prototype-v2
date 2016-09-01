@@ -47,11 +47,10 @@ var data = [ {
   "appointee" : [
     {
       "page"             : "x",
-      "heading"          : "Help with your application",
-      "question"         : "Are you:",
-      "yourselfLabel"    : "filling in this application by yourself",
-      "friendLabel"      : "getting help from a friend, relative or third party such as a charity",
-      "behalfLabel"      : "applying on behalf of someone else",
+      "heading"          : "Are you applying for PIP for yourself?",
+      "yourselfLabel"    : "Yes, I'm applying for myself",
+      "friendLabel"      : "[SEE DWP DESIGN PATTERN]",
+      "behalfLabel"      : "No, I'm applying on behalf of someone else",
       "helperNameQ"      : "The name of the person helping you",
       "knowThemQ"        : "How you know them",
       "whyHelpQ"         : "Why they're helping you",
@@ -67,8 +66,7 @@ var data = [ {
   "aboutYou" : [
     {
       "page"             : "2",
-      "heading"          : "About you",
-      "introText"        : "If you’re filling in this form for someone else, tell us about <span class='bold-medium'>them</span>, not you",
+      "heading"          : "About you - the person the benefit is for",
       "question"         : "First name",
       "question2"        : "Middle name(s)",
       "question3"        : "Last name",
@@ -94,10 +92,10 @@ var data = [ {
   "contactPref" : [
     {
       "page"             : "4",
-      "heading"          : "How you want to be contacted",
-      "question"         : "Do you want to get text messages about the progress of your claim?",
+      "heading"          : "How should we get in touch with you?",
+      "question"         : "Do you want to get text messages about [the progress of] your claim?",
       "question2"        : "Mobile number",
-      "question3"        : "You'll get your decision letter in the post. Do you need this in a different format - like braille, large print or audio CD?",
+      "question3"        : "SPLIT THESE?  Do you need information in braille, large print or audio CD - or another format?",
       "checkbox1"        : "Large print (16 point)",
       "checkbox2"        : "Braille",
       "checkbox3"        : "Audio CD",
@@ -110,9 +108,8 @@ var data = [ {
   "bankDetails" : [
     {
       "page"             : "8",
-      "heading"          : "How you want to receive payment",
-      "introText"        : "If your claim is successful, money will be paid into your account. If you give your details now this could stop delays in the future.",
-      "question"         : "How would you like to get paid?",
+      "heading"          : "How do you want to be paid?",
+      "introText"        : "If you give your bank details now you'll get paid quicker - if your claim is successful.",
       "options"          : ["Bank account","Building society account","Credit union account","I don't have any of these"],
       "backLink"         : "/pip22/contactPref"
     }
@@ -165,8 +162,7 @@ var data = [ {
   "currentWhereabouts" : [
     {
       "page"             : "5",
-      "heading"          : "Where you are now",
-      "question"         : "Are you currently staying in:",
+      "heading"          : "Where are you staying at the moment?",
       "question2"        : "When did you start staying there?",
       "question3"        : "The address",
       "question4"        : "Postcode",
@@ -190,8 +186,7 @@ var data = [ {
   "conditionDetails" : [
     {
       "page"             : "8",
-      "heading"          : "Your conditions and disabilities",
-      "introText"        : "List all the conditions or disabilities you have that affect your life and when they started to affect you.",
+      "heading"          : "What conditions and disabilities do you have?",
       "rowHd"            : "Condition",
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
@@ -202,8 +197,7 @@ var data = [ {
   "medications" : [
     {
       "page"             : "9",
-      "heading"          : "Your medication",
-      "question"         : "Are you currently taking any medication?",
+      "heading"          : "Are you taking any medication?",
       "rowHd"            : "Medication",
       "medicationHd"     : "Name of medication",
       "dosageHd"         : "Dosage",
@@ -217,8 +211,7 @@ var data = [ {
   "manageMedications" : [
     {
       "page"             : "10",
-      "heading"          : "Managing your medication",
-      "question"         : "Does your condition affect you:",
+      "heading"          : "Does your condition affect you taking your medication?",
       "question2"        : "How often does your condition affect how you manage your medication?",
       "howoften1"        : "At least once a day",
       "howoften2"        : "More than half the time",
@@ -243,9 +236,8 @@ var data = [ {
   "treatments" : [
     {
       "page"             : "11",
-      "heading"          : "Your treatments and therapies",
-      "introText"        : "Treatments and therapies can include chemotherapy, physiotherapy, dialysis, or medical massages or exercises.",
-      "question"         : "Are you having, or do you have planned, any treatment or therapy?",
+      "heading"          : "Are you having, or do you have planned, any treatments?",
+      "introText"        : "Including chemotherapy, physiotherapy, dialysis, or medical massages or exercises.",
       "rowHd"            : "Treatment or therapy",
       "treatmentHd"      : "Name of treatment or therapy",
       "oftenHd"          : "When or how often",
@@ -270,8 +262,7 @@ var data = [ {
   "sideEffects" : [
     {
       "page"             : "12",
-      "heading"          : "Side effects",
-      "question"         : "Do you get side effects from any medication, treatment or therapy?",
+      "heading"          : "Do you get side effects from your medication or treatment?",
       "question2"        : "Describe the side effects you get and how often you get them.",
       "backLink"         : "/pip22/treatments"
     },
@@ -279,8 +270,7 @@ var data = [ {
   "conditionAffects" : [
     {
       "page"             : "13",
-      "heading"          : "Changes to your condition",
-      "question"         : "Do the effects of your condition change or vary?",
+      "heading"          : "Do the effects of your condition change or vary?",
       "qHintText"        : "This includes if some days, weeks or months are worse than others.",
       "question3"        : "Explain how the effects of your condition change or vary.",
       "q3HintText"       : "Include how many days out of a week or month you're affected.",
@@ -847,9 +837,8 @@ var data = [ {
   ],
   "completionDate" : [
     {
-      "heading"          : "Completion date",
-      "p1"               : "You have until <strong>17 September 2016</strong> to complete your application." ,
-      "p2"               : "You can save and return to the application as often as you like before <strong>17 September 2016</strong>",
+      "heading"          : "How long do I have to fill in my form?",
+      "p1"               : "You have until <strong>17 September 2016</strong>. Save and return to it as often as you like before then." ,
       "submit"           : "Continue",
       "backLink"         : "/pip22/declaration"
     }

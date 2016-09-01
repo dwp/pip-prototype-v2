@@ -17,13 +17,13 @@
 				<form action="/pip22/currentWhereabouts{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
 					{{ elements.header(page,question) }}
 					{% set seq = [
-						{"id":"location1", "label":"hospital", "value":"hospital", "showPanel":"details"},
-						{"id":"location2", "label":"a care or nursing home", "value":"a care or nursing home", "showPanel":"details"},
-						{"id":"location3", "label":"sheltered housing", "value":"sheltered housing", "showPanel":"details"},
-						{"id":"location4", "label":"a residential college", "value":"a residential college", "showPanel":"details"},
-						{"id":"location5", "label":"a hostel", "value":"a hostel", "showPanel":"details"},
-						{"id":"location6", "label":"a hospice", "value":"a hospice", "showPanel":"details"},
-						{"id":"location7", "label":"You are <span class='bold-small'>not</span> currently staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
+						{"id":"location1", "label":"Hospital", "value":"hospital", "showPanel":"details"},
+						{"id":"location2", "label":"A care or nursing home", "value":"a care or nursing home", "showPanel":"details"},
+						{"id":"location3", "label":"Sheltered housing", "value":"sheltered housing", "showPanel":"details"},
+						{"id":"location4", "label":"A residential college", "value":"a residential college", "showPanel":"details"},
+						{"id":"location5", "label":"A hostel", "value":"a hostel", "showPanel":"details"},
+						{"id":"location6", "label":"A hospice", "value":"a hospice", "showPanel":"details"},
+						{"id":"location7", "label":"You're <span class='bold-small'>not</span> staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
 					] %}
 					{{ elements.checkbox('optionsName',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
 
