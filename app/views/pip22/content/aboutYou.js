@@ -49,7 +49,7 @@ var data = [ {
       "page"             : "x",
       "heading"          : "Are you applying for PIP for yourself?",
       "yourselfLabel"    : "Yes, I'm applying for myself",
-      "friendLabel"      : "[SEE DWP DESIGN PATTERN]",
+      "friendLabel"      : "Yes, with help from a friend, relative or third party such as a charity",
       "behalfLabel"      : "No, I'm applying on behalf of someone else",
       "helperNameQ"      : "The name of the person helping you",
       "knowThemQ"        : "How you know them",
@@ -837,7 +837,7 @@ var data = [ {
   ],
   "completionDate" : [
     {
-      "heading"          : "How long do I have to fill in my form?",
+      "heading"          : "How long do I have to fill in this application?",
       "p1"               : "You have until <strong>17 September 2016</strong>. Save and return to it as often as you like before then." ,
       "submit"           : "Continue",
       "backLink"         : "/pip22/declaration"
