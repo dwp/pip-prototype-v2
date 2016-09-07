@@ -250,8 +250,8 @@ var data = [ {
   "manageTreatments" : [
     {
       "page"             : "x",
-      "heading"          : "Managing your treatments",
-      "question"         : "Does someone need to help you manage your treatment or therapy at home?",
+      "heading"          : "Does someone need to help you manage your treatment or therapy at home?",
+      "question"         : "",
       "qHintText"        : "This includes if you need them to supervise you or remind you.",
       "question2"        : "How many hours a week they help you",
       "question3"        : "Why does someone need to help you manage your treatment or therapy at home?",
@@ -291,8 +291,8 @@ var data = [ {
   "healthcareprofessional" : [
     {
       "page"             : "15",
-      "heading"          : "Professionals who know about your condition",
-      "introText"        : "Enter details of professionals who could give information about how your condition affects you.",
+      "heading"          : "Are there any professionals who can tell us about your condition?",
+      "introText"        : "",
       "question"         : "They could be your doctor, support worker, carer or anyone else who has information about the effects of your condition.",
       "rowHd"            : "Professional",
       "nameHd"           : "Their name",
@@ -320,7 +320,7 @@ var data = [ {
     {
       "page"             : "16",
       "heading"          : "Information you can send",
-      "introText"        : "<p>It can help your application if you send information that gives more detail about the effects of your condition.</p><p>Only send what you have to hand - nothing you have to pay to get hold of.</p><p>You need to send this within the next 2 weeks or a decision could be made without it. We cannot return any paperwork, so send photocopies if you can.</p>",
+      "introText"        : "<p>It can help your application if you send information that gives more detail about the effects of your condition.</p><p>Only send what you have to hand - nothing you have to pay to get hold of.</p><p>You need to send this within the next 2 weeks or a decision could be made without it. We can't return any paperwork, so send photocopies if you can.</p>",
       "question"         : "You will send your:",
       "q2HintText"       : "Tick all that apply",
       "question3"        : "How will you send the information?",
@@ -331,8 +331,8 @@ var data = [ {
   "specialAids" : [
     {
       "page"              : "17",
-      "heading"           : "Aids and adaptations",
-      "question"          : "Where do you have to use aids or adaptations?",
+      "heading"           : "Where do you have to use aids or adaptations?",
+      "question"          : "",
       "qHintText"         : "Include any aids or adaptations you need but have not got yet. Include aids you have adapted or made yourself.",
       "homeLabel"         : "Getting in and out of your home",
       "homeTextareaQ"     : "List the aids or adaptations you have to use to get in or out of your home.",
@@ -357,8 +357,8 @@ var data = [ {
   "sight" : [
     {
       "page"             : "18",
-      "heading"          : "Your sight",
-      "question"         : "Does your condition affect your sight?",
+      "heading"          : "Does your condition affect your sight?",
+      "question"         : "",
       "qHintText"        : "If your sight is fine when you wear glasses, choose 'no'.",
       "question2"        : "How often is your sight affected?",
       "qHintText2"       : "Include how many days out of each week or month you're affected.",
@@ -376,8 +376,8 @@ var data = [ {
   "speech" : [
     {
       "page"             : "19",
-      "heading"          : "Your speech",
-      "question"         : "Does your condition affect your speech?",
+      "heading"          : "Does your condition affect your speech?",
+      "question"         : "",
       "question2"        : "Does your condition affect your speech all the time?",
       "question3"        : "How often is your speech affected?",
       "qHintText3"       : "Include how many days out of each week or month you're affected.",
@@ -390,8 +390,8 @@ var data = [ {
   "hearing" : [
     {
       "page"             : "20",
-      "heading"          : "Your hearing",
-      "question"         : "Does your condition affect your hearing?",
+      "heading"          : "Does your condition affect your hearing?",
+      "question"         : "",
       "question2"        : "Tick all that apply:",
       "hearingAidLabel"  : "You need a hearing aid",
       "2hearingAidLabel" : "You need 2 hearing aids",
@@ -413,7 +413,7 @@ var data = [ {
   "gettingUp" : [
     {
       "page"             : "21",
-      "heading"          : "Getting up and moving around",
+      "heading"          : "How does your condition affect you moving around?",
       "question"         : "Does your condition affect you:",
       "motivatedLabel"   : "being motivated to get up",
       "sittingUpLabel"   : "sitting up",
