@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip22/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.srti %}
+<main id="content" role="main" class="pip22">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip22/srti{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"srti-yes","value":"Yes"},
+						{"id":"srti-no", "value":"No","showPanel":"postCode"}
+					] %}
+					{{ elements.radioSelect('srti',question.question,"",answers.srti,seq,"inline") }}
+
+					<div id="postCode" class="panel-indent js-hidden">
+						{{ elements.genericInput('postcode',question.postCode, answers.postcode,question.postCodeHint) }}
+					</div>
+
+					{{ elements.submit(page,question,true,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

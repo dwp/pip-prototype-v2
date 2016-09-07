@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip22/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.filterQuestions %}
+<main id="content" role="main" class="pip22">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip22/filterQuestions{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question1-no"}
+					] %}
+					{{ elements.radioSelect('question1',question.question,"",answers.question1,seq,"inline") }}
+
+					<div id="question1-no" class="panel-indent js-hidden">
+							<p>{{question.questionNo}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question2-no"}
+					] %}
+					{{ elements.radioSelect('question2',question.question2,"",answers.question1,seq,"inline") }}
+
+					<div id="question2-no" class="panel-indent js-hidden">
+							<p>{{question.question2No}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question3-no"}
+					] %}
+					{{ elements.radioSelect('question3',question.question3,"",answers.question1,seq,"inline") }}
+
+					<div id="question3-no" class="panel-indent js-hidden">
+							<p>{{question.question3No}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question4-no"}
+					] %}
+					{{ elements.radioSelect('question4',question.question4,"",answers.question1,seq,"inline") }}
+
+					<div id="question4-no" class="panel-indent js-hidden">
+							<p>{{question.question4No}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question5-no"}
+					] %}
+					{{ elements.radioSelect('question5',question.question5,"",answers.question1,seq,"inline") }}
+
+					<div id="question5-no" class="panel-indent js-hidden">
+							<p>{{question.question5No}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question6-no"}
+					] %}
+					{{ elements.radioSelect('question6',question.question6,"",answers.question1,seq,"inline") }}
+
+					<div id="question6-no" class="panel-indent js-hidden">
+							<p>{{question.question6No}}</p>
+					</div>
+
+					{{ elements.submit(page,question) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
