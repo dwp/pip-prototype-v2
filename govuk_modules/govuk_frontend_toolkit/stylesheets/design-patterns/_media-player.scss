@@ -1,5 +1,5 @@
-@import '../colours';
-@import '../url-helpers';
+@import '../_colours';
+@import '../_url-helpers';
 
 // Player overrides
 
@@ -44,17 +44,15 @@
       cursor: pointer;
     }
 
-    a,
-    button {
+    button, a {
       &:focus {
-        background-color: $focus-colour;
+        background-color: orange;
         outline: none;
       }
     }
 
     .player-controls {
-      .play,
-      .pause {
+      .play, .pause {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -74,8 +72,7 @@
         background-image: file-url('player-icon-pause.png');
       }
 
-      .rewind,
-      .forward {
+      .rewind, .forward {
         position: absolute;
         top: 0;
         z-index: 30;
@@ -135,8 +132,7 @@
         content: "d";
       }
 
-      .vol-down,
-      .vol-up {
+      .vol-down, .vol-up {
         position: absolute;
         bottom: 0;
         height: 40px;
@@ -147,8 +143,7 @@
         text-align: center;
         z-index: 10;
 
-        &:hover,
-        &:focus {
+        &:hover, &:focus {
           color: $light-blue;
         }
       }
@@ -227,9 +222,7 @@
         height: 100%;
         padding-bottom: 1px;
         width: 20px;
-        // Allow RGBA here, it is the only colour value with alpha transparency
-        // scss-lint:disable ColorVariable
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba(0,0,0,0.5);
         z-index: 10;
       }
     }

@@ -1,10 +1,7 @@
-(function(global) {
+(function(Modules) {
   "use strict";
 
-  var GOVUK = global.GOVUK || {};
-  GOVUK.Modules = GOVUK.Modules || {};
-
-  GOVUK.Modules.AutoTrackEvent = function() {
+  Modules.AutoTrackEvent = function() {
     this.start = function(element) {
       var options = {nonInteraction: 1}, // automatic events shouldn't affect bounce rate
           category = element.data('track-category'),
@@ -26,5 +23,4 @@
     }
   };
 
-  global.GOVUK = GOVUK;
-})(window);
+})(window.GOVUK.Modules);

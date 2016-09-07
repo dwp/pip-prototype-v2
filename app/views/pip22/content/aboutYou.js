@@ -44,6 +44,69 @@ var data = [ {
       "ownWords"       : "Explain how often in your own words"
     },
   ],
+  "stillApply"         : [
+    {
+      "applyQuestion"   : "Do you still want to apply?",
+      "applyHint"       : "You're still legally entitled to apply even though you don't qualify and won't get Peronal Independence Payment"
+    },
+  ],
+  "srti"                 : [
+    {
+      "heading"          : "Terminal Illness",
+      "question"         : "Have you been diagnosed with a terminal illness?",
+      "postCode"         : "Enter your post code",
+      "postCodeHint"     : "Only LS10 is eligible",
+      "submit"           : "Continue",
+      "backLink"         : "/pip22/apply"
+    }
+  ],
+  "srtiSignPost"         : [
+    {
+      "heading"          : "SRTI not eligible",
+      "submit"           : "Continue"
+    }
+  ],
+  "postCodeSignPost"     : [
+    {
+      "heading"          : "Post code Not eligible",
+      "submit"           : "Continue"
+    }
+  ],
+  "filterQuestions"      : [
+    {
+      "heading"          : "filterQuestions",
+      "question"         : "question 1",
+      "questionNo"       : "Not eligible for question 1",
+      "question2"        : "question 2",
+      "question2No"      : "Not eligible for question 2",
+      "question3"        : "question 3",
+      "question3No"      : "Not eligible for question 3",
+      "question4"        : "question 4",
+      "question4No"      : "Not eligible for question 4",
+      "question5"        : "question 5",
+      "question5No"      : "Not eligible for question 5",
+      "question6"        : "question 6",
+      "question6No"      : "Not eligible for question 6",
+      "backLink"         : "/pip22/srti"
+    }
+  ],
+  "filterSignPost"       : [
+    {
+      "heading"          : "filter Not eligible",
+      "submit"           : "Continue"
+    },
+  ],
+  "registration"         : [
+    {
+      "heading"          : "Registration",
+      "introText"        : "Registration instructions",
+      "username"         : "Email address",
+      "password"         : "Password",
+      "passwordHint"     : "Your password must be atleast 8 characters",
+      "submit"           : "Register your account",
+      "backLink"         : "/pip22/filterQuestions"
+    },
+  ],
   "appointee" : [
     {
       "page"             : "x",
