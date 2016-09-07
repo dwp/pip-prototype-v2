@@ -37,6 +37,106 @@ module.exports = function (app) {
   });
 
   /*******************
+  srtiSignPost
+  *******************/
+  app.get('/pip22/srti', function (req, res) {
+      res.render('pip22/srti', {
+        answers : req.session['pip22-srti'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/srti', function (req, res) {
+    req.session['pip22-srti'] = req.body;
+    if (req.body.srti == 'Yes') {
+      res.redirect('/pip22/srtiSignPost');
+    } else if (req.body.postcode != 'ls10') {
+      res.redirect('/pip22/postCodeSignPost');
+    } else {
+      res.redirect('/pip22/filterQuestions');
+    }
+  });
+
+  /*******************
+  srtiSignPost
+  *******************/
+  app.get('/pip22/srtiSignPost', function (req, res) {
+      res.render('pip22/srtiSignPost', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/srtiSignPost', function (req, res) {
+    req.session['pip22-srtiSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  spostCodeSignPost
+  *******************/
+
+  app.get('/pip22/postCodeSignPost', function (req, res) {
+      res.render('pip22/postCodeSignPost', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/postCodeSignPost', function (req, res) {
+    req.session['pip22-postCodeSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  filterQuestions
+  *******************/
+  app.get('/pip22/filterQuestions', function (req, res) {
+      res.render('pip22/filterQuestions', {
+        answers : req.session['pip22-filterQuestions'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/filterQuestions', function (req, res) {
+    req.session['pip22-filterQuestions'] = req.body;
+    if (req.body.question1 == "No") {
+      res.redirect('/pip22/filterSignPost');
+    } else {
+      res.redirect('/pip22/registration');
+    }
+  });
+
+  /*******************
+  filterSignPost
+  *******************/
+
+  app.get('/pip22/filterSignPost', function (req, res) {
+      res.render('pip22/filterSignPost', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/filterSignPost', function (req, res) {
+    req.session['pip22-filterSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  registration
+  *******************/
+  app.get('/pip22/registration', function (req, res) {
+      res.render('pip22/registration', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/registration', function (req, res) {
+    req.session['pip22-registration'] = req.body;
+    res.redirect('/pip22/appointee');
+  });
+
+  /*******************
   appointee
   *******************/
   app.get('/pip22/appointee', function (req, res) {
