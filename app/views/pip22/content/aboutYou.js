@@ -46,7 +46,7 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-      "applyQuestionSRTI"   : "Call 0800 917 2222 to have your claim dealt with faster.",
+      "applyQuestionSRTI"   : "Call <strong>0800 917 2222</strong> to have your claim dealt with faster.",
       "applyHintSRTI"     : "You can get PIP more quickly if you’re not expected to live more than 6 months. Do you still want to carry on with your claim?",
       "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
       "applyHintPostcode" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
@@ -55,14 +55,49 @@ var data = [ {
 
     },
   ],
+  "postcodeCheck"        : [
+    {
+      "heading"          : "Can I apply online?",
+      "p1"               : "This is a pilot",
+      "p2"               : "You can only apply online if:",
+      "list"             : [
+        "Live in Leeds, Sheffield, Leicester...etc",
+        "Not an appointee",
+        "Not claimed in the last 12 months",
+
+      ],
+      "postCode"         : "Enter your postcode",
+      "postCodeHint"     : "Postcode hint text",
+      "submit"           : "Check your postcode",
+      "backLink"         : "/pip22/apply"
+    }
+  ],
+  "postCodeSignPost"     : [
+    {
+      "heading"          : "Can I claim Personal Independence Payment online?",
+      "submit"           : "Continue"
+    }
+  ],
+  "dob"                  : [
+    {
+      "heading"          : "Are you between 16 and 64?",
+      "question"         : "Are you between 16 and 64?",
+      "submit"           : "Continue",
+      "backLink"         : "/pip22/postcodeCheck"
+    }
+  ],
+  "dobSignPost"     : [
+    {
+      "heading"          : "DobSignPost",
+      "submit"           : "Continue"
+    }
+  ],
   "srti"                 : [
     {
       "heading"          : "Terminal illness",
       "question"         : "Have you been diagnosed with a terminal illness?",
-      "postCode"         : "Enter your postcode",
-      "postCodeHint"     : "While we’re trialling this service online, only people who live in the LS10 postcode can claim this way.",
       "submit"           : "Continue",
-      "backLink"         : "/pip22/apply"
+      "backLink"         : "/pip22/dob"
     }
   ],
   "srtiSignPost"         : [
@@ -72,28 +107,17 @@ var data = [ {
 
     }
   ],
-
-  "postCodeSignPost"     : [
-    {
-      "heading"          : "Can I claim Personal Independence Payment online?",
-      "submit"           : "Continue"
-    }
-  ],
   "filterQuestions"      : [
     {
-      "heading"          : "Can I apply for Personal Independence Payment online? NEED HINT UNDER HERE",
-      "question"         : "Are you an appointee[link to https://www.gov.uk/become-appointee-for-someone-claiming-benefits] for the person claiming?",
+      "heading"          : "Can I apply for Personal Independence Payment online?",
+      "introText"        : "Hint text here",
+      "question"         : "Are you an <a href='https://www.gov.uk/become-appointee-for-someone-claiming-benefits' rel='external' target='blank'>appointee</a> for the person claiming?",
       "questionNo"       : "While we're trialling the online service, you can't claim PIP in this way. Call XXX to start your claim.",
       "question2"        : "Have you claimed for PIP or DLA in the past year?",
       "question2No"      : "While we're trialling the online service, you can't claim PIP in this way. Call XXX to start your claim.",
-      "question3"        : "Are you aged 16 to 64?",
-      "question3No"      : "Based on your answer, you can't get PIP. Only people aged 16 to 64 can get the benefit.",
-      "question4"        : "Do you have a  personal email address?",
-      "question4No"      : "You need to have a personal email address to claim PIP online. Call XXX to start your claim.",
-      "question5"        : "question 5",
-      "question5No"      : "Not eligible for question 5",
-      "question6"        : "question 6",
-      "question6No"      : "Not eligible for question 6",
+      "question3"        : "Do you have a  personal email address?",
+      "question3No"      : "You need to have a personal email address to claim PIP online. Call XXX to start your claim.",
+      "submit"           : "Continue",
       "backLink"         : "/pip22/srti"
     }
   ],

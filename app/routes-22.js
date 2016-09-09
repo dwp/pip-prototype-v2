@@ -37,7 +37,75 @@ module.exports = function (app) {
   });
 
   /*******************
-  srtiSignPost
+  postcodeCheck
+  *******************/
+
+  app.get('/pip22/postcodeCheck', function (req, res) {
+      res.render('pip22/postcodeCheck', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/postcodeCheck', function (req, res) {
+    req.session['pip22-postcodeCheck'] = req.body;
+    if (req.body.postcode != 'ls10') {
+      res.redirect('/pip22/postCodeSignPost');
+    } else {
+      res.redirect('/pip22/dob');
+    }
+  });
+
+  /*******************
+  postCodeSignPost
+  *******************/
+
+  app.get('/pip22/postCodeSignPost', function (req, res) {
+      res.render('pip22/postCodeSignPost', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/postCodeSignPost', function (req, res) {
+    req.session['pip22-postCodeSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  dob
+  *******************/
+
+  app.get('/pip22/dob', function (req, res) {
+      res.render('pip22/dob', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/dob', function (req, res) {
+    req.session['pip22-dob'] = req.body;
+    if (req.body.dob == 'No') {
+      res.redirect('/pip22/dobSignPost');
+    } else {
+      res.redirect('/pip22/srti');
+    }
+  });
+
+  /*******************
+  dobSignPost
+  *******************/
+
+  app.get('/pip22/dobSignPost', function (req, res) {
+      res.render('pip22/dobSignPost', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/dobSignPost', function (req, res) {
+    req.session['pip22-dobSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  srt
   *******************/
   app.get('/pip22/srti', function (req, res) {
       res.render('pip22/srti', {
@@ -51,8 +119,6 @@ module.exports = function (app) {
     req.session['pip22-srti'] = req.body;
     if (req.body.srti == 'Yes') {
       res.redirect('/pip22/srtiSignPost');
-    } else if (req.body.postcode != 'ls10') {
-      res.redirect('/pip22/postCodeSignPost');
     } else {
       res.redirect('/pip22/filterQuestions');
     }
@@ -73,21 +139,6 @@ module.exports = function (app) {
   });
 
   /*******************
-  spostCodeSignPost
-  *******************/
-
-  app.get('/pip22/postCodeSignPost', function (req, res) {
-      res.render('pip22/postCodeSignPost', {
-        data    : aboutYou.getTableData()
-      });
-  });
-
-  app.post('/pip22/postCodeSignPost', function (req, res) {
-    req.session['pip22-postCodeSignPost'] = req.body;
-    res.redirect('/pip22/registration');
-  });
-
-  /*******************
   filterQuestions
   *******************/
   app.get('/pip22/filterQuestions', function (req, res) {
@@ -100,7 +151,7 @@ module.exports = function (app) {
 
   app.post('/pip22/filterQuestions', function (req, res) {
     req.session['pip22-filterQuestions'] = req.body;
-    if (req.body.question1 == "No") {
+    if (req.body.question1 == "Yes" || req.body.question2 == "Yes" || req.body.question3 == "No" ) {
       res.redirect('/pip22/filterSignPost');
     } else {
       res.redirect('/pip22/registration');

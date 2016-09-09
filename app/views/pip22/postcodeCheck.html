@@ -8,21 +8,26 @@
 
 {% import "pip22/macros/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.srti %}
+{% for question in page.postcodeCheck %}
 <main id="content" role="main" class="pip22">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip22/srti{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<form action="/pip22/postcodeCheck{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{% set seq  = [
-						{"id":"srti-yes","value":"Yes"},
-						{"id":"srti-no", "value":"No"}
-					] %}
-					{{ elements.radioSelect('srti',question.question,"",answers.srti,seq,"inline") }}
+					<p>{{question.p1}}</p>
 
+					<p>{{question.p2}}</p>
+
+					<ul class="list list-bullet">
+						{% for listItem in question.list %}
+							<li>{{listItem}}</li>
+						{% endfor %}
+					</ul>
+
+					{{ elements.genericInput('postcode',question.postCode, answers.postcode,question.postCodeHint) }}
 
 					{{ elements.submit(page,question,true,false,false) }}
 

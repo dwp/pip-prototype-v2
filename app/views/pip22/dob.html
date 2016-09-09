@@ -8,20 +8,20 @@
 
 {% import "pip22/macros/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.srti %}
+{% for question in page.dob %}
 <main id="content" role="main" class="pip22">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip22/srti{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<form action="/pip22/dob{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
 					{% set seq  = [
-						{"id":"srti-yes","value":"Yes"},
-						{"id":"srti-no", "value":"No"}
+						{"id":"dob","value":"Yes"},
+						{"id":"dob", "value":"No"}
 					] %}
-					{{ elements.radioSelect('srti',question.question,"",answers.srti,seq,"inline") }}
+					{{ elements.radioSelect('dob',question.question,"",answers.dob,seq,"inline") }}
 
 
 					{{ elements.submit(page,question,true,false,false) }}

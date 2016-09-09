@@ -8,13 +8,13 @@
 
 {% import "pip22/macros/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.filterSignPost %}
+{% for question in page.dobSignPost %}
 <main id="content" role="main" class="pip22">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip22/filterSignPost{% if edit %}?edit=true{% endif %}" method="post" class="form">
+				<form action="/pip22/dobSignPost{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
 					{% for stillApply in page.stillApply %}

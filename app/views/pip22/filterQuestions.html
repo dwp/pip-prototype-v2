@@ -18,22 +18,22 @@
 					{{ elements.header(page,question) }}
 
 					{% set seq  = [
-						{"id":"question1-yes","value":"Yes"},
-						{"id":"question1-no", "value":"No","showPanel" : "question1-no"}
+						{"id":"question1-yes","value":"Yes","showPanel" : "question1-yes"},
+						{"id":"question1-no", "value":"No"}
 					] %}
-					{{ elements.radioSelect('question1',question.question,"",answers.question1,seq,"inline") }}
+					{{ elements.radioSelect('question1',question.question|safe,"",answers.question1,seq,"inline") }}
 
-					<div id="question1-no" class="panel-indent js-hidden">
+					<div id="question1-yes" class="panel-indent js-hidden">
 							<p>{{question.questionNo}}</p>
 					</div>
 
 					{% set seq  = [
-						{"id":"question1-yes","value":"Yes"},
-						{"id":"question1-no", "value":"No","showPanel" : "question2-no"}
+						{"id":"question1-yes","value":"Yes","showPanel" : "question2-yes"},
+						{"id":"question1-no", "value":"No"}
 					] %}
 					{{ elements.radioSelect('question2',question.question2,"",answers.question1,seq,"inline") }}
 
-					<div id="question2-no" class="panel-indent js-hidden">
+					<div id="question2-yes" class="panel-indent js-hidden">
 							<p>{{question.question2No}}</p>
 					</div>
 
@@ -47,37 +47,7 @@
 							<p>{{question.question3No}}</p>
 					</div>
 
-					{% set seq  = [
-						{"id":"question1-yes","value":"Yes"},
-						{"id":"question1-no", "value":"No","showPanel" : "question4-no"}
-					] %}
-					{{ elements.radioSelect('question4',question.question4,"",answers.question1,seq,"inline") }}
-
-					<div id="question4-no" class="panel-indent js-hidden">
-							<p>{{question.question4No}}</p>
-					</div>
-
-					{% set seq  = [
-						{"id":"question1-yes","value":"Yes"},
-						{"id":"question1-no", "value":"No","showPanel" : "question5-no"}
-					] %}
-					{{ elements.radioSelect('question5',question.question5,"",answers.question1,seq,"inline") }}
-
-					<div id="question5-no" class="panel-indent js-hidden">
-							<p>{{question.question5No}}</p>
-					</div>
-
-					{% set seq  = [
-						{"id":"question1-yes","value":"Yes"},
-						{"id":"question1-no", "value":"No","showPanel" : "question6-no"}
-					] %}
-					{{ elements.radioSelect('question6',question.question6,"",answers.question1,seq,"inline") }}
-
-					<div id="question6-no" class="panel-indent js-hidden">
-							<p>{{question.question6No}}</p>
-					</div>
-
-					{{ elements.submit(page,question) }}
+					{{ elements.submit(page,question,true,false,false) }}
 
         </form>
 			</div>
