@@ -46,43 +46,50 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-      "applyQuestion"   : "Do you still want to apply?",
-      "applyHint"       : "You're still legally entitled to apply even though you don't qualify and won't get Peronal Independence Payment"
+      "applyQuestionSRTI"   : "Call 0800 917 2222 to have your claim dealt with faster.",
+      "applyHintSRTI"     : "You can get PIP more quickly if you’re not expected to live more than 6 months. Do you still want to carry on with your claim?",
+      "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
+      "applyHintPostcode" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
+      "applyQuestionOtherQs"   : "Based on your answer, you can't get PIP.",
+      "applyHintOtherQs" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
+
     },
   ],
   "srti"                 : [
     {
-      "heading"          : "Terminal Illness",
+      "heading"          : "Terminal illness",
       "question"         : "Have you been diagnosed with a terminal illness?",
-      "postCode"         : "Enter your post code",
-      "postCodeHint"     : "Only LS10 is eligible",
+      "postCode"         : "Enter your postcode",
+      "postCodeHint"     : "While we’re trialling this service online, only people who live in the LS10 postcode can claim this way.",
       "submit"           : "Continue",
       "backLink"         : "/pip22/apply"
     }
   ],
   "srtiSignPost"         : [
     {
-      "heading"          : "SRTI not eligible",
+      "heading"          : "Terminal illness",
       "submit"           : "Continue"
+
     }
   ],
+
   "postCodeSignPost"     : [
     {
-      "heading"          : "Post code Not eligible",
+      "heading"          : "Can I claim Personal Independence Payment online?",
       "submit"           : "Continue"
     }
   ],
   "filterQuestions"      : [
     {
-      "heading"          : "filterQuestions",
-      "question"         : "question 1",
-      "questionNo"       : "Not eligible for question 1",
-      "question2"        : "question 2",
-      "question2No"      : "Not eligible for question 2",
-      "question3"        : "question 3",
-      "question3No"      : "Not eligible for question 3",
-      "question4"        : "question 4",
-      "question4No"      : "Not eligible for question 4",
+      "heading"          : "Can I apply for Personal Independence Payment online? NEED HINT UNDER HERE",
+      "question"         : "Are you an appointee[link to https://www.gov.uk/become-appointee-for-someone-claiming-benefits] for the person claiming?",
+      "questionNo"       : "While we're trialling the online service, you can't claim PIP in this way. Call XXX to start your claim.",
+      "question2"        : "Have you claimed for PIP or DLA in the past year?",
+      "question2No"      : "While we're trialling the online service, you can't claim PIP in this way. Call XXX to start your claim.",
+      "question3"        : "Are you aged 16 to 64?",
+      "question3No"      : "Based on your answer, you can't get PIP. Only people aged 16 to 64 can get the benefit.",
+      "question4"        : "Do you have a  personal email address?",
+      "question4No"      : "You need to have a personal email address to claim PIP online. Call XXX to start your claim.",
       "question5"        : "question 5",
       "question5No"      : "Not eligible for question 5",
       "question6"        : "question 6",
@@ -92,7 +99,7 @@ var data = [ {
   ],
   "filterSignPost"       : [
     {
-      "heading"          : "filter Not eligible",
+      "heading"          : "Can I apply for Personal Independence Payment online?",
       "submit"           : "Continue"
     },
   ],
