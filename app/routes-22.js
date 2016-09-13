@@ -48,7 +48,7 @@ module.exports = function (app) {
 
   app.post('/pip22/postcodeCheck', function (req, res) {
     req.session['pip22-postcodeCheck'] = req.body;
-    if (req.body.postcode != 'ls10') {
+    if (req.body.postcode != 'ls10' || req.body.postcode != 'LS10'  ) {
       res.redirect('/pip22/postCodeSignPost');
     } else {
       res.redirect('/pip22/dob');
