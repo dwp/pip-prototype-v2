@@ -5,6 +5,7 @@
   var GOVUK = global.GOVUK || {};
 
   var SelectionButtons = function (elmsOrSelector, opts) {
+    var $elms;
 
     this.selectedClass = 'selected';
     this.focusedClass = 'focused';
@@ -14,6 +15,7 @@
       }.bind(this));
     }
     if (typeof elmsOrSelector === 'string') {
+      $elms = $(elmsOrSelector);
       this.selector = elmsOrSelector;
       this.setInitialState($(this.selector));
     } else if (elmsOrSelector !== undefined) {

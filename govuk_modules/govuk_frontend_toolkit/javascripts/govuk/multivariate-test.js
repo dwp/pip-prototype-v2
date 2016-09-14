@@ -18,7 +18,6 @@
     this._loadOption(options, 'runImmediately', true);
     this._loadOption(options, 'defaultWeight', 1);
     this._loadOption(options, 'contentExperimentId', null);
-    this._loadOption(options, 'cookieDuration', 30);
 
     if (this.runImmediately) {
       this.run();
@@ -70,27 +69,18 @@
     var cohort = GOVUK.cookie(this.cookieName());
     if (!cohort || !this.cohorts[cohort]) {
       cohort = this.chooseRandomCohort();
-      GOVUK.cookie(this.cookieName(), cohort, {days: this.cookieDuration});
+      GOVUK.cookie(this.cookieName(), cohort, {days: 30});
     }
     return cohort;
   };
 
   MultivariateTest.prototype.setCustomVar = function(cohort) {
-    if (this.customDimensionIndex &&
-      this.customDimensionIndex.constructor === Array) {
-      for (var index = 0; index < this.customDimensionIndex.length; index++) {
-        this.setDimension(cohort, this.customDimensionIndex[index])
-      }
-    } else if (this.customDimensionIndex) {
-      this.setDimension(cohort, this.customDimensionIndex)
+    if (this.customDimensionIndex) {
+      GOVUK.analytics.setDimension(
+        this.customDimensionIndex,
+        this.cookieName() + "__" + cohort
+      );
     }
-  };
-
-  MultivariateTest.prototype.setDimension = function(cohort, dimension) {
-    GOVUK.analytics.setDimension(
-      dimension,
-      this.cookieName() + "__" + cohort
-    );
   };
 
   MultivariateTest.prototype.setUpContentExperiment = function(cohort) {
