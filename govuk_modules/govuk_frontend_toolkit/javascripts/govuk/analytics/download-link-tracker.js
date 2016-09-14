@@ -1,7 +1,6 @@
 (function(global) {
   "use strict";
 
-  var $ = global.jQuery;
   var GOVUK = global.GOVUK || {};
 
   GOVUK.analyticsPlugins = GOVUK.analyticsPlugins || {};
