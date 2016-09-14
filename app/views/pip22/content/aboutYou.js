@@ -61,7 +61,7 @@ var data = [ {
       "p1"               : "This is a pilot of an online service to apply for Personal Independence Payment (PIP).",
       "p2"               : "You can only apply online if you:",
       "list"             : [
-        "live in certain areas of Leeds, Sheffield, Leicester [list postcodes if not too long]",
+        "live in certain areas",
         "are not an appointee",
         "have not claimed PIP or Employment and Support Allowance in the last 12 months",
         "have an email address.",
@@ -81,8 +81,8 @@ var data = [ {
   ],
   "dob"                  : [
     {
-      "heading"          : "Are you aged 16 and 64?",
-      "question"         : "Are you between 16 and 64?",
+      "heading"          : "Are you aged between 16 and 64?",
+      "question"         : "",
       "submit"           : "Continue",
       "backLink"         : "/pip22/postcodeCheck"
     }
@@ -112,7 +112,7 @@ var data = [ {
     {
       "heading"          : "Can I apply for Personal Independence Payment online?",
       "introText"        : "Hint text here",
-      "question"         : "Are you an <a href='https://www.gov.uk/become-appointee-for-someone-claiming-benefits' rel='external' target='blank'>appointee</a> for the person claiming?",
+      "question"         : "Are you an appointee (appointees are authorised by the Department for Work and Pensions) for the person claiming?",
       "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
       "question2"        : "Have you claimed for PIP or DLA in the past year?",
       "question2No"      : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
@@ -130,12 +130,12 @@ var data = [ {
   ],
   "registration"         : [
     {
-      "heading"          : "Registration",
-      "introText"        : "Registration instructions",
+      "heading"          : "Sign up to apply for Personal Independence Payment online",
+      "introText"        : "Enter a personal email address and choose a password at least 8 characters long.",
       "username"         : "Email address",
       "password"         : "Password",
       "passwordHint"     : "Your password must be atleast 8 characters",
-      "submit"           : "Register your account",
+      "submit"           : "Sign up",
       "backLink"         : "/pip22/filterQuestions"
     },
   ],
@@ -150,9 +150,9 @@ var data = [ {
       "knowThemQ"        : "How you know them",
       "whyHelpQ"         : "Why they're helping you",
       "appointeeQ"       : "You're completing this application on their behalf because:",
-      "POWlabel"         : "you are their registered Power of Attorney",
-      "deputyLabel"      : "you Deputy for them under a court of law",
-      "regAppointee"     : "you are their registered Appointee",
+      "POWlabel"         : "you are their registered power of attorney",
+      "deputyLabel"      : "you deputy for them under a court of law",
+      "regAppointee"     : "you are their registered appointee",
       "canNotManage"     : "they can't manage their own affairs",
       "other"            : "other",
       "backLink"         : "/pip22/apply"
