@@ -50,7 +50,7 @@ var data = [ {
       "applyHintSRTI"     : "You can get PIP more quickly if you’re not expected to live more than 6 months. Do you still want to carry on with your claim?",
       "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
       "applyHintPostcode" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
-      "applyQuestionOtherQs"   : "Based on your answer, you can't get PIP.",
+      "applyQuestionOtherQs"   : "Based on your answer, you can't get PIP. You may be entitled to another benefit though. Call XXX to find out.",
       "applyHintOtherQs" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
 
     },
@@ -89,14 +89,14 @@ var data = [ {
   ],
   "dobSignPost"     : [
     {
-      "heading"          : "Can I claim Personal Independence Payment online?",
+      "heading"          : "Personal Independence Payment is for people aged 16 to 64",
       "submit"           : "Continue"
     }
   ],
   "srti"                 : [
     {
       "heading"          : "Terminal illness",
-      "question"         : "Have you been diagnosed with a terminal illness?",
+      "question"         : "Do you have less than 6 months to live?",
       "submit"           : "Continue",
       "backLink"         : "/pip22/dob"
     }
@@ -110,8 +110,8 @@ var data = [ {
   ],
   "filterQuestions"      : [
     {
-      "heading"          : "Can I apply for Personal Independence Payment online?",
-      "introText"        : "Hint text here",
+      "heading"          : "Other restrictions on applying online",
+      "introText"        : "",
       "question"         : "Are you an appointee (appointees are authorised by the Department for Work and Pensions) for the person claiming?",
       "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
       "question2"        : "Have you claimed for PIP or DLA in the past year?",
