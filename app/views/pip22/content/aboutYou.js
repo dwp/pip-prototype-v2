@@ -26,13 +26,13 @@ var data = [ {
   "helpline"           : [
     {
     "p1"               : "If you need help call:",
-    "p2"               : "0345 850 3322",
+    "p2"               : "0345 850 33 22",
     "p3"               : "Calls charged at local rate from landlines, calls from mobiles may cost more.",
     "p4"               : "Or text:",
     "p5"               : "07867 687 141",
     "p6"               : "Texts are charged at your standard rate",
-    "p7"               : "Monday to Thursday 8.30am to 5pm",
-    "p8"               : "Friday 8.30am to 4:30pm",
+    "p7"               : "Monday to Friday 8am to 6pm",
+    "p8"               : "",
     "p9"               : "Closed public holidays"
     },
   ],
@@ -143,7 +143,7 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Are you applying for PIP for yourself?",
-      "yourselfLabel"    : "Yes, I'm applying for myself",
+      "yourselfLabel"    : "Yes, I am applying for myself",
       "friendLabel"      : "Yes, with help from a friend, relative or third party such as a charity",
       "behalfLabel"      : "No, I'm applying on behalf of someone else",
       "helperNameQ"      : "The name of the person helping you",
@@ -158,6 +158,20 @@ var data = [ {
       "backLink"         : "/pip22/apply"
     },
   ],
+
+  "additionalSupport" : [
+    {
+      "page"             : "1",
+      "heading"          : "Additional Support",
+      "question"         : "Do you suffer from any of the following",
+      "question2"        : "question two",
+      "question3"        : "Question three",
+      "question4"        : "Question four",
+      "question5"        : "Question five",
+      "backLink"         : "/pip22/appointee"
+    },
+  ],
+
   "aboutYou" : [
     {
       "page"             : "2",

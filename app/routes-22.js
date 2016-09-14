@@ -200,16 +200,49 @@ module.exports = function (app) {
 
   app.post('/pip22/appointee', function (req, res) {
     req.session['pip22-appointee'] = req.body;
+
+    if(req.body.appointee === 'Yes, I am applying for myself') {
+       if (req.body.saveAndMenu) {
+         res.redirect('/pip22/additionalSupport?edit=true');
+       } else {
+         res.redirect('/pip22/additionalSupport');
+       }
+     }
+     else if (req.param('edit')) {
+       res.redirect('/pip22/checkYourAnswers');
+     }
+     else if (req.body.saveAndMenu) {
+       res.redirect('/pip22/unansweredQuestions#yourCondition');
+     } else {
+       res.redirect('/pip22/aboutYou');
+     }
+  });
+
+  /*******************
+  additionalSupport
+  *******************/
+  app.get('/pip22/additionalSupport', function (req, res) {
+      res.render('pip22/additionalSupport', {
+        answers : req.session['pip22-additionalSupport'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/additionalSupport', function (req, res) {
+    req.session['pip22-additionalSupport'] = req.body;
+
     if (req.param('edit')) {
       res.redirect('/pip22/checkYourAnswers');
     }
     else if (req.body.saveAndMenu) {
-      res.redirect('/pip22/unansweredQuestions');
-    }
-    else {
+      res.redirect('/pip22/unansweredQuestions#additionalSupport');
+    } else {
       res.redirect('/pip22/aboutYou');
     }
   });
+
+
 
   /*******************
   aboutYou
