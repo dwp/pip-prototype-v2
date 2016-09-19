@@ -105,7 +105,7 @@ module.exports = function (app) {
   });
 
   /*******************
-  srt
+  srti
   *******************/
   app.get('/pip22/srti', function (req, res) {
       res.render('pip22/srti', {
@@ -440,6 +440,100 @@ module.exports = function (app) {
   app.post('/pip22/nationality', function (req, res) {
     req.session['pip22-nationality'] = req.body;
 
+    if(req.body.otherNationality != 'Irish'
+      && req.body.otherNationality != ''
+      && req.body.otherNationality != 'Scottish'
+      && req.body.otherNationality != 'English'
+      && req.body.otherNationality != 'British'
+      && req.body.otherNationality != 'Austrian'
+      && req.body.otherNationality != 'Belgian'
+      && req.body.otherNationality != 'Cypriot'
+      && req.body.otherNationality != 'Czech'
+      && req.body.otherNationality != 'Danish'
+      && req.body.otherNationality != 'Estonian'
+      && req.body.otherNationality != 'Finnish'
+      && req.body.otherNationality != 'French'
+      && req.body.otherNationality != 'Icelandic'
+      && req.body.otherNationality != 'Italian'
+      && req.body.otherNationality != 'Latvian'
+      && req.body.otherNationality != 'German'
+      && req.body.otherNationality != 'Greek'
+      && req.body.otherNationality != 'Liechtensteiner'
+      && req.body.otherNationality != 'Lithuanian'
+      && req.body.otherNationality != 'Luxembourger'
+      && req.body.otherNationality != 'Maltan'
+      && req.body.otherNationality != 'Dutch'
+      && req.body.otherNationality != 'Norwegian'
+      && req.body.otherNationality != 'Polish'
+      && req.body.otherNationality != 'Portuguese'
+      && req.body.otherNationality != 'Romanian'
+      && req.body.otherNationality != 'Slovakian'
+      && req.body.otherNationality != 'Slovenian'
+      && req.body.otherNationality != 'Spanish'
+      && req.body.otherNationality != 'Swedish') {
+       if (req.body.saveAndMenu) {
+         res.redirect('/pip22/leaveToRemain?edit=true');
+       } else {
+         res.redirect('/pip22/leaveToRemain');
+       }
+     }
+
+     else if(req.body.livingAbroad === 'Yes') {
+        if (req.body.saveAndMenu) {
+          res.redirect('/pip22/livingAbroad?edit=true');
+        } else {
+          res.redirect('/pip22/livingAbroad');
+        }
+      }
+
+    else if (req.param('edit')) {
+      res.redirect('/pip22/checkYourAnswers');
+    }
+    else if (req.body.saveAndMenu) {
+      res.redirect('/pip22/unansweredQuestions#aboutYou');
+    } else {
+      res.redirect('/pip22/currentWhereabouts');
+    }
+  });
+
+  /*******************
+  leaveToRemain
+  *******************/
+  app.get('/pip22/leaveToRemain', function (req, res) {
+    res.render('pip22/leaveToRemain', {
+      answers : req.session['pip22-leaveToRemain'],
+      'edit'  : req.param('edit'),
+      data    : aboutYou.getTableData()
+    });
+  });
+
+  app.post('/pip22/leaveToRemain', function (req, res) {
+    req.session['pip22-leaveToRemain'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip22/checkYourAnswers');
+    }
+    else if (req.body.saveAndMenu) {
+      res.redirect('/pip22/unansweredQuestions#aboutYou');
+    } else {
+      res.redirect('/pip22/currentWhereabouts');
+    }
+  });
+
+  /*******************
+  livingAbroad
+  *******************/
+  app.get('/pip22/livingAbroad', function (req, res) {
+    res.render('pip22/livingAbroad', {
+      answers : req.session['pip22-livingAbroad'],
+      'edit'  : req.param('edit'),
+      data    : aboutYou.getTableData()
+    });
+  });
+
+  app.post('/pip22/livingAbroad', function (req, res) {
+    req.session['pip22-livingAbroad'] = req.body;
+
     if (req.param('edit')) {
       res.redirect('/pip22/checkYourAnswers');
     }
@@ -464,6 +558,73 @@ module.exports = function (app) {
 
   app.post('/pip22/currentWhereabouts', function (req, res) {
     req.session['pip22-currentWhereabouts'] = req.body;
+
+    if(req.body.currentLiving === 'a care or nursing home'
+      || req.body.currentLiving === 'sheltered housing'
+      || req.body.currentLiving === 'a residential college'
+      || req.body.currentLiving === 'a hostel') {
+       if (req.body.saveAndMenu) {
+         res.redirect('/pip22/careHomeFunding?edit=true');
+       } else {
+         res.redirect('/pip22/careHomeFunding');
+       }
+     }
+     else if(req.body.currentLiving === 'a care or nursing home'
+       || req.body.currentLiving === 'hospital'
+       || req.body.currentLiving === 'a hospice') {
+        if (req.body.saveAndMenu) {
+          res.redirect('/pip22/hospitalFunding?edit=true');
+        } else {
+          res.redirect('/pip22/hospitalFunding');
+        }
+      }
+     else if (req.param('edit')) {
+       res.redirect('/pip22/checkYourAnswers');
+     }
+     else if (req.body.saveAndMenu) {
+       res.redirect('/pip22/unansweredQuestions#yourCondition');
+     } else {
+       res.redirect('/pip22/paymentsFromAbroad');
+     }
+  });
+
+  /*******************
+  careHomeFunding
+  *******************/
+  app.get('/pip22/careHomeFunding', function (req, res) {
+      res.render('pip22/careHomeFunding', {
+        answers : req.session['pip22-careHomeFunding'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/careHomeFunding', function (req, res) {
+    req.session['pip22-careHomeFunding'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip22/checkYourAnswers');
+    }
+    else if (req.body.saveAndMenu) {
+      res.redirect('/pip22/unansweredQuestions#aboutYou');
+    } else {
+      res.redirect('/pip22/paymentsFromAbroad');
+    }
+  });
+
+  /*******************
+  hospitalFunding
+  *******************/
+  app.get('/pip22/hospitalFunding', function (req, res) {
+      res.render('pip22/hospitalFunding', {
+        answers : req.session['pip22-hospitalFunding'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/hospitalFunding', function (req, res) {
+    req.session['pip22-hospitalFunding'] = req.body;
 
     if (req.param('edit')) {
       res.redirect('/pip22/checkYourAnswers');

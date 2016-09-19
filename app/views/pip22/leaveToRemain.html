@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip22/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.leaveToRemain %}
+<main id="content" role="main" class="pip22">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip22/leaveToRemain{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"noRecourse1", "label":"Yes", "value":"Yes"},
+						{"id":"noRecourse2", "label":"No",   "value":"No"},
+						{"id":"noRecourse3", "label":"I don't know",   "value":"I don't know"}
+
+					] %}
+					{{ elements.radioSelect('recourseToFunds',question.question,"",answers.recourseToFunds,seq) }}
+
+
+					{% set seq2 = [
+						{"id":"restrictions1", "label":"No restrictions", "value":"No restrictions"},
+						{"id":"restrictions2", "label":"Limited leave to remain",   "value":"Limited leave to remain", "showPanel":"limitedLeave"},
+						{"id":"restrictions3", "label":"Limited leave to remain extension applied for",   "value":"Limited leave to remain extension applied for", "showPanel":"extensionApplied"},
+						{"id":"restrictions4", "label":"Indefinite leave to remain",   "value":"Indefinite leave to remain"},
+						{"id":"restrictions5", "label":"No leave to remain",   "value":"No leave to remain"},
+						{"id":"restrictions6", "label":"I don't know",   "value":"I don't know"}
+					] %}
+					{{ elements.radioSelect('restrictions',question.question2,"",answers.restrictions,seq2) }}
+
+
+					<div class="form-group
+          {% if not answers.restrictions  or answers.restrictions != 'Limited leave to remain' %}js-hidden{% endif %}" id="limitedLeave">
+						{{ elements.genericInput('whenEnds1',question.question3, answers.whenEnds1)}}
+					</div>
+
+					<div class="form-group
+          {% if not answers.restrictions  or answers.restrictions != 'Limited leave to remain to remain extension applied for' %}js-hidden{% endif %}" id="extensionApplied">
+					{{ elements.genericInput('whenEnds2',question.question3, answers.whenEnds2) }}
+					{{ elements.genericInput('whenExtend',question.question4, answers.whenExtend) }}
+				</div>
+
+
+				{% if answers.skipQuestion.length or edit %}
+					{{ elements.returnToMenu(page,question) }}
+				{% else %}
+					{{ elements.submit(page,question,true,true) }}
+				{% endif %}
+
+
+				</form>
+          </div>
+          {{ elements.helpline(page) }}
+      </div>
+
+    </main>
+
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

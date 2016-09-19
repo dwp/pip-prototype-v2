@@ -161,13 +161,10 @@ var data = [ {
 
   "additionalSupport" : [
     {
-      "page"             : "1",
+      "page"             : "x",
       "heading"          : "Additional Support",
-      "question"         : "Do you suffer from any of the following",
-      "question2"        : "question two",
-      "question3"        : "Question three",
-      "question4"        : "Question four",
-      "question5"        : "Question five",
+      "question"         : "Are you affected by one of the following conditions",
+      "youAreNotLabel"   : "None of the above",
       "backLink"         : "/pip22/appointee"
     },
   ],
@@ -268,6 +265,34 @@ var data = [ {
       "backLink"         : "/pip22/bankDetails"
     },
   ],
+
+  "leaveToRemain" : [
+    {
+      "page"             : "x",
+      "heading"          : "Nationality continued",
+      "question"         : "Does your passport, or any other document from the Home Office, say “No recourse to public funds”?",
+      "question2"        : "What restrictions are there, if any on your leave to remain",
+      "question3"        : "When does your leave to remain end?",
+      "question4"        : "When did you apply for an extension to your leave to remain?",
+      "backLink"         : "/pip22/nationality"
+    },
+  ],
+
+  "livingAbroad" : [
+    {
+      "page"             : "x",
+      "heading"          : "Working and living abroad",
+      "removeLink"       : "Remove this",
+      "question"         : "Which country did you go to?",
+      "question2"        : "What date you go",
+      "question3"        : "What date did you come back",
+      "question4"        : "Why did you go?",
+      "question5"        : "When you went, did you intend to return",
+      "whyGoHintText"    : "For example, holiday, work, medical treatment, as a member of HM Forces or as a family member of someone in HM Forces.",
+      "backLink"         : "/pip22/nationality"
+    },
+  ],
+
   "currentWhereabouts" : [
     {
       "page"             : "5",
@@ -278,6 +303,28 @@ var data = [ {
       "backLink"         : "/pip22/nationality"
     }
   ],
+
+  "careHomeFunding" : [
+    {
+      "page"             : "x",
+      "heading"          : "More details about where you are staying",
+      "question"         : "Are you paying all of the costs for your stay without help from a local authority, health authority, education authority, DWP or a charity?",
+      "question2"        : "Who is funding your stay?",
+      "question3"        : "Tell us the name of the authority that is paying",
+      "question4"        : "Do you have an agreement with the local authority to repay all the costs",
+      "backLink"         : "/pip22/currentWhereabouts"
+    }
+  ],
+
+  "hospitalFunding" : [
+    {
+      "page"             : "x",
+      "heading"          : "More details about staying in hospital",
+      "question"         : "A you a private patient paying all of your own costs?",
+      "backLink"         : "/pip22/currentWhereabouts"
+    }
+  ],
+
   "paymentsFromAbroad" : [
     {
       "page"             : "7",

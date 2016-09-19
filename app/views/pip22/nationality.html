@@ -21,7 +21,11 @@
 						{"id":"nationality","value":"British"},
 						{"id":"nationality", "value":"Other","showPanel":"otherNationality"}
 					] %}
-					{{ elements.genericInput('nationality',question.question,answers.nationality,"","") }}
+					{{ elements.radioSelect('nationality',question.question,"",answers.nationality,seq,"inline") }}
+
+					<div class="form-group panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
+						{{ elements.genericInput('otherNationality',question.question2, answers.otherNationality) }}
+					</div>
 
 
 					{% set seq2  = [
