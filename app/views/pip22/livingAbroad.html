@@ -28,11 +28,8 @@
 									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 
 										{{ elements.genericInputList("whereGo" + i,question.question, answers["whereGo" + i]) }}
-
-										{{ elements.genericInputList("whenGo" + i,question.question2, answers["whenGo" + i]) }}
-
-										{{ elements.genericInputList("whenComeBack" + i,question.question3, answers["whenComeBack" + i]) }}
-
+                    {{ elements.date("whenGo" + i,question.question2,answers["whenYouGo" + i]) }}
+                    {{ elements.date("whenComeBack" + i,question.question3,answers["whenComeBack" + i]) }}
                     {{ elements.textarea("whyGo" + i,question.question4, answers["whyGo" + i],question.whyGoHintText,"","",false) }}
 
                     {% set seq = [

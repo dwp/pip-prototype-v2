@@ -30,7 +30,8 @@
 	          {{ elements.textarea('why',question.whyHelpQ, answers.why) }}
 					</div>
 
-					<div class="form-group panel-indent {% if answers.appointee != question.behalfLabel %}js-hidden{% endif %}" id="appointeeText">
+
+					<div class="panel panel-border-wide blue-alert {% if answers.appointee != question.behalfLabel %}js-hidden{% endif %}" id="appointeeText">
 						<p> While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim. </p>
 					</div>
 

@@ -2699,3 +2699,11 @@ PIP21
   background-size: 25px 30px;
   padding-left: 31px;
 }
+
+/*********************
+PIP22
+**********************/
+.panel.blue-alert {
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+}

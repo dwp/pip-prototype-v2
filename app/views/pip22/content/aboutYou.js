@@ -284,7 +284,7 @@ var data = [ {
       "heading"          : "Working and living abroad",
       "removeLink"       : "Remove this",
       "question"         : "Which country did you go to?",
-      "question2"        : "What date you go",
+      "question2"        : "What date did you go",
       "question3"        : "What date did you come back",
       "question4"        : "Why did you go?",
       "question5"        : "When you went, did you intend to return",
