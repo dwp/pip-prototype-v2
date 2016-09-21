@@ -18,11 +18,11 @@
 					{{ elements.header(page,question) }}
 
           <div class="form-group">
-						<p>Tell us about all the times you've spent out of the country over the last 3 years.</p>
 						<ul class="list-user-input">
 							{% for i in range(1, 6) -%}
 
-								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['name' + i] %} js-hidden {% endif %}">
+								<li id="abroad-row-{{i}}" class="condition-row {% if not loop.first and not answers['name' + i] %} js-hidden {% endif %}">
+                  <h2 class="heading-small">{{ question.questionHead }} {{i}}</h2>
 
 									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
 

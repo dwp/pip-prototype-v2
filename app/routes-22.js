@@ -51,7 +51,7 @@ module.exports = function (app) {
     if (req.body.postcode != 'ls10' && req.body.postcode != 'LS10'  ) {
       res.redirect('/pip22/postCodeSignPost');
     } else {
-      res.redirect('/pip22/dob');
+      res.redirect('/pip22/srti');
     }
   });
 
@@ -85,7 +85,7 @@ module.exports = function (app) {
     if (req.body.dob == 'No') {
       res.redirect('/pip22/dobSignPost');
     } else {
-      res.redirect('/pip22/srti');
+      res.redirect('/pip22/registration');
     }
   });
 
@@ -154,7 +154,7 @@ module.exports = function (app) {
     if (req.body.question1 == "Yes" || req.body.question2 == "Yes" || req.body.question3 == "No" ) {
       res.redirect('/pip22/filterSignPost');
     } else {
-      res.redirect('/pip22/registration');
+      res.redirect('/pip22/dob');
     }
   });
 

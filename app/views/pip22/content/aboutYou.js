@@ -282,7 +282,8 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Working and living abroad",
-
+      "introText"        : "Tell us about all the times you've spent out of the country over the last 3 years.",
+      "questionHead"     : "Period abroad",
       "removeLink"       : "Remove this",
       "question"         : "Which country did you go to?",
       "question2"        : "What date did you go",
