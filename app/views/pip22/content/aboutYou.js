@@ -63,7 +63,7 @@ var data = [ {
       "list"             : [
         "live in certain areas",
         "are not an appointee",
-        "have not claimed PIP or Employment and Support Allowance in the last 12 months",
+        "have not claimed PIP or Disability Living Allowance Allowance in the last 12 months",
         "have an email address.",
 
       ],
