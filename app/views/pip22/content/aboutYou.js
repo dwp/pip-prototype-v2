@@ -282,12 +282,13 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Working and living abroad",
+
       "removeLink"       : "Remove this",
       "question"         : "Which country did you go to?",
       "question2"        : "What date did you go",
       "question3"        : "What date did you come back",
       "question4"        : "Why did you go?",
-      "question5"        : "When you went, did you intend to return",
+      "question5"        : "When you went, did you intend to return?",
       "whyGoHintText"    : "For example, holiday, work, medical treatment, as a member of HM Forces or as a family member of someone in HM Forces.",
       "backLink"         : "/pip22/nationality"
     },
@@ -308,10 +309,10 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "More details about where you are staying",
-      "question"         : "Are you paying all of the costs for your stay without help from a local authority, health authority, education authority, DWP or a charity?",
+      "question"         : "Are you paying all of the costs for your stay?",
       "question2"        : "Who is funding your stay?",
-      "question3"        : "Tell us the name of the authority that is paying",
-      "question4"        : "Do you have an agreement with the local authority to repay all the costs",
+      "question3"        : "Tell us the name of the organisation that is paying",
+      "question4"        : "Do you have an agreement with the local authority to repay all the costs?",
       "backLink"         : "/pip22/currentWhereabouts"
     }
   ],
@@ -319,8 +320,8 @@ var data = [ {
   "hospitalFunding" : [
     {
       "page"             : "x",
-      "heading"          : "More details about staying in hospital",
-      "question"         : "A you a private patient paying all of your own costs?",
+      "heading"          : "A you a private patient paying all of your own costs?",
+      "question"         : "",
       "backLink"         : "/pip22/currentWhereabouts"
     }
   ],
