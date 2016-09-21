@@ -46,8 +46,8 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-      "applyQuestionSRTI"   : "Call <strong>0800 917 2222</strong> or textphone <strong>0800&nbsp917&nbsp7777</strong> to have your claim dealt with faster.",
-      "applyHintSRTI"     : "You can get PIP more quickly if you’re not expected to live more than 6 months. Do you still want to carry on with your claim?",
+      "applyQuestionSRTI"   : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800&nbsp917&nbsp7777</strong>.",
+      "applyHintSRTI"     : "Do you still want to carry on with your claim?",
       "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
       "applyHintPostcode" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
       "applyQuestionOtherQs"   : "Based on your answer, you can't get PIP. You may be entitled to another benefit though. Call XXX to find out.",
@@ -63,7 +63,7 @@ var data = [ {
       "list"             : [
         "live in certain areas",
         "are not an appointee",
-        "have not claimed PIP or Disability Living Allowance Allowance in the last 12 months",
+        "have not claimed PIP or Disability Living Allowance in the last 12 months",
         "have an email address.",
 
       ],
@@ -110,7 +110,7 @@ var data = [ {
   ],
   "filterQuestions"      : [
     {
-      "heading"          : "Other restrictions on applying online",
+      "heading"          : "Can I still apply online?",
       "introText"        : "",
       "question"         : "Are you an appointee (appointees are authorised by the Department for Work and Pensions) for the person claiming?",
       "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
@@ -224,7 +224,7 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Bank account details",
-      "accountName"      : "Account holder name",
+      "accountName"      : "Name of account holder",
       "sortCode"         : "Sort code",
       "accountNumber"    : "Account number",
       "backLink"         : "/pip22/bankDetails"
@@ -234,7 +234,7 @@ var data = [ {
     {
       "page"              : "x",
       "heading"           : "Building society account details",
-      "accountName"       : "Account holder name",
+      "accountName"       : "Name of account holder",
       "sortCode"          : "Sort code",
       "accountNumber"     : "Building society roll or reference number",
       "accountNumberHint" : "If you have one, this will be on your passbook",
@@ -245,7 +245,7 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Credit union account details",
-      "accountName"      : "Account holder name",
+      "accountName"      : "Name of account holder",
       "sortCode"         : "Sort code",
       "accountNumber"    : "Account number",
       "customerRef"      : "Customer reference number",
