@@ -20,16 +20,16 @@
 
             <div class="form-group panel-indent}" id="medicalInfoDetails">
   						{% set seq2 = [
-  							{"id":"incap1", "label":"Severe depression for which you've been hospitilised", "value":"Severe depression for which you've been hospitilised","showPanel":"noPanel"},
+  							{"id":"incap1", "label":"Severe depression, which you've been in hospital for", "value":"Severe depression for which you've been hospitilised","showPanel":"noPanel"},
   			        {"id":"incap2", "label":"Psychosis", "value":"psychosis","showPanel":"noPanel"},
   			        {"id":"incap3", "label":"Schizophrenia", "value":"Schizophrenia", "showPanel":"noPanel"},
-  			        {"id":"incap4", "label":"Severe ADHD", "value":"Severe ADHD", "showPanel":"noPanel"},
-  			        {"id":"incap6", "label":"Downs syndrome", "value":"Downs syndrome", "showPanel":"noPanel"},
+  			        {"id":"incap4", "label":"Severe attention deficity hyperactivity disorder (ADHD)", "value":"Severe ADHD", "showPanel":"noPanel"},
+  			        {"id":"incap6", "label":"Down's syndrome", "value":"Down's syndrome", "showPanel":"noPanel"},
   			        {"id":"incap7", "label":"Fragile X syndrome", "value":"Fragile X syndrome", "showPanel":"noPanel"},
                 {"id":"incap8", "label":"Severe autism", "value":"Severe autism", "showPanel":"noPanel"},
                 {"id":"incap9", "label":"Severe developmental delay", "value":"Severe developmental delay", "showPanel":"noPanel"},
-								{"id":"incap10", "label":"Any form of dementia", "value": "Any form of dementia", "showPanel":"noPanel"},
-  							{"id":"incap11", "label":"I'm not affected by one of the above conditions", "value":"I'm not suffering from one of the above conditions", "hidePanel":"noPanel"}
+								{"id":"incap10", "label":"Dementia", "value": "Dementia", "showPanel":"noPanel"},
+  							{"id":"incap11", "label":"I don't have any of these conditions", "value":"I don't have any of these conditions", "hidePanel":"noPanel"}
   			      ] %}
   						{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq2,answers,answers.optionsName, "check-uncheck") }}
 

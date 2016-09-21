@@ -162,8 +162,8 @@ var data = [ {
   "additionalSupport" : [
     {
       "page"             : "x",
-      "heading"          : "Additional Support",
-      "question"         : "Are you affected by one of the following conditions",
+      "heading"          : "Do you have any of the following conditions?",
+      "question"         : "",
       "youAreNotLabel"   : "None of the above",
       "backLink"         : "/pip22/appointee"
     },
@@ -199,7 +199,7 @@ var data = [ {
     {
       "page"             : "4",
       "heading"          : "How should we get in touch with you?",
-      "question"         : "Do you want to get text messages about [the progress of] your claim?",
+      "question"         : "Do you want to get text messages about your claim?",
       "question2"        : "Mobile number",
       "question3"        : "SPLIT THESE?  Do you need information in braille, large print or audio CD - or another format?",
       "checkbox1"        : "Large print (16 point)",
