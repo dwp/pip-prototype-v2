@@ -75,7 +75,7 @@ module.exports = function (app) {
   *******************/
 
   app.get('/pip22/dob', function (req, res) {
-    console.log(req.session['pip22-dob']);
+    (req.session['pip22-dob']);
       res.render('pip22/dob', {
         answers : req.session['pip22-dob'],
         'edit'  : req.param ('edit'),
@@ -85,11 +85,28 @@ module.exports = function (app) {
 
   app.post('/pip22/dob', function (req, res) {
     req.session['pip22-dob'] = req.body;
-    if (req.body.dob == 'No') {
+    if (req.body.dobYear <= '1951'
+    && req.body.dobMonth <= '10'
+    && req.body.dobDay <= '04') {
       res.redirect('/pip22/dobSignPost');
-    } else {
+    }
+    else if (req.body.dobYear <= '1950') {
+      res.redirect('/pip22/dobSignPost');
+    }
+
+    else if (req.body.dobYear >= '2000'
+    && req.body.dobMonth >= '10'
+    && req.body.dobDay >= '05') {
+      res.redirect('/pip22/tooYoung');
+    }
+    else if (req.body.dobYear >= '2001') {
+      res.redirect('/pip22/tooYoung');
+    }
+
+    else {
       res.redirect('/pip22/registration');
     }
+
   });
 
   /*******************
