@@ -96,7 +96,7 @@ var data = [ {
   "srti"                 : [
     {
       "heading"          : "Terminal illness",
-      "question"         : "Do you have less than 6 months to live?",
+      "question"         : "Do you have a DS1500? A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
       "submit"           : "Continue",
       "backLink"         : "/pip22/dob"
     }

@@ -221,7 +221,6 @@ main {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -238,7 +237,6 @@ main {
   line-height: 1.0377358491;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -254,7 +252,6 @@ main {
   line-height: 1.09375;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -270,7 +267,6 @@ main {
   line-height: 1.0416666667;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -286,7 +282,6 @@ main {
   line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -302,7 +297,6 @@ main {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -318,7 +312,6 @@ main {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -334,7 +327,6 @@ main {
   line-height: 1.0377358491;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -350,7 +342,6 @@ main {
   line-height: 1.09375;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -366,7 +357,6 @@ main {
   line-height: 1.0416666667;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -382,7 +372,6 @@ main {
   line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -398,7 +387,6 @@ main {
   line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -414,7 +402,6 @@ main {
   line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -430,7 +417,6 @@ main {
   line-height: 1.09375;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   margin-top: 0.46875em;
   margin-bottom: 0.9375em;
 }
@@ -455,7 +441,6 @@ main {
   line-height: 1.1111111111;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   display: block;
   padding-top: 8px;
   padding-bottom: 7px;
@@ -483,7 +468,6 @@ main {
   line-height: 1.0416666667;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   margin-top: 1.0416666667em;
   margin-bottom: 0.4166666667em;
 }
@@ -508,7 +492,6 @@ main {
   line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   display: block;
   padding-top: 9px;
   padding-bottom: 6px;
@@ -536,7 +519,6 @@ main {
   line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   margin-top: 1.25em;
   margin-bottom: 0.5em;
 }
@@ -561,7 +543,6 @@ main {
   line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   margin-top: 0.625em;
   margin-bottom: 0.3125em;
 }
@@ -597,7 +578,6 @@ p {
   line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -641,7 +621,6 @@ p {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   margin-top: 15px;
   margin-bottom: 15px;
   padding-left: 14px;
@@ -843,7 +822,6 @@ hr {
   line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   background-image: url("/public/images/icons/icon-pointer.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
@@ -1222,7 +1200,6 @@ table td {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   padding: 0.75em 1.25em 0.5625em 0;
   text-align: left;
   color: #0b0c0c;
@@ -1251,7 +1228,6 @@ table td.numeric {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   text-align: right;
 }
 
@@ -1369,7 +1345,6 @@ textarea {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -1385,7 +1360,6 @@ textarea {
   line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
 }
 
 @media (min-width: 641px) {
@@ -1425,7 +1399,6 @@ legend .form-label-bold {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   display: block;
   color: #6f777b;
   font-weight: normal;
@@ -1448,7 +1421,6 @@ legend .form-label-bold {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   width: 100%;
   padding: 4px;
   background-color: #fff;
@@ -1670,7 +1642,6 @@ input[type=number] {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   display: block;
   clear: both;
   margin: 0;
@@ -1739,7 +1710,6 @@ input[type=number] {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   float: left;
   background-image: url("/public/images/separator.png");
   background-position: 0% 50%;
@@ -1794,7 +1764,6 @@ input[type=number] {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -1814,7 +1783,6 @@ input[type=number] {
   line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
@@ -1854,7 +1822,6 @@ input[type=number] {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {
@@ -1874,7 +1841,6 @@ input[type=number] {
   line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
@@ -1914,7 +1880,6 @@ input[type=number] {
   line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   vertical-align: top;
 }
 
@@ -2195,7 +2160,6 @@ strong {
   line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
   color: #6f777b;
   display: block;
 }
@@ -2221,7 +2185,6 @@ strong {
   line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
 }
 
 @media (min-width: 641px) {

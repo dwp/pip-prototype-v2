@@ -1,3 +1,27 @@
+# 4.16.1
+
+- Fix anchor-buttons.js to trigger a native click event, also rename to shimLinksWithButtonRole.js to explain what it does
+- Add tests for shimLinksWithButtonRole ([PR #310](https://github.com/alphagov/govuk_frontend_toolkit/pull/310))
+
+# 4.16.0
+
+- Add Department for International Trade organisation ([PR #308](https://github.com/alphagov/govuk_frontend_toolkit/pull/308))
+
+# 4.15.0
+
+- Add support for Google Analytics fieldsObject ([PR #298](https://github.com/alphagov/govuk_frontend_toolkit/pull/298))
+- anchor-buttons.js: normalise keyboard behaviour between buttons and links with a button role ([PR #297](https://github.com/alphagov/govuk_frontend_toolkit/pull/297))
+
+# 4.14.1
+
+- Fix tabular number sizing in Firefox ([PR #301](https://github.com/alphagov/govuk_frontend_toolkit/pull/301))
+
+# 4.14.0
+
+- Allow use of multiple GA customDimensionIndex. See [this section](https://github.com/alphagov/govuk_frontend_toolkit/blob/master/docs/javascript.md#using-google-custom-dimensions-with-your-own-statistical-model) of the documentation for more information.
+- Configurable duration (in days) for AB Test cookie. See [this section](https://github.com/alphagov/govuk_frontend_toolkit/blob/master/docs/javascript.md#multivariate-test-framework) of the documentation for more information.
+- Allow base scripts to run within a module loader. See [this PR](https://github.com/alphagov/govuk_frontend_toolkit/pull/290) for more information.
+
 # 4.13.0
 
 - Make headings block-level by default (PR #200). If you are styling elements you want to be inline with heading includes, you’ll need to explicitly make them inline in your CSS.
