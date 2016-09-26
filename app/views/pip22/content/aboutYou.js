@@ -82,9 +82,9 @@ var data = [ {
   "dob"                  : [
     {
       "heading"          : "Are you aged between 16 and 64?",
-      "question"         : "",
+      "question"         : "What is your date of birth",
       "submit"           : "Continue",
-      "backLink"         : "/pip22/postcodeCheck"
+      "backLink"         : "/pip22/filterQuestions"
     }
   ],
   "dobSignPost"     : [
@@ -96,9 +96,10 @@ var data = [ {
   "srti"                 : [
     {
       "heading"          : "Terminal illness",
-      "question"         : "Do you have a DS1500? A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
+      "question"         : "Do you have a DS1500?",
+      "hintTextsrti"     : "A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
       "submit"           : "Continue",
-      "backLink"         : "/pip22/dob"
+      "backLink"         : "/pip22/postcodeCheck"
     }
   ],
   "srtiSignPost"         : [
@@ -136,7 +137,7 @@ var data = [ {
       "password"         : "Password",
       "passwordHint"     : "Your password must be atleast 8 characters",
       "submit"           : "Sign up",
-      "backLink"         : "/pip22/filterQuestions"
+      "backLink"         : "/pip22/dob"
     },
   ],
   "appointee" : [

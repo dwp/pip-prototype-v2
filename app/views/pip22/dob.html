@@ -17,6 +17,8 @@
 				<form action="/pip22/dob{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
+					{{ elements.date('dateOfBirth', question.question,answers.dobDay) }}
+
 					{% set seq  = [
 						{"id":"dob","value":"Yes"},
 						{"id":"dob", "value":"No"}

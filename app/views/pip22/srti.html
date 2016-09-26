@@ -21,7 +21,7 @@
 						{"id":"srti-yes","value":"Yes"},
 						{"id":"srti-no", "value":"No"}
 					] %}
-					{{ elements.radioSelect('srti',question.question,"",answers.srti,seq,"inline") }}
+					{{ elements.radioSelect('srti',question.question,question.hintTextsrti,answers.srti,seq,"inline") }}
 
 
 					{{ elements.submit(page,question,true,false,false) }}

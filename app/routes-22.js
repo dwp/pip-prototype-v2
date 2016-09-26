@@ -75,7 +75,10 @@ module.exports = function (app) {
   *******************/
 
   app.get('/pip22/dob', function (req, res) {
+    console.log(req.session['pip22-dob']);
       res.render('pip22/dob', {
+        answers : req.session['pip22-dob'],
+        'edit'  : req.param ('edit'),
         data    : aboutYou.getTableData()
       });
   });
