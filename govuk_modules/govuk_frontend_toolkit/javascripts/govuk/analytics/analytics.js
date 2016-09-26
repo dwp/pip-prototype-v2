@@ -9,9 +9,7 @@
   var Analytics = function(config) {
     this.trackers = [];
     if (typeof config.universalId != 'undefined') {
-      var universalId = config.universalId;
-      delete config.universalId;
-      this.trackers.push(new GOVUK.GoogleAnalyticsUniversalTracker(universalId, config));
+      this.trackers.push(new GOVUK.GoogleAnalyticsUniversalTracker(config.universalId, config.cookieDomain));
     }
   };
 
