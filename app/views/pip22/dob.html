@@ -17,13 +17,7 @@
 				<form action="/pip22/dob{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{{ elements.date('dateOfBirth', question.question,answers) }}
-
-					{% set seq  = [
-						{"id":"dob","value":"Yes"},
-						{"id":"dob", "value":"No"}
-					] %}
-					{{ elements.radioSelect('dob',question.question,"",answers.dob,seq,"inline") }}
+					{{ elements.date('dateOfBirth',question.question,question.hintTextDob,answers) }}
 
 
 					{{ elements.submit(page,question,true,false,false) }}

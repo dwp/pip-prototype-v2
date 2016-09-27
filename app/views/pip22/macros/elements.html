@@ -89,8 +89,13 @@
 </div>
 {% endmacro %}
 
-{% macro date(id,question,answer)%}
+{% macro date(id,question,hintText,answer)%}
 <fieldset class="form-group">
+
+  {% if hintText %}
+    <span class="form-hint">{{ hintText }}</span>
+  {% endif %}
+
   <legend>{{ question }}</legend>
   <div class="form-date">
     <div class="form-group form-group-day">

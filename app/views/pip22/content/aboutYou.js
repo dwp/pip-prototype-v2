@@ -83,6 +83,7 @@ var data = [ {
     {
       "heading"          : "Are you aged between 16 and 64?",
       "question"         : "What is your date of birth",
+      "hintTextDob"      : "dd mm yyyy",
       "submit"           : "Continue",
       "backLink"         : "/pip22/filterQuestions"
     }
@@ -91,6 +92,20 @@ var data = [ {
     {
       "heading"          : "Personal Independence Payment is for people aged 16 to 64",
       "submit"           : "Continue"
+    }
+  ],
+  "overSixtyFive"        : [
+    {
+    "heading"            : "You're over 65",
+    "submit"             : "continue",
+    "backLink"           : "/pip22/dob"
+    }
+  ],
+  "underSixteen"         : [
+    {
+      "heading"          : "You're under 16",
+      "submit"           : "continue",
+      "backLink"         : "/pip22/dob"
     }
   ],
   "srti"                 : [

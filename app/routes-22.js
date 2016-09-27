@@ -74,7 +74,7 @@ module.exports = function (app) {
   dob
   *******************/
 
-  app.get('/pip22/dob', function (req, res) {
+  app.get('/pip22/dob', function (req, res){
     (req.session['pip22-dob']);
       res.render('pip22/dob', {
         answers : req.session['pip22-dob'],
@@ -87,21 +87,23 @@ module.exports = function (app) {
     req.session['pip22-dob'] = req.body;
     if (req.body.dobYear <= '1951'
     && req.body.dobMonth <= '10'
-    && req.body.dobDay <= '04') {
-      res.redirect('/pip22/dobSignPost');
+    && req.body.dobDay <= '04'
+    ) {
+      res.redirect('/pip22/overSixtyFive');
     }
     else if (req.body.dobYear <= '1950') {
-      res.redirect('/pip22/dobSignPost');
+      res.redirect('/pip22/overSixtyFive');
     }
 
     else if (req.body.dobYear >= '2000'
     && req.body.dobMonth >= '10'
     && req.body.dobDay >= '05') {
-      res.redirect('/pip22/tooYoung');
+      res.redirect('/pip22/underSixteen');
     }
     else if (req.body.dobYear >= '2001') {
-      res.redirect('/pip22/tooYoung');
+      res.redirect('/pip22/underSixteen');
     }
+
 
     else {
       res.redirect('/pip22/registration');
@@ -121,6 +123,36 @@ module.exports = function (app) {
 
   app.post('/pip22/dobSignPost', function (req, res) {
     req.session['pip22-dobSignPost'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  overSixtyFive
+  *******************/
+
+  app.get('/pip22/overSixtyFive', function (req, res) {
+      res.render('pip22/overSixtyFive', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/overSixtyFive', function (req, res) {
+    req.session['pip22-overSixtyFive'] = req.body;
+    res.redirect('/pip22/registration');
+  });
+
+  /*******************
+  underSixteen
+  *******************/
+
+  app.get('/pip22/underSixteen', function (req, res) {
+      res.render('pip22/underSixteen', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip22/underSixteen', function (req, res) {
+    req.session['pip22-underSixteen'] = req.body;
     res.redirect('/pip22/registration');
   });
 
@@ -364,7 +396,7 @@ module.exports = function (app) {
         case "Building society account":
           page = 'buildingSociety';
           break;
-        case "Credit Union account":
+        case "Credit union account":
           page = 'creditUnion';
           break;
         default:
