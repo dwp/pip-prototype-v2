@@ -48,7 +48,7 @@ module.exports = function (app) {
 
   app.post('/pip22/postcodeCheck', function (req, res) {
     req.session['pip22-postcodeCheck'] = req.body;
-    if (req.body.postcode != 'ls10' && req.body.postcode != 'LS10'  ) {
+    if (req.body.postcode.toLowerCase() != 'ls10'   ) {
       res.redirect('/pip22/postCodeSignPost');
     } else {
       res.redirect('/pip22/srti');
@@ -67,7 +67,7 @@ module.exports = function (app) {
 
   app.post('/pip22/postCodeSignPost', function (req, res) {
     req.session['pip22-postCodeSignPost'] = req.body;
-    res.redirect('/pip22/registration');
+    res.redirect('/pip22/srti');
   });
 
   /*******************
@@ -75,6 +75,7 @@ module.exports = function (app) {
   *******************/
 
   app.get('/pip22/dob', function (req, res){
+    console.log(req.session['pip22-dob']);
     (req.session['pip22-dob']);
       res.render('pip22/dob', {
         answers : req.session['pip22-dob'],

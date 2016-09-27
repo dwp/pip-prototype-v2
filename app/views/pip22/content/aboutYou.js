@@ -46,13 +46,14 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-      "applyQuestionSRTI"   : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800&nbsp917&nbsp7777</strong>.",
-      "applyHintSRTI"     : "Do you still want to carry on with your claim?",
+          "applyQuestionSRTI"   : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800&nbsp917&nbsp7777</strong>.",
+      "applyHintSRTI"           : "Do you still want to carry on with your claim?",
       "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
-      "applyHintPostcode" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
-      "applyQuestionOtherQs"   : "Based on your answer, you can't get PIP. You may be entitled to another benefit though. Call XXX to find out.",
-      "applyHintOtherQs" : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
-
+      "applyHintPostcode"       : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
+      "applyQuestionOtherQs"    : "Based on your answer, you can't get PIP. You may be entitled to another benefit though. Call XXX to find out.",
+      "applyHintOtherQs"        : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
+      "applyOverAge"            : "You may be entitled to another benefit though. Call Attendance Allowance on 0345 605 6055  to find out.",
+      "applyUnderAge"           : "You may be entitled to another benefit though. Call Disability Living Allowance for Children on 0345 712 3456  to find out."
     },
   ],
   "postcodeCheck"        : [
@@ -97,6 +98,7 @@ var data = [ {
   "overSixtyFive"        : [
     {
     "heading"            : "You're over 65",
+    "introText"        : "Based on your answer, you can't get PIP",
     "submit"             : "continue",
     "backLink"           : "/pip22/dob"
     }
@@ -104,6 +106,7 @@ var data = [ {
   "underSixteen"         : [
     {
       "heading"          : "You're under 16",
+      "introText"        : "Based on your answer, you can't get PIP",
       "submit"           : "continue",
       "backLink"         : "/pip22/dob"
     }
@@ -217,7 +220,7 @@ var data = [ {
       "heading"          : "How should we get in touch with you?",
       "question"         : "Do you want to get text messages about your claim?",
       "question2"        : "Mobile number",
-      "question3"        : "SPLIT THESE?  Do you need information in braille, large print or audio CD - or another format?",
+      "question3"        : "Do you need information in braille, large print or audio CD - or another format?",
       "checkbox1"        : "Large print (16 point)",
       "checkbox2"        : "Braille",
       "checkbox3"        : "Audio CD",
@@ -1012,7 +1015,7 @@ var data = [ {
   "completionDate" : [
     {
       "heading"          : "How long do I have to fill in this application?",
-      "p1"               : "You have until <strong>17 September 2016</strong>. Save and return to it as often as you like before then." ,
+      "p1"               : "You have until <strong>01 November 2016</strong>. Save and return to it as often as you like before then." ,
       "submit"           : "Continue",
       "backLink"         : "/pip22/declaration"
     }

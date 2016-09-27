@@ -17,7 +17,7 @@
 				<form action="/pip22/dob{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					{{ elements.date('dateOfBirth',question.question,question.hintTextDob,answers) }}
+					{{ elements.date('dateOfBirth',question.question,answers) }}
 
 
 					{{ elements.submit(page,question,true,false,false) }}
