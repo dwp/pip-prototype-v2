@@ -22,7 +22,7 @@
 							{"id":"helper","value":"Yes","showPanel":"submit-button"},
 							{"id":"helper", "value":"No","showPanel":"go-to-govuk"}
 						] %}
-						{{ elements.radioSelect('helper',stillApply.applyQuestionOtherQs,stillApply.applyHintOtherQs,answers.helper,seq,"inline") }}
+						{{ elements.radioSelect('helper',stillApply.applyQuestionOtherQs  |  safe,stillApply.applyHintOtherQs,answers.helper,seq,"inline") }}
 				 {% endfor %}
 
 				 <div id="submit-button" class="js-hidden">

@@ -22,7 +22,7 @@
 							{"id":"helper","value":"Yes","showPanel":"submit-button"},
 							{"id":"helper", "value":"No","showPanel":"go-to-govuk"}
 						] %}
-						{{ elements.radioSelect('helper',stillApply.applyQuestionPostcode,stillApply.applyHintPostcode,answers.helper,seq,"inline") }}
+						{{ elements.radioSelect('helper',stillApply.applyQuestionPostcode  |  safe,stillApply.applyHintPostcode,answers.helper,seq,"inline") }}
 				 {% endfor %}
 
 				 <div id="submit-button" class="js-hidden">

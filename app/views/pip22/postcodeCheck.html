@@ -27,7 +27,7 @@
 						{% endfor %}
 					</ul>
 
-					{{ elements.genericInput('postcode',question.postCode, answers.postcode,question.postCodeHint) }}
+					{{ elements.genericInput('postcode',question.postCode  |  safe, answers.postcode,question.postCodeHint) }}
 
 					{{ elements.submit(page,question,true,false,false) }}
 

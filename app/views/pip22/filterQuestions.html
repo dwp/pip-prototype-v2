@@ -21,10 +21,10 @@
 						{"id":"question1-yes","value":"Yes","showPanel" : "question1-yes"},
 						{"id":"question1-no", "value":"No"}
 					] %}
-					{{ elements.radioSelect('question1',question.question|safe,"",answers.question1,seq,"inline") }}
+					{{ elements.radioSelect('question1',question.question|safe,question.hintTextAppointee,answers.question1,seq,"inline") }}
 
 					<div id="question1-yes" class="panel panel-border-wide blue-alert js-hidden">
-							<p>{{question.questionNo}}</p>
+							<p>{{question.questionNo  |  safe}}</p>
 					</div>
 
 					{% set seq  = [
@@ -34,7 +34,7 @@
 					{{ elements.radioSelect('question2',question.question2,"",answers.question1,seq,"inline") }}
 
 					<div id="question2-yes" class="panel panel-border-wide blue-alert js-hidden">
-							<p>{{question.question2No}}</p>
+							<p>{{question.question2No  |  safe}}</p>
 					</div>
 
 					{% set seq  = [
@@ -44,7 +44,7 @@
 					{{ elements.radioSelect('question3',question.question3,"",answers.question1,seq,"inline") }}
 
 					<div id="question3-no" class="panel panel-border-wide blue-alert js-hidden">
-							<p>{{question.question3No}}</p>
+							<p>{{question.question3No  |  safe}}</p>
 					</div>
 
 					{{ elements.submit(page,question,true,false,false) }}

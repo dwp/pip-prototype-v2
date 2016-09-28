@@ -23,7 +23,7 @@
 					] %}
 					{{ elements.radioSelect('nationality',question.question,"",answers.nationality,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
+					<div class="form-group-related panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
 						{{ elements.genericInput('otherNationality',question.question2, answers.otherNationality) }}
 					</div>
 

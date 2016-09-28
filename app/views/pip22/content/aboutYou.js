@@ -46,14 +46,14 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-          "applyQuestionSRTI"   : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800&nbsp917&nbsp7777</strong>.",
-      "applyHintSRTI"           : "Do you still want to carry on with your claim?",
-      "applyQuestionPostcode"   : "People living in your area can’t yet apply online.",
-      "applyHintPostcode"       : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
-      "applyQuestionOtherQs"    : "Based on your answer, you can't get PIP. You may be entitled to another benefit though. Call XXX to find out.",
-      "applyHintOtherQs"        : "You're still legally entitled to apply online even though the claim won't be valid. Do you still want to carry on with your claim?",
-      "applyOverAge"            : "You may be entitled to another benefit though. Call Attendance Allowance on 0345 605 6055  to find out.",
-      "applyUnderAge"           : "You may be entitled to another benefit though. Call Disability Living Allowance for Children on 0345 712 3456  to find out."
+          "applyQuestionSRTI"   : "Do you still want to carry on with your claim?",
+      "applyHintSRTI"           : "",
+      "applyQuestionPostcode"   : "Do you still want to carry on with your claim?",
+      "applyHintPostcode"       : "",
+      "applyQuestionOtherQs"    : "<p>To make a claim call <strong>0800 917 2222</strong> or textphone: <strong>0800 917 7777</strong>.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p><p>Do you still want to carry on with your claim?</p>",
+      "applyHintOtherQs"        : "",
+      "applyOverAge"            : "<p>PIP is a benefit for people aged 16 to 64.</p><p>You may be entitled to another benefit though. Call Attendance Allowance on <strong>0345 605 6055</strong> or textphone <strong>0345 604 5312</strong> to find out.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p> <p>Do you still want to carry on with your claim?</p>",
+      "applyUnderAge"           : "<p>You may be entitled to another benefit though. Call Disability Living Allowance for Children on <strong>0345 712 3456</strong> or textphone <strong>0345 722 4433</strong> to find out.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p> <p>Do you still want to carry on with your claim?</p>"
     },
   ],
   "postcodeCheck"        : [
@@ -68,15 +68,16 @@ var data = [ {
         "have an email address.",
 
       ],
-      "postCode"         : "Enter your postcode",
-      "postCodeHint"     : "Postcode hint text",
+      "postCode"         : "<strong>Enter your postcode</strong>",
+      "postCodeHint"     : "",
       "submit"           : "Check your postcode",
       "backLink"         : "/pip22/apply"
     }
   ],
   "postCodeSignPost"     : [
     {
-      "heading"          : "Can I claim Personal Independence Payment online?",
+      "heading"          : "People living in your area can’t yet apply online.",
+      "introText"        : "You're still legally entitled to apply online even though the claim won't be valid.",
       "submit"           : "Continue"
     }
   ],
@@ -97,16 +98,16 @@ var data = [ {
   ],
   "overSixtyFive"        : [
     {
-    "heading"            : "You're over 65",
-    "introText"        : "Based on your answer, you can't get PIP",
+    "heading"            : "You may be entitled to a different benefit",
+    "introText"        : "Based on your answer, you can't get Personal Independence Payment (PIP)",
     "submit"             : "continue",
     "backLink"           : "/pip22/dob"
     }
   ],
   "underSixteen"         : [
     {
-      "heading"          : "You're under 16",
-      "introText"        : "Based on your answer, you can't get PIP",
+      "heading"          : "You may be entitled to a different benefit",
+      "introText"        : "Based on your answer, you can't get Personal Independence Payment (PIP)",
       "submit"           : "continue",
       "backLink"         : "/pip22/dob"
     }
@@ -123,6 +124,7 @@ var data = [ {
   "srtiSignPost"         : [
     {
       "heading"          : "Terminal illness",
+      "introText"        : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong>.",
       "submit"           : "Continue"
 
     }
@@ -131,19 +133,21 @@ var data = [ {
     {
       "heading"          : "Can I still apply online?",
       "introText"        : "",
-      "question"         : "Are you an appointee (appointees are authorised by the Department for Work and Pensions) for the person claiming?",
-      "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
+      "question"         : "Are you an appointee for the person claiming?",
+      "hintTextAppointee": "Appointees are authorised by the Department for Work and Pensions",
+      "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
       "question2"        : "Have you claimed for PIP or DLA in the past year?",
-      "question2No"      : "While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
+      "question2No"      : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
       "question3"        : "Do you have a  personal email address?",
-      "question3No"      : "You need to have a personal email address to claim PIP online. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim.",
+      "question3No"      : "You need to have a personal email address to claim PIP online. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
       "submit"           : "Continue",
       "backLink"         : "/pip22/srti"
     }
   ],
   "filterSignPost"       : [
     {
-      "heading"          : "Can I apply for Personal Independence Payment online?",
+      "heading"          : "You need to claim on the phone",
+      "introText"        : "Based on your answers, you can’t claim Personal Independence Payment (PIP) online.",
       "submit"           : "Continue"
     },
   ],
@@ -153,6 +157,7 @@ var data = [ {
       "introText"        : "Enter a personal email address and choose a password at least 8 characters long.",
       "username"         : "Email address",
       "password"         : "Password",
+      "password2"        : "Re-enter your password",
       "passwordHint"     : "Your password must be atleast 8 characters",
       "submit"           : "Sign up",
       "backLink"         : "/pip22/dob"
@@ -279,8 +284,8 @@ var data = [ {
       "question2"        : "Your nationality",
       "question3"        : "Do you currently live in England, Scotland or Wales?",
       "question4"        : "Where you live",
-      "question5"        : "Have you been out of England, Scotland or Wales for more than 4 weeks in the last 3 years?",
-      "q5HintText"       : "This could be one trip or a number of trips adding up to 4 weeks.",
+      "question5"        : "Have you been out of England, Scotland or Wales for more than 4 weeks at a time in the last 3 years?",
+      "q5HintText"       : "",
       "backLink"         : "/pip22/bankDetails"
     },
   ],
@@ -301,7 +306,7 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Working and living abroad",
-      "introText"        : "Tell us about all the times you've spent out of the country over the last 3 years.",
+      "introText"        : "Tell us about all the times you've spent out of the country for more than 4 weeks at a time over the last 3 years.",
       "questionHead"     : "Period abroad",
       "removeLink"       : "Remove this",
       "question"         : "Which country did you go to?",
