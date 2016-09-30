@@ -26,7 +26,7 @@
           ] %}
           {{ elements.radioSelect('funding',question.question,"",answers.funding,seq) }}
 
-          <div class="form-group panel-indent
+          <div class="panel-indent
           {% if not answers.funding  or answers.funding == 'No' %}js-hidden{% endif %}" id="extraFunding">
 
           {% set seq2 = [
@@ -36,13 +36,17 @@
             {"id":"funding4", "label":"A charity",   "value":"A charity", "hidePanel":"repayAmount"},
             {"id":"funding3", "label":"Department for Work and Pensions",   "value":"Department for Work and Pensions", "hidePanel":"repayAmount"}
 					] %}
+
+
 					{{ elements.radioSelect('extraFunding',question.question2,"",answers.funding,seq2) }}
+
 
           {{ elements.genericInput('whoAuthority',question.question3, answers.when) }}
 
+
         </div>
 
-        <div class="form-group panel-indent
+        <div class="panel-indent
         {% if not answers.extrafunding  or answers.funding != 'Local authority' %}js-hidden{% endif %}" id="repayAmount">
 
                     {% set seq3 = [

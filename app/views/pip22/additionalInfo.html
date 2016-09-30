@@ -16,7 +16,7 @@
 
 				<form action="/pip22/additionalInfo{% if edit %}?edit=true{% endif %}" method="post" class="form">
 						{{ elements.header(page,question) }}
-						{{ elements.textarea("additionalInfo","",answers.additionalInfo,"","","",3000) }}
+						{{ elements.textarea("additionalInfo","",answers.additionalInfo,"","","",3000,25000) }}
 
 						{% if answers.skipQuestion.length or edit %}
 							{{ elements.returnToMenu(page,question) }}

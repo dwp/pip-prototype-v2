@@ -23,13 +23,13 @@
 					] %}
 					{{ elements.radioSelect('speech',question.question,"",answers.speech,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.speech != 'Yes' %}js-hidden{% endif %}" id="speechDetails">
+					<div class="panel-indent {% if answers.speech != 'Yes' %}js-hidden{% endif %}" id="speechDetails">
 						{% set seq  = [
 							{"id":"allTime","value":"Yes"},
 							{"id":"allTime", "value":"No","showPanel":"allTimeDetails"}
 						] %}
 						{{ elements.radioSelect('allTime',question.question2,"",answers.allTime,seq,"inline") }}
-						<div class="form-group panel-indent {% if answers.allTime != 'No' %}js-hidden{% endif %}" id="allTimeDetails">
+						<div class="form-group {% if answers.allTime != 'No' %}js-hidden{% endif %}" id="allTimeDetails">
 							{{ elements.genericInput('howOften',question.question3, answers.howOften,question.qHintText3) }}
 						</div>
 						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}

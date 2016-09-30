@@ -23,7 +23,7 @@
 					] %}
 					{{ elements.radioSelect('treatments',question.question,"",answers.treatments,seq,"inline") }}
 
-          <div class="form-group panel-indent {% if answers.treatments != 'Yes' %}js-hidden{% endif %}" id="medications">
+          <div class="panel-indent {% if answers.treatments != 'Yes' %}js-hidden{% endif %}" id="medications">
 						<ul class="list-user-input">
 							{% for i in range(1, 11) -%}
 								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['treatment' + i] %} js-hidden {% endif %}">

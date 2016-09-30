@@ -23,7 +23,7 @@
 					] %}
 					{{ elements.radioSelect('monitored',question.question,"",answers.monitored,seq,"inline") }}
 
-          <div class="form-group panel-indent {% if answers.monitored != 'Yes' %}js-hidden{% endif %}" id="monitoredDetails">
+          <div class="panel-indent {% if answers.monitored != 'Yes' %}js-hidden{% endif %}" id="monitoredDetails">
 						{{ elements.textarea("whyNeedMonitoring",question.question3,answers.whyNeedMonitoring) }}
 						{{ elements.textarea("howHelpToMonitor",question.question4,answers.howHelpToMonitor) }}
           </div>

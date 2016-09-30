@@ -37,12 +37,12 @@
 					{{ elements.radioSelect('restrictions',question.question2,"",answers.restrictions,seq2) }}
 
 
-					<div class="form-group
+					<div class="form-group-related
           {% if not answers.restrictions  or answers.restrictions != 'Limited leave to remain' %}js-hidden{% endif %}" id="limitedLeave">
 						{{ elements.genericInput('whenEnds1',question.question3, answers.whenEnds1)}}
 					</div>
 
-					<div class="form-group
+					<div class="form-group-related
           {% if not answers.restrictions  or answers.restrictions != 'Limited leave to remain to remain extension applied for' %}js-hidden{% endif %}" id="extensionApplied">
 					{{ elements.genericInput('whenEnds2',question.question3, answers.whenEnds2) }}
 					{{ elements.genericInput('whenExtend',question.question4, answers.whenExtend) }}

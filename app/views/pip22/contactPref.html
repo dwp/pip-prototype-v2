@@ -37,7 +37,7 @@
 						}
 					] %}
 
-					<div class="form-group panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
+					<div class="panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
 						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
 					</div>
 
@@ -47,7 +47,7 @@
 					] %}
 					{{ elements.radioSelect('smsContact',question.question,"",answers.smsContact,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="smsContactPanel">
+					<div class="panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="smsContactPanel">
             {{ elements.genericInput('mobile',question.question2, answers.mobile) }}
           </div>
 

@@ -23,7 +23,7 @@
 					] %}
 					{{ elements.radioSelect('nationality',question.question,"",answers.nationality,seq,"inline") }}
 
-					<div class="form-group-related panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
+					<div class="panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
 						{{ elements.genericInput('otherNationality',question.question2, answers.otherNationality) }}
 					</div>
 
@@ -34,7 +34,7 @@
 					] %}
 					{{ elements.radioSelect('countryLive',question.question3,"",answers.countryLive,seq2,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.countryLiving != 'No' %}js-hidden{% endif %}" id="otherCountry">
+					<div class="panel-indent {% if answers.countryLiving != 'No' %}js-hidden{% endif %}" id="otherCountry">
             {{ elements.genericInput('countryLiving',question.question4, answers.countryLivingOther) }}
           </div>
 

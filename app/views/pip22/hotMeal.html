@@ -37,7 +37,7 @@
 					] %}
 					{{ elements.checkbox('optionsName',"checkbox",question.question,page.tickAll,seq,answers,answers.optionsName,"check-uncheck") }}
 
-					<div class="form-group panel-indent
+					<div class="panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
 
 						{% set seq = [

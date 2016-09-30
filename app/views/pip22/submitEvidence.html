@@ -19,7 +19,7 @@
 
 
 
-					<div class="form-group panel-indent}" id="medicalInfoDetails">
+					<div class="form-group" id="medicalInfoDetails">
 						{% set seq2 = [
 							{"id":"medicalItem1", "label":"medical reports", "value":"medical reports", "target" : "postToAddress"},
 			        {"id":"medicalItem2", "label":"care or treatment plans", "value":"care or treatment plans","showPanel":"details"},
@@ -37,7 +37,7 @@
 			      ] %}
 						{{ elements.checkbox('optionsName',"checkbox",question.question,'',seq2,answers,answers.optionsName, "check-uncheck") }}
 
-						<div class="form-group panel-indent
+						<div class="panel-indent
 						 {% if not answers.optionsName  or answers.optionsName == question.youAreNotLabel|safe %}js-hidden{% endif %}" id="details">
 
 						{% set seq3  = [

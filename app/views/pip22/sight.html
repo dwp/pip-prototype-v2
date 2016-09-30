@@ -23,7 +23,7 @@
 					] %}
 					{{ elements.radioSelect('sight',question.question,question.qHintText,answers.sight,seq,"inline") }}
 
-					<div class="form-group panel-indent {% if answers.sight != 'Yes' %}js-hidden{% endif %}" id="sightDetails">
+					<div class="panel-indent {% if answers.sight != 'Yes' %}js-hidden{% endif %}" id="sightDetails">
 						{% set seq = [
 							{"id":"sight1", "label":question.blindLabel, "value":question.blindLabel},
 							{"id":"sight2", "label":question.partiallyLabel, "value":question.partiallyLabel},

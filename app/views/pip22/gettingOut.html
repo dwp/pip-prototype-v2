@@ -33,7 +33,7 @@
 					] %}
 					{{ elements.checkbox('optionsName',"checkbox",question.question,"",seq,answers,answers.optionsName,"check-uncheck") }}
 
-					<div class="form-group panel-indent
+					<div class="panel-indent
 					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
 
 					 	{{ elements.textarea('howFarWalk',question.question2, answers.howFarWalk) }}

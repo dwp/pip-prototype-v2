@@ -24,7 +24,7 @@
 					] %}
 					{{ elements.radioSelect('anySideEffects',question.question,"",answers.anySideEffects,seq,"inline") }}
 
-          <div class="form-group panel-indent {% if answers.anySideEffects != 'Yes' %}js-hidden{% endif %}" id="sideEffectsDetails">
+          <div class="panel-indent {% if answers.anySideEffects != 'Yes' %}js-hidden{% endif %}" id="sideEffectsDetails">
             {{ elements.textarea("sideEffects",question.question2,answers.sideEffects) }}
           </div>
 
