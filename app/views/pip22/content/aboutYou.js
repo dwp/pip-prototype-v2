@@ -326,6 +326,9 @@ var data = [ {
       "question2"        : "When did you start staying there?",
       "question3"        : "The address",
       "question4"        : "Postcode",
+      "whereWhenStart"   : "When did you start staying there?",
+      "whereWhenAddress" : "The address",
+      "whereWhenPostcode": "Postcode",
       "backLink"         : "/pip22/nationality"
     }
   ],

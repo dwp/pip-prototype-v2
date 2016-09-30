@@ -275,6 +275,25 @@
         {{ genericInput(item.textboxId,"",item.textboxAnswer) }}
       </div>
     {% endif %}
+
+<!-- test for address within currentWhereabouts-->
+{% if item.whereAndWhen %}
+  <div id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false"
+    {% if savedAnswer == inputValue %}
+      style="display:block;"
+    {% endif %}>
+    <legend>{{ question }}</legend>
+    {{ genericInput(item.whereWhenId,item.whereWhenLabel,item.whereWhenAnswer) }}
+    {{ genericInput(item.whereWhenId2,item.whereWhenLabel2,item.whereWhenAnswer2) }}
+    {{ textInput(item.whereWhenId3,item.whereWhenAnswer3) }}
+    {{ textInput(item.whereWhenId4,item.whereWhenAnswer4) }}
+    {{ genericInput(item.whereWhenId5,item.whereWhenLabel5,item.whereWhenAnswer5)}}
+
+  </div>
+{% endif %}
+<!-- end of test -->
+
+
   {% endfor %}
 </fieldset>
 {% endmacro %}
@@ -468,4 +487,24 @@ open
 
 </div>
 {% endfor %}
+{% endmacro %}
+
+<!-- macros for current whereabouts -->
+
+
+{% macro address(id,question,answer,hintText,inputSize,type='text')%}
+<div class="form-group" id="form-group-{{ id }}">
+  <label>The address</label><br>
+  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
+<div class="form-group" id="form-group-{{ id }}">
+  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
+<div class="form-group" id="form-group-{{ id }}">
+  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
+<div class="form-group" id="form-group-{{ id }}">
+  <label>Post Code</label><br>
+  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
+</div>
 {% endmacro %}

@@ -17,31 +17,65 @@
 				<form action="/pip22/currentWhereabouts{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
 					{{ elements.header(page,question) }}
 
-
 					{% set seq = [
-						{"id":"location1", "label":"Hospital", "value":"hospital", "showPanel":"details"},
-						{"id":"location2", "label":"A care or nursing home", "value":"a care or nursing home", "showPanel":"details"},
-						{"id":"location3", "label":"Sheltered housing", "value":"sheltered housing", "showPanel":"details"},
-						{"id":"location4", "label":"A residential college", "value":"a residential college", "showPanel":"details"},
-						{"id":"location5", "label":"A hostel", "value":"a hostel", "showPanel":"details"},
-						{"id":"location6", "label":"A hospice", "value":"a hospice", "showPanel":"details"},
+						{"id":"location1", "label":"Hospital", "value":"hospital",
+						"target"             : "hospitalAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"hospitalWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.hospitalWhen,
+						"whereWhenId2":"hospitalWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.hospitalWhere1,
+						"whereWhenId3": "hospitalWhere2", "whereWhenAnswer3":answers.hospitalWhere2,
+						"whereWhenId4": "hospitalWhere3", "whereWhenAnswer4":answers.hospitalWhere3,
+						"whereWhenId5":"hospitalWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.hospitalWhere4},
+
+						{"id":"location2", "label":"A care or nursing home", "value":"a care or nursing home",
+						"target"             : "careHomeAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"careHomeWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.careHomeWhen,
+						"whereWhenId2":"careHomeWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.careHomeWhere1,
+						"whereWhenId3": "careHomeWhere2", "whereWhenAnswer3":answers.careHomeWhere2,
+						"whereWhenId4": "careHomeWhere3", "whereWhenAnswer4":answers.careHomeWhere3,
+						"whereWhenId5":"careHomeWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.careHomeWhere4},
+
+						{"id":"location3", "label":"Sheltered housing", "value":"sheltered housing",
+						"target"             : "shelteredAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"shelteredWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.shelteredWhen,
+						"whereWhenId2":"shelteredWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.shelteredWhere1,
+						"whereWhenId3": "shelteredWhere2", "whereWhenAnswer3":answers.shelteredWhere2,
+						"whereWhenId4": "shelteredWhere3", "whereWhenAnswer4":answers.shelteredWhere3,
+						"whereWhenId5":"shelteredWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.shelteredWhere4},
+
+						{"id":"location4", "label":"A residential college", "value":"a residential college",
+						"target"             : "collegeAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"collegeWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.collegeWhen,
+						"whereWhenId2":"collegeWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.collegeWhere1,
+						"whereWhenId3": "collegeWhere2", "whereWhenAnswer3":answers.collegeWhere2,
+						"whereWhenId4": "collegeWhere3", "whereWhenAnswer4":answers.collegeWhere3,
+						"whereWhenId5":"collegeWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.collegeWhere4},
+
+						{"id":"location5", "label":"A hostel", "value":"a hostel",
+						"target"             : "hostelAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"hostelWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.hostelWhen,
+						"whereWhenId2":"hostelWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.hostelWhere1,
+						"whereWhenId3": "hostelWhere2", "whereWhenAnswer3":answers.hostelWhere2,
+						"whereWhenId4": "hostelWhere3", "whereWhenAnswer4":answers.hostelWhere3,
+						"whereWhenId5":"hostelWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.hostelWhere4},
+
+						{"id":"location6", "label":"A hospice", "value":"a hospice",
+						"target"             : "hospiceAddress",
+						"whereAndWhen"       : true,
+						"whereWhenId":"hospiceWhen", "whereWhenLabel":question.whereWhenStart,"whereWhenAnswer":answers.hospiceWhen,
+						"whereWhenId2":"hospiceWhere1", "whereWhenLabel2":question.whereWhenAddress,"whereWhenAnswer2":answers.hospiceWhere1,
+						"whereWhenId3": "hospiceWhere2", "whereWhenAnswer3":answers.hospiceWhere2,
+						"whereWhenId4": "hospiceWhere3", "whereWhenAnswer4":answers.hospiceWhere3,
+						"whereWhenId5":"hospiceWhere4", "whereWhenLabel5":question.whereWhenPostcode,"whereWhenAnswer5":answers.hospiceWhere4},
+
 						{"id":"location7", "label":"You're <span class='bold-small'>not</span> staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
 					] %}
 					{{ elements.checkbox('currentLiving',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
 
-					<div class="panel-indent
-					{% if not answers.optionsName  or answers.optionsName == 'you are currently not staying in any of these' %}js-hidden{% endif %}" id="details">
-						{{ elements.genericInput('when',question.question2, answers.when) }}
-
-						<fieldset class="form-group">
-							<legend class="form-label">{{ question.question3 }}</legend>
-							{{ elements.textInput('address1',answers.address1) }}
-							{{ elements.textInput('address2',answers.address2) }}
-							{{ elements.textInput('address3',answers.address3) }}
-						</fieldset>
-
-						{{ elements.genericInput('postcode',question.question4, answers.postcode) }}
-					</div>
 
 					{% if answers.skipQuestion.length or edit %}
 						{{ elements.returnToMenu(page,question) }}
