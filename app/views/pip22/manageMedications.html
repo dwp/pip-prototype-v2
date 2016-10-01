@@ -34,7 +34,7 @@
 					] %}
 					{{ elements.checkbox('conditionAffect',"checkbox",question.question,page.tickAll,seq,answers,answers.conditionAffect,"check-uncheck") }}
 
-					<div class="panel-indent
+					<div class="form-group panel-indent
 					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
 
 						{% set seq3 = [

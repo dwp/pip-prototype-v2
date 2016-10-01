@@ -226,6 +226,9 @@
       {% if item.hidePanel %}
         data-hide="{{ item.hidePanel }}"
       {% endif %}
+      {% if item.removePanel %}
+        data-hide="{{ item.removePanel }}"
+      {% endif %}  
       {% if item.target %}
         data-target="{{ item.target }}"
       {% endif %}
@@ -275,8 +278,17 @@
         {{ genericInput(item.textboxId,"",item.textboxAnswer) }}
       </div>
     {% endif %}
-
-<!-- test for address within currentWhereabouts-->
+<!-- no indent textbox with label -->
+{% if item.questionBox %}
+  <div id="{{ item.target }}" class="js-hidden form-group" aria-hidden="false"
+    {% if savedAnswer == inputValue %}
+      style="display:block;"
+    {% endif %}>
+    {{ genericInput(item.questionBoxId,item.questionBoxLabel,item.questionBoxAnswer) }}
+  </div>
+{% endif %}
+<!-- end no indent textbox with label -->
+<!--  address with start date end -->
 {% if item.whereAndWhen %}
   <div id="{{ item.target }}" class="js-hidden panel-indent form-group-related" aria-hidden="false"
     {% if savedAnswer == inputValue %}
@@ -288,12 +300,9 @@
     {{ textInput(item.whereWhenId3,item.whereWhenAnswer3) }}
     {{ textInput(item.whereWhenId4,item.whereWhenAnswer4) }}
     {{ genericInput(item.whereWhenId5,item.whereWhenLabel5,item.whereWhenAnswer5)}}
-
   </div>
 {% endif %}
-<!-- end of test -->
-
-
+<!-- address with start date end -->
   {% endfor %}
 </fieldset>
 {% endmacro %}

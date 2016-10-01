@@ -24,29 +24,45 @@
             {"id":"ownCosts3", "label":"I don't know",   "value":"I don't know", "HidePanel":"extraFunding"}
 
           ] %}
-          {{ elements.radioSelect('funding',question.question,"",answers.funding,seq) }}
+          {{ elements.radioSelect('funding',question.question,"",answers.funding,seq,"inline") }}
 
           <div class="panel-indent
           {% if not answers.funding  or answers.funding == 'No' %}js-hidden{% endif %}" id="extraFunding">
 
           {% set seq2 = [
-						{"id":"funding1", "label":"Local authority", "value":"Local authority", "showPanel":"repayAmount"},
-						{"id":"funding2", "label":"Health authority",   "value":"Health authority", "hidePanel":"repayAmount"},
-						{"id":"funding3", "label":"Education authority",   "value":"Education authority", "hidePanel":"repayAmount"},
-            {"id":"funding4", "label":"A charity",   "value":"A charity", "hidePanel":"repayAmount"},
-            {"id":"funding3", "label":"Department for Work and Pensions",   "value":"Department for Work and Pensions", "hidePanel":"repayAmount"}
+						{"id":"funding1", "label":"Local authority", "value":"Local authority", "showPanel":"repayAmount",
+						"target" 				: "localName",
+						"questionBox"		 	  : true,
+						"questionBoxId" 		: "localName",
+						"questionBoxLabel"  : "Tell us the name of the organisation that is paying",
+						"questionBoxAnswer" : answers.localName},
+						{"id":"funding2", "label":"Health authority",   "value":"Health authority", "removePanel":"repayAmount",
+						"target" 				: "healthName",
+						"questionBox"		 	  : true,
+						"questionBoxId" 		: "healthName",
+						"questionBoxLabel"  : "Tell us the name of the organisation that is paying",
+						"questionBoxAnswer" : answers.healthName},
+						{"id":"funding3", "label":"Education authority",   "value":"Education authority", "removePanel":"repayAmount",
+						"target" 				: "educationName",
+						"questionBox"		 	  : true,
+						"questionBoxId" 		: "educationName",
+						"questionBoxLabel"  : "Tell us the name of the organisation that is paying",
+						"textboxAnswer" : answers.educationName},
+            {"id":"funding4", "label":"A charity",   "value":"A charity", "removePanel":"repayAmount",
+						"target" 				: "charityName",
+						"questionBox"		 	  : true,
+						"questionBoxId" 		: "charityName",
+						"questionBoxLabel"  : "Tell us the name of the organisation that is paying",
+						"questionBoxAnswer" : answers.charityName},
+            {"id":"funding5", "label":"Department for Work and Pensions", "value":"Department for Work and Pensions", "removePanel":"repayAmount"}
 					] %}
 
 
-					{{ elements.radioSelect('extraFunding',question.question2,"",answers.funding,seq2) }}
+					{{ elements.checkbox('extraFunding',"radio",question.question2,'',seq2,answers,answers.optionsName,"check-uncheck") }}
 
+				</div>
 
-          {{ elements.genericInput('whoAuthority',question.question3, answers.when) }}
-
-
-        </div>
-
-        <div class="panel-indent
+        <div class="form-group-related
         {% if not answers.extrafunding  or answers.funding != 'Local authority' %}js-hidden{% endif %}" id="repayAmount">
 
                     {% set seq3 = [
@@ -55,9 +71,10 @@
                       {"id":"repay3", "label":"I don't know",   "value":"I don't know"}
 
                     ] %}
-                    {{ elements.radioSelect('repay',question.question4,"",answers.repay,seq3) }}
+                    {{ elements.radioSelect('repay',question.question4,"",answers.repay,seq3,"inline") }}
 
-                  </div>
+
+								</div>
 
 					{% if answers.skipQuestion.length or edit %}
 						{{ elements.returnToMenu(page,question) }}
