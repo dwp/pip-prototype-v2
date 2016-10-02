@@ -29,7 +29,7 @@
   </div>
 </div>
 
-<!-- medicatins -->
+<!-- medications -->
 <div class="column-full">
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.medicationHd}}</h2>
@@ -65,6 +65,7 @@
 </div>
 
 <!-- manage medications -->
+{% if medications.takingMedication != 'No' %}
 <div class="column-full">
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.manageMedsHd}}</h2>
@@ -124,7 +125,7 @@
     <a href="/pip22/manageMedications?edit=true">{{question.changeLinkTxt}}</a>
   </div>
 </div>
-
+{% endif %}
 <!-- treatments -->
 <div class="column-full">
   <div class="answers-cont">
@@ -169,6 +170,7 @@ manageHours
 manageWhy
 manageHow
 -->
+{% if treatments.treatments != 'No' %}
 <div class="column-full">
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.manageTreatHd}}</h2>
@@ -195,6 +197,7 @@ manageHow
     <a href="/pip22/manageTreatments?edit=true">{{question.changeLinkTxt}}</a>
   </div>
 </div>
+{% endif %}
 
 <!-- side effects -->
 <div class="column-full">

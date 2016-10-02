@@ -13,6 +13,17 @@ var data = [ {
       "helperName"         : "Name",
       "helperRel"          : "Relationship",
 
+      /* appointee */
+      "appointeeHd"        : "Help with your application",
+      "applyingSelfHd"     : "Applying for yourself",
+      "appointeeNameHd"    : "Their name",
+      "appointeeWhoHd"     : "Relationship",
+      "appointeeWhyHd"     : "Why they're helping",
+
+      /* additionalSupport*/
+      "addSupportHd"        : "Do you have any of the following conditions",
+      "addCondHd"           : "You have",
+
       /* About You */
       "aboutYouHd"         : "About you",
       "aboutYouName"       : "Full name",

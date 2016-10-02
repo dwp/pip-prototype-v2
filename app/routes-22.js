@@ -271,6 +271,7 @@ module.exports = function (app) {
      }
   });
 
+
   /*******************
   additionalSupport
   *******************/
@@ -615,19 +616,19 @@ module.exports = function (app) {
   app.post('/pip22/currentWhereabouts', function (req, res) {
     req.session['pip22-currentWhereabouts'] = req.body;
 
-    if(req.body.currentLiving === 'a care or nursing home'
-      || req.body.currentLiving === 'sheltered housing'
-      || req.body.currentLiving === 'a residential college'
-      || req.body.currentLiving === 'a hostel') {
+    if(req.body.optionsLiving === 'a care or nursing home'
+      || req.body.optionsLiving === 'sheltered housing'
+      || req.body.optionsLiving === 'a residential college'
+      || req.body.optionsLiving === 'a hostel') {
        if (req.body.saveAndMenu) {
          res.redirect('/pip22/careHomeFunding?edit=true');
        } else {
          res.redirect('/pip22/careHomeFunding');
        }
      }
-     else if(req.body.currentLiving === 'a care or nursing home'
-       || req.body.currentLiving === 'hospital'
-       || req.body.currentLiving === 'a hospice') {
+     else if(req.body.optionsLiving === 'a care or nursing home'
+       || req.body.optionsLiving === 'hospital'
+       || req.body.optionsLiving === 'a hospice') {
         if (req.body.saveAndMenu) {
           res.redirect('/pip22/hospitalFunding?edit=true');
         } else {
@@ -1486,6 +1487,8 @@ module.exports = function (app) {
         data                     : aboutYou.getTableData(),
         dataCheckChange          : checkYourAnswers.getTableData(),
         helper                   : req.session['pip22-helper'],
+        appointee                : req.session['pip22-appointee'],
+        additionalSupport        : req.session['pip22-additionalSupport'],
         aboutYou                 : req.session['pip22-aboutYou'],
         contactDetails           : req.session['pip22-contactDetails'],
         contactPref              : req.session['pip22-contactPref'],

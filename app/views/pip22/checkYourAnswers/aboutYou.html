@@ -1,3 +1,59 @@
+<!-- appointee -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.appointeeHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.applyingSelfHd}}</span>
+        <span class ="answer">{{appointee.appointee}}</span>
+      </li>
+      {% if appointee.appointee == 'Yes, with help from a friend, relative or third party such as a charity' %}
+      <li>
+        <span class="question">{{question.appointeeNameHd}}</span>
+        <span class="answer">{{appointee.name}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.appointeeWhoHd}}</span>
+        <span class="answer">{{appointee.relationship}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.appointeeWhyHd}}</span>
+        <span class="answer">{{appointee.why}}
+        </li>
+        {% endif %}
+      </ul>
+      <a href="/pip22/appointee?edit=true">{{question.changeLinkTxt}}</a>
+    </div>
+  </div>
+
+  <!-- additionalSupport -->
+  {% if appointee.appointee == 'Yes, I am applying for myself' %}
+  <div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.addSupportHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.addCondHd}}</span>
+        <span class="answer">
+          {% if additionalSupport.additionalOptions == 'psychosis' %}
+          {{additionalSupport.additionalOptions}}
+          {% elif additionalSupport.additionalOptions|length < 10 %}
+          <ul class="list-bullet">
+            {% for additionalOption in additionalSupport.additionalOptions %}
+            <li>{{additionalOption}}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          {{additionalSupport.additionalOptions}}
+          {% endif %}
+        </span>
+        </li>
+      </ul>
+      <a href="/pip22/additionalSupport?edit=true">{{question.changeLinkTxt}}</a>
+    </div>
+  </div>
+    {% endif %}
+
 <!-- aboutYou -->
 <div class="column-full">
   <div class="answers-cont">
@@ -52,10 +108,16 @@
         <span class="question">{{question.detailsPhoneAlt}}</span>
         <span class="answer">{{contactDetails.altPhone}}</span>
       </li>
+
+      <!-- email currently removed whilst testing create account
+
       <li>
         <span class="question">{{question.detailsEmail}}</span>
         <span class="answer">{{contactDetails.email}}</span>
       </li>
+
+       remove note to display email -->
+
     </ul>
     <a href="/pip22/contactDetails?edit=true">{{question.changeLinkTxt}}</a>
   </div>
@@ -96,24 +158,50 @@
     <ul class="column-two-thirds">
       <li>
         <span class="question">{{question.whereCurrently}}</span>
-        <span class="answer">
-          {% if currentWhereabouts.optionsName != 'you are currently not staying in any of these' %}
-            {{currentWhereabouts.optionsName}}
-          {% endif %}
-        </span>
+        <span class="answer">{{currentWhereabouts.optionsLiving}}</span>
       </li>
-      {% if currentWhereabouts.optionsName != 'you are currently not staying in any of these' %}
+      {% if currentWhereabouts.optionsLiving != 'You are not currently staying in any of these' %}
       <li>
         <span class="question">{{question.whereDateIn}}</span>
-        <span class="answer">{{currentWhereabouts.when}}</span>
+        <span class="answer">{{currentWhereabouts.hospitalWhen}}</span>
+        <span class="answer">{{currentWhereabouts.careHomeWhen}}</span>
+        <span class="answer">{{currentWhereabouts.shelteredWhen}}</span>
+        <span class="answer">{{currentWhereabouts.collegeWhen}}</span>
+        <span class="answer">{{currentWhereabouts.hostelWhen}}</span>
+        <span class="answer">{{currentWhereabouts.hospiceWhen}}</span>
       </li>
       <li>
         <span class="question">{{question.whereAddress}}</span>
         <span class="answer">
-          {% if currentWhereabouts.address1 %} {{currentWhereabouts.address1}}<br/> {% endif %}
-          {% if currentWhereabouts.address2 %} {{currentWhereabouts.address2}}<br/> {% endif %}
-          {% if currentWhereabouts.address3 %} {{currentWhereabouts.address3}}<br/> {% endif %}
-          {% if currentWhereabouts.postcode %} {{currentWhereabouts.postcode}} {% endif %}
+          {% if currentWhereabouts.hospitalWhere1 %} {{currentWhereabouts.hospitalWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere2 %} {{currentWhereabouts.hospitalWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere3 %} {{currentWhereabouts.hospitalWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere4 %} {{currentWhereabouts.hospitalWhere4}} {% endif %}
+
+          {% if currentWhereabouts.careHomeWhere1 %} {{currentWhereabouts.careHomeWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere2 %} {{currentWhereabouts.careHomeWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere3 %} {{currentWhereabouts.careHomeWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere4 %} {{currentWhereabouts.careHomeWhere4}} {% endif %}
+
+          {% if currentWhereabouts.shelteredWhere1 %} {{currentWhereabouts.shelteredWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere2 %} {{currentWhereabouts.shelteredWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere3 %} {{currentWhereabouts.shelteredWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere4 %} {{currentWhereabouts.shelteredWhere4}} {% endif %}
+
+          {% if currentWhereabouts.collegeWhere1 %} {{currentWhereabouts.collegeWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere2 %} {{currentWhereabouts.collegeWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere3 %} {{currentWhereabouts.collegeWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere4 %} {{currentWhereabouts.collegeWhere4}} {% endif %}
+
+          {% if currentWhereabouts.hostelWhere1 %} {{currentWhereabouts.hostelWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere2 %} {{currentWhereabouts.hostelWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere3 %} {{currentWhereabouts.hostelWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere4 %} {{currentWhereabouts.hostelWhere4}} {% endif %}
+
+          {% if currentWhereabouts.hospiceWhere1 %} {{currentWhereabouts.hospiceWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere2 %} {{currentWhereabouts.hospiceWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere3 %} {{currentWhereabouts.hospiceWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere4 %} {{currentWhereabouts.hospiceWhere4}} {% endif %}
         </span>
       </li>
       {% endif %}

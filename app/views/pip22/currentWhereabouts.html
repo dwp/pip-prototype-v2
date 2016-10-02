@@ -74,7 +74,7 @@
 
 						{"id":"location7", "label":"You're <span class='bold-small'>not</span> staying in any of these", "value":"You are not currently staying in any of these", "hidePanel":"details"}
 					] %}
-					{{ elements.checkbox('currentLiving',"radio",question.question,'',seq,answers,answers.optionsName,"check-uncheck") }}
+					{{ elements.checkbox('optionsLiving',"radio",question.question,'',seq,answers,answers.optionsLiving,"check-uncheck") }}
 
 
 					{% if answers.skipQuestion.length or edit %}

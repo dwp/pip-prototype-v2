@@ -228,7 +228,7 @@
       {% endif %}
       {% if item.removePanel %}
         data-hide="{{ item.removePanel }}"
-      {% endif %}  
+      {% endif %}
       {% if item.target %}
         data-target="{{ item.target }}"
       {% endif %}
@@ -496,24 +496,4 @@ open
 
 </div>
 {% endfor %}
-{% endmacro %}
-
-<!-- macros for current whereabouts -->
-
-
-{% macro address(id,question,answer,hintText,inputSize,type='text')%}
-<div class="form-group" id="form-group-{{ id }}">
-  <label>The address</label><br>
-  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
-</div>
-<div class="form-group" id="form-group-{{ id }}">
-  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
-</div>
-<div class="form-group" id="form-group-{{ id }}">
-  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
-</div>
-<div class="form-group" id="form-group-{{ id }}">
-  <label>Post Code</label><br>
-  <input type="{{ type }}" class="form-control" id="{{ id }}"  name="{{ id }}" value="{{ answer }}">
-</div>
 {% endmacro %}
