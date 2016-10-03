@@ -21,7 +21,7 @@
 						{"id":"callContact","value":"Yes","showPanel":"callContactPanel"},
 						{"id":"callContact", "value":"No"}
 					] %}
-					{{ elements.radioSelect('callContact',question.question3,"",answers.callContact,seq2,"inline") }}
+					{{ elements.radioSelect('callContact',question.question3,question.formatsHint,answers.callContact,seq2,"inline") }}
 
 					{% set seq3 = [
 						{"id":"checkbox-1", "label": question.checkbox1, "value":question.checkbox1},

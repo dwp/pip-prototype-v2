@@ -116,6 +116,7 @@ var data = [ {
     {
       "heading"          : "Terminal illness",
       "question"         : "Do you have a DS1500?",
+      "question2"        : "Have you been diagnosed with a terminal illness?",
       "hintTextsrti"     : "A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
       "submit"           : "Continue",
       "backLink"         : "/pip22/postcodeCheck"
@@ -223,10 +224,11 @@ var data = [ {
   "contactPref" : [
     {
       "page"             : "4",
-      "heading"          : "How should we get in touch with you?",
+      "heading"          : "Do you need information in a special format?",
       "question"         : "Do you want to get text messages about your claim?",
       "question2"        : "Mobile number",
-      "question3"        : "Do you need information in a special format?",
+      "question3"        : "We can only provide this if you need it because of your condition.",
+      "formatsHint"      : "",
       "checkbox1"        : "Large print (16 point)",
       "checkbox2"        : "Braille",
       "checkbox3"        : "Audio CD",
@@ -1024,7 +1026,7 @@ var data = [ {
   "completionDate" : [
     {
       "heading"          : "How long do I have to fill in this application?",
-      "p1"               : "You have until <strong>01 November 2016</strong>. Save and return to it as often as you like before then." ,
+      "p1"               : "You have until <strong>04 November 2016</strong>. Save and return to it as often as you like before then." ,
       "submit"           : "Continue",
       "backLink"         : "/pip22/declaration"
     }
