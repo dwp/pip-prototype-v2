@@ -77,7 +77,7 @@ var data = [ {
   "postCodeSignPost"     : [
     {
       "heading"          : "People living in your area can’t yet apply online.",
-      "introText"        : "You're still legally entitled to apply online even though the claim won't be valid.",
+      "introText"        : "You're still legally entitled to apply online even though the claim won't be valid",
       "submit"           : "Continue"
     }
   ],
@@ -154,9 +154,9 @@ var data = [ {
   "registration"         : [
     {
       "heading"          : "Sign up to apply for Personal Independence Payment online",
-      "introText"        : "Enter a personal email address and choose a password at least 8 characters long.",
+      "introText"        : "Enter a personal email address and create a password at least 8 characters long.",
       "username"         : "Email address",
-      "password"         : "Password",
+      "password"         : "Create a password",
       "password2"        : "Re-enter your password",
       "passwordHint"     : "Your password must be atleast 8 characters",
       "submit"           : "Sign up",
@@ -212,10 +212,11 @@ var data = [ {
       "question"         : "Your address",
       "question2"        : "Postcode",
       "question3"        : "Postcode",
-      "question4"        : "Your phone number",
-      "q4HintText"       : "Enter the number you can be contacted on 9am to 5pm, Monday to Friday",
-      "question5"        : "Alternative phone number",
+      "question4"        : "Alternative phone number",
+      "q4HintText"       : "",
+      "question5"        : "Mobile phone number",
       "question6"        : "Email address",
+      "question7"        : "Do you want to get text messages about your claim?",
       "backLink"         : "/pip22/aboutYou"
     },
   ],
@@ -225,13 +226,13 @@ var data = [ {
       "heading"          : "How should we get in touch with you?",
       "question"         : "Do you want to get text messages about your claim?",
       "question2"        : "Mobile number",
-      "question3"        : "Do you need information in braille, large print or audio CD - or another format?",
+      "question3"        : "Do you need information in a special format?",
       "checkbox1"        : "Large print (16 point)",
       "checkbox2"        : "Braille",
       "checkbox3"        : "Audio CD",
       "checkbox4"        : "Other",
       "textareaQ"        : "What format do you need?",
-      "textareaHintText" : "for example larger than 16pt print. We can only provide this if it’s necessary because of your condition.",
+      "textareaHintText" : "For example, you may need larger than 16 point print. We can only provide this if you need it because of your condition.",
       "backLink"         : "/pip22/contactDetails"
     },
   ],
@@ -376,7 +377,7 @@ var data = [ {
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip22/paymentsFromAbroad#aboutYou"
+      "backLink"         : "/pip22/declaration"
     },
   ],
   "medications" : [
@@ -486,7 +487,7 @@ var data = [ {
       "phoneHd"          : "Their phone number",
       "lastSeenHd"       : "When you last saw them",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip22/monitoringCondition"
+      "backLink"         : "/pip22/paymentsFromAbroad"
     },
   ],
   "hcpConsent" : [
@@ -510,7 +511,7 @@ var data = [ {
       "q2HintText"       : "Tick all that apply",
       "question3"        : "How will you send the information?",
       "youAreNotLabel"   : "You are <span class='bold-small'>not</span> sending any information",
-      "backLink"         : "/pip22/healthcareprofessional"
+      "backLink"         : "/pip22/monitoringCondition"
     },
   ],
   "specialAids" : [
@@ -1017,7 +1018,7 @@ var data = [ {
       "list"             : ["the information you will enter in this application is complete and correct as far as you know","to promptly <a href='#' data-target='legalDetails' class='showLegal'>report any changes to your circumstances</a>"],
       "disclaimer"       : "You might have to go to court or pay a penalty if you deliberately give false or incomplete information, or do not report changes. Your Personal Independence Payment may also be stopped or reduced.",
       "submit"           : "I agree - continue my application",
-      "backLink"         : "/pip22/paymentsFromAbroad"
+      "backLink"         : "/pip22/healthcareprofessional"
     },
   ],
   "completionDate" : [

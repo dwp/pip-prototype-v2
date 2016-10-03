@@ -41,11 +41,19 @@
 						</div>
 					</fieldset>
 
-					{{ elements.genericInputPhone('phone',question.question4, answers.phone,answers.textPhone,question.q4HintText) }}
 
 
 					{{ elements.genericInput('altPhone',question.question5, answers.altPhone) }}
-				
+
+					{% set seq  = [
+						{"id":"smsContact","value":"Yes","showPanel":"smsContactPanel"},
+						{"id":"smsContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('smsContact',question.question7,"",answers.smsContact,seq,"inline") }}
+
+
+					{{ elements.genericInputPhone('phone',question.question4, answers.phone,answers.textPhone,question.q4HintText) }}
+
 
 					{% if answers.skipQuestion.length or edit %}
 						{{ elements.returnToMenu(page,question) }}

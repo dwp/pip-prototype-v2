@@ -41,15 +41,6 @@
 						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
 					</div>
 
-					{% set seq  = [
-						{"id":"smsContact","value":"Yes","showPanel":"smsContactPanel"},
-						{"id":"smsContact", "value":"No"}
-					] %}
-					{{ elements.radioSelect('smsContact',question.question,"",answers.smsContact,seq,"inline") }}
-
-					<div class="panel-indent {% if answers.smsContact != 'Yes' %}js-hidden{% endif %}" id="smsContactPanel">
-            {{ elements.genericInput('mobile',question.question2, answers.mobile) }}
-          </div>
 
 					{% if answers.skipQuestion.length or edit %}
 						{{ elements.returnToMenu(page,question) }}

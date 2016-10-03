@@ -713,7 +713,7 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip22/unansweredQuestions#aboutYou');
     } else {
-      res.redirect('/pip22/declaration');
+      res.redirect('/pip22/healthcareprofessional');
     }
   });
 
@@ -952,7 +952,7 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip22/unansweredQuestions#yourCondition');
     } else {
-      res.redirect('/pip22/healthcareprofessional');
+      res.redirect('/pip22/submitEvidence');
     }
   });
 
@@ -976,7 +976,7 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip22/specialAids#yourCondition');
     } else {
-      res.redirect('/pip22/submitEvidence');
+      res.redirect('/pip22/declaration');
     }
   });
 

@@ -95,15 +95,15 @@
   <div class="form-date">
     <div class="form-group form-group-day">
       <label for="{{id}}-dob-day">Day</label>
-      <input class="form-control" id="{{id}}-dob-day" name="dobDay" value="{{answer.dobDay}}">
+      <input class="form-control" id="{{id}}-dob-day" name="dobDay" value="{{answer.dobDay}}" type="number" pattern="[0-9]*" min="01" max="31" minlength="2">
     </div>
     <div class="form-group form-group-month">
       <label for="{{id}}-dob-month">Month</label>
-      <input class="form-control" id="{{id}}-dob-month" name="dobMonth" value="{{answer.dobMonth}}">
+      <input class="form-control" id="{{id}}-dob-month" name="dobMonth" value="{{answer.dobMonth}}" type="number" pattern="[0-9]*" min="01" max="12">
     </div>
     <div class="form-group form-group-year">
       <label for="{{id}}-dob-year">Year</label>
-      <input class="form-control" id="{{id}}-dob-year" name="dobYear" value="{{answer.dobYear}}">
+      <input class="form-control" id="{{id}}-dob-year" name="dobYear" value="{{answer.dobYear}}" type="number" pattern="[0-9]*" min="1920" max="2017">
     </div>
   </div>
 </fieldset>
