@@ -17,11 +17,15 @@
 				<form action="/pip22/contactPref{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
+					<!-- Yes no
+
 					{% set seq2  = [
 						{"id":"callContact","value":"Yes","showPanel":"callContactPanel"},
 						{"id":"callContact", "value":"No"}
 					] %}
 					{{ elements.radioSelect('callContact',question.question3,question.formatsHint,answers.callContact,seq2,"inline") }}
+
+					 end yes/no -->
 
 					{% set seq3 = [
 						{"id":"checkbox-1", "label": question.checkbox1, "value":question.checkbox1},
@@ -33,11 +37,11 @@
 							"textareaId"     : "textreadId2",
 							"textareaLabel"  : question.textareaQ,
 							"textareaAnswer" : answers.textreadId2,
-							"hintText"       : question.textareaHintText
-						}
+							"hintText"       : question.textareaHintText},
+							{"id":"checkbox-5", "label": question.checkbox5, "value":question.checkbox5,"hidePanel":"noPanel"}
 					] %}
 
-					<div class="panel-indent {% if answers.callContact != 'Yes' %}js-hidden{% endif %}" id="callContactPanel">
+					<div class="form-group" id="callContactPanel">
 						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
 					</div>
 
