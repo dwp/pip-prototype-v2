@@ -56,6 +56,19 @@
 </div>
 {% endmacro %}
 
+<!-- new macro for passwords-->
+{% macro inputPassword(id,question,answer,hintText,type='password') %}
+<div class="form-group" id="form-group-{{ id }}">
+  <label class="form-label" for="{{ id }}">{{ question }}
+  {% if hintText %}
+  <span class="form-hint">{{ hintText }}</span>
+  {% endif %}
+</label>
+<input type="{{ type }}" class="form-control" name="{{ id }}" value="{{ answer }}">
+</div>
+{% endmacro %}
+
+
 {% macro genericInputList(id,question,answer,name,hintText,inputSize,type='text') %}
 <div class="form-group" id="form-group-{{ id }}">
   <label class="form-label" for="{{ id }}">{{question}}
@@ -95,7 +108,7 @@
   <div class="form-date">
     <div class="form-group form-group-day">
       <label for="{{id}}-dob-day">Day</label>
-      <input class="form-control" id="{{id}}-dob-day" name="dobDay" value="{{answer.dobDay}}" type="number" pattern="[0-9]*" min="01" max="31" minlength="2">
+      <input class="form-control" id="{{id}}-dob-day" name="dobDay" value="{{answer.dobDay}}" type="number" pattern="[0-9]*" min="01" max="31">
     </div>
     <div class="form-group form-group-month">
       <label for="{{id}}-dob-month">Month</label>
