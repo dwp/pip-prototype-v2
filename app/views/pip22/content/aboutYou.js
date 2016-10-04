@@ -226,6 +226,7 @@ var data = [ {
       "page"             : "4",
       "heading"          : "Do you need information in a special format?",
       "question"         : "Do you want to get text messages about your claim?",
+      "introText"        : "We can only provide this if you need it because of your condition.",
       "question2"        : "Mobile number",
       "question3"        : "We can only provide this if you need it because of your condition.",
       "formatsHint"      : "",
@@ -235,7 +236,7 @@ var data = [ {
       "checkbox4"        : "Other",
       "checkbox5"        : "I don't need any of these",
       "textareaQ"        : "What format do you need?",
-      "textareaHintText" : "For example, you may need larger than 16 point print. We can only provide this if you need it because of your condition.",
+      "textareaHintText" : "For example, you may need larger than 16 point print.",
       "backLink"         : "/pip22/contactDetails"
     },
   ],
