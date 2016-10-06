@@ -1,10 +1,9 @@
 .check-your-answers td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   vertical-align: top;
 }
 

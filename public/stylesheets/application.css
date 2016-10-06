@@ -217,11 +217,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 main {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -234,11 +233,10 @@ main {
 
 .font-xxlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 53px;
-  line-height: 1.0377358491;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 53px;
+  line-height: 1.0377358491;
 }
 
 @media (min-width: 641px) {
@@ -250,11 +248,10 @@ main {
 
 .font-xlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 32px;
-  line-height: 1.09375;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 32px;
+  line-height: 1.09375;
 }
 
 @media (min-width: 641px) {
@@ -266,11 +263,10 @@ main {
 
 .font-large {
   font-family: "nta", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.0416666667;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 24px;
+  line-height: 1.0416666667;
 }
 
 @media (min-width: 641px) {
@@ -282,11 +278,10 @@ main {
 
 .font-medium {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 @media (min-width: 641px) {
@@ -298,11 +293,10 @@ main {
 
 .font-small {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 @media (min-width: 641px) {
@@ -314,11 +308,10 @@ main {
 
 .font-xsmall {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
 }
 
 @media (min-width: 641px) {
@@ -330,11 +323,10 @@ main {
 
 .bold-xxlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 53px;
-  line-height: 1.0377358491;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 53px;
+  line-height: 1.0377358491;
 }
 
 @media (min-width: 641px) {
@@ -346,11 +338,10 @@ main {
 
 .bold-xlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 32px;
-  line-height: 1.09375;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 32px;
+  line-height: 1.09375;
 }
 
 @media (min-width: 641px) {
@@ -362,11 +353,10 @@ main {
 
 .bold-large {
   font-family: "nta", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.0416666667;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 24px;
+  line-height: 1.0416666667;
 }
 
 @media (min-width: 641px) {
@@ -378,11 +368,10 @@ main {
 
 .bold-medium {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 @media (min-width: 641px) {
@@ -394,11 +383,10 @@ main {
 
 .bold-small {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 @media (min-width: 641px) {
@@ -410,11 +398,10 @@ main {
 
 .bold-xsmall {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 14px;
+  line-height: 1.1428571429;
 }
 
 @media (min-width: 641px) {
@@ -426,11 +413,10 @@ main {
 
 .heading-xlarge {
   font-family: "nta", Arial, sans-serif;
-  font-size: 32px;
-  line-height: 1.09375;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 32px;
+  line-height: 1.09375;
   margin-top: 0.46875em;
   margin-bottom: 0.9375em;
 }
@@ -451,11 +437,10 @@ main {
 
 .heading-xlarge .heading-secondary {
   font-family: "nta", Arial, sans-serif;
-  font-size: 20px;
-  line-height: 1.1111111111;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 20px;
+  line-height: 1.1111111111;
   display: block;
   padding-top: 8px;
   padding-bottom: 7px;
@@ -479,11 +464,10 @@ main {
 
 .heading-large {
   font-family: "nta", Arial, sans-serif;
-  font-size: 24px;
-  line-height: 1.0416666667;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 24px;
+  line-height: 1.0416666667;
   margin-top: 1.0416666667em;
   margin-bottom: 0.4166666667em;
 }
@@ -504,11 +488,10 @@ main {
 
 .heading-large .heading-secondary {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 18px;
+  line-height: 1.2;
   display: block;
   padding-top: 9px;
   padding-bottom: 6px;
@@ -532,11 +515,10 @@ main {
 
 .heading-medium {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 18px;
+  line-height: 1.2;
   margin-top: 1.25em;
   margin-bottom: 0.5em;
 }
@@ -557,11 +539,10 @@ main {
 
 .heading-small {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 16px;
+  line-height: 1.25;
   margin-top: 0.625em;
   margin-bottom: 0.3125em;
 }
@@ -593,11 +574,10 @@ p {
 
 .lede {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 @media (min-width: 641px) {
@@ -637,11 +617,10 @@ p {
   display: inline-block;
   position: relative;
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
   margin-top: 15px;
   margin-bottom: 15px;
   padding-left: 14px;
@@ -839,11 +818,10 @@ hr {
 .button-start,
 .button-get-started {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 18px;
+  line-height: 1.2;
   background-image: url("/public/images/icons/icon-pointer.png");
   background-repeat: no-repeat;
   background-position: 100% 50%;
@@ -1218,11 +1196,10 @@ table {
 table th,
 table td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
   padding: 0.75em 1.25em 0.5625em 0;
   text-align: left;
   color: #0b0c0c;
@@ -1247,11 +1224,10 @@ table th.numeric {
 
 table td.numeric {
   font-family: "ntatabularnumbers", "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
   text-align: right;
 }
 
@@ -1365,11 +1341,10 @@ textarea {
 
 .form-label {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 @media (min-width: 641px) {
@@ -1381,11 +1356,10 @@ textarea {
 
 .form-label-bold {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 @media (min-width: 641px) {
@@ -1421,11 +1395,10 @@ legend .form-label-bold {
 
 .form-hint {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   display: block;
   color: #6f777b;
   font-weight: normal;
@@ -1444,11 +1417,10 @@ legend .form-label-bold {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   width: 100%;
   padding: 4px;
   background-color: #fff;
@@ -1666,11 +1638,10 @@ input[type=number] {
 
 .error-message {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   display: block;
   clear: both;
   margin: 0;
@@ -1735,11 +1706,10 @@ input[type=number] {
 
 .breadcrumbs li {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
   float: left;
   background-image: url("/public/images/separator.png");
   background-position: 0% 50%;
@@ -1790,11 +1760,10 @@ input[type=number] {
   margin: 0;
   color: #000;
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
 }
 
 @media (min-width: 641px) {
@@ -1810,11 +1779,10 @@ input[type=number] {
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 14px;
+  line-height: 1.1428571429;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
@@ -1850,11 +1818,10 @@ input[type=number] {
   margin: 0;
   color: #000;
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
 }
 
 @media (min-width: 641px) {
@@ -1870,11 +1837,10 @@ input[type=number] {
   margin: 0 8px 0 0;
   padding: 2px 5px 0;
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 700;
   text-transform: none;
-  font-size-adjust: 0.525;
+  font-size: 14px;
+  line-height: 1.1428571429;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none;
@@ -1910,11 +1876,10 @@ input[type=number] {
 
 .check-your-answers td {
   font-family: "nta", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.25;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 16px;
+  line-height: 1.25;
   vertical-align: top;
 }
 
@@ -2191,11 +2156,10 @@ strong {
 
 [class*="heading-"] .section-progress {
   font-family: "nta", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.2;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 18px;
+  line-height: 1.2;
   color: #6f777b;
   display: block;
 }
@@ -2217,11 +2181,10 @@ strong {
 
 .panel-indent .form-hint {
   font-family: "nta", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.1428571429;
   font-weight: 400;
   text-transform: none;
-  font-size-adjust: 0.5;
+  font-size: 14px;
+  line-height: 1.1428571429;
 }
 
 @media (min-width: 641px) {

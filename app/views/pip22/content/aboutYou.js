@@ -390,7 +390,7 @@ var data = [ {
       "heading"          : "Are you taking any medication?",
       "rowHd"            : "Medication",
       "medicationHd"     : "Name of medication",
-      "dosageHd"         : "Dosage",
+      "dosageHd"         : "Dose",
       "dosageHintText"   : "For example, 40mg",
       "oftenHd"          : "How often you take it",
       "oftenHintText"    : "For example, 2 tablets, twice a day",

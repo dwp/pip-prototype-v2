@@ -5,17 +5,17 @@
   var GOVUK = global.GOVUK || {};
 
   var SelectionButtons = function (elmsOrSelector, opts) {
-    var $elms;
 
     this.selectedClass = 'selected';
     this.focusedClass = 'focused';
+    this.radioClass = 'selection-button-radio';
+    this.checkboxClass = 'selection-button-checkbox';
     if (opts !== undefined) {
       $.each(opts, function (optionName, optionObj) {
         this[optionName] = optionObj;
       }.bind(this));
     }
     if (typeof elmsOrSelector === 'string') {
-      $elms = $(elmsOrSelector);
       this.selector = elmsOrSelector;
       this.setInitialState($(this.selector));
     } else if (elmsOrSelector !== undefined) {
@@ -35,6 +35,8 @@
     $elms.each(function (idx, elm) {
       var $elm = $(elm);
 
+      var labelClass = $elm.attr('type') === 'radio' ? this.radioClass : this.checkboxClass;
+      $elm.parent('label').addClass(labelClass);
       if ($elm.is(':checked')) {
         this.markSelected($elm);
       }
