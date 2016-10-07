@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.appointee %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/appointee{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+      	  {{ elements.header(page,question) }}
+					{% set seq = [
+						{"id":"appointee", "label":question.yourselfLabel, "value":question.yourselfLabel},
+						{"id":"appointee", "label":question.friendLabel,   "value":question.friendLabel, "showPanel":"third-party"},
+						{"id":"appointee", "label":question.behalfLabel,   "value":question.behalfLabel, "showPanel":"appointeeText"}
+					] %}
+					{{ elements.radioSelect('appointee',question.question,"",answers.appointee,seq,"inline") }}
+
+					<div class="panel panel-border-narrow {% if answers.appointee != question.friendLabel %}js-hidden{% endif %}" id="third-party">
+						{{ elements.genericInput('name',question.helperNameQ, answers.name) }}
+            {{ elements.genericInput('relationship',question.knowThemQ, answers.relationship, question.q3HintText) }}
+	          {{ elements.textarea('why',question.whyHelpQ, answers.why) }}
+					</div>
+
+
+					<div class="panel panel-border-wide blue-alert {% if answers.appointee != question.behalfLabel %}js-hidden{% endif %}" id="appointeeText">
+						<p> While we're piloting the online service, you can't claim PIP in this way. Call 0800 917 2222 or textphone 0800 917 7777 to start your claim. </p>
+					</div>
+
+
+
+
+
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

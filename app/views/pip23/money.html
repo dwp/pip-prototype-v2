@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.money %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/money{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"affect7", "label":question.motivatedLabel, "value":question.motivatedLabel, "showPanel":"details"},
+						{"id":"affect1", "label":question.billsLabel, "value":question.billsLabel, "showPanel":"details"},
+						{"id":"affect2", "label":question.spendLabel, "value":question.spendLabel, "showPanel":"details"},
+						{"id":"affect3", "label":question.costLabel, "value":question.costLabel, "showPanel":"details"},
+						{"id":"affect4", "label":question.changeLabel, "value":question.changeLabel, "showPanel":"details"},
+						{"id":"affect5", "label":question.overspendLabel, "value":question.overspendLabel, "showPanel":"details"},
+						{"id":"affect6", "label":question.otherWayLabel|lower, "value":question.otherWayLabel|lower, "showPanel":"details",
+							"target"        : "target2",
+							"textbox"       : true,
+							"textboxId"     : "textboxId2",
+							"textboxAnswer" : answers.textboxId2
+						},
+						{"id":"affect10", "label":question.doesntLabel, "value":question.doesntLabel, "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('optionsName',"checkbox",question.question,page.tickAll,seq,answers,answers.optionsName,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					 {% if not answers.optionsName  or answers.optionsName == question.doesntLabel %}js-hidden{% endif %}" id="details">
+
+						{% set seq = [
+							{id:"conditionAffect1",label:question.relySomeoneLabel,value:question.relySomeoneLabel, "helpText":page.explainHelp},
+							{id:"conditionAffect2",label:question.relyRemindLabel,value:question.relyRemindLabel, "helpText":page.remindsMeHelp},
+							{id:"conditionAffect4",label:question.legalLabel,value:question.legalLabel},
+							{id:"conditionAffect3",label:question.ownLabel,value:question.ownLabel, "helpText":page.difficultiesManage},
+							{"id":"conditionAffect6", "label":question.otherWayLabel, "value":question.otherWayLabel,
+								"target"         : "conditionAffectOther",
+								"textarea"       : true,
+								"textareaId"     : "conditionAffectOther",
+								"textareaLabel"  : "",
+								"textareaAnswer" : answers.conditionAffectOther
+							}
+						] %}
+						{{ elements.checkbox('manageNow',"checkbox",question.question2,'',seq,answers,answers.manageNow) }}
+
+						{{ elements.textarea("howDoes",question.question3,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

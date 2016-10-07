@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.srti %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/srti{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq =[
+						 {"id":"terminal-yes","value":"Yes","showPanel":"srti"},
+						 {"id":"terminal-no","value":"No"}
+						] %}
+					{{ elements.radioSelect('terminal',question.question2,"",answers.terminal,seq,"inline") }}
+
+					<div class="form-group-related panel-indent {% if answers.terminal !="Yes" %}js-hidden{% endif %}" id="srti">
+
+					{% set seq  = [
+						{"id":"srti-yes","value":"Yes"},
+						{"id":"srti-no", "value":"No"}
+					] %}
+					{{ elements.radioSelect('srti',question.question,question.hintTextsrti,answers.srti,seq,"inline") }}
+
+				</div>
+
+
+					{{ elements.submit(page,question,true,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

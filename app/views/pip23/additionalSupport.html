@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.additionalSupport %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/additionalSupport{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+            {{ elements.header(page,question) }}
+
+            <div class="form-group panel-indent}" id="medicalInfoDetails">
+  						{% set seq2 = [
+  							{"id":"incap1", "label":"Severe depression, which you've been in hospital for", "value":"Severe depression for which you've been hospitilised","showPanel":"noPanel"},
+  			        {"id":"incap2", "label":"Psychosis", "value":"psychosis","showPanel":"noPanel"},
+  			        {"id":"incap3", "label":"Schizophrenia", "value":"Schizophrenia", "showPanel":"noPanel"},
+  			        {"id":"incap4", "label":"Severe attention deficit hyperactivity disorder (ADHD)", "value":"Severe ADHD", "showPanel":"noPanel"},
+  			        {"id":"incap6", "label":"Down's syndrome", "value":"Down's syndrome", "showPanel":"noPanel"},
+  			        {"id":"incap7", "label":"Fragile X syndrome", "value":"Fragile X syndrome", "showPanel":"noPanel"},
+                {"id":"incap8", "label":"Severe autism", "value":"Severe autism", "showPanel":"noPanel"},
+                {"id":"incap9", "label":"Severe developmental delay", "value":"Severe developmental delay", "showPanel":"noPanel"},
+								{"id":"incap10", "label":"Any form of dementia", "value": "Any form of dementia", "showPanel":"noPanel"},
+  							{"id":"incap11", "label":"I don't have any of these conditions", "value":"I don't have any of these conditions", "hidePanel":"noPanel"}
+  			      ] %}
+  						{{ elements.checkbox('additionalOptions',"checkbox",question.question,'',seq2,answers,answers.additionalOptions, "check-uncheck") }}
+
+
+  </div>
+
+
+
+            {% if answers.skipQuestion.length or edit %}
+              {{ elements.returnToMenu(page,question) }}
+            {% else %}
+              {{ elements.submit(page,question,true,true) }}
+            {% endif%}
+
+          </div>
+
+
+
+          </form>
+
+        {{ elements.helpline(page) }}
+    </div>
+
+  </main>
+
+  {% endfor %}
+  {% endfor %}
+  {% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.livingAbroad %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/livingAbroad{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+          <div class="form-group">
+						<ul class="list-user-input">
+							{% for i in range(1, 6) -%}
+
+								<li id="abroad-row-{{i}}" class="condition-row {% if not loop.first and not answers['name' + i] %} js-hidden {% endif %}">
+                  <h2 class="heading-small">{{ question.questionHead }} {{i}}</h2>
+
+									{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
+
+										{{ elements.genericInputList("whereGo" + i,question.question, answers["whereGo" + i]) }}
+                    {{ elements.date("whenGo" + i,question.question2,answers["whenYouGo" + i]) }}
+                    {{ elements.date("whenComeBack" + i,question.question3,answers["whenComeBack" + i]) }}
+                    {{ elements.textarea("whyGo" + i,question.question4, answers["whyGo" + i],question.whyGoHintText,"","",false) }}
+
+                    {% set seq = [
+                      {"id":"comingBack1", "label":"Yes", "value":"Yes"},
+                      {"id":"comingBack2", "label":"No",   "value":"No"}
+
+                    ] %}
+
+          					{{ elements.radioSelect('comingBack',question.question5,"",answers["comingBack" + i],seq,"inline") }}
+
+								</li>
+							{% endfor %}
+							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another trip abroad</a></li>
+						</ul>
+          </div>
+
+
+
+          {% if answers.skipQuestion.length or edit %}
+  					{{ elements.returnToMenu(page,question) }}
+  				{% else %}
+  					{{ elements.submit(page,question,true,true) }}
+  				{% endif %}
+
+
+
+				</form>
+          </div>
+          {{ elements.helpline(page) }}
+      </div>
+
+    </main>
+
+    {% endfor %}
+    {% endfor %}
+    {% endblock %}

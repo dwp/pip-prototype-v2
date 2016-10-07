@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.speech %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/speech{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"speech","value":"Yes","showPanel":"speechDetails"},
+						{"id":"speech", "value":"No"}
+					] %}
+					{{ elements.radioSelect('speech',question.question,"",answers.speech,seq,"inline") }}
+
+					<div class="panel-indent {% if answers.speech != 'Yes' %}js-hidden{% endif %}" id="speechDetails">
+						{% set seq  = [
+							{"id":"allTime","value":"Yes"},
+							{"id":"allTime", "value":"No","showPanel":"allTimeDetails"}
+						] %}
+						{{ elements.radioSelect('allTime',question.question2,"",answers.allTime,seq,"inline") }}
+						<div class="form-group {% if answers.allTime != 'No' %}js-hidden{% endif %}" id="allTimeDetails">
+							{{ elements.genericInput('howOften',question.question3, answers.howOften,question.qHintText3) }}
+						</div>
+						{{ elements.textarea("howDoes",question.question4,answers.howDoes,"",question.helpTextHd,question.helpText) }}
+					</div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

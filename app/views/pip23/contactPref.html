@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.contactPref %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/contactPref{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					<!-- Yes no
+
+					{% set seq2  = [
+						{"id":"callContact","value":"Yes","showPanel":"callContactPanel"},
+						{"id":"callContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('callContact',question.question3,question.formatsHint,answers.callContact,seq2,"inline") }}
+
+					 end yes/no -->
+
+					{% set seq3 = [
+						{"id":"checkbox-1", "label": question.checkbox1, "value":question.checkbox1},
+						{"id":"checkbox-2", "label": question.checkbox2, "value":question.checkbox2},
+						{"id":"checkbox-3", "label": question.checkbox3, "value":question.checkbox3},
+						{"id":"checkbox-4", "label": question.checkbox4, "value":"Other",
+							"target"         : "target2",
+							"textarea"       : true,
+							"textareaId"     : "textreadId2",
+							"textareaLabel"  : question.textareaQ,
+							"textareaAnswer" : answers.textreadId2,
+							"hintText"       : question.textareaHintText},
+							{"id":"checkbox-5", "label": question.checkbox5, "value":question.checkbox5,"hidePanel":"noPanel"}
+					] %}
+
+					<div class="form-group" id="callContactPanel">
+						{{ elements.checkbox('optionsName',"radio",question.question4,'',seq3,answers,answers.optionsName) }}
+					</div>
+
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

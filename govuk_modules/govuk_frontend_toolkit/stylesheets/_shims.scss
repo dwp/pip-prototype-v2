@@ -1,7 +1,7 @@
 // Cross-browser shims
 // Ways of normalising properties across browsers.
 
-@import "conditionals";
+@import "_conditionals";
 
 // From: https://blog.mozilla.org/webdev/2009/02/20/cross-browser-inline-block/
 
@@ -48,7 +48,6 @@
     display: block;
     clear: both;
   }
-
   @include ie-lte(7) {
     zoom: 1;
   }

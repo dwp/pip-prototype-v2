@@ -1,9 +1,5 @@
-(function(global) {
+(function() {
   "use strict";
-
-  var $ = global.jQuery;
-  var GOVUK = global.GOVUK || {};
-
   GOVUK.analyticsPlugins = GOVUK.analyticsPlugins || {};
   GOVUK.analyticsPlugins.externalLinkTracker = function () {
 
@@ -37,8 +33,6 @@
   }
 
   GOVUK.analyticsPlugins.externalLinkTracker.getHostname = function() {
-    return global.location.hostname;
+    return window.location.hostname;
   }
-
-  global.GOVUK = GOVUK;
-})(window);
+}());

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip21/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.bankDetails %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/bankDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"helper","value":question.options[0]},
+						{"id":"helper","value":question.options[1]},
+						{"id":"helper","value":question.options[2]},
+						{"id":"helper","value":question.options[3]}
+					] %}
+					{{ elements.radioSelect('bank',question.question,"",answers.bank,seq) }}
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+      	</form>
+    </div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

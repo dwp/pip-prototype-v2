@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.filterQuestions %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/filterQuestions{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes","showPanel" : "question1-yes"},
+						{"id":"question1-no", "value":"No"}
+					] %}
+					{{ elements.radioSelect('question1',question.question|safe,question.hintTextAppointee,answers.question1,seq,"inline") }}
+
+					<div id="question1-yes" class="panel panel-border-wide blue-alert js-hidden">
+							<p>{{question.questionNo  |  safe}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes","showPanel" : "question2-yes"},
+						{"id":"question1-no", "value":"No"}
+					] %}
+					{{ elements.radioSelect('question2',question.question2,"",answers.question1,seq,"inline") }}
+
+					<div id="question2-yes" class="panel panel-border-wide blue-alert js-hidden">
+							<p>{{question.question2No  |  safe}}</p>
+					</div>
+
+					{% set seq  = [
+						{"id":"question1-yes","value":"Yes"},
+						{"id":"question1-no", "value":"No","showPanel" : "question3-no"}
+					] %}
+					{{ elements.radioSelect('question3',question.question3,"",answers.question1,seq,"inline") }}
+
+					<div id="question3-no" class="panel panel-border-wide blue-alert js-hidden">
+							<p>{{question.question3No  |  safe}}</p>
+					</div>
+
+					{{ elements.submit(page,question,true,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

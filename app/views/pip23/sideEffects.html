@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.sideEffects %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/sideEffects{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+					{{ elements.header(page,question) }}
+
+					{% set seq  = [
+						{"id":"anySideEffects","value":"Yes","showPanel":"sideEffectsDetails"},
+						{"id":"anySideEffects", "value":"No"}
+					] %}
+					{{ elements.radioSelect('anySideEffects',question.question,"",answers.anySideEffects,seq,"inline") }}
+
+          <div class="panel-indent {% if answers.anySideEffects != 'Yes' %}js-hidden{% endif %}" id="sideEffectsDetails">
+            {{ elements.textarea("sideEffects",question.question2,answers.sideEffects) }}
+          </div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

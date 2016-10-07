@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.manageMedications %}
+<main id="content" role="main" class="pip23">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip23/manageMedications{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
+					{{ elements.header(page,question) }}
+
+					{% set seq = [
+						{"id":"affect1", "label":"￼I forget to take my medication", "value":"￼remembering to take your medication", "showPanel":"details"},
+						{"id":"affect2", "label":"I forget to get enough medication", "value":"making sure you have enough medication", "showPanel":"details"},
+						{"id":"affect3", "label":"I can't get it out of the packaging", "value":"getting medication out of the packaging", "showPanel":"details"},
+						{"id":"affect4", "label":"I find it hard to swallow", "value":"swallowing", "showPanel":"details"},
+						{"id":"affect5", "label":"￼It affects me in another way", "value":"in another way", "showPanel":"details",
+							"target"         : "target2",
+							"textarea"       : true,
+							"textareaId"     : "textreadId2",
+							"textareaLabel"  : question.textareaQ,
+							"textareaAnswer" : answers.textreadId2,
+							"hintText"       : question.textareaHintText
+						},
+						{"id":"affect6", "label":"Your condition does <span class='bold-small'>not</span>  affect you taking your medication", "value":"Your condition does not affect you taking your medication", "hidePanel":"details"}
+					] %}
+					{{ elements.checkbox('conditionAffect',"checkbox",question.question,page.tickAll,seq,answers,answers.conditionAffect,"check-uncheck") }}
+
+					<div class="form-group panel-indent
+					 {% if not answers.conditionAffect  or answers.conditionAffect == 'Your condition does not affect you taking your medication' %}js-hidden{% endif %}" id="details">
+
+						{% set seq3 = [
+							{"id":"checkbox-1", "label":question.remindsMe, "value":question.remindsMe, "helpText":question.remindsMeHelp},
+							{"id":"checkbox-2", "label":question.helpsTakeIt, "value":question.helpsTakeIt, "helpText":page.helpsTakeItHelp},
+							{"id":"checkbox-3", "label":question.relyOnAids, "value":question.relyOnAids, "helpText":page.relyOnHelp, "helpText2":page.relyOnHelpRec},
+							{"id":"checkbox-4", "label":question.manage, "value":question.manage, "helpText":question.manageHelp},
+							{"id":"checkbox-5", "label":question.otherWay, "value":question.otherWay,
+								"target"        : "target3",
+								"textbox"       : true,
+								"textboxId"     : "textboxId3",
+								"textboxAnswer" : answers.textboxId3}
+						] %}
+						{{ elements.checkbox('manageNow',"checkbox",question.question3,'',seq3,answers,answers.manageNow) }}
+
+						{% set seq2  = [
+							{"id":"howOften", "value":question.howoften1},
+							{"id":"howOften", "value":question.howoften2},
+							{"id":"howOften", "value":question.howoften3},
+							{"id":"howOften", "value":question.howoften4,"showPanel":"tellUsHowOften"}
+						] %}
+						{{ elements.radioSelect('howOften',question.question2,"",answers.howOften,seq2,"",page.dayshelptext,page.freqHelpText) }}
+						<div class="form-group panel-indent {% if answers.howOften != question.howoften2 %}js-hidden{% endif %}" id="tellUsHowOften">
+							{{ elements.textarea('howOftenDetails',question.ownWords,answers.howOftenDetails) }}
+						</div>
+
+						{{ elements.textarea('moreDetails',question.question4,answers.moreDetails,"",question.helpTextHd,question.helpText) }}
+
+					</div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}
