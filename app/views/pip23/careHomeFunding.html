@@ -21,7 +21,7 @@
           {% set seq = [
             {"id":"ownCosts1", "label":"Yes", "value":"Yes", "HidePanel":"extraFunding"},
             {"id":"ownCosts2", "label":"No",   "value":"No", "showPanel":"extraFunding"},
-            {"id":"ownCosts3", "label":"I don't know",   "value":"I don't know", "HidePanel":"extraFunding"}
+            {"id":"ownCosts3", "label":"You don't know",   "value":"You don't know", "HidePanel":"extraFunding"}
 
           ] %}
           {{ elements.radioSelect('funding',question.question,"",answers.funding,seq,"inline") }}
@@ -68,7 +68,7 @@
                     {% set seq3 = [
                       {"id":"repay1", "label":"Yes", "value":"Yes"},
                       {"id":"repay2", "label":"No",   "value":"No"},
-                      {"id":"repay3", "label":"I don't know",   "value":"I don't know"}
+                      {"id":"repay3", "label":"You don't know",   "value":"You don't know"}
 
                     ] %}
                     {{ elements.radioSelect('repay',question.question4,"",answers.repay,seq3,"inline") }}

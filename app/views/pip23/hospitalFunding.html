@@ -21,7 +21,7 @@
           {% set seq = [
             {"id":"hospitalCosts1", "label":"Yes", "value":"Yes"},
             {"id":"hospitalCosts2", "label":"No",   "value":"No"},
-            {"id":"hospitalCosts3", "label":"I don't know",   "value":"I don't know"}
+            {"id":"hospitalCosts3", "label":"You don't know",   "value":"You don't know"}
 
           ] %}
           {{ elements.radioSelect('hopitalFunding',question.question,"",answers.hospitalFunding,seq,"inline") }}

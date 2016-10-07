@@ -46,26 +46,26 @@ var data = [ {
   ],
   "stillApply"         : [
     {
-          "applyQuestionSRTI"   : "Do you still want to carry on with your claim?",
+          "applyQuestionSRTI"   : "Do you want to carry on?",
       "applyHintSRTI"           : "",
-      "applyQuestionPostcode"   : "Do you still want to carry on with your claim?",
+      "applyQuestionPostcode"   : "Do you want to carry on?",
       "applyHintPostcode"       : "",
       "applyQuestionOtherQs"    : "<p>To make a claim call <strong>0800 917 2222</strong> or textphone: <strong>0800 917 7777</strong>.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p><p>Do you still want to carry on with your claim?</p>",
       "applyHintOtherQs"        : "",
-      "applyOverAge"            : "<p>PIP is a benefit for people aged 16 to 64.</p><p>You may be entitled to another benefit though. Call Attendance Allowance on <strong>0345 605 6055</strong> or textphone <strong>0345 604 5312</strong> to find out.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p> <p>Do you still want to carry on with your claim?</p>",
-      "applyUnderAge"           : "<p>You may be entitled to another benefit though. Call Disability Living Allowance for Children on <strong>0345 712 3456</strong> or textphone <strong>0345 722 4433</strong> to find out.</p><p>You're still legally entitled to apply online even though the claim won't be valid.</p> <p>Do you still want to carry on with your claim?</p>"
+      "applyOverAge"            : "<p>PIP is a benefit for people aged 16 to 64.</p><p>You may be entitled to another benefit though. Call Attendance Allowance on <strong>0345 605 6055</strong> or textphone <strong>0345 604 5312</strong> to find out.</p><p>You're still legally entitled to carry on with this online application. But it won't be valid and you'll have to call the number above to enter your information on a paper form.</p> <p>Do you want to carry on?</p>",
+      "applyUnderAge"           : "<p>PIP is a benefit for people aged 16 to 64.</p><p>You may be entitled to another benefit though. Call Disability Living Allowance for Children on <strong>0345 712 3456</strong> or textphone <strong>0345 722 4433</strong> to find out.</p><p>You're still legally entitled to carry on with this online application. But it won't be valid and you'll have to call the number above to enter your information on a paper form.</p> <p>Do you want to carry on?</p>"
     },
   ],
   "postcodeCheck"        : [
     {
-      "heading"          : "Can I apply online?",
-      "p1"               : "This is a pilot of an online service to apply for Personal Independence Payment (PIP).",
-      "p2"               : "You can only apply online if you:",
+      "heading"          : "Can you apply online?",
+      "p1"               : "Department of Work and Pensions is trialling a limited online service to apply for Personal Independence Payment (PIP).",
+      "p2"               : "<p>We'll need to check a few things before asking details about how your condition affects you.</p><p>You can only apply online if you:</p>",
       "list"             : [
         "live in certain areas",
         "are not an appointee",
         "have not claimed PIP or Disability Living Allowance in the last 12 months",
-        "have an email address.",
+        "have an email address",
 
       ],
       "postCode"         : "<strong>Enter your postcode</strong>",
@@ -76,15 +76,15 @@ var data = [ {
   ],
   "postCodeSignPost"     : [
     {
-      "heading"          : "People living in your area can’t yet apply online.",
-      "introText"        : "You're still legally entitled to apply online even though the claim won't be valid",
+      "heading"          : "People living in your area can’t yet apply online",
+      "introText"        : "<p>To make a claim call <strong>0800 917 2222</strong> or textphone: <strong>0800 917 7777</strong>.</p>You're still legally entitled to carry on with this online application. But it won't be valid and you'll have to call the number above to enter your information on a paper form.</p>",
       "submit"           : "Continue"
     }
   ],
   "dob"                  : [
     {
-      "heading"          : "Are you aged between 16 and 64?",
-      "question"         : "What is your date of birth",
+      "heading"          : "What is your date of birth?",
+      "question"         : "",
       "hintTextDob"      : "dd mm yyyy",
       "submit"           : "Continue",
       "backLink"         : "/pip23/filterQuestions"
@@ -114,9 +114,9 @@ var data = [ {
   ],
   "srti"                 : [
     {
-      "heading"          : "Terminal illness",
+      "heading"          : "Have you been diagnosed with less than 6 months to live?",
       "question"         : "Do you have a DS1500?",
-      "question2"        : "Have you been diagnosed with a terminal illness?",
+      "question2"        : "People with less than 6 months to live can have their claim dealt with faster under special rules for the terminally ill.",
       "hintTextsrti"     : "A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
       "submit"           : "Continue",
       "backLink"         : "/pip23/postcodeCheck"
@@ -132,12 +132,12 @@ var data = [ {
   ],
   "filterQuestions"      : [
     {
-      "heading"          : "Can I still apply online?",
+      "heading"          : "Can you still apply online?",
       "introText"        : "",
       "question"         : "Are you an appointee for the person claiming?",
       "hintTextAppointee": "Appointees are authorised by the Department for Work and Pensions",
       "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
-      "question2"        : "Have you claimed for PIP or DLA in the past year?",
+      "question2"        : "Have you claimed Personal Independence Payment or Disability Living Allowance in the past year?",
       "question2No"      : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
       "question3"        : "Do you have a  personal email address?",
       "question3No"      : "You need to have a personal email address to claim PIP online. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
@@ -155,9 +155,9 @@ var data = [ {
   "registration"         : [
     {
       "heading"          : "Sign up to apply for Personal Independence Payment online",
-      "introText"        : "Enter a personal email address and create a password at least 8 characters long.",
-      "username"         : "Email address",
-      "password"         : "Create a password",
+      "introText"        : "",
+      "username"         : "Enter a personal email address",
+      "password"         : "Create a password at least 8 characters long",
       "password2"        : "Re-enter your password",
       "passwordHint"     : "Your password must be atleast 8 characters",
       "submit"           : "Sign up",
@@ -167,10 +167,10 @@ var data = [ {
   "appointee" : [
     {
       "page"             : "x",
-      "heading"          : "Are you applying for PIP for yourself?",
-      "yourselfLabel"    : "Yes, I am applying for myself",
+      "heading"          : "Are you applying for Personal Independence Payment for yourself?",
+      "yourselfLabel"    : "Yes, you're applying for yourself",
       "friendLabel"      : "Yes, with help from a friend, relative or third party such as a charity",
-      "behalfLabel"      : "No, I'm applying on behalf of someone else",
+      "behalfLabel"      : "No, you're applying on behalf of someone else",
       "helperNameQ"      : "The name of the person helping you",
       "knowThemQ"        : "How you know them",
       "whyHelpQ"         : "Why they're helping you",
@@ -230,11 +230,11 @@ var data = [ {
       "question2"        : "Mobile number",
       "question3"        : "We can only provide this if you need it because of your condition.",
       "formatsHint"      : "",
-      "checkbox1"        : "Large print (16 point)",
-      "checkbox2"        : "Braille",
-      "checkbox3"        : "Audio CD",
-      "checkbox4"        : "Other",
-      "checkbox5"        : "I don't need any of these",
+      "checkbox1"        : "Yes, in large print (16 point)",
+      "checkbox2"        : "Yes, in braille",
+      "checkbox3"        : "Yes, on an audio CD",
+      "checkbox4"        : "Yes, in another format",
+      "checkbox5"        : "No, you don't need any of these",
       "textareaQ"        : "What format do you need?",
       "textareaHintText" : "For example, you may need larger than 16 point print.",
       "backLink"         : "/pip23/contactDetails"
@@ -244,8 +244,8 @@ var data = [ {
     {
       "page"             : "8",
       "heading"          : "How do you want to be paid?",
-      "introText"        : "If you give your bank details now you'll get paid quicker - if your claim is successful.",
-      "options"          : ["Bank account","Building society account","Credit union account","I don't have any of these"],
+      "introText"        : "If you give your account details now you'll get paid quicker - if your claim is successful.",
+      "options"          : ["Bank account","Building society account","Credit union account","You don't have any of these"],
       "backLink"         : "/pip23/contactPref"
     }
   ],
@@ -315,8 +315,8 @@ var data = [ {
       "questionHead"     : "Period abroad",
       "removeLink"       : "Remove this",
       "question"         : "Which country did you go to?",
-      "question2"        : "What date did you go",
-      "question3"        : "What date did you come back",
+      "question2"        : "What date did you go?",
+      "question3"        : "What date did you come back?",
       "question4"        : "Why did you go?",
       "question5"        : "When you went, did you intend to return?",
       "whyGoHintText"    : "For example, holiday, work, medical treatment, as a member of HM Forces or as a family member of someone in HM Forces.",
@@ -1027,8 +1027,8 @@ var data = [ {
   ],
   "completionDate" : [
     {
-      "heading"          : "How long do I have to fill in this application?",
-      "p1"               : "You have until <strong>04 November 2016</strong>. Save and return to it as often as you like before then." ,
+      "heading"          : "How long you have to submit your claim",
+      "p1"               : "You have 1 month - so until <strong>04 November 2016</strong>. <p>Save and return to it as often as you like before then.</p>" ,
       "submit"           : "Continue",
       "backLink"         : "/pip23/declaration"
     }

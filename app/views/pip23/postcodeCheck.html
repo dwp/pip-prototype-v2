@@ -19,7 +19,7 @@
 
 					<p>{{question.p1}}</p>
 
-					<p>{{question.p2}}</p>
+					<p>{{question.p2|safe}}</p>
 
 					<ul class="list list-bullet">
 						{% for listItem in question.list %}
