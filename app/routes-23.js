@@ -254,7 +254,7 @@ module.exports = function (app) {
   app.post('/pip23/appointee', function (req, res) {
     req.session['pip23-appointee'] = req.body;
 
-    if(req.body.appointee === 'Yes, I am applying for myself') {
+    if(req.body.appointee === "Yes, you're applying for yourself") {
        if (req.body.saveAndMenu) {
          res.redirect('/pip23/additionalSupport?edit=true');
        } else {
