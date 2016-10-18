@@ -27,6 +27,7 @@ $is-print: false !default;
     font-family: $Print-reset;
   } @else {
     font-family: $toolkit-font-stack;
+<<<<<<< HEAD
     @if $toolkit-font-stack == "$NTA-Light" {
       @if $font-weight > 400 {
         font-size-adjust: 0.525;
@@ -34,10 +35,28 @@ $is-print: false !default;
         font-size-adjust: 0.5;
       }
     }
+=======
+>>>>>>> origin/master
   }
   font-weight: $font-weight;
   text-transform: none;
 
+<<<<<<< HEAD
+=======
+  @if $toolkit-font-stack == $NTA-Light {
+    @if $font-weight > 400 {
+      font-size-adjust: 0.525;
+    } @else {
+      font-size-adjust: 0.5;
+    }
+  }
+
+  @include media(tablet) {
+    font-size: $font-size;
+    line-height: $line-height;
+  }
+
+>>>>>>> origin/master
   @if $is-print {
     font-size: $font-size-print;
     line-height: $line-height;

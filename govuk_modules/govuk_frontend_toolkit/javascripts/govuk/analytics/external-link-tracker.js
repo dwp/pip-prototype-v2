@@ -1,7 +1,10 @@
 (function(global) {
   "use strict";
 
+<<<<<<< HEAD
   var $ = global.jQuery;
+=======
+>>>>>>> origin/master
   var GOVUK = global.GOVUK || {};
 
   GOVUK.analyticsPlugins = GOVUK.analyticsPlugins || {};
