@@ -18,31 +18,29 @@
 
             {{ elements.header(page,question) }}
 
-            <div class="form-group panel-indent}" id="medicalInfoDetails">
-  						{% set seq2 = [
-  							{"id":"incap1", "label":"Severe depression, which you've been in hospital for", "value":"Severe depression for which you've been hospitilised","showPanel":"noPanel"},
-  			        {"id":"incap2", "label":"Psychosis", "value":"psychosis","showPanel":"noPanel"},
-  			        {"id":"incap3", "label":"Schizophrenia", "value":"Schizophrenia", "showPanel":"noPanel"},
-  			        {"id":"incap4", "label":"Severe ADHD (attention deficit hyperactivity disorder)", "value":"Severe ADHD", "showPanel":"noPanel"},
-  			        {"id":"incap6", "label":"Down's syndrome", "value":"Down's syndrome", "showPanel":"noPanel"},
-  			        {"id":"incap7", "label":"Fragile X syndrome", "value":"Fragile X syndrome", "showPanel":"noPanel"},
-                {"id":"incap8", "label":"Severe autism", "value":"Severe autism", "showPanel":"noPanel"},
-                {"id":"incap9", "label":"Severe developmental delay", "value":"Severe developmental delay", "showPanel":"noPanel"},
-								{"id":"incap10", "label":"Any form of dementia", "value": "Any form of dementia", "showPanel":"noPanel"},
-  							{"id":"incap11", "label":"I don't have any of these conditions", "value":"I don't have any of these conditions", "hidePanel":"noPanel"}
-  			      ] %}
-  						{{ elements.checkbox('additionalOptions',"checkbox",question.question,'',seq2,answers,answers.additionalOptions, "check-uncheck") }}
+            <div class="form-group" id="medicalInfoDetails">
+							<p>We know some people have difficulty filling in forms because of their condition.</p>
+							<p>Do you have any of these conditions?</p>
+							<ul class="list-bullet">
+								<li>Severe depression, which you've been in hospital for</li>
+								<li>Psychosis</li>
+								<li>Schizophrenia</li>
+								<li>Severe ADHD (attention deficit hyperactivity disorder)</li>
+								<li>Down's syndrome</li>
+								<li>Fragile X syndrome</li>
+								<li>Severe autism</li>
+								<li>Severe developmental delay</li>
+								<li>Any form of dementia</li>
+							</ul>
+							<br />
+							{% set seq  = [
+								{"id":"helper","value":"Yes","showPanel":"helperDetails"},
+								{"id":"helper", "value":"No"}
+							] %}
+							{{ elements.radioSelect('helper',"","",answers.helper,seq,"inline") }}
+  					</div>
 
-
-  </div>
-
-
-
-            {% if answers.skipQuestion.length or edit %}
-              {{ elements.returnToMenu(page,question) }}
-            {% else %}
-              {{ elements.submit(page,question,true,true) }}
-            {% endif%}
+						{{ elements.submit(page,question,false,false,false) }}
 
           </div>
 

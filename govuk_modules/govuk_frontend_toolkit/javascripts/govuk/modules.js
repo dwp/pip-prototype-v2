@@ -1,8 +1,6 @@
-(function(global) {
+(function($, root) {
   "use strict";
-
-  var $ = global.jQuery;
-  var GOVUK = global.GOVUK || {};
+  root.GOVUK = root.GOVUK || {};
   GOVUK.Modules = GOVUK.Modules || {};
 
   GOVUK.modules = {
@@ -55,6 +53,4 @@
       }
     }
   }
-
-  global.GOVUK = GOVUK;
-})(window);
+})(jQuery, window);

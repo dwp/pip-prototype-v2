@@ -237,7 +237,7 @@ module.exports = function (app) {
 
   app.post('/pip23/registration', function (req, res) {
     req.session['pip23-registration'] = req.body;
-    res.redirect('/pip23/appointee');
+    res.redirect('/pip23/aboutYou');
   });
 
   /*******************
@@ -262,12 +262,12 @@ module.exports = function (app) {
        }
      }
      else if (req.param('edit')) {
-       res.redirect('/pip23/checkYourAnswers');
+       res.redirect('/pip23/pip1Answers');
      }
      else if (req.body.saveAndMenu) {
        res.redirect('/pip23/unansweredQuestions#yourCondition');
      } else {
-       res.redirect('/pip23/aboutYou');
+       res.redirect('/pip23/contactDetails');
      }
   });
 
@@ -287,12 +287,12 @@ module.exports = function (app) {
     req.session['pip23-additionalSupport'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#additionalSupport');
     } else {
-      res.redirect('/pip23/aboutYou');
+      res.redirect('/pip23/contactDetails');
     }
   });
 
@@ -313,13 +313,38 @@ module.exports = function (app) {
     req.session['pip23-aboutYou'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
-    else if (req.body.saveAndMenu) {
-      res.redirect('/pip23/unansweredQuestions#aboutYou');
-    } else {
-      res.redirect('/pip23/contactDetails');
+    else {
+      res.redirect('/pip23/declaration');
     }
+  });
+
+  /*******************
+  declaration at start
+  *******************/
+  app.get('/pip23/declaration', function (req, res) {
+      res.render('pip23/declaration', {
+        answers  : req.session['pip23-declaration'],
+        aboutYou : req.session['pip23-aboutYou'],
+        'edit'   : req.body.saveAndMenu,
+        data     : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip23/declaration', function (req, res) {
+    req.session['pip23-declaration'] = req.body;
+    res.redirect('/pip23/whatYouNeedToDo');
+    //unansweredQuestions#aboutYou'
+  });
+
+  /*******************
+  whatYouNeedToDo
+  *******************/
+  app.get('/pip23/whatYouNeedToDo', function (req, res) {
+      res.render('pip23/whatYouNeedToDo', {
+        data    : aboutYou.getTableData()
+      });
   });
 
   /*******************
@@ -337,7 +362,7 @@ module.exports = function (app) {
     req.session['pip23-contactDetails'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -361,7 +386,7 @@ module.exports = function (app) {
     req.session['pip23-contactPref'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -386,7 +411,7 @@ module.exports = function (app) {
     req.session['pip23-bankDetails'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -423,7 +448,7 @@ module.exports = function (app) {
     req.session['pip23-bankAccount'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -447,7 +472,7 @@ module.exports = function (app) {
     req.session['pip23-buildingSociety'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -471,7 +496,7 @@ module.exports = function (app) {
     req.session['pip23-creditUnion'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -544,7 +569,7 @@ module.exports = function (app) {
       }
 
     else if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -568,7 +593,7 @@ module.exports = function (app) {
     req.session['pip23-leaveToRemain'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -592,7 +617,7 @@ module.exports = function (app) {
     req.session['pip23-livingAbroad'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -636,7 +661,7 @@ module.exports = function (app) {
         }
       }
      else if (req.param('edit')) {
-       res.redirect('/pip23/checkYourAnswers');
+       res.redirect('/pip23/pip1Answers');
      }
      else if (req.body.saveAndMenu) {
        res.redirect('/pip23/unansweredQuestions#yourCondition');
@@ -660,7 +685,7 @@ module.exports = function (app) {
     req.session['pip23-careHomeFunding'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -684,7 +709,7 @@ module.exports = function (app) {
     req.session['pip23-hospitalFunding'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
@@ -708,12 +733,12 @@ module.exports = function (app) {
     req.session['pip23-paymentsFromAbroad'] = req.body;
 
     if (req.param('edit')) {
-      res.redirect('/pip23/checkYourAnswers');
+      res.redirect('/pip23/pip1Answers');
     }
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/unansweredQuestions#aboutYou');
     } else {
-      res.redirect('/pip23/healthcareprofessional');
+      res.redirect('/pip23/mainHcp');
     }
   });
 
@@ -957,6 +982,31 @@ module.exports = function (app) {
   });
 
   /*******************
+  main HCP
+  *******************/
+  app.get('/pip23/mainHcp', function (req, res) {
+      res.render('pip23/mainHcp', {
+        answers : req.session['pip23-mainHcp'],
+        'edit'  : req.param('edit'),
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  app.post('/pip23/mainHcp', function (req, res) {
+    req.session['pip23-mainHcp'] = req.body;
+
+    if (req.param('edit')) {
+      res.redirect('/pip23/pip1Answers');
+    }
+    else if (req.body.saveAndMenu) {
+      res.redirect('/pip23/specialAids#yourCondition');
+    } else {
+      res.redirect('/pip23/pip1Answers');
+    }
+  });
+
+
+  /*******************
   healthcareprofessional
   *******************/
   app.get('/pip23/healthcareprofessional', function (req, res) {
@@ -976,8 +1026,58 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/specialAids#yourCondition');
     } else {
-      res.redirect('/pip23/declaration');
+      res.redirect('/pip23/conditionDetails');
     }
+  });
+
+  /*******************
+  Check you answers pip1
+  *******************/
+  app.get('/pip23/pip1Answers', function (req, res) {
+      res.render('pip23/pip1Answers', {
+        answers : req.session['pip23-pip1Answers'],
+        'edit'  : req.param('edit'),
+        data                     : aboutYou.getTableData(),
+        dataCheckChange          : checkYourAnswers.getTableData(),
+        helper                   : req.session['pip23-helper'],
+        appointee                : req.session['pip23-appointee'],
+        additionalSupport        : req.session['pip23-additionalSupport'],
+        aboutYou                 : req.session['pip23-aboutYou'],
+        contactDetails           : req.session['pip23-contactDetails'],
+        contactPref              : req.session['pip23-contactPref'],
+        currentWhereabouts       : req.session['pip23-currentWhereabouts'],
+        bankDetails              : req.session['pip23-bankDetails'],
+        nationality              : req.session['pip23-nationality'],
+        paymentsFromAbroad       : req.session['pip23-paymentsFromAbroad'],
+        mainHcp                  : req.session['pip23-mainHcp']
+      });
+  });
+
+  app.post('/pip23/pip1Answers', function (req, res) {
+    res.redirect('/pip23/pip2Start');
+  })
+
+  /*******************
+  pip2Start
+  *******************/
+  app.get('/pip23/pip2Start', function (req, res) {
+      res.render('pip23/pip2Start', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  /*******************
+  pip2Questions
+  *******************/
+  app.get('/pip23/pip2Questions', function (req, res) {
+      res.render('pip23/pip2Questions', {
+        data                     : aboutYou.getTableData(),
+        dataCheckChange          : unansweredQuestions.getTableData(),
+      });
+  });
+
+  app.post('/pip23/pip2Questions', function (req, res) {
+    res.redirect('/pip23/healthcareprofessional');
   });
 
   /*******************

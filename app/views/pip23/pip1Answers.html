@@ -13,16 +13,14 @@
 <main id="content" role="main" class="pip23 pip18">
 
 	<div class="grid-row">
-			<form action="/pip23/checkYourAnswers{% if edit %}?edit=true{% endif %}" method="post" class="form">
+			<form action="/pip23/pip1Answers{% if edit %}?edit=true{% endif %}" method="post" class="form">
 
 				<div class="column-two-thirds">
 					{{ elements.header(page,question) }}
 				</div>
 
-				{% include "./checkYourAnswers/yourCondition.html" %}
-				{% include "./checkYourAnswers/yourHome.html" %}
-				{% include "./checkYourAnswers/outAndAbout.html" %}
-				{% include "./checkYourAnswers/makingSense.html" %}
+				{% include "./checkYourAnswers/aboutYou.html" %}
+
 
 				<div class="column-two-thirds">
 					{{ elements.submit(page,question,true,false,false) }}

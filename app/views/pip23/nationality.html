@@ -14,16 +14,16 @@
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="/pip23/nationality{% if edit %}?edit=true{% endif %}" method="post" class="form form-nationality">
+				<form action="/pip23/nationality{% if edit %}?edit=true{% endif %}" method="post" class="form form-nationality pip-typeahead">
 					{{ elements.header(page,question) }}
 
 					{% set seq  = [
 						{"id":"nationality","value":"British"},
-						{"id":"nationality", "value":"Other","showPanel":"otherNationality"}
+						{"id":"nationality", "value":"Other","showPanel":"otherNationalityCont"}
 					] %}
 					{{ elements.radioSelect('nationality',question.question,"",answers.nationality,seq,"inline") }}
 
-					<div class="panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationality">
+					<div class="panel-indent {% if answers.nationality != 'Other' %}js-hidden{% endif %}" id="otherNationalityCont">
 						{{ elements.genericInput('otherNationality',question.question2, answers.otherNationality) }}
 					</div>
 
@@ -45,11 +45,7 @@
 					{{ elements.radioSelect('livingAbroad',question.question5,question.q5HintText,answers.livingAbroad,seq3,"inline") }}
 
 
-					{% if answers.skipQuestion.length or edit %}
-						{{ elements.returnToMenu(page,question) }}
-					{% else %}
-						{{ elements.submit(page,question,true,true) }}
-					{% endif%}
+				{{ elements.submit(page,question,false,false,false) }}
 
         </form>
 			</div>
