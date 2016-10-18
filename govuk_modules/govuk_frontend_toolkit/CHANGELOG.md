@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 4.18.2
 
 - Remove unnecessary print font fallback that causes regression downstream ([PR #328](https://github.com/alphagov/govuk_frontend_toolkit/pull/328))
@@ -40,8 +39,6 @@
 - Configurable duration (in days) for AB Test cookie. See [this section](https://github.com/alphagov/govuk_frontend_toolkit/blob/master/docs/javascript.md#multivariate-test-framework) of the documentation for more information.
 - Allow base scripts to run within a module loader. See [this PR](https://github.com/alphagov/govuk_frontend_toolkit/pull/290) for more information.
 
-=======
->>>>>>> origin/master
 # 4.13.0
 
 - Make headings block-level by default (PR #200). If you are styling elements you want to be inline with heading includes, you’ll need to explicitly make them inline in your CSS.

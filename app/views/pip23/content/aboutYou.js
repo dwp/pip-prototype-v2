@@ -187,8 +187,8 @@ var data = [ {
   "additionalSupport" : [
     {
       "page"             : "x",
-      "heading"          : "Do you have any of the following conditions?",
-      "question"         : "",
+      "heading"          : "Additional support",
+      "question"         : "We know some people have difficulty filling in forms because of their condition. Do you have any of these conditions?",
       "youAreNotLabel"   : "None of the above",
       "backLink"         : "/pip23/appointee"
     },

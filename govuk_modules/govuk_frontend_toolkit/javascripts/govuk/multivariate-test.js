@@ -76,7 +76,6 @@
   };
 
   MultivariateTest.prototype.setCustomVar = function(cohort) {
-<<<<<<< HEAD
     if (this.customDimensionIndex &&
       this.customDimensionIndex.constructor === Array) {
       for (var index = 0; index < this.customDimensionIndex.length; index++) {
@@ -84,13 +83,6 @@
       }
     } else if (this.customDimensionIndex) {
       this.setDimension(cohort, this.customDimensionIndex)
-=======
-    if (this.customDimensionIndex) {
-      GOVUK.analytics.setDimension(
-        this.customDimensionIndex,
-        this.cookieName() + "__" + cohort
-      );
->>>>>>> origin/master
     }
   };
 
