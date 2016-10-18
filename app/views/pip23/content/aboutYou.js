@@ -100,7 +100,7 @@ var data = [ {
     {
     "heading"            : "You may be entitled to a different benefit",
     "introText"        : "Based on your answer, you can't get Personal Independence Payment (PIP)",
-    "submit"             : "continue",
+    "submit"             : "Continue",
     "backLink"           : "/pip23/dob"
     }
   ],
@@ -483,7 +483,7 @@ var data = [ {
       "page"             : "15",
       "heading"          : "Are there any professionals who can tell us about your condition?",
       "introText"        : "",
-      "question"         : "They could be your doctor, support worker, carer or anyone else who has information about the effects of your condition.",
+      "question"         : "Put the person who sees you the most first. They could be a nurse, support worker, carer, doctor or anyone else who has information about the effects of your condition.",
       "rowHd"            : "Professional",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
