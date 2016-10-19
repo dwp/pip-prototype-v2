@@ -481,10 +481,10 @@ var data = [ {
   "mainHcp" : [
     {
       "page"             : "15",
-      "heading"          : "Main HCP",
+      "heading"          : "Is there a professional who can tell us about your condition?",
       "introText"        : "",
-      "question"         : "Put the person who sees you the most first. ",
-      "rowHd"            : "Professional",
+      "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. ",
+      "rowHd"            : "",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
       "addressHd"        : "Their address",
