@@ -325,5 +325,9 @@ $(document).ready(function() {
     });
 
 
+    $('.answer-later-link').click(function(e){
+      e.preventDefault();
+      $('#skipQuestion').click()
+    });
 
 });

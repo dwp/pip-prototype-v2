@@ -386,7 +386,7 @@ var data = [ {
   "pip2Start"     : [
     {
       "page"            : "x",
-      "heading"         : "You have now started your claim",
+      "heading"         : "You have finished part 1",
       "backLink"        : "/pip23/pip1Answers"
     },
   ],
@@ -509,7 +509,8 @@ var data = [ {
       "phoneHd"          : "Their phone number",
       "lastSeenHd"       : "When you last saw them",
       "removeLink"       : "Remove this",
-      "backLink"         : "/pip23/paymentsFromAbroad"
+      "backLink"         : "/pip23/paymentsFromAbroad",
+      "submit"           : "Continue"
     },
   ],
   "healthcareprofessional" : [

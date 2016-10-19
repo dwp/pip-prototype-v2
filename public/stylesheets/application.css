@@ -2844,3 +2844,8 @@ PIP23
   margin-top: 15px;
   padding-top: 15px;
 }
+
+.answer-later-link {
+  margin-bottom: 20px;
+  width: 100%;
+}

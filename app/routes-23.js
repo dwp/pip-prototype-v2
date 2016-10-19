@@ -343,7 +343,7 @@ module.exports = function (app) {
 
   app.post('/pip23/declaration', function (req, res) {
     req.session['pip23-declaration'] = req.body;
-    res.redirect('/pip23/whatYouNeedToDo');
+    res.redirect('/pip23/appointee');
     //unansweredQuestions#aboutYou'
   });
 
@@ -1010,7 +1010,7 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip23/specialAids#yourCondition');
     } else {
-      res.redirect('/pip23/pip1Answers');
+      res.redirect('/pip23/pip2Start');
     }
   });
 
