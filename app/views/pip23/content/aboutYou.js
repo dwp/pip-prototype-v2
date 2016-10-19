@@ -510,7 +510,7 @@ var data = [ {
       "lastSeenHd"       : "When you last saw them",
       "removeLink"       : "Remove this",
       "backLink"         : "/pip23/paymentsFromAbroad",
-      "submit"           : "Continue"
+      "submit"           : "Save and continue"
     },
   ],
   "healthcareprofessional" : [
