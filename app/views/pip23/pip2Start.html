@@ -8,7 +8,7 @@
 
 {% import "pip23/macros/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.aboutYou %}
+{% for question in page.pip2Start %}
 <main id="content" role="main" class="pip23">
 
 	<div class="grid-row">
@@ -16,7 +16,12 @@
 
 				<form action="/pip23/{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
-<p>pip2Start</p>
+
+					<p>If you're successful, you will be paid from today's date.</p>
+					<p>You can now continue to the next set of more detailed questions about your condition, or you can take a break.</p>
+					<p>You have 1 month to complete the application [add date with highlighting a la Eddie's design]</p>
+					<p>You can leave the application and return as often as you want, using the link we sent in an email. All the answers you’ve given so far will be saved.</p>
+				
 					<a href="/pip23/pip2Questions" class="button">Next</a>
 
         </form>

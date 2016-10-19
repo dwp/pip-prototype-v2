@@ -373,6 +373,15 @@ var data = [ {
       "backLink"         : "/pip23/currentWhereabouts"
     },
   ],
+
+  "pip2Start"     : [
+    {
+      "page"            : "x",
+      "heading"         : "You have now started your claim",
+      "backLink"        : "/pip23/pip1Answers"
+    },
+  ],
+
   "conditionDetails" : [
     {
       "page"             : "8",
