@@ -81,6 +81,15 @@ var data = [ {
       "submit"           : "Continue"
     }
   ],
+  "exit"                  : [
+    {
+      "heading"          : "We have saved your answers",
+      "question"         : "",
+      "hintTextDob"      : "dd mm yyyy",
+      "submit"           : "Continue",
+      "backLink"         : "/pip23/filterQuestions"
+    }
+  ],
   "dob"                  : [
     {
       "heading"          : "What is your date of birth?",

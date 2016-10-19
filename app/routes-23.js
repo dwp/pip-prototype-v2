@@ -37,6 +37,15 @@ module.exports = function (app) {
   });
 
   /*******************
+  exit
+  *******************/
+  app.get('/pip23/exit', function (req, res) {
+      res.render('pip23/exit', {
+        data    : aboutYou.getTableData()
+      });
+  });
+
+  /*******************
   postcodeCheck
   *******************/
 

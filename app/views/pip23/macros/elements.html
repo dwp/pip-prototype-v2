@@ -22,7 +22,12 @@
     {% endif %}
 
     {% if showReturnToMenu != false %}
-      <input type="submit" value="{{data.saveExit}}" name="saveAndMenu" class="exit-link">
+    <div class="border-top-take-break">
+      <p style="margin-bottom:0;">Do you want to take a break? <br />
+        <span class="form-hint">You can save your answers and come back to the application at another time.</span>
+      </p>
+      <input type="submit" value="Save and come back later" name="saveAndMenu" class="exit-link" style="margin-top:0;">
+    </div>
     {% endif %}
     {% if backLink != false %}
       <a href="{{questions.backLink}}" class="link-back">{{data.backText}}</a>
