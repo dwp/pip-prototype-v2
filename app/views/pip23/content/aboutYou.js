@@ -173,6 +173,11 @@ var data = [ {
       "backLink"         : "/pip23/dob"
     },
   ],
+  "registered"         : [
+    {
+      "heading"          : "Check your email",
+    },
+  ],
   "appointee" : [
     {
       "page"             : "x",

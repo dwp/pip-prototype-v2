@@ -246,7 +246,13 @@ module.exports = function (app) {
 
   app.post('/pip23/registration', function (req, res) {
     req.session['pip23-registration'] = req.body;
-    res.redirect('/pip23/aboutYou');
+    res.redirect('/pip23/registered');
+  });
+
+  app.get('/pip23/registered', function (req, res) {
+      res.render('pip23/registered', {
+        data    : aboutYou.getTableData()
+      });
   });
 
   /*******************
