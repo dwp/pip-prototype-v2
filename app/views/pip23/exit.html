@@ -8,29 +8,22 @@
 
 {% import "pip23/macros/elements.html" as elements %}
 {% for page in data %}
-{% for question in page.pip2Start %}
+{% for question in page.exit %}
 <main id="content" role="main" class="pip23">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
 				<form action="/pip23/{% if edit %}?edit=true{% endif %}" method="post" class="form">
-					<h1 class="form-title heading-large">You have finished part 1</h1>
+					{{ elements.header(page,question) }}
 
-					<p>You can now continue to the next set of more detailed questions about your condition, or you can take a break.</p>
-
+					<p>When you are ready to carry on with your application, <a href="#">request a new link</a></p>
 
 					<div style="width:97%; background:#eaf4f9; padding:10px; margin:0 0 20px; text-align:center;">
 						<p>You need to complete the rest of the application by:</p>
 						<p><span class="heading-large">25 November 2016</span></p>
 					</div>
 
-					<p>You can leave the application and return as often as you want, using the link we sent in an email.</p>
-					<p class="panel-indent"> All the answers you’ve given so far will be saved.</p>
-
-					<p><a href="/pip23/healthcareprofessional" class="button">Continue to part 2</a></p>
-
-					<p><a href="/pip23/exit">Save and come back later</a></p>
 
         </form>
 			</div>
