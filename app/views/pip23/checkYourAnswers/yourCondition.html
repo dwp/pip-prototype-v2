@@ -1,3 +1,41 @@
+<!-- hcp -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.hcpHd}}</h2>
+    <ul class="column-two-thirds">
+        {% for i in range(1, 11) -%}
+          {% if loop.first or healthcareprofessional["name" + i] %}
+            <li>
+              <h3 class="heading-small">Professional {{i}}</h3>
+              <ul>
+                <li>
+                  <span class="question">{{question.hcpName}}</span>
+                  <span class="answer">{{healthcareprofessional["name" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpAddress}}</span>
+                  <span class="answer">{{healthcareprofessional["profession" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpNumber}}</span>
+                  <span class="answer">{{healthcareprofessional["address" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpLastSeen}}</span>
+                  <span class="answer">{{healthcareprofessional["phone" + i]}}</span>
+                </li>
+                <li>
+                  <span class="question">{{question.hcpLastSeen}}</span>
+                  <span class="answer">{{healthcareprofessional["lastSeen" + i]}}</span>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+        {% endfor %}
+    </ul>
+    <a href="/pip23/healthcareprofessional?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
 <!-- condition details -->
 <div class="column-full">
   <div class="answers-cont">
@@ -271,44 +309,7 @@ manageHow
   </div>
 </div>
 
-<!-- hcp -->
-<div class="column-full">
-  <div class="answers-cont">
-    <h2 class="heading-medium">{{question.hcpHd}}</h2>
-    <ul class="column-two-thirds">
-        {% for i in range(1, 11) -%}
-          {% if loop.first or healthcareprofessional["name" + i] %}
-            <li>
-              <h3 class="heading-small">Professional {{i}}</h3>
-              <ul>
-                <li>
-                  <span class="question">{{question.hcpName}}</span>
-                  <span class="answer">{{healthcareprofessional["name" + i]}}</span>
-                </li>
-                <li>
-                  <span class="question">{{question.hcpAddress}}</span>
-                  <span class="answer">{{healthcareprofessional["profession" + i]}}</span>
-                </li>
-                <li>
-                  <span class="question">{{question.hcpNumber}}</span>
-                  <span class="answer">{{healthcareprofessional["address" + i]}}</span>
-                </li>
-                <li>
-                  <span class="question">{{question.hcpLastSeen}}</span>
-                  <span class="answer">{{healthcareprofessional["phone" + i]}}</span>
-                </li>
-                <li>
-                  <span class="question">{{question.hcpLastSeen}}</span>
-                  <span class="answer">{{healthcareprofessional["lastSeen" + i]}}</span>
-                </li>
-              </ul>
-            </li>
-          {% endif %}
-        {% endfor %}
-    </ul>
-    <a href="/pip23/healthcareprofessional?edit=true">{{question.changeLinkTxt}}</a>
-  </div>
-</div>
+
 
 <!-- submit evidence -->
 <div class="column-full">

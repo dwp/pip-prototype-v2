@@ -115,6 +115,9 @@ var data = [ {
       "mConditionWhy"      : "Why do you rely on someone to help manage your treatments or therapy at home?",
       "mConditionHow"      : "How does someone help you manage your treatment or therapy at home at the moment?",
 
+      /* MainHcp */
+      "mainHcpHD"          : "Professional who knows most about your condition",
+
       /* HCP */
       "hcpHd"              : "Professionals who know about your condition",
       "hcpContact"         : "Do you agree to us contacting professionals who will share information about your condition with us?",

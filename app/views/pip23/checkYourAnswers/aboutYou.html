@@ -1,3 +1,25 @@
+<!-- aboutYou -->
+
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.aboutYouHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.aboutYouName}}</span>
+        <span class="answer">{{aboutYou.firstName}} {{aboutYou.middleName}} {{aboutYou.surname}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouDOB}}</span>
+        <span class="answer">{{aboutYou.dobDay}}/{{aboutYou.dobMonth}}/{{aboutYou.dobYear}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouNINO}}</span>
+        <span class="answer">{{aboutYou.nino}}</span>
+      </li>
+    </ul>
+    <a href="/pip23/aboutYou?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
 <!-- appointee -->
 <div class="column-full">
   <div class="answers-cont">
@@ -54,27 +76,7 @@
   </div>
     {% endif %}
 
-<!-- aboutYou -->
-<div class="column-full">
-  <div class="answers-cont">
-    <h2 class="heading-medium">{{question.aboutYouHd}}</h2>
-    <ul class="column-two-thirds">
-      <li>
-        <span class="question">{{question.aboutYouName}}</span>
-        <span class="answer">{{aboutYou.firstName}} {{aboutYou.middleName}} {{aboutYou.surname}}</span>
-      </li>
-      <li>
-        <span class="question">{{question.aboutYouDOB}}</span>
-        <span class="answer">{{aboutYou.dobDay}}/{{aboutYou.dobMonth}}/{{aboutYou.dobYear}}</span>
-      </li>
-      <li>
-        <span class="question">{{question.aboutYouNINO}}</span>
-        <span class="answer">{{aboutYou.nino}}</span>
-      </li>
-    </ul>
-    <a href="/pip23/aboutYou?edit=true">{{question.changeLinkTxt}}</a>
-  </div>
-</div>
+
 
 <!-- contact details -->
 <div class="column-full">
@@ -102,11 +104,16 @@
       </li>
       <li>
         <span class="question">{{question.detailsPhone}}</span>
-        <span class="answer">{{contactDetails.phone}}</span>
+        <span class="answer">{{contactDetails.altPhone}}
+          {% if contactDetails.smsContact == 'Yes' %}
+          <br />
+          You want to get text messages about your claim
+          {% endif %}
+        </span>
       </li>
       <li>
         <span class="question">{{question.detailsPhoneAlt}}</span>
-        <span class="answer">{{contactDetails.altPhone}}</span>
+        <span class="answer">{{contactDetails.phone}}</span>
       </li>
 
       <!-- email currently removed whilst testing create account
@@ -128,16 +135,6 @@
   <div class="answers-cont">
     <h2 class="heading-medium">{{question.prefHd}}</h2>
     <ul class="column-two-thirds">
-      <li>
-        <span class="question">{{question.prefSMS}}</span>
-        <span class="answer">{{contactPref.smsContact}}</span>
-      </li>
-      {% if contactPref.smsContact == 'Yes' %}
-        <li>
-          <span class="question">{{question.prefMobile}}</span>
-          <span class="answer">{{contactPref.mobile}}</span>
-        </li>
-      {% endif %}
       <li>
         <span class="question">{{question.prefComms}}</span>
         <span class="answer">{{contactPref.optionsName}}
@@ -263,5 +260,27 @@
       {% endif %}
     </ul>
     <a href="/pip23/paymentsFromAbroad?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+<!-- hcp -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.mainHcpHD}}</h2>
+    <ul class="column-two-thirds">
+
+          <li>
+            <span class="question">{{question.hcpName}}</span>
+            <span class="answer">{{mainHcp.name}}</span>
+          </li>
+          <li>
+            <span class="question">{{question.hcpAddress}}</span>
+            <span class="answer">{{mainHcp.profession}}</span>
+          </li>
+          <li>
+            <span class="question">{{question.hcpLastSeen}}</span>
+            <span class="answer">{{mainHcp.phone}}</span>
+          </li>
+        </ul>
+    <a href="/pip23/mainHcp?edit=true">{{question.changeLinkTxt}}</a>
   </div>
 </div>

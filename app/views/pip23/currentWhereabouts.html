@@ -77,11 +77,7 @@
 					{{ elements.checkbox('optionsLiving',"radio",question.question,'',seq,answers,answers.optionsLiving,"check-uncheck") }}
 
 
-					{% if answers.skipQuestion.length or edit %}
-						{{ elements.returnToMenu(page,question) }}
-					{% else %}
-						{{ elements.submit(page,question,true,true) }}
-					{% endif%}
+					{{ elements.submit(page,question,false,false,false) }}
 
         </form>
 			</div>

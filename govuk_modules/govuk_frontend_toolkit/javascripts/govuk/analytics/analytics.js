@@ -1,7 +1,6 @@
-(function(global) {
+(function() {
   "use strict";
-
-  var GOVUK = global.GOVUK || {};
+  window.GOVUK = window.GOVUK || {};
 
   // For usage and initialisation see:
   // https://github.com/alphagov/govuk_frontend_toolkit/blob/master/docs/analytics.md#create-an-analytics-tracker
@@ -9,9 +8,7 @@
   var Analytics = function(config) {
     this.trackers = [];
     if (typeof config.universalId != 'undefined') {
-      var universalId = config.universalId;
-      delete config.universalId;
-      this.trackers.push(new GOVUK.GoogleAnalyticsUniversalTracker(universalId, config));
+      this.trackers.push(new GOVUK.GoogleAnalyticsUniversalTracker(config.universalId, config.cookieDomain));
     }
   };
 
@@ -64,6 +61,4 @@
   };
 
   GOVUK.Analytics = Analytics;
-
-  global.GOVUK = GOVUK;
-})(window);
+})();

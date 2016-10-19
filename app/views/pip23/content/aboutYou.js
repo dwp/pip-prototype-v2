@@ -478,12 +478,32 @@ var data = [ {
       "backLink"         : "/pip23/conditionAffects"
     },
   ],
+  "mainHcp" : [
+    {
+      "page"             : "15",
+      "heading"          : "Main HCP",
+      "introText"        : "",
+      "question"         : "Put the person who sees you the most first. ",
+      "rowHd"            : "Professional",
+      "nameHd"           : "Their name",
+      "professionHd"     : "Their profession",
+      "addressHd"        : "Their address",
+      "phoneHd"          : "Their phone number",
+      "lastSeenHd"       : "When you last saw them",
+      "removeLink"       : "Remove this",
+      "backLink"         : "/pip23/paymentsFromAbroad"
+    },
+  ],
   "healthcareprofessional" : [
     {
       "page"             : "15",
-      "heading"          : "Are there any professionals who can tell us about your condition?",
+      "heading"          : "Are there any other professionals who can tell us about your condition?",
       "introText"        : "",
+<<<<<<< HEAD
       "question"         : "Put the person who sees you the most first. They could be your nurse, support worker, carer, doctor or anyone else who has information about the effects of your condition.",
+=======
+      "question"         : "They could be a nurse, support worker, carer, doctor or anyone else who has information about the effects of your condition.",
+>>>>>>> origin/master
       "rowHd"            : "Professional",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
