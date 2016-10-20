@@ -63,7 +63,7 @@ var data = [ {
       "p2"               : "<p>We'll need to check a few things before asking details about how your condition affects you.</p><p>You can only apply online if you:</p>",
       "list"             : [
         "live in certain areas",
-        "are not an appointee",
+        "are not an appointee acting on behalf of the person claiming benefits",
         "have not claimed PIP or Disability Living Allowance in the last 12 months",
         "have an email address",
 
@@ -144,7 +144,7 @@ var data = [ {
       "heading"          : "Can you still apply online?",
       "introText"        : "",
       "question"         : "Are you an appointee for the person claiming?",
-      "hintTextAppointee": "Appointees are authorised by the Department for Work and Pensions",
+      "hintTextAppointee": "Appointees act on behalf of a person claiming benefits. They have to apply through the Department for Work and Pensions.",
       "questionNo"       : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
       "question2"        : "Have you claimed Personal Independence Payment or Disability Living Allowance in the past year?",
       "question2No"      : "While we're piloting the online service, you can't claim PIP in this way. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong> to start your claim.",
