@@ -1077,8 +1077,8 @@ var data = [ {
     {
       "page"             : "x",
       "heading"          : "Submit your application",
-      "p1"               : "You have now answered all the questions on the application and you are now able to send it",
-      "p2"               : "You will not be able to change your answers after you send your application.",
+      "p1"               : "You have answered all the questions on the application and you can now send it.",
+      "p2"               : "You won't be able to change your answers after you send your application.",
       "submit"           : "Send my application",
       "backLink"         : "/pip23/checkYourAnswers"
     },
@@ -1086,7 +1086,7 @@ var data = [ {
   "thankYou" : [
     {
       "heading"          : "Your application has been sent",
-      "heading2"         : "Send more information",
+      "heading2"         : "Where to send your information",
       "p1"               : "You said you’re going to send information about the effects of your condition. Write your full name and National Insurance number on each page you send and post it before [date in two weeks]. If you do not send it before then, a decision could be made without it.",
       "postTo"           : "Post to:",
       "heading3"         : "What happens next",
