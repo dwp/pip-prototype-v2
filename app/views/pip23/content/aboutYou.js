@@ -176,8 +176,23 @@ var data = [ {
   "registered"         : [
     {
       "heading"          : "Check your email",
+      "question"         : "",
+      "question2"        : "Check your 'spam' folder if the email is not in your inbox.",
+      "question3"        : "If you have not got the email within one hour <a href='#'>enter your email address again.</a>"
     },
   ],
+
+  "continueYourApplication" : [
+    {
+      "heading"          : "Continue your application",
+      "introText"        : "",
+      "question"         : "Continue your application from",
+      "question2"        : "You have until <strong>25 Novemeber 2016</strong> to complete your application.",
+      "backLink"         : "/pip23/register",
+      "submit"           : "Continue"
+    },
+  ],
+
   "appointee" : [
     {
       "page"             : "x",

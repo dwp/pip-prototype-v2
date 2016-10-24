@@ -15,13 +15,12 @@
 
 				<form action="#" method="post" class="form form-login">
 					<header>
-					  <h1 class="form-title heading-xlarge">Saving your application</h1>
+					  <h1 class="form-title heading-xlarge">Continue your application</h1>
 					</header>
-					<p class="lede">Many questions in this application ask for detailed answers which may take time to fill in. You can leave the application at any point and go back to it when you want, without losing any of your information.</p>
+					<p class="lede">Enter your email address and password to continue your application</p>
 
-					{{ elements.genericInput('username',"Choose username","","You'll need this to sign in again so make it memorable, like your email address. Make it at least 8 characters long.") }}
-					{{ elements.genericInput('password',"Choose password","","Your password must be at least 8 characters long","",type='password') }}
-					{{ elements.genericInput('password2',"Confirm password","","","",type='password') }}
+					{{ elements.genericInput('username',"Enter your email","","") }}
+					{{ elements.genericInput('password',"Enter your password","","","",type='password') }}
 
 					<div class="form-group">
 		        <a class="button " href="appointee" >Save</a>

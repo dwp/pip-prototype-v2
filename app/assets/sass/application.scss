@@ -632,8 +632,8 @@ PIP22
 
 //Alerts from filter questions
 .panel.blue-alert {
-  border-color: $error-colour;
-  background-color: $mellow-red;
+  border-color: $red;
+  background-color: mix($white, $mellow-red, 90%);
 }
 
 /*********************

@@ -84,7 +84,6 @@ module.exports = function (app) {
   *******************/
 
   app.get('/pip23/dob', function (req, res){
-    console.log(req.session['pip23-dob']);
     (req.session['pip23-dob']);
       res.render('pip23/dob', {
         answers : req.session['pip23-dob'],
@@ -249,11 +248,67 @@ module.exports = function (app) {
     res.redirect('/pip23/registered');
   });
 
-  app.get('/pip23/registered', function (req, res) {
-      res.render('pip23/registered', {
-        data    : aboutYou.getTableData()
+
+  /*******************
+  registered
+  ********************/
+  app.get('/pip23/registered', function (req,res) {
+    res.render('pip23/registered', {
+      answers  : req.session['pip23-registered'],
+      registration : req.session['pip23-registration'],
+      data      : aboutYou.getTableData()
+    });
+  });
+
+  app.post('/pip23/registration', function (req, res) {
+    req.session['pip23-registered'] = req.body;
+    res.redirect('/pip23/registered');
+  });
+
+  /**********************
+  login
+  ************************/
+  app.get('/pip23/login', function (req, res) {
+    res.render('pip23/login', {
+      answers : req.session['pip23-login'],
+      data  : aboutYou.getTableData()
+    });
+  });
+
+  app.post('pip23/login', function (req, res) {
+    req.session['pip23-login'] = req.body;
+    res.redirect('pip23/continueYourApplication');
+  });
+
+
+  /*******************
+  continueYourApplication
+  *******************/
+  app.get('/pip23/continueYourApplication', function (req, res) {
+      res.render('pip23/continueYourApplication', {
+          data    : aboutYou.getTableData()
       });
   });
+
+  app.post('/pip23/continueYourApplication', function (req, res) {
+    req.session['pip23-continueYourApplication'] = req.body;
+
+    if(req.body.continue === "Where you left it") {
+       if (req.body.saveAndMenu) {
+         res.redirect('/pip23/aboutYou?edit=true');
+       } else {
+         res.redirect('/pip23/aboutYou');
+       }
+     }
+     else if (req.body.saveAndMenu) {
+       res.redirect('/pip23/unansweredQuestions#yourCondition');
+     } else {
+       res.redirect('/pip23/aboutYou');
+     }
+  });
+
+
+
 
   /*******************
   appointee

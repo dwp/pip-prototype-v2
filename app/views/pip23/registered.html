@@ -17,7 +17,14 @@
 				<form action="/pip23/{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
-					We have sent you a link to access your application.
+
+<p>An email has been sent to <strong>{{registration.username}}</strong>. Click on the link in the email to apply for Personal Independance Payment (PIP).</p>
+<div class="form-group">
+{{ question.question2 }}
+</div>
+<div class="form-group">
+{{ question.question3 |  safe}}
+</div>
 
         </form>
 			</div>
