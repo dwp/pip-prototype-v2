@@ -17,6 +17,7 @@
 				<form action="/pip23/sideEffects{% if edit %}?edit=true{% endif %}" method="post" class="form">
 
 					{{ elements.header(page,question) }}
+					{{ elements.answerLater() }}
 
 					{% set seq  = [
 						{"id":"anySideEffects","value":"Yes","showPanel":"sideEffectsDetails"},

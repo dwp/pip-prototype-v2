@@ -275,9 +275,9 @@ module.exports = function (app) {
     });
   });
 
-  app.post('pip23/login', function (req, res) {
+  app.post('/pip23/login', function (req, res) {
     req.session['pip23-login'] = req.body;
-    res.redirect('pip23/continueYourApplication');
+    res.redirect('/pip23/continueYourApplication');
   });
 
 

@@ -16,6 +16,7 @@
 
 				<form action="/pip23/mixing{% if edit %}?edit=true{% endif %}" method="post" class="form form-group-frequency">
 					{{ elements.header(page,question) }}
+					{{ elements.answerLater() }}
 
 					{% set seq = [
 						{"id":"affect1", "label":question.youDontKnowLabel, "value":question.youDontKnowLabel, "showPanel":"details"},

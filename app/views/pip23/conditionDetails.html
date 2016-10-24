@@ -16,6 +16,7 @@
 
 				<form action="/pip23/conditionDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
+					{{ elements.answerLater() }}
 
 					<ul class="list-user-input">
 						{% for i in range(1, 11) -%}

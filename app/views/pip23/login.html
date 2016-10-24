@@ -7,13 +7,15 @@
 {% block content %}
 
 {% import "pip23/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.login %}
 
 <main id="content" role="main" class="pip23">
 
 	<div class="grid-row">
 			<div class="column-two-thirds">
 
-				<form action="#" method="post" class="form form-login">
+				<form action="/pip23/login" method="post" class="form form-login">
 					<header>
 					  <h1 class="form-title heading-xlarge">Continue your application</h1>
 					</header>
@@ -23,7 +25,7 @@
 					{{ elements.genericInput('password',"Enter your password","","","",type='password') }}
 
 					<div class="form-group">
-		        <a class="button " href="appointee" >Save</a>
+		        {{ elements.submit (page,question,false,false,false) }}
 					</div>
 
 
@@ -33,5 +35,8 @@
 	</div>
 
 </main>
+
+{% endfor %}
+{% endfor %}
 
 {% endblock %}

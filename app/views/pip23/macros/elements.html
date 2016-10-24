@@ -8,6 +8,12 @@
 <p class="lede">{{ question.introText|safe }}</p>
 {% endmacro %}
 
+{% macro answerLater() %}
+<p>
+<a class="answer-later-link" href="/pip23/exit">Answer later</a>
+</p>
+{% endmacro %}
+
 {% macro submit(data,questions,backLink,showReturnToMenu,showAnswerLater) %}
 <div id="submit-group" class="form-group">
     {% if questions.warningMsg %}
