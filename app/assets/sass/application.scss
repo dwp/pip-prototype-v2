@@ -630,9 +630,10 @@ PIP21
 PIP22
 **********************/
 
+//Alerts from filter questions
 .panel.blue-alert {
-  border-color: #2b8cc4;
-  background-color: #eaf4f9;
+  border-color: $error-colour;
+  background-color: $mellow-red;
 }
 
 /*********************
