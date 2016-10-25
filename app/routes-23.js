@@ -297,7 +297,7 @@ module.exports = function (app) {
        if (req.body.saveAndMenu) {
          res.redirect('/pip23/aboutYou?edit=true');
        } else {
-         res.redirect('/pip23/aboutYou');
+         res.redirect('/pip23/medications');
        }
      }
      else if (req.body.saveAndMenu) {
