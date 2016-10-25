@@ -187,7 +187,7 @@ var data = [ {
       "heading"          : "Continue your application",
       "introText"        : "",
       "question"         : "Continue your application from",
-      "question2"        : "You have until <strong>25 Novemeber 2016</strong> to complete your application.",
+      "question2"        : "You have until <strong>25 November 2016</strong> to complete your application.",
       "backLink"         : "/pip23/register",
       "submit"           : "Continue"
     },
