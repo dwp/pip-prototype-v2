@@ -1,8 +1,6 @@
 // Extension to monitor attempts to print pages.
-(function (global) {
+(function () {
   "use strict";
-
-  var GOVUK = global.GOVUK || {};
 
   GOVUK.analyticsPlugins = GOVUK.analyticsPlugins || {};
 
@@ -13,15 +11,15 @@
     });
 
     // Most browsers
-    if (global.matchMedia) {
-      var mediaQueryList = global.matchMedia('print'),
+    if (window.matchMedia) {
+      var mediaQueryList = window.matchMedia('print'),
         mqlListenerCount = 0;
       mediaQueryList.addListener(function (mql) {
         if (!mql.matches && mqlListenerCount === 0) {
           printAttempt();
           mqlListenerCount++;
           // If we try and print again within 3 seconds, don't log it
-          setTimeout(function () {
+          window.setTimeout(function () {
             mqlListenerCount = 0;
             // printing will be tracked again now
           }, 3000);
@@ -30,11 +28,10 @@
     }
 
     // IE < 10
-    if (global.onafterprint) {
-      global.onafterprint = printAttempt;
+    if (window.onafterprint) {
+      window.onafterprint = printAttempt;
     }
 
   };
 
-  global.GOVUK = GOVUK;
-})(window);
+}());
