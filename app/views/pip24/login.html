@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.login %}
+
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/login" method="post" class="form form-login">
+					<header>
+					  <h1 class="form-title heading-xlarge">Continue your application</h1>
+					</header>
+					<p class="lede">Enter your email address and password to continue your application</p>
+
+					{{ elements.genericInput('username',"Enter your email","","") }}
+					{{ elements.genericInput('password',"Enter your password","","","",type='password') }}
+
+					<div class="form-group">
+		        {{ elements.submit (page,question,false,false,false) }}
+					</div>
+
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+
+{% endblock %}

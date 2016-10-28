@@ -1,0 +1,371 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.checkYourAnswers %}
+<main id="content" role="main" class="pip24 pip18">
+
+	<div class="grid-row">
+			<form action="/pip24/unansweredQuestions{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+				<div class="column-two-thirds">
+					{{ elements.header(page,question) }}
+				</div>
+
+				<div class="column-full checkYourAnswersCont">
+
+				{% if not appointee.saveAndcontinue.length and not appointee.saveAndMenu.length %}
+						<div class="column-full">
+		        	<h2 id="aboutYou" class="heading-medium heading-highlight"><span class="h2">Help with your application</span></h2>
+		          <ul>
+		            <li>
+									<div class="column-two-thirds">Helper details</div>
+									{{ elements.EnterChangeAnswers(appointee,"appointee",page) }}
+								</li>
+		          </ul>
+						</div>
+				{% endif %}
+
+				{% if
+					not aboutYou.saveAndcontinue.length and not aboutYou.saveAndMenu.length
+					or not contactDetails.saveAndcontinue.length and not contactDetails.saveAndMenu.length
+					or not contactPref.saveAndcontinue.length and not contactPref.saveAndMenu.length
+					or not bankDetails.saveAndcontinue.length and not bankDetails.saveAndMenu.length
+					or not currentWhereabouts.saveAndcontinue.length and not currentWhereabouts.saveAndMenu.length
+					or not nationality.saveAndcontinue.length and not nationality.saveAndMenu.length
+					or not paymentsFromAbroad.saveAndcontinue.length and not paymentsFromAbroad.saveAndMenu.length
+				%}
+					<div class="column-full">
+	        	<h2 id="aboutYou" class="heading-medium heading-highlight"><span class="h2">About you</span></h2>
+	          <ul>
+
+							{% if not aboutYou.saveAndcontinue.length and not aboutYou.saveAndMenu.length %}
+		            <li>
+									<div class="column-two-thirds">Personal details</div>
+									{{ elements.EnterChangeAnswers(aboutYou,"aboutYou",page) }}
+								</li>
+							{% endif %}
+
+							{% if not contactDetails.saveAndcontinue.length and not contactDetails.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your contact details</div>
+									{{ elements.EnterChangeAnswers(contactDetails,"contactDetails",page) }}
+								</li>
+							{% endif %}
+
+							{% if not contactPref.saveAndcontinue.length and not contactPref.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">How you want to be contacted</div>
+									{{ elements.EnterChangeAnswers(contactPref,"contactPref",page) }}
+								</li>
+							{% endif %}
+
+							{% if not bankDetails.saveAndcontinue.length and not bankDetails.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">How you want to receive payment</div>
+									{{ elements.EnterChangeAnswers(bankDetails,"bankDetails",page) }}
+								</li>
+							{% endif %}
+
+							{% if not currentWhereabouts.saveAndcontinue.length and not currentWhereabouts.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Where are you currently staying</div>
+									{{ elements.EnterChangeAnswers(currentWhereabouts,"currentWhereabouts",page) }}
+								</li>
+							{% endif %}
+
+							{% if not nationality.saveAndcontinue.length and not nationality.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Nationality and where you live</div>
+									{{ elements.EnterChangeAnswers(nationality,"nationality",page) }}
+								</li>
+							{% endif %}
+
+							{% if not paymentsFromAbroad.saveAndcontinue.length and not paymentsFromAbroad.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Payments from abroad</div>
+									{{ elements.EnterChangeAnswers(paymentsFromAbroad,"paymentsFromAbroad",page) }}
+								</li>
+							{% endif %}
+	          </ul>
+					</div>
+				{% endif %}
+
+				{% if
+					not conditionDetails.saveAndcontinue.length and not conditionDetails.saveAndMenu.length
+					or not medications.saveAndcontinue.length and not medications.saveAndMenu.length
+					or not manageMedications.saveAndcontinue.length and not manageMedications.saveAndMenu.length
+					or not treatments.saveAndcontinue.length and not treatments.saveAndMenu.length
+					or not sideEffects.saveAndcontinue.length and not sideEffects.saveAndMenu.length
+					or not conditionAffects.saveAndcontinue.length and not conditionAffects.saveAndMenu.length
+					or not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length
+					or not healthcareprofessional.saveAndcontinue.length and not healthcareprofessional.saveAndMenu.length
+					or not submitEvidence.saveAndcontinue.length and not submitEvidence.saveAndMenu.length
+					or not specialAids.saveAndcontinue.length and not specialAids.saveAndMenu.length
+					or not sight.saveAndcontinue.length and not sight.saveAndMenu.length
+					or not speech.saveAndcontinue.length and not speech.saveAndMenu.length
+					or not hearing.saveAndcontinue.length and not hearing.saveAndMenu.length
+				%}
+					<div class="column-full">
+		        <h2 id="yourCondition" class="heading-medium heading-highlight"><span class="h2">You and your condition</span></h2>
+		        <ul>
+
+							{% if not conditionDetails.saveAndcontinue.length and not conditionDetails.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your conditions and disabilities</div>
+									{{ elements.EnterChangeAnswers(conditionDetails,"conditionDetails",page) }}
+								</li>
+							{% endif %}
+
+							{% if not medications.saveAndcontinue.length and not medications.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your medication</div>
+									{{ elements.EnterChangeAnswers(medications,"medications",page) }}
+								</li>
+							{% endif %}
+
+							{% if not manageMedications.saveAndcontinue.length and not manageMedications.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Managing your medication</div>
+									{{ elements.EnterChangeAnswers(manageMedications,"manageMedications",page) }}
+								</li>
+							{% endif %}
+
+							{% if not treatments.saveAndcontinue.length and not treatments.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your treatments and therapy</div>
+									{{ elements.EnterChangeAnswers(treatments,"treatments",page) }}
+								</li>
+							{% endif %}
+
+							{% if not sideEffects.saveAndcontinue.length and not sideEffects.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Side effects</div>
+									{{ elements.EnterChangeAnswers(sideEffects,"sideEffects",page) }}
+								</li>
+							{% endif %}
+
+							{% if not conditionAffects.saveAndcontinue.length and not conditionAffects.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Changes in your condition</div>
+									{{ elements.EnterChangeAnswers(conditionAffects,"conditionAffects",page) }}
+								</li>
+							{% endif %}
+
+							{% if not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Monitoring your condition</div>
+									{{ elements.EnterChangeAnswers(monitoringCondition,"monitoringCondition",page) }}
+								</li>
+							{% endif %}
+
+							{% if not healthcareprofessional.saveAndcontinue.length and not healthcareprofessional.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Professionals who know about your condition</div>
+									{{ elements.EnterChangeAnswers(healthcareprofessional,"healthcareprofessional",page) }}
+								</li>
+							{% endif %}
+
+							{% if not submitEvidence.saveAndcontinue.length and not submitEvidence.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Information you can send</div>
+									{{ elements.EnterChangeAnswers(submitEvidence,"submitEvidence",page) }}
+								</li>
+							{% endif %}
+
+							{% if not specialAids.saveAndcontinue.length and not specialAids.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Any aids and adaptations you have</div>
+									{{ elements.EnterChangeAnswers(specialAids,"specialAids",page) }}
+								</li>
+							{% endif %}
+
+							{% if not sight.saveAndcontinue.length and not sight.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your sight</div>
+									{{ elements.EnterChangeAnswers(sight,"sight",page) }}
+								</li>
+							{% endif %}
+
+							{% if not speech.saveAndcontinue.length and not speech.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your speech</div>
+									{{ elements.EnterChangeAnswers(speech,"speech",page) }}
+								</li>
+							{% endif %}
+
+							{% if not hearing.saveAndcontinue.length and not hearing.saveAndMenu.length %}
+								<li>
+									<div class="column-two-thirds">Your hearing</div>
+									{{ elements.EnterChangeAnswers(hearing,"hearing",page) }}
+								</li>
+							{% endif %}
+
+		        </ul>
+					</div>
+				{% endif %}
+
+				{% if
+					not gettingUp.saveAndcontinue.length and not gettingUp.saveAndMenu.length
+					or not toilet.saveAndcontinue.length and not toilet.saveAndMenu.length
+					or not washing.saveAndcontinue.length and not washing.saveAndMenu.length
+					or not gettingDressed.saveAndcontinue.length and not gettingDressed.saveAndMenu.length
+					or not hotMeal.saveAndcontinue.length and not hotMeal.saveAndMenu.length
+					or not eatingAndDrinking.saveAndcontinue.length and not eatingAndDrinking.saveAndMenu.length
+				%}
+					<div class="column-full">
+		        <h2 id="yourHome" class="heading-medium heading-highlight"><span class="h2">You and your home</span></h2>
+		          <ul>
+
+								{% if not gettingUp.saveAndcontinue.length and not gettingUp.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Getting up and moving around</div>
+										{{ elements.EnterChangeAnswers(gettingUp,"gettingUp",page) }}
+									</li>
+								{% endif %}
+
+								{% if not toilet.saveAndcontinue.length and not toilet.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Using the toilet</div>
+										{{ elements.EnterChangeAnswers(toilet,"toilet",page) }}
+									</li>
+								{% endif %}
+
+								{% if not washing.saveAndcontinue.length and not washing.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Washing yourself</div>
+										{{ elements.EnterChangeAnswers(washing,"washing",page) }}
+									</li>
+								{% endif %}
+
+								{% if not gettingDressed.saveAndcontinue.length and not gettingDressed.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Getting dressed </div>
+										{{ elements.EnterChangeAnswers(gettingDressed,"gettingDressed",page) }}
+									</li>
+								{% endif %}
+
+								{% if not hotMeal.saveAndcontinue.length and not hotMeal.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Making a hot meal from fresh ingredients</div>
+										{{ elements.EnterChangeAnswers(hotMeal,"hotMeal",page) }}
+									</li>
+								{% endif %}
+
+								{% if not eatingAndDrinking.saveAndcontinue.length and not eatingAndDrinking.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Eating and drinking</div>
+										{{ elements.EnterChangeAnswers(eatingAndDrinking,"eatingAndDrinking",page) }}
+									</li>
+								{% endif %}
+
+		          </ul>
+					</div>
+				{% endif %}
+
+				{%if
+					not gettingOut.saveAndcontinue.length and not gettingOut.saveAndMenu.length
+					or not mixing.saveAndcontinue.length and not mixing.saveAndMenu.length
+				%}
+					<div class="column-full">
+		        <h2 id="gettingOut" class="heading-medium heading-highlight"><span class="h2">Getting out and about</span></h2>
+		          <ul>
+
+								{% if not gettingOut.saveAndcontinue.length and not gettingOut.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Getting out and about</div>
+										{{ elements.EnterChangeAnswers(gettingOut,"gettingOut",page) }}
+									</li>
+								{% endif %}
+
+								{% if not mixing.saveAndcontinue.length and not mixing.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Mixing with people</div>
+										{{ elements.EnterChangeAnswers(mixing,"mixing",page) }}
+									</li>
+								{% endif %}
+
+		          </ul>
+					</div>
+				{% endif %}
+
+				{% if
+					not localJourney.saveAndcontinue.length and not localJourney.saveAndMenu.length
+					or not somewhereNeverBeenBefore.saveAndcontinue.length and not somewhereNeverBeenBefore.saveAndMenu.length
+					or not understanding.saveAndcontinue.length and not understanding.saveAndMenu.length
+					or not money.saveAndcontinue.length and not money.saveAndMenu.length
+				%}
+					<div class="column-full">
+						<h2 id="makingSense" class="heading-medium heading-highlight"><span class="h2">Making sense of things</span></h2>
+		          <ul>
+
+								{% if not localJourney.saveAndcontinue.length and not localJourney.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Planning a local journey</div>
+										{{ elements.EnterChangeAnswers(localJourney,"localJourney",page) }}
+									</li>
+								{% endif %}
+
+								{% if not somewhereNeverBeenBefore.saveAndcontinue.length and not somewhereNeverBeenBefore.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Following a route</div>
+										{{ elements.EnterChangeAnswers(somewhereNeverBeenBefore,"somewhereNeverBeenBefore",page) }}
+									</li>
+								{% endif %}
+
+								{% if not understanding.saveAndcontinue.length and not understanding.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Understanding written information</div>
+										{{ elements.EnterChangeAnswers(understanding,"understanding",page) }}
+									</li>
+								{% endif %}
+
+								{% if not money.saveAndcontinue.length and not money.saveAndMenu.length %}
+									<li>
+										<div class="column-two-thirds">Dealing with money</div>
+										{{ elements.EnterChangeAnswers(money,"money",page) }}
+									</li>
+								{% endif %}
+
+		          </ul>
+					</div>
+				{% endif %}
+
+				{% if not additionalInfo.saveAndcontinue.length and not additionalInfo.saveAndMenu.length %}
+					<div class="column-full">
+						<h2 id="additionalInfo" class="heading-medium heading-highlight"><span class="h2">&nbsp; </span></h2>
+		          <ul>
+		            <li>
+									<div class="column-two-thirds">Additional Information</div>
+									{{ elements.EnterChangeAnswers(additionalInfo,"additionalInfo",page) }}
+								</li>
+							</ul>
+					</div>
+				{% endif %}
+
+					<div class="column-two-thirds">
+						<div id="submit-group" class="form-group">
+					    <input type="submit" class="button" value="Continue" name="saveAndMenu">
+					    <a href="/pip24/money" class="link-back">Back</a>
+						</div>
+					</div>
+
+			</div>
+
+
+      </form>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

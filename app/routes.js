@@ -30,5 +30,6 @@ module.exports = {
   require('./routes-21')(app);
   require('./routes-22')(app);
   require('./routes-23')(app);
+  require('./routes-24')(app);
   }
 };

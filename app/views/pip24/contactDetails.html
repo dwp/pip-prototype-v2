@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.contactDetails %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/contactDetails{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					<fieldset class="form-group">
+						<legend class="form-label">Your address</legend>
+						{{ elements.textInput('address1',answers.address1) }}
+						{{ elements.textInput('address2',answers.address2) }}
+						{{ elements.textInput('address3',answers.address3) }}
+
+						{{ elements.genericInput('postcode',question.question2, answers.postcode,"","form-control-1-4") }}
+					</fieldset>
+
+					<fieldset class="form-group">
+						<label class="block-label" for="radio-1" data-target="correspondenceAddress">
+			        <input id="radio-1" type="checkbox" name="radioCorrespondence" value="Yes" {% if answers.radioCorrespondence == 'Yes' %} checked=checked {% endif %}>
+							You need letters to be posted to a different address
+			      </label>
+						<div class="panel-indent {% if answers.radioCorrespondence != 'Yes' %} js-hidden {% endif %}" id="correspondenceAddress">
+							<legend class="form-label">Send letters to:</legend>
+							{{ elements.textInput('correspondenceAddress1',answers.correspondenceAddress1) }}
+							{{ elements.textInput('correspondenceAddress2',answers.correspondenceAddress2) }}
+							{{ elements.textInput('correspondenceAddress3',answers.correspondenceAddress3) }}
+
+							{{ elements.genericInput('correspondencePostcode',question.question2, answers.correspondencePostcode,"","form-control-1-4") }}
+						</div>
+					</fieldset>
+
+
+
+					{{ elements.genericInput('altPhone',question.question5, answers.altPhone) }}
+
+					{% set seq  = [
+						{"id":"smsContact","value":"Yes","showPanel":"smsContactPanel"},
+						{"id":"smsContact", "value":"No"}
+					] %}
+					{{ elements.radioSelect('smsContact',question.question7,"",answers.smsContact,seq,"inline") }}
+
+
+					{{ elements.genericInputPhone('phone',question.question4, answers.phone,answers.textPhone,question.q4HintText) }}
+
+
+					{{ elements.submit(page,question,false,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.aboutYou %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					<h1 class="form-title heading-xlarge">What happens next</h1>
+
+					<p>First we’ll ask you a few basic questions about yourself.</p>
+					<p>Answer these questions and submit them. The date you submit the answers to the basic questions will be the date you’ll be paid from if you’re successful.</p>
+					<p>Then we’ll ask you in detail about the effects of your condition.</p>
+					<p>You have up to a month to answer all the questions. So take your time to answer as fully as possible.</p>
+					<p>Take a break if you need to - you can save and return as often as you like.</p>
+
+					<a href="/pip24/appointee" class="button">Continue</a>
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

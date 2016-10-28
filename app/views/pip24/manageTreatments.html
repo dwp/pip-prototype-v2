@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.manageTreatments %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/manageTreatments{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+					{{ elements.answerLater() }}
+
+					{% set seq  = [
+						{"id":"monitored","value":"Yes","showPanel":"monitoredDetails"},
+						{"id":"monitored", "value":"No"}
+					] %}
+					{{ elements.radioSelect('monitored',question.question,question.qHintText,answers.monitored,seq,"inline") }}
+
+          <div class="form-group panel-indent {% if answers.monitored != 'Yes' %}js-hidden{% endif %}" id="monitoredDetails">
+						{{ elements.genericInput('howManyHours',question.question2,answers.howManyHours,"","form-control-1-8") }}
+						{{ elements.textarea("whyNeedMonitoring",question.question3,answers.whyNeedMonitoring) }}
+						{{ elements.textarea("howHelpToMonitor",question.question4,answers.howHelpToMonitor) }}
+          </div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

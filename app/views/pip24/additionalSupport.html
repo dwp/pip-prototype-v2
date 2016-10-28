@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.additionalSupport %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/additionalSupport{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+            {{ elements.header(page,question) }}
+
+            <div class="form-group" id="medicalInfoDetails">
+							<p>We know some people have difficulty filling in forms because of their condition.</p>
+							<p>Do you have any of these conditions?</p>
+							<ul class="list-bullet">
+								<li>Severe depression, which you've been in hospital for</li>
+								<li>Psychosis</li>
+								<li>Schizophrenia</li>
+								<li>Severe ADHD (attention deficit hyperactivity disorder)</li>
+								<li>Down's syndrome</li>
+								<li>Fragile X syndrome</li>
+								<li>Severe autism</li>
+								<li>Severe developmental delay</li>
+								<li>Any form of dementia</li>
+							</ul>
+							<br />
+							{% set seq  = [
+								{"id":"helper","value":"Yes","showPanel":"helperDetails"},
+								{"id":"helper", "value":"No"}
+							] %}
+							{{ elements.radioSelect('helper',"","",answers.helper,seq,"inline") }}
+  					</div>
+
+						{{ elements.submit(page,question,false,false,false) }}
+
+          </div>
+
+
+
+          </form>
+
+        {{ elements.helpline(page) }}
+    </div>
+
+  </main>
+
+  {% endfor %}
+  {% endfor %}
+  {% endblock %}

@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.continueYourApplication %}
+
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+		<form action="/pip24/continueYourApplication{% if edit %}?edit=true{% endif %}" method="post" class="form">
+        {{ elements.header(page,question) }}
+
+<div class="form-group">
+  {{ question.question2  |  safe}}
+</div>
+
+
+{% set seq =[
+  { "id":"whereLeftIt", "value":"Where you left it", "label":"Where you left it" },
+  { "id":"the Start", "value":"The start", "label":"The start"}
+  ] %}
+
+  {{ elements.radioSelect('continue',question.question,"",answers.continue,seq,"inline") }}
+
+						{{ elements.submit(page,question,false,false,false) }}
+
+		</form>
+
+		</div>
+
+  <div>
+  	{{ elements.helpline(page) }}
+  	</div>
+  </div>
+
+  </main>
+
+  {% endfor %}
+  {% endfor %}
+  {% endblock %}

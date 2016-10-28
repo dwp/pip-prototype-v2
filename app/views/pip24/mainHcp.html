@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.mainHcp %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/mainHcp{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+
+						<p>{{question.question}}</p>
+						<ul>
+								<li id="condition-row-{{i}}" class="condition-row {% if not loop.first and not answers['name' + i] %} js-hidden {% endif %}">
+
+									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
+
+										{{ elements.genericInputList("name",question.nameHd, answers.name) }}
+
+										{{ elements.genericInputList("profession",question.professionHd, answers.profession) }}
+
+										{{ elements.genericInputList("phone",question.phoneHd, answers.phone) }}
+								</li>
+
+						</ul>
+        	{{ elements.submit(page,question,false,false,false) }}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

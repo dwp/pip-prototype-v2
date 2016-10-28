@@ -1,0 +1,286 @@
+<!-- aboutYou -->
+
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.aboutYouHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.aboutYouName}}</span>
+        <span class="answer">{{aboutYou.firstName}} {{aboutYou.middleName}} {{aboutYou.surname}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouDOB}}</span>
+        <span class="answer">{{aboutYou.dobDay}}/{{aboutYou.dobMonth}}/{{aboutYou.dobYear}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.aboutYouNINO}}</span>
+        <span class="answer">{{aboutYou.nino}}</span>
+      </li>
+    </ul>
+    <a href="/pip24/aboutYou?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+<!-- appointee -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.appointeeHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.applyingSelfHd}}</span>
+        <span class ="answer">{{appointee.appointee}}</span>
+      </li>
+      {% if appointee.appointee == 'Yes, with help from a friend, relative or third party such as a charity' %}
+      <li>
+        <span class="question">{{question.appointeeNameHd}}</span>
+        <span class="answer">{{appointee.name}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.appointeeWhoHd}}</span>
+        <span class="answer">{{appointee.relationship}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.appointeeWhyHd}}</span>
+        <span class="answer">{{appointee.why}}
+        </li>
+        {% endif %}
+      </ul>
+      <a href="/pip24/appointee?edit=true">{{question.changeLinkTxt}}</a>
+    </div>
+  </div>
+
+  <!-- additionalSupport -->
+  {% if appointee.appointee == 'Yes, I am applying for myself' %}
+  <div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.addSupportHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.addCondHd}}</span>
+        <span class="answer">
+          {% if additionalSupport.additionalOptions == 'psychosis' %}
+          {{additionalSupport.additionalOptions}}
+          {% elif additionalSupport.additionalOptions|length < 10 %}
+          <ul class="list-bullet">
+            {% for additionalOption in additionalSupport.additionalOptions %}
+            <li>{{additionalOption}}</li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          {{additionalSupport.additionalOptions}}
+          {% endif %}
+        </span>
+        </li>
+      </ul>
+      <a href="/pip24/additionalSupport?edit=true">{{question.changeLinkTxt}}</a>
+    </div>
+  </div>
+    {% endif %}
+
+
+
+<!-- contact details -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.detaialsHD}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.detailsAddress}}</span>
+        <span class="answer">
+          {% if contactDetails.address1 %} {{contactDetails.address1}}<br/> {% endif %}
+          {% if contactDetails.address2 %} {{contactDetails.address2}}<br/> {% endif %}
+          {% if contactDetails.address3 %} {{contactDetails.address3}}<br/> {% endif %}
+          {% if contactDetails.postcode %} {{contactDetails.postcode}} {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsCAddress}}</span>
+        <span class="answer">
+          {% if contactDetails.correspondenceAddress1 %} {{contactDetails.correspondenceAddress1}}<br/> {% endif %}
+          {% if contactDetails.correspondenceAddress2 %} {{contactDetails.correspondenceAddress2}}<br/> {% endif %}
+          {% if contactDetails.correspondenceAddress3 %} {{contactDetails.correspondenceAddress3}}<br/> {% endif %}
+          {% if contactDetails.correspondencePostcode %} {{contactDetails.correspondencePostcode}} {% endif %}
+        </span>
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsPhone}}</span>
+        <span class="answer">{{contactDetails.altPhone}}
+          {% if contactDetails.smsContact == 'Yes' %}
+          <br />
+          You want to get text messages about your claim
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.detailsPhoneAlt}}</span>
+        <span class="answer">{{contactDetails.phone}}</span>
+      </li>
+
+      <!-- email currently removed whilst testing create account
+
+      <li>
+        <span class="question">{{question.detailsEmail}}</span>
+        <span class="answer">{{contactDetails.email}}</span>
+      </li>
+
+       remove note to display email -->
+
+    </ul>
+    <a href="/pip24/contactDetails?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- contact preferences -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.prefHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.prefComms}}</span>
+        <span class="answer">{{contactPref.optionsName}}
+        {% if contactPref.optionsName == 'Other' %}
+          - {{contactPref.textreadId2}}
+        {% endif %}
+        </span>
+      </li>
+    </ul>
+    <a href="/pip24/contactPref?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- currentWhereabouts -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.whereHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.whereCurrently}}</span>
+        <span class="answer">{{currentWhereabouts.optionsLiving}}</span>
+      </li>
+      {% if currentWhereabouts.optionsLiving != 'You are not currently staying in any of these' %}
+      <li>
+        <span class="question">{{question.whereDateIn}}</span>
+        <span class="answer">{{currentWhereabouts.hospitalWhen}}</span>
+        <span class="answer">{{currentWhereabouts.careHomeWhen}}</span>
+        <span class="answer">{{currentWhereabouts.shelteredWhen}}</span>
+        <span class="answer">{{currentWhereabouts.collegeWhen}}</span>
+        <span class="answer">{{currentWhereabouts.hostelWhen}}</span>
+        <span class="answer">{{currentWhereabouts.hospiceWhen}}</span>
+      </li>
+      <li>
+        <span class="question">{{question.whereAddress}}</span>
+        <span class="answer">
+          {% if currentWhereabouts.hospitalWhere1 %} {{currentWhereabouts.hospitalWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere2 %} {{currentWhereabouts.hospitalWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere3 %} {{currentWhereabouts.hospitalWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hospitalWhere4 %} {{currentWhereabouts.hospitalWhere4}} {% endif %}
+
+          {% if currentWhereabouts.careHomeWhere1 %} {{currentWhereabouts.careHomeWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere2 %} {{currentWhereabouts.careHomeWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere3 %} {{currentWhereabouts.careHomeWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.careHomeWhere4 %} {{currentWhereabouts.careHomeWhere4}} {% endif %}
+
+          {% if currentWhereabouts.shelteredWhere1 %} {{currentWhereabouts.shelteredWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere2 %} {{currentWhereabouts.shelteredWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere3 %} {{currentWhereabouts.shelteredWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.shelteredWhere4 %} {{currentWhereabouts.shelteredWhere4}} {% endif %}
+
+          {% if currentWhereabouts.collegeWhere1 %} {{currentWhereabouts.collegeWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere2 %} {{currentWhereabouts.collegeWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere3 %} {{currentWhereabouts.collegeWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.collegeWhere4 %} {{currentWhereabouts.collegeWhere4}} {% endif %}
+
+          {% if currentWhereabouts.hostelWhere1 %} {{currentWhereabouts.hostelWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere2 %} {{currentWhereabouts.hostelWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere3 %} {{currentWhereabouts.hostelWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hostelWhere4 %} {{currentWhereabouts.hostelWhere4}} {% endif %}
+
+          {% if currentWhereabouts.hospiceWhere1 %} {{currentWhereabouts.hospiceWhere1}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere2 %} {{currentWhereabouts.hospiceWhere2}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere3 %} {{currentWhereabouts.hospiceWhere3}}<br/> {% endif %}
+          {% if currentWhereabouts.hospiceWhere4 %} {{currentWhereabouts.hospiceWhere4}} {% endif %}
+        </span>
+      </li>
+      {% endif %}
+    </ul>
+    <a href="/pip24/currentWhereabouts?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- nationality -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.nationalityHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.nationalityCurrent}}</span>
+        <span class="answer">
+          {% if nationality.nationality == 'Other' %}
+            {{nationality.otherNationality}}
+          {% else %}
+            {{nationality.nationality}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.nationalityLiving}}</span>
+        <span class="answer">{{nationality.countryLiving}}
+          {% if nationality.countryLiving == 'No' %}
+            - {{nationality.countryLivingOther}}
+          {% endif %}
+        </span>
+      </li>
+      <li>
+        <span class="question">{{question.nationalityAbroad}}</span>
+        <span class="answer">{{nationality.livingAbroad}}</span>
+      </li>
+    </ul>
+    <a href="/pip24/nationality?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+
+<!-- payments from abroad -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.paymentsHd}}</h2>
+    <ul class="column-two-thirds">
+      <li>
+        <span class="question">{{question.paymentsAbroad}}</span>
+        <span class="answer">{{paymentsFromAbroad.workedAbroad}}</span>
+      </li>
+      {% if paymentsFromAbroad.workedAbroad == 'Yes' %}
+        <li>
+          <span class="question">{{question.paymentsBenefits}}</span>
+          <span class="answer">{{paymentsFromAbroad.benefitsAbroadPayment}}</span>
+        </li>
+        <li>
+          <span class="question">{{question.paymentsNi}}</span>
+          <span class="answer">{{paymentsFromAbroad.payInsuranceAbroad}}</span>
+        </li>
+      {% endif %}
+    </ul>
+    <a href="/pip24/paymentsFromAbroad?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>
+<!-- hcp -->
+<div class="column-full">
+  <div class="answers-cont">
+    <h2 class="heading-medium">{{question.mainHcpHD}}</h2>
+    <ul class="column-two-thirds">
+
+          <li>
+            <span class="question">{{question.hcpName}}</span>
+            <span class="answer">{{mainHcp.name}}</span>
+          </li>
+          <li>
+            <span class="question">{{question.hcpAddress}}</span>
+            <span class="answer">{{mainHcp.profession}}</span>
+          </li>
+          <li>
+            <span class="question">{{question.hcpLastSeen}}</span>
+            <span class="answer">{{mainHcp.phone}}</span>
+          </li>
+        </ul>
+    <a href="/pip24/mainHcp?edit=true">{{question.changeLinkTxt}}</a>
+  </div>
+</div>

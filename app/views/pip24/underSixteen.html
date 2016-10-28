@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.underSixteen %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/underSixteen{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+
+					{% for stillApply in page.stillApply %}
+						{% set seq  = [
+							{"id":"helper","value":"Yes","showPanel":"submit-button"},
+							{"id":"helper", "value":"No","showPanel":"go-to-govuk"}
+						] %}
+						{{ elements.radioSelect('helper',stillApply.applyUnderAge  |  safe,stillApply.applyHintOtherQs,answers.helper,seq,"inline") }}
+				 {% endfor %}
+
+				 <div id="submit-button" class="js-hidden">
+					 {{ elements.submit(page,question,true,false,false) }}
+				 </div>
+
+				 <div id="go-to-govuk" class="js-hidden">
+						<a href="https://www.gov.uk/disability-living-allowance-children/how-to-claim" rel="external">Return to GOV.UK</a>
+				 </div>
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

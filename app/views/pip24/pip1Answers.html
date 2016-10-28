@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.checkYourAnswers %}
+<main id="content" role="main" class="pip24 pip18">
+
+	<div class="grid-row">
+			<form action="/pip24/pip1Answers{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+				<div class="column-two-thirds">
+					{{ elements.header(page,question) }}
+				</div>
+
+				{% include "./checkYourAnswers/aboutYou.html" %}
+
+
+				<div class="column-two-thirds">
+					{{ elements.submit(page,question,true,false,false) }}
+				</div>
+
+      </form>
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% endblock %}

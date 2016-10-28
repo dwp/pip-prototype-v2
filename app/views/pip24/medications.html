@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for question in page.medications %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<div class="column-two-thirds">
+
+				<form action="/pip24/medications{% if edit %}?edit=true{% endif %}" method="post" class="form">
+					{{ elements.header(page,question) }}
+					{{ elements.answerLater() }}
+
+					{% set seq  = [
+						{"id":"takingMedication","value":"Yes","showPanel":"medications"},
+						{"id":"takingMedication", "value":"No"}
+					] %}
+					{{ elements.radioSelect('takingMedication',question.question,"",answers.takingMedication,seq,"inline") }}
+
+          <div class="panel-indent {% if answers.takingMedication != 'Yes' %}js-hidden{% endif %}" id="medications">
+						<ul class="list-user-input">
+							{% for i in range(1, 11) -%}
+
+								<li id="condition-row-{{i}}" class="condition-row  {% if not loop.first and not answers['medication' + i] %} js-hidden {% endif %}">
+									<h2 class="heading-small">{{ question.rowHd }} {{i}}</h2>
+
+										{% if not loop.first %}<a href="#" class="remove">{{ question.removeLink }}</a>{% endif %}
+
+										{{ elements.genericInputList("medication" + i,question.medicationHd, answers["medication" + i],"medication-1") }}
+										{{ elements.genericInputList("dosage" + i,question.dosageHd, answers["dosage" + i],"dosage-1",question.dosageHintText) }}
+										{{ elements.genericInputList("often" + i,question.oftenHd, answers["often" + i],"often-1",question.oftenHintText) }}
+
+								</li>
+
+							{% endfor %}
+							<li><a href="add-another" class="add-another secondary-button" data-target="condition-row">Add another</a></li>
+						</ul>
+          </div>
+
+					{% if answers.skipQuestion.length or edit %}
+						{{ elements.returnToMenu(page,question) }}
+					{% else %}
+						{{ elements.submit(page,question,true,true) }}
+					{% endif%}
+
+        </form>
+			</div>
+			{{ elements.helpline(page) }}
+	</div>
+
+</main>
+
+{% endfor %}
+{% endfor %}
+{% endblock %}

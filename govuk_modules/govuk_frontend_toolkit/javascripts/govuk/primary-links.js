@@ -1,8 +1,6 @@
-(function(global) {
+(function() {
   "use strict";
-
-  var $ = global.jQuery;
-  var GOVUK = global.GOVUK || {};
+  window.GOVUK = window.GOVUK || {};
 
   // Only show the first {n} items in a list, documentation is in the README.md
   var PrimaryList = function(el, selector){
@@ -41,7 +39,6 @@
       $(window).trigger('govuk.pageSizeChanged');
     }
   };
-
   GOVUK.PrimaryList = PrimaryList;
 
   GOVUK.primaryLinks = {
@@ -51,6 +48,4 @@
       });
     }
   };
-
-  global.GOVUK = GOVUK;
-})(window);
+}());
