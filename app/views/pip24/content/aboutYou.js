@@ -59,15 +59,15 @@ var data = [ {
   "postcodeCheck"        : [
     {
       "heading"          : "Can you apply online?",
-      "p1"               : "Department of Work and Pensions is trialling a limited online service to apply for Personal Independence Payment (PIP).",
-      "p2"               : "<p>We'll need to check a few things before asking details about how your condition affects you.</p><p>You can only apply online if you:</p>",
+      "p1"               : "",
+      "p2"               : "At the moment you can only apply online if you:",
       "list"             : [
         "live in certain areas",
         "are not an appointee acting on behalf of the person claiming benefits",
         "have not claimed PIP or Disability Living Allowance in the last 12 months",
         "have an email address",
-
       ],
+      "question1"        : "Check if you're in the right postcode below",
       "postCode"         : "<strong>Enter your postcode</strong>",
       "postCodeHint"     : "",
       "submit"           : "Check your postcode",
