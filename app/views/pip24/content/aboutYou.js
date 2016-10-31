@@ -527,13 +527,8 @@ var data = [ {
       "page"             : "15",
       "heading"          : "Is there a professional who can tell us about your condition?",
       "introText"        : "",
-<<<<<<< HEAD
-      "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. ",
-      "question2"        : "",
-=======
       "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. You'll be able to add more professionals later.",
-      "question2"        : "Do you agree that we can ask professionals to share information about your condition with us?",
->>>>>>> 753bd11ffa87786dbfe375e098a355d75ea4ebee
+      "question2"        : "",
       "rowHd"            : "",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
