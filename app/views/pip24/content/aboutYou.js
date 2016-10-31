@@ -76,8 +76,8 @@ var data = [ {
   ],
   "postCodeSignPost"     : [
     {
-      "heading"          : "People living in your area can’t yet apply online",
-      "introText"        : "<p>To make a claim call <strong>0800 917 2222</strong> or textphone: <strong>0800 917 7777</strong>.</p>You're still legally entitled to carry on with this online application. But it won't be valid and you'll have to call the number above to enter your information on a paper form.</p>",
+      "heading"          : "You need to start your claim on the phone",
+      "introText"        : "<p>To make a claim call <strong>0800 917 2222</strong> or textphone: <strong>0800 917 7777</strong>.</p><p>People living in your area can't yet apply online. </p><p>You're still legally entitled to carry on with this online application. But it won't be valid and you'll have to call the number above to enter your information on a paper form.</p>",
       "submit"           : "Continue"
     }
   ],
@@ -123,9 +123,9 @@ var data = [ {
   ],
   "srti"                 : [
     {
-      "heading"          : "Have you been diagnosed with less than 6 months to live?",
+      "heading"          : "Terminal illness",
       "question"         : "Do you have a DS1500?",
-      "question2"        : "People with less than 6 months to live can have their claim dealt with faster under special rules for the terminally ill.",
+      "question2"        : "People with less than 6 months to live can have their claim dealt with faster under special rules for the terminally ill. Do you have less than 6 months to live?",
       "hintTextsrti"     : "A DS1500 is a form completed by a medical professional which allows someone who is terminally ill to claim certain benefits.",
       "submit"           : "Continue",
       "backLink"         : "/pip24/postcodeCheck"
@@ -133,8 +133,8 @@ var data = [ {
   ],
   "srtiSignPost"         : [
     {
-      "heading"          : "Terminal illness",
-      "introText"        : "You may be able to have your claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong>.",
+      "heading"          : "Have your claim dealt with faster on the phone",
+      "introText"        : "People with a terminal illness can have their claim dealt with faster. Call <strong>0800 917 2222</strong> or textphone <strong>0800 917 7777</strong>.",
       "submit"           : "Continue"
 
     }
@@ -156,8 +156,8 @@ var data = [ {
   ],
   "filterSignPost"       : [
     {
-      "heading"          : "You need to claim on the phone",
-      "introText"        : "Based on your answers, you can’t claim Personal Independence Payment (PIP) online.",
+      "heading"          : "You need to start your claim on the phone",
+      "introText"        : "",
       "submit"           : "Continue"
     },
   ],
@@ -527,8 +527,13 @@ var data = [ {
       "page"             : "15",
       "heading"          : "Is there a professional who can tell us about your condition?",
       "introText"        : "",
+<<<<<<< HEAD
       "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. ",
       "question2"        : "",
+=======
+      "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. You'll be able to add more professionals later.",
+      "question2"        : "Do you agree that we can ask professionals to share information about your condition with us?",
+>>>>>>> 753bd11ffa87786dbfe375e098a355d75ea4ebee
       "rowHd"            : "",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",
