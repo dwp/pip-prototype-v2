@@ -528,6 +528,7 @@ var data = [ {
       "heading"          : "Is there a professional who can tell us about your condition?",
       "introText"        : "",
       "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. ",
+      "question2"        : "Do you agree that we can ask professionals to share information about your condition with us?",
       "rowHd"            : "",
       "nameHd"           : "Their name",
       "professionHd"     : "Their profession",

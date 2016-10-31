@@ -17,6 +17,14 @@
 				<form action="/pip24/mainHcp{% if edit %}?edit=true{% endif %}" method="post" class="form">
 					{{ elements.header(page,question) }}
 
+					{% set seq = [
+						{"id":"mainConsentYes", "label":"Yes", "value":"Yes", "showPanel":"mainHcpDets"},
+						{"id":"mainConsentNo", "label":"No", "value":"No"}
+						] %}
+
+						{{ elements.radioSelect ('mainConsent',question.question2,"",answers.mainConsent,seq,"inline") }}
+
+						<div class="panel-indent {% if answers.mainConsent != 'Yes' %}js-hidden{% endif %}" id="mainHcpDets">
 
 						<p>{{question.question}}</p>
 						<ul>
@@ -32,6 +40,7 @@
 								</li>
 
 						</ul>
+					</div>
         	{{ elements.submit(page,question,false,false,false) }}
 
         </form>
