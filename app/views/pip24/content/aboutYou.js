@@ -177,8 +177,8 @@ var data = [ {
     {
       "heading"          : "Check your email",
       "question"         : "",
-      "question2"        : "Check your 'spam' folder if the email is not in your inbox.",
-      "question3"        : "If you have not got the email within one hour <a href='/pip24/login'>enter your email address again.</a>"
+      "question2"        : "Check your spam folder if the email is not in your inbox.",
+      "question3"        : "If you have not got the email within 1 hour <a href='/pip24/login'>enter your email address again.</a>"
     },
   ],
 
@@ -525,7 +525,7 @@ var data = [ {
   "mainHcp" : [
     {
       "page"             : "15",
-      "heading"          : "Is there a professional who can tell us about your condition?",
+      "heading"          : "Is there a professional who can tell us about how your condition affects you?",
       "introText"        : "",
       "question"         : "Give details of the person who sees you the most. This could be your nurse, carer, support worker or doctor. You'll be able to add more professionals later.",
       "question2"        : "",
