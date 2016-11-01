@@ -421,7 +421,7 @@ var data = [ {
   "conditionDetails" : [
     {
       "page"             : "8",
-      "heading"          : "What conditions and disabilities do you have?",
+      "heading"          : "What conditions or disabilities do you have?",
       "rowHd"            : "Condition",
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
