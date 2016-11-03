@@ -152,13 +152,6 @@
 								</li>
 							{% endif %}
 
-							{% if not conditionAffects.saveAndcontinue.length and not conditionAffects.saveAndMenu.length %}
-								<li>
-									<div class="column-two-thirds">Changes in your condition</div>
-									{{ elements.EnterChangeAnswers(conditionAffects,"conditionAffects",page) }}
-								</li>
-							{% endif %}
-
 							{% if not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length %}
 								<li>
 									<div class="column-two-thirds">Monitoring your condition</div>

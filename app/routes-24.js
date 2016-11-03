@@ -297,7 +297,7 @@ module.exports = function (app) {
        if (req.body.saveAndMenu) {
          res.redirect('/pip24/aboutYou?edit=true');
        } else {
-         res.redirect('/pip24/medications');
+         res.redirect('/pip24/unansweredQuestions');
        }
      }
      else if (req.body.saveAndMenu) {
@@ -999,7 +999,7 @@ module.exports = function (app) {
     else if (req.body.saveAndMenu) {
       res.redirect('/pip24/unansweredQuestions#yourCondition');
     } else {
-      res.redirect('/pip24/conditionAffects');
+      res.redirect('/pip24/monitoringCondition');
     }
   });
 

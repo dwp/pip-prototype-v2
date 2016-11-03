@@ -257,30 +257,6 @@ manageHow
   </div>
 </div>
 
-<!-- condition affects -->
-<div class="column-full">
-  <div class="answers-cont">
-    <h2 class="heading-medium">{{question.cAffectsHd}}</h2>
-    <ul class="column-two-thirds">
-      <li>
-        <span class="question">{{question.cAffectsVary}}</span>
-        <span class="answer">{{conditionAffects.conditionAffects}}</span>
-      </li>
-      {% if conditionAffects.conditionAffects == 'Yes' %}
-        <li>
-          <span class="question">{{question.cAffectsHowDo}}</span>
-          <span class="answer">{{conditionAffects.howConditionEffects}}</span>
-        </li>
-        <li>
-          <span class="question">{{question.cAffectsHowOften}}</span>
-          <span class="answer">{{conditionAffects.howOftenConditionAffects}}</span>
-        </li>
-      {% endif %}
-    </ul>
-    <a href="/pip24/conditionAffects?edit=true">{{question.changeLinkTxt}}</a>
-  </div>
-</div>
-
 <!-- monitoring Condition -->
 <div class="column-full">
   <div class="answers-cont">

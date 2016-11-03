@@ -68,6 +68,7 @@ var data = [ {
         "have an email address",
       ],
       "question1"        : "Check if you're in the right postcode below",
+      "question2"        : "Already got an online account?",
       "postCode"         : "<strong>Enter your postcode</strong>",
       "postCodeHint"     : "",
       "submit"           : "Check your postcode",
@@ -519,7 +520,7 @@ var data = [ {
       "question2"        : "How many hours does someone need to help monitor your condition?",
       "question3"        : "In your own words, describe why someone needs to monitor your condition on a typical day.",
       "question4"        : "How do they monitor your condition?",
-      "backLink"         : "/pip24/conditionAffects"
+      "backLink"         : "/pip24/sideEffects"
     },
   ],
   "mainHcp" : [
