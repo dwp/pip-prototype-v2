@@ -1,9 +1,5 @@
 module.exports = function (app) {
 
-  var Nationality = ['scottish','english','british','austrian','belgian','bulgarian','cypriot','czech','danish','estonian',
-'finnish','french','icelandic','italian','hungarian','latvian','german','greek','liechtenstenier','lithuanian','luxumbourger',
-'maltan','dutch','norwegian','polish','portuguese','romanian','slovakian','swiss','slovenian','spanish','swedish','welsh',''];
-
   var styleguide           = require('./views/pip24/content/styleguide'),
       aboutYou             = require('./views/pip24/content/aboutYou'),
       unansweredQuestions  = require('./views/pip24/content/unansweredQuestions'),
@@ -593,16 +589,21 @@ module.exports = function (app) {
   app.post('/pip24/nationality', function (req, res) {
     req.session['pip24-nationality'] = req.body;
 
-  for (var i = 0; i < Nationality.length; i++) {
+  var Nationality = ['scottish','english','british','austrian','belgian','bulgarian','cypriot','czech','danish','estonian',
+  'finnish','french','icelandic','italian','hungarian','latvian','german','greek','liechtenstenier','lithuanian','luxumbourger',
+  'maltan','dutch','norwegian','polish','portuguese','romanian','slovakian','swiss','slovenian','spanish','swedish','welsh',''];
+
+  for (var i = 0; i < Nationality.length; i++)
+
     if (Nationality[i] == req.body.otherNationality.toLowerCase()) {
       if (req.body.saveAndMenu){
         res.redirect('/pip24/currentWhereabouts?edit=true');
     } else {
       res.redirect('/pip24/currentWhereabouts');
     }
-  }}
+  }
 
-if(req.body.livingAbroad === 'Yes') {
+else if (req.body.livingAbroad === 'Yes') {
    if (req.body.saveAndMenu) {
      res.redirect('/pip24/livingAbroad?edit=true');
    } else {
@@ -610,7 +611,7 @@ if(req.body.livingAbroad === 'Yes') {
    }
  }
 
- else if (req.param('edit')) {
+ if (req.param('edit')) {
    res.redirect('/pip24/pip1Answers');
  }
  else if (req.body.saveAndMenu) {
@@ -618,7 +619,6 @@ if(req.body.livingAbroad === 'Yes') {
  } else {
    res.redirect('/pip24/leaveToRemain');
  }
-
 
   });
 
