@@ -600,17 +600,17 @@ module.exports = function (app) {
     } else {
       res.redirect('/pip24/currentWhereabouts');
     }
-}
+  }}
 
-else if(req.body.livingAbroad === 'Yes') {
+if(req.body.livingAbroad === 'Yes') {
    if (req.body.saveAndMenu) {
      res.redirect('/pip24/livingAbroad?edit=true');
    } else {
      res.redirect('/pip24/livingAbroad');
    }
  }
- }
- if (req.param('edit')) {
+
+ else if (req.param('edit')) {
    res.redirect('/pip24/pip1Answers');
  }
  else if (req.body.saveAndMenu) {
@@ -618,6 +618,7 @@ else if(req.body.livingAbroad === 'Yes') {
  } else {
    res.redirect('/pip24/leaveToRemain');
  }
+
 
   });
 
