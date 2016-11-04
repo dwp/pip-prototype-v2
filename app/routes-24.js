@@ -586,24 +586,24 @@ module.exports = function (app) {
     });
   });
 
-  app.post('/pip24/nationality', function (req, res) {
-    req.session['pip24-nationality'] = req.body;
-
   var Nationality = ['scottish','english','british','austrian','belgian','bulgarian','cypriot','czech','danish','estonian',
   'finnish','french','icelandic','italian','hungarian','latvian','german','greek','liechtenstenier','lithuanian','luxumbourger',
   'maltan','dutch','norwegian','polish','portuguese','romanian','slovakian','swiss','slovenian','spanish','swedish','welsh',''];
 
-  for (var i = 0; i < Nationality.length; i++)
+  app.post('/pip24/nationality', function (req, res) {
+    req.session['pip24-nationality'] = req.body;
 
-    if (Nationality[i] == req.body.otherNationality.toLowerCase()) {
+    for (var i = 0; i < Nationality.length; i++) {
+
+    if (Nationality[i] == req.body.otherNationality.toLowerCase())  {
       if (req.body.saveAndMenu){
         res.redirect('/pip24/currentWhereabouts?edit=true');
     } else {
       res.redirect('/pip24/currentWhereabouts');
     }
-  }
+} { continue; } }
 
-else if (req.body.livingAbroad === 'Yes') {
+if (req.body.livingAbroad === 'Yes') {
    if (req.body.saveAndMenu) {
      res.redirect('/pip24/livingAbroad?edit=true');
    } else {
