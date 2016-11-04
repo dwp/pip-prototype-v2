@@ -593,15 +593,15 @@ module.exports = function (app) {
   app.post('/pip24/nationality', function (req, res) {
     req.session['pip24-nationality'] = req.body;
 
-    for (var i = 0; i < Nationality.length; i++) {
+    for (var i = 0; i < Nationality.length; i++)
 
-    if (Nationality[i] == req.body.otherNationality.toLowerCase())  {
+    if (Nationality[i] == req.body.otherNationality.toLowerCase()) {
       if (req.body.saveAndMenu){
         res.redirect('/pip24/currentWhereabouts?edit=true');
     } else {
       res.redirect('/pip24/currentWhereabouts');
-    }
-} { continue; } }
+    } { break; }
+}
 
 if (req.body.livingAbroad === 'Yes') {
    if (req.body.saveAndMenu) {
