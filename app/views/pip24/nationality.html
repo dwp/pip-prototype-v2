@@ -17,6 +17,8 @@
 				<form action="/pip24/nationality{% if edit %}?edit=true{% endif %}" method="post" class="form form-nationality pip-typeahead">
 					{{ elements.header(page,question) }}
 
+					<p id="test"></p>
+
 					{% set seq  = [
 						{"id":"nationality","value":"British"},
 						{"id":"nationality", "value":"Other","showPanel":"otherNationalityCont"}

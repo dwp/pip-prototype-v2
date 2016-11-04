@@ -586,66 +586,38 @@ module.exports = function (app) {
     });
   });
 
+
   app.post('/pip24/nationality', function (req, res) {
     req.session['pip24-nationality'] = req.body;
 
-    if(req.body.otherNationality != 'Irish'
-      && req.body.otherNationality != ''
-      && req.body.otherNationality != 'Scottish'
-      && req.body.otherNationality != 'English'
-      && req.body.otherNationality != 'British'
-      && req.body.otherNationality != 'Austrian'
-      && req.body.otherNationality != 'Belgian'
-      && req.body.otherNationality != 'Bulgarian'
-      && req.body.otherNationality != 'Cypriot'
-      && req.body.otherNationality != 'Czech'
-      && req.body.otherNationality != 'Danish'
-      && req.body.otherNationality != 'Estonian'
-      && req.body.otherNationality != 'Finnish'
-      && req.body.otherNationality != 'French'
-      && req.body.otherNationality != 'Icelandic'
-      && req.body.otherNationality != 'Italian'
-      && req.body.otherNationality != 'Hungarian'
-      && req.body.otherNationality != 'Latvian'
-      && req.body.otherNationality != 'German'
-      && req.body.otherNationality != 'Greek'
-      && req.body.otherNationality != 'Liechtensteiner'
-      && req.body.otherNationality != 'Lithuanian'
-      && req.body.otherNationality != 'Luxembourger'
-      && req.body.otherNationality != 'Maltan'
-      && req.body.otherNationality != 'Dutch'
-      && req.body.otherNationality != 'Norwegian'
-      && req.body.otherNationality != 'Polish'
-      && req.body.otherNationality != 'Portuguese'
-      && req.body.otherNationality != 'Romanian'
-      && req.body.otherNationality != 'Slovakian'
-      && req.body.otherNationality != 'Swiss'
-      && req.body.otherNationality != 'Slovenian'
-      && req.body.otherNationality != 'Spanish'
-      && req.body.otherNationality != 'Swedish') {
-       if (req.body.saveAndMenu) {
-         res.redirect('/pip24/leaveToRemain?edit=true');
-       } else {
-         res.redirect('/pip24/leaveToRemain');
-       }
-     }
+    var Nationality = ['scottish','english','british','austrian','belgian','bulgarian','cypriot','czech','danish','estonian',
+  'finnish','french','icelandic','italian','hungarian','latvian','german','greek','liechtenstenier','lithuanian','luxumbourger',
+  'maltan','dutch','norwegian','polish','portuguese','romanian','slovakian','swiss','slovenian','spanish','swedish','welsh',''];
 
-     else if(req.body.livingAbroad === 'Yes') {
-        if (req.body.saveAndMenu) {
-          res.redirect('/pip24/livingAbroad?edit=true');
-        } else {
-          res.redirect('/pip24/livingAbroad');
-        }
-      }
-
-    else if (req.param('edit')) {
-      res.redirect('/pip24/pip1Answers');
-    }
-    else if (req.body.saveAndMenu) {
-      res.redirect('/pip24/unansweredQuestions#aboutYou');
+  for (var i = 0; i < Nationality.length; i++) {
+    if (Nationality[i] == req.body.otherNationality.toLowerCase()) {
+      if (req.body.saveAndMenu){
+        res.redirect('/pip24/currentWhereabouts?edit=true');
     } else {
       res.redirect('/pip24/currentWhereabouts');
     }
+}
+}
+if(req.body.livingAbroad === 'Yes') {
+   if (req.body.saveAndMenu) {
+     res.redirect('/pip24/livingAbroad?edit=true');
+   } else {
+     res.redirect('/pip24/livingAbroad');
+   }
+ }
+ else if (req.param('edit')) {
+   res.redirect('/pip24/pip1Answers');
+ }
+ else if (req.body.saveAndMenu) {
+   res.redirect('/pip24/unansweredQuestions#aboutYou');
+ } else {
+   res.redirect('/pip24/leaveToRemain');
+ }
   });
 
   /*******************
