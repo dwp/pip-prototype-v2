@@ -16,14 +16,6 @@
 
 				<form action="/pip24/nationality{% if edit %}?edit=true{% endif %}" method="post" class="form form-nationality pip-typeahead">
 
-					<div id="error-msg" class="error-summary js-hidden" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-						<h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">There's a problem</h1>
-						<p>You must:</p>
-						<ul class="error-summary-list">
-							<li><a href="#example-personal-details">tick all boxes and click the ‘I agree - continue with my application’ button to continue</a></li>
-						</ul>
-					</div>
-
 					{{ elements.header(page,question) }}
 
 					{% set seq  = [
