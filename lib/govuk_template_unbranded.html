@@ -53,11 +53,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="{{ asset_path }}images/opengraph-image.png?0.16.0">
 
+
     {% block head %}{% endblock %}
   </head>
 
   <body class="{% block body_classes %}{% endblock %}">
+
     <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
 
     {% block body_start %}{% endblock %}
 
@@ -91,8 +94,12 @@
 
     <div id="global-app-error" class="app-error hidden"></div>
 
-    <script src="{{ asset_path }}javascripts/govuk-template.js?0.16.0" type="text/javascript"></script>
+
+    <script src="{{ asset_path }}javascripts/govuk-template.js?0.18.3" type="text/javascript"></script>
 
     {% block body_end %}{% endblock %}
+
+    <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
+
   </body>
 </html>
