@@ -223,7 +223,7 @@ var data = [ {
   "additionalSupport" : [
     {
       "page"             : "x",
-      "heading"          : "Additional support",
+      "heading"          : "Extra help with your application",
       "question"         : "We know some people have difficulty filling in forms because of their condition. Do you have any of these conditions?",
       "youAreNotLabel"   : "None of the above",
       "backLink"         : "/pip24/appointee"
@@ -421,7 +421,7 @@ var data = [ {
   "conditionDetails" : [
     {
       "page"             : "8",
-      "heading"          : "What conditions and disabilities do you have?",
+      "heading"          : "What conditions or disabilities do you have?",
       "rowHd"            : "Condition",
       "conditionHd"      : "Name of condition",
       "startedHd"        : "When it started",
