@@ -1,3 +1,4 @@
+/* line 3, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/patterns/check-your-answers.scss */
 .check-your-answers td {
   font-family: "nta", Arial, sans-serif;
   font-weight: 400;
@@ -8,14 +9,18 @@
 }
 
 @media (min-width: 641px) {
+  /* line 3, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/patterns/check-your-answers.scss */
   .check-your-answers td {
     font-size: 19px;
     line-height: 1.3157894737;
   }
 }
 
+/* line 8, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/patterns/check-your-answers.scss */
 .check-your-answers .change-answer {
   text-align: right;
   font-weight: bold;
   padding-right: 0;
 }
+
+/*# sourceMappingURL=patterns.css.map */

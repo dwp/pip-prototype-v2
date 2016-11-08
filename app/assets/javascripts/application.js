@@ -338,7 +338,7 @@ $(document).ready(function() {
               var ni = nationality.indexOf($(this).val());
               if (ni === -1) {
               $('#error-msg').removeClass('js-hidden')
-              $(this).addClass('error-summary')
+              $(this).addClass('error-summary-temp')
               e.preventDefault();
               $("html, body").animate({
                   scrollTop: 0
@@ -349,6 +349,10 @@ $(document).ready(function() {
 
 
 });
+
+
+
+
 
 /* global $ */
 /* global GOVUK */

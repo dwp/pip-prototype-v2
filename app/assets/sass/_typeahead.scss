@@ -6,7 +6,13 @@
   box-sizing:border-box;
 }
 .tt-suggestion {
-  @extend .form-control;
+  @include box-sizing(border-box);
+  @include core-19;
+  width: 100%;
+
+  padding: 4px;
+  background-color: $white;
+  border: 2px solid $grey-1;
   background:none;
   border:none;
   width:100%;

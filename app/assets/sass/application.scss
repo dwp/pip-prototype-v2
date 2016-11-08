@@ -32,6 +32,7 @@ screenshots
 // Related links
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
 .related-links {
+}
 // Path to assets for use with the file-url function
 // in the govuk frontend toolkit's url-helpers partial
 $path: "/public/images/";
@@ -664,4 +665,11 @@ PIP23
 .answer-later-link {
   margin-bottom: 20px;
   width: 100%;
+}
+
+/*********
+PIP24
+***********/
+.error-summary-temp {
+  border: 4px solid $error-colour;
 }

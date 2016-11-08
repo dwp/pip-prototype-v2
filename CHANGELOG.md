@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 # 4.0.0
 
 Breaking changes:
@@ -75,7 +74,6 @@ New documentation to make it easier to install and run from scratch - tested wit
 - Add tmuxp config files to gitignore (#132)
 - Improve 'port in use' errors, find a new port (#130)
 
->>>>>>> fb45d4fe0a6b972ec5d2d027ea5828f59d853324
 # 2.0.0
 
 This release switches templating language from [Mustache](http://mustache.github.io/) to [Nunjucks](https://mozilla.github.io/nunjucks/).
