@@ -673,3 +673,89 @@ PIP24
 .error-summary-temp {
   border: 4px solid $error-colour;
 }
+
+.continue-application .heading-highlight {
+  background: rgb(40,161,151);
+  background: rgba(40,161,151,0.25);
+  margin: 0;
+  padding:10px 15px 8px 15px;
+}
+
+.continue-application h2 {
+  margin: 0;
+  float: left;
+  width: 30%;
+  padding-left: 15px;
+}
+
+.continue-application ul {
+  float: left;
+  margin-top: 3px;
+  width: 65%;
+}
+
+.continue-application ul li {
+  margin-bottom: 15px;
+}
+
+/** removed as unliked
+.continue-application ul li:nth-child(even) {
+  background-color: $highlight-colour;
+}
+**/
+
+.continue-application ul li:last-child {
+  margin:0;
+}
+
+.continue-application > div {
+  border-top: 2px solid $border-colour;
+  padding:15px 0;
+}
+
+.continue-application > div:first-child {
+  border-top :4px solid $border-colour;
+}
+
+.continue-application > div:last-child {
+  border:0;
+}
+
+.section-complete {
+  border-top: 3px solid $border-colour;
+}
+
+
+.section-complete h3 {
+  margin: 0;
+  width: 98%;
+  padding: 0;
+}
+
+.section-complete ul {
+  width: 112%;
+}
+
+.section-incomplete {
+  border-top: 3px solid $border-colour;
+}
+
+.section-incomplete h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.section-incomplete ul {
+  width: 112%;
+}
+
+.completed-this {
+  background: url(../images/cya-tick.png) no-repeat 3px 3px;
+  background-size: 22px 22px;
+  padding-left: 30px;
+}
+
+.awaiting-completion {
+  background: url(../images/empty-tick.png) no-repeat 3px 3px;
+  padding-left: 30px;
+}

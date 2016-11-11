@@ -522,3 +522,59 @@ open
 </div>
 {% endfor %}
 {% endmacro %}
+
+
+{% macro completedQuestion(question,pageKey,page) %}
+{% for pageKeyContent in page[pageKey]%}
+<li>
+  <div class="column-two-thirds">{{ question }}</div>
+<div>
+  <a href="{{pageKey}}" class="completed-this">Complete</a>
+</div>
+</li>
+{% endfor %}
+{% endmacro %}
+
+{% macro awaitingCompletion(question,pageKey,page) %}
+{% for pageKeyContent in page[pageKey]%}
+<li>
+  <div class="column-two-thirds">{{ question }}</div>
+<div>
+  <a href="{{pageKey}}" class="awaiting-completion">Enter your answer</a>
+</div>
+<div class="js-hidden">
+  <p>Enter your answer</p>
+</div>
+</li>
+{% endfor %}
+{% endmacro %}
+
+{% macro completedSection(question,pageKey,page) %}
+{% for pageKeyContent in page[pageKey]%}
+<div class="column-full section-complete">
+<ul>
+<li>
+  <div class="column-two-thirds"><h3 class="heading-medium">{{ question }}</h3></div>
+<div>
+  <a href="{{pageKey}}" class="completed-this">Section complete</a>
+</div>
+</li>
+</ul>
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro emptySection(question,pageKey,page) %}
+{% for pageKeyContent in page[pageKey]%}
+<div class="column-full section-incomplete">
+<ul>
+<li>
+  <div class="column-two-thirds"><h3 class="heading-medium">{{ question }}</h3></div>
+<div>
+  <a href="{{pageKey}}" class="awaiting-completion">Section To do</a>
+</div>
+</li>
+</ul>
+</div>
+{% endfor %}
+{% endmacro %}

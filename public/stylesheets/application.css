@@ -5289,4 +5289,104 @@ PIP24
   border: 4px solid #b10e1e;
 }
 
+/* line 677, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application .heading-highlight {
+  background: #28a197;
+  background: rgba(40, 161, 151, 0.25);
+  margin: 0;
+  padding: 10px 15px 8px 15px;
+}
+
+/* line 684, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application h2 {
+  margin: 0;
+  float: left;
+  width: 30%;
+  padding-left: 15px;
+}
+
+/* line 691, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application ul {
+  float: left;
+  margin-top: 3px;
+  width: 65%;
+}
+
+/* line 697, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application ul li {
+  margin-bottom: 15px;
+}
+
+/** removed as unliked
+.continue-application ul li:nth-child(even) {
+  background-color: $highlight-colour;
+}
+**/
+/* line 707, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application ul li:last-child {
+  margin: 0;
+}
+
+/* line 711, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application > div {
+  border-top: 2px solid #bfc1c3;
+  padding: 15px 0;
+}
+
+/* line 716, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application > div:first-child {
+  border-top: 4px solid #bfc1c3;
+}
+
+/* line 720, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.continue-application > div:last-child {
+  border: 0;
+}
+
+/* line 724, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-complete {
+  border-top: 3px solid #bfc1c3;
+}
+
+/* line 729, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-complete h3 {
+  margin: 0;
+  width: 98%;
+  padding: 0;
+}
+
+/* line 735, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-complete ul {
+  width: 112%;
+}
+
+/* line 739, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-incomplete {
+  border-top: 3px solid #bfc1c3;
+}
+
+/* line 743, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-incomplete h3 {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 748, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.section-incomplete ul {
+  width: 112%;
+}
+
+/* line 752, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.completed-this {
+  background: url(../images/cya-tick.png) no-repeat 3px 3px;
+  background-size: 22px 22px;
+  padding-left: 30px;
+}
+
+/* line 758, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/application.scss */
+.awaiting-completion {
+  background: url(../images/empty-tick.png) no-repeat 3px 3px;
+  padding-left: 30px;
+}
+
 /*# sourceMappingURL=application.css.map */

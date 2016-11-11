@@ -3,6 +3,7 @@ module.exports = function (app) {
   var styleguide           = require('./views/pip24/content/styleguide'),
       aboutYou             = require('./views/pip24/content/aboutYou'),
       unansweredQuestions  = require('./views/pip24/content/unansweredQuestions'),
+      continueApplication  = require('./views/pip24/content/continueApplication')
       checkYourAnswers     = require('./views/pip24/content/checkYourAnswers');
 
   app.get('/pip24/styleguide', function (req, res) {
@@ -1661,6 +1662,57 @@ var Nationality = ['scottish','english','british','austrian','belgian','bulgaria
 
   app.post('/pip24/unansweredQuestions', function (req, res) {
     res.redirect('/pip24/checkYourAnswers');
+  });
+
+  /*******************
+  continueApplication
+  *******************/
+  app.get('/pip24/continueApplication', function (req, res) {
+      res.render('pip24/continueApplication', {
+        data                     : aboutYou.getTableData(),
+        dataCheckChange          : continueApplication.getTableData(),
+        appointee                : req.session['pip24-appointee'],
+        aboutYou                 : req.session['pip24-aboutYou'],
+        contactDetails           : req.session['pip24-contactDetails'],
+        contactPref              : req.session['pip24-contactPref'],
+        bankDetails              : req.session['pip24-bankDetails'],
+        currentWhereabouts       : req.session['pip24-currentWhereabouts'],
+        nationality              : req.session['pip24-nationality'],
+        paymentsFromAbroad       : req.session['pip24-paymentsFromAbroad'],
+        mainHcp                  : req.session['pip24-mainHcp'],
+        conditionDetails         : req.session['pip24-conditionDetails'],
+        medications              : req.session['pip24-medications'],
+        manageMedications        : req.session['pip24-manageMedications'],
+        treatments               : req.session['pip24-treatments'],
+        manageTreatments         : req.session['pip24-manageTreatments'],
+        sideEffects              : req.session['pip24-sideEffects'],
+        conditionAffects         : req.session['pip24-conditionAffects'],
+        monitoringCondition      : req.session['pip24-monitoringCondition'],
+        healthcareprofessional   : req.session['pip24-healthcareprofessional'],
+        submitEvidence           : req.session['pip24-submitEvidence'],
+        specialAids              : req.session['pip24-specialAids'],
+        sight                    : req.session['pip24-sight'],
+        speech                   : req.session['pip24-speech'],
+        hearing                  : req.session['pip24-hearing'],
+        gettingUp                : req.session['pip24-gettingUp'],
+        toilet                   : req.session['pip24-toilet'],
+        washing                  : req.session['pip24-washing'],
+        gettingDressed           : req.session['pip24-gettingDressed'],
+        hotMeal                  : req.session['pip24-hotMeal'],
+        eatingAndDrinking        : req.session['pip24-eatingAndDrinking'],
+        gettingOut               : req.session['pip24-gettingOut'],
+        mixing                   : req.session['pip24-mixing'],
+        localJourney             : req.session['pip24-localJourney'],
+        somewhereNeverBeenBefore : req.session['pip24-somewhereNeverBeenBefore'],
+        somewhereYouKnow         : req.session['pip24-somewhereYouKnow'],
+        understanding            : req.session['pip24-understanding'],
+        money                    : req.session['pip24-money'],
+        additionalInfo           : req.session['pip24-additionalInfo']
+      });
+  });
+
+  app.post('/pip24/continueApplication', function (req, res) {
+    res.redirect('/');
   });
 
   /*******************

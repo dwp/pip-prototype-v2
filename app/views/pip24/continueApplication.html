@@ -1,0 +1,436 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+	GOV.UK prototyping kit
+{% endblock %}
+
+{% block content %}
+
+{% import "pip24/macros/elements.html" as elements %}
+{% for page in data %}
+{% for checkYourAnswers in dataCheckChange %}
+{% for question in checkYourAnswers.continueApplication %}
+<main id="content" role="main" class="pip24">
+
+	<div class="grid-row">
+			<form action="/pip24/continueApplication{% if edit %}?edit=true{% endif %}" method="post" class="form">
+
+					{{ elements.header(page,question) }}
+
+
+          <div class="column-full continue-application">
+
+            <!-- First Section - PIP 1 -->
+
+
+            {% if
+              not aboutYou.saveAndcontinue.length and not aboutYou.saveAndMenu.length
+              or not appointee.saveAndcontinue.length and not appointee.saveAndMenu.length
+              or not contactDetails.saveAndcontinue.length and not contactDetails.saveAndMenu.length
+              or not contactPref.saveAndcontinue.length and not contactPref.saveAndMenu.length
+              or not bankDetails.saveAndcontinue.length and not bankDetails.saveAndMenu.length
+              or not currentWhereabouts.saveAndcontinue.length and not currentWhereabouts.saveAndMenu.length
+              or not nationality.saveAndcontinue.length and not nationality.saveAndMenu.length
+              or not paymentsFromAbroad.saveAndcontinue.length and not paymentsFromAbroad.saveAndMenu.length
+              or not mainHcp.saveAndcontinue.length and not mainHcp.saveAndMenu.length
+            %}
+            <div class="column-full">
+            <h2 class="heading-medium"><span class="h2">About You</span></h2>
+
+  	          <ul>
+                {% if not aboutYou.saveAndcontinue.length and not aboutYou.saveAndMenu.length %}
+  								{{ elements.awaitingCompletion(question.aboutYou,"aboutYou",page) }}
+                {% else %}
+  								{{ elements.completedQuestion(question.aboutYou,"aboutYou",page) }}
+                {% endif %}
+
+                {% if not appointee.saveAndcontinue.length and not appointee.saveAndMenu.length %}
+  								{{ elements.awaitingCompletion(question.appointee,"appointee",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.appointee,"appointee",page) }}
+                {% endif %}
+
+                {% if not contactDetails.saveAndcontinue.length and not contactDetails.saveAndMenu.length %}
+  								{{ elements.awaitingCompletion(question.contactDetails,"contactDetails",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.contactDetails,"contactDetails",page) }}
+                {% endif %}
+
+                {% if not contactPref.saveAndcontinue.length and not contactPref.saveAndMenu.length %}
+    							{{ elements.awaitingCompletion(question.contactPref,"contactPref",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.contactPref,"contactPref",page) }}
+                {% endif %}
+
+                {% if not bankDetails.saveAndcontinue.length and not bankDetails.saveAndMenu.length %}
+  							  {{ elements.awaitingCompletion(question.bankDetails,"bankDetails",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.bankDetails,"bankDetails",page) }}
+                {% endif %}
+
+                {% if not nationality.saveAndcontinue.length and not nationality.saveAndMenu.length %}
+        					{{ elements.awaitingCompletion(question.nationality,"nationality",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.nationality,"nationality",page) }}
+                {% endif %}
+
+                {% if not currentWhereabouts.saveAndcontinue.length and not currentWhereabouts.saveAndMenu.length %}
+          				{{ elements.awaitingCompletion(question.currentWhereabouts,"currentWhereabouts",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.currentWhereabouts,"currentWhereabouts",page) }}
+                {% endif %}
+
+                {% if not paymentsFromAbroad.saveAndcontinue.length and not paymentsFromAbroad.saveAndMenu.length %}
+          				{{ elements.awaitingCompletion(question.paymentsFromAbroad,"paymentsFromAbroad",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.paymentsFromAbroad,"paymentsFromAbroad",page) }}
+                {% endif %}
+
+                {% if not mainHcp.saveAndcontinue.length and not mainHcp.saveAndMenu.length %}
+          				{{ elements.awaitingCompletion(question.mainHcp,"mainHcp",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.mainHcp,"mainHcp",page) }}
+                {% endif %}
+  	          </ul>
+            </div>
+
+            {% else %}
+              {{ elements.completedSection(question.aboutYouSection,"aboutYou",page) }}
+
+              {% endif %}
+
+              <!-- Second section -->
+
+              {% if
+                not aboutYou.saveAndcontinue.length and not aboutYou.saveAndMenu.length
+                or not appointee.saveAndcontinue.length and not appointee.saveAndMenu.length
+                or not contactDetails.saveAndcontinue.length and not contactDetails.saveAndMenu.length
+                or not contactPref.saveAndcontinue.length and not contactPref.saveAndMenu.length
+                or not bankDetails.saveAndcontinue.length and not bankDetails.saveAndMenu.length
+                or not currentWhereabouts.saveAndcontinue.length and not currentWhereabouts.saveAndMenu.length
+                or not nationality.saveAndcontinue.length and not nationality.saveAndMenu.length
+                or not paymentsFromAbroad.saveAndcontinue.length and not paymentsFromAbroad.saveAndMenu.length
+                or not mainHcp.saveAndcontinue.length and not mainHcp.saveAndMenu.length 
+              %}
+                {{ elements.emptySection(question.conditionsSection,"healthcareprofessional",page) }}
+
+              {% elseif
+                not healthcareprofessional.saveAndcontinue.length and not healthcareprofessional.saveAndMenu.length
+                or not conditionDetails.saveAndcontinue.length and not conditionDetails.saveAndMenu.length
+                or not medications.saveAndcontinue.length and not medications.saveAndMenu.length
+                or not treatments.saveAndcontinue.length and not treatments.saveAndMenu.length
+                or not sideEffects.saveAndcontinue.length and not sideEffects.saveAndMenu.length
+                or not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length
+                or not submitEvidence.saveAndcontinue.length and not submitEvidence.saveAndMenu.length
+              %}
+
+              <div class="column-full">
+              <h2 class="heading-medium">You and your condition</h2>
+                <ul>
+            {% if not healthcareprofessional.saveAndcontinue.length and not healthcareprofessional.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.healthcareprofessional,"healthcareprofessional",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.healthcareprofessional,"healthcareprofessional",page) }}
+                {% endif %}
+
+                {% if not conditionDetails.saveAndcontinue.length and not conditionDetails.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.conditionDetails,"conditionDetails",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.conditionDetails,"conditionDetails",page) }}
+                {% endif %}
+
+                {% if not medications.saveAndcontinue.length and not medications.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.medications,"medications",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.medications,"medications",page) }}
+                {% endif %}
+
+                {% if not treatments.saveAndcontinue.length and not treatments.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.treatments,"treatments",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.treatments,"treatments",page) }}
+                {% endif %}
+
+                {% if not sideEffects.saveAndcontinue.length and not sideEffects.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.sideEffects,"sideEffects",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.sideEffects,"sideEffects",page) }}
+                {% endif %}
+
+                {% if not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.monitoringCondition,"monitoringCondition",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.monitoringCondition,"monitoringCondition",page) }}
+                {% endif %}
+
+                {% if not submitEvidence.saveAndcontinue.length and not submitEvidence.saveAndMenu.length %}
+                  {{ elements.awaitingCompletion(question.submitEvidence,"submitEvidence",page) }}
+                {% else %}
+                  {{ elements.completedQuestion(question.submitEvidence,"submitEvidence",page) }}
+                {% endif %}
+
+              </ul>
+            </div>
+
+            {% else %}
+              {{ elements.completedSection(question.conditionsSection,"healthcareprofessional",page) }}
+
+              {% endif %}
+
+              <!-- Third section -->
+
+              {% if
+                not healthcareprofessional.saveAndcontinue.length and not healthcareprofessional.saveAndMenu.length
+                or not conditionDetails.saveAndcontinue.length and not conditionDetails.saveAndMenu.length
+                or not medications.saveAndcontinue.length and not medications.saveAndMenu.length
+                or not treatments.saveAndcontinue.length and not treatments.saveAndMenu.length
+                or not sideEffects.saveAndcontinue.length and not sideEffects.saveAndMenu.length
+                or not monitoringCondition.saveAndcontinue.length and not monitoringCondition.saveAndMenu.length
+                or not submitEvidence.saveAndcontinue.length and not submitEvidence.saveAndMenu.length
+               %}
+                {{ elements.emptySection(question.homeSection,"specialAids",page) }}
+
+                {% elseif
+                  not specialAids.saveAndcontinue.length and not specialAids.saveAndMenu.length
+        					or not sight.saveAndcontinue.length and not sight.saveAndMenu.length
+        					or not speech.saveAndcontinue.length and not speech.saveAndMenu.length
+        					or not hearing.saveAndcontinue.length and not hearing.saveAndMenu.length
+                  or not gettingUp.saveAndcontinue.length and not gettingUp.saveAndMenu.length
+                   %}
+
+               <div class="column-full">
+               <h2 class="heading-medium">You and your condition</h2>
+                 <ul>
+
+                   {% if not specialAids.saveAndcontinue.length and not specialAids.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.specialAids,"specialAids",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.specialAids,"specialAids",page) }}
+                   {% endif %}
+
+                   {% if not sight.saveAndcontinue.length and not sight.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.sight,"sight",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.sight,"sight",page) }}
+                   {% endif %}
+
+                   {% if not speech.saveAndcontinue.length and not speech.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.speech,"speech",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.speech,"speech",page) }}
+                   {% endif %}
+
+                   {% if not hearing.saveAndcontinue.length and not hearing.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.hearing,"hearing",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.hearing,"hearing",page) }}
+                   {% endif %}
+
+                   {% if not gettingUp.saveAndcontinue.length and not gettingUp.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.gettingUp,"gettingUp",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.gettingUp,"gettingUp",page) }}
+                   {% endif %}
+
+                 </ul>
+               </div>
+
+               {% else %}
+                 {{ elements.completedSection(question.homeSection,"specialAids",page) }}
+
+                {% endif %}
+
+                <!-- Fourth section - Caring for yourself -->
+
+                {% if
+                  not specialAids.saveAndcontinue.length and not specialAids.saveAndMenu.length
+        					or not sight.saveAndcontinue.length and not sight.saveAndMenu.length
+        					or not speech.saveAndcontinue.length and not speech.saveAndMenu.length
+        					or not hearing.saveAndcontinue.length and not hearing.saveAndMenu.length
+                  or not gettingUp.saveAndcontinue.length and not gettingUp.saveAndMenu.length
+                  %}
+
+                  {{ elements.emptySection(question.careSection,"toilet",page) }}
+
+                {% elseif
+                  not toilet.saveAndcontinue.length and not toilet.saveAndMenu.length
+                  or not washing.saveAndcontinue.length and not washing.saveAndMenu.length
+                  or not gettingDressed.saveAndcontinue.length and not gettingDressed.saveAndMenu.length
+                  or not hotMeal.saveAndcontinue.length and not hotMeal.saveAndMenu.length
+                  or not eatingAndDrinking.saveAndcontinue.length and not eatingAndDrinking.saveAndMenu.length %}
+
+                  <div class="column-full">
+                    <h2 class="heading-medium">Caring for yourself</h2>
+                    <ul>
+                      {% if not toilet.saveAndcontinue.length and not toilet.saveAndMenu.length %}
+                        {{ elements.awaitingCompletion(question.toilet,"toilet",page) }}
+                      {% else %}
+                        {{ elements.completedQuestion(question.toilet,"toilet",page) }}
+                      {% endif %}
+
+                      {% if not washing.saveAndcontinue.length and not washing.saveAndMenu.length %}
+                        {{ elements.awaitingCompletion(question.washing,"washing",page) }}
+                      {% else %}
+                        {{ elements.completedQuestion(question.washing,"washing",page) }}
+                      {% endif %}
+
+                      {% if not gettingDressed.saveAndcontinue.length and not gettingDressed.saveAndMenu.length %}
+                        {{ elements.awaitingCompletion(question.gettingDressed,"gettingDressed",page) }}
+                      {% else %}
+                        {{ elements.completedQuestion(question.gettingDressed,"gettingDressed",page) }}
+                      {% endif %}
+
+                      {% if not hotMeal.saveAndcontinue.length and not hotMeal.saveAndMenu.length %}
+                        {{ elements.awaitingCompletion(question.hotMeal,"hotMeal",page) }}
+                      {% else %}
+                        {{ elements.completedQuestion(question.hotMeal,"hotMeal",page) }}
+                      {% endif %}
+
+                      {% if not eatingAndDrinking.saveAndcontinue.length and not eatingAndDrinking.saveAndMenu.length %}
+                        {{ elements.awaitingCompletion(question.eatingAndDrinking,"eatingAndDrinking",page) }}
+                      {% else %}
+                        {{ elements.completedQuestion(question.eatingAndDrinking,"eatingAndDrinking",page) }}
+                      {% endif %}
+                    </ul>
+                  </div>
+
+                  {% else %}
+                  {{ elements.completedSection (question.careSection,"toilet",page)}}
+
+                  {% endif %}
+
+                  <!-- Fifth section - Leaving your home -->
+
+                  {% if
+                    not toilet.saveAndcontinue.length and not toilet.saveAndMenu.length
+                    or not washing.saveAndcontinue.length and not washing.saveAndMenu.length
+                    or not gettingDressed.saveAndcontinue.length and not gettingDressed.saveAndMenu.length
+                    or not hotMeal.saveAndcontinue.length and not hotMeal.saveAndMenu.length
+                    or not eatingAndDrinking.saveAndcontinue.length and not eatingAndDrinking.saveAndMenu.length
+                     %}
+                  {{ elements.emptySection (question.leavingSection,"gettingOut",page) }}
+
+                  {% elseif
+                    not gettingOut.saveAndcontinue.length and not gettingOut.saveAndMenu.length
+                    or not mixing.saveAndcontinue.length and not mixing.saveAndMenu.length
+                   %}
+
+                   <div class="column-full">
+                     <h2 class="heading-medium">Leaving your home</h2>
+                     <ul>
+                   {% if not gettingOut.saveAndcontinue.length and not gettingOut.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.gettingOut,"gettingOut",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.gettingOut,"gettingOut",page) }}
+                   {% endif %}
+
+                   {% if not mixing.saveAndcontinue.length and not mixing.saveAndMenu.length %}
+                     {{ elements.awaitingCompletion(question.mixing,"mixing",page) }}
+                   {% else %}
+                     {{ elements.completedQuestion(question.mixing,"mixing",page) }}
+                   {% endif %}
+                 </ul>
+               </div>
+
+               {% else %}
+               {{ elements.completedSection (question.leavingSection,"gettingOut",page) }}
+
+               {% endif %}
+
+               <!-- Sixth section - Making sense of things  -->
+
+               {% if
+                 not gettingOut.saveAndcontinue.length and not gettingOut.saveAndMenu.length
+                 or not mixing.saveAndcontinue.length and not mixing.saveAndMenu.length
+                  %}
+                {{ elements.emptySection (question.senseSection,"localJourney",page) }}
+
+                {% elseif
+                  not localJourney.saveAndcontinue.length and not localJourney.saveAndMenu.length
+                  or not somewhereNeverBeenBefore.saveAndcontinue.length and not somewhereNeverBeenBefore.saveAndMenu.length
+                  or not understanding.saveAndcontinue.length and not understanding.saveAndMenu.length
+                  or not money.saveAndcontinue.length and not money.saveAndMenu.length
+                    %}
+                   <div class="column-full">
+                     <h2 class="heading-medium">Making sense of things</h2>
+                     <ul>
+                  {% if not localJourney.saveAndcontinue.length and not localJourney.saveAndMenu.length %}
+                    {{ elements.awaitingCompletion(question.localJourney,"localJourney",page) }}
+                  {% else %}
+                    {{ elements.completedQuestion(question.localJourney,"localJourney",page) }}
+                  {% endif %}
+
+                  {% if not somewhereNeverBeenBefore.saveAndcontinue.length and not somewhereNeverBeenBefore.saveAndMenu.length %}
+                    {{ elements.awaitingCompletion(question.somewhereNeverBeenBefore,"somewhereNeverBeenBefore",page) }}
+                  {% else %}
+                    {{ elements.completedQuestion(question.somewhereNeverBeenBefore,"somewhereNeverBeenBefore",page) }}
+                  {% endif %}
+
+                  {% if not understanding.saveAndcontinue.length and not understanding.saveAndMenu.length %}
+                    {{ elements.awaitingCompletion(question.understanding,"understanding",page) }}
+                  {% else %}
+                    {{ elements.completedQuestion(question.understanding,"understanding",page) }}
+                  {% endif %}
+
+                  {% if not money.saveAndcontinue.length and not money.saveAndMenu.length %}
+                    {{ elements.awaitingCompletion(question.money,"money",page) }}
+                  {% else %}
+                    {{ elements.completedQuestion(question.money,"money",page) }}
+                  {% endif %}
+                     </ul>
+                   </div>
+
+                   {% else %}
+                   {{ elements.completedSection (question.senseSection,"localJourney",page) }}
+
+                {% endif %}
+
+                <!-- Seventh Section - Additional information -->
+                 {% if
+                   not localJourney.saveAndcontinue.length and not localJourney.saveAndMenu.length
+                   or not somewhereNeverBeenBefore.saveAndcontinue.length and not somewhereNeverBeenBefore.saveAndMenu.length
+                   or not understanding.saveAndcontinue.length and not understanding.saveAndMenu.length
+                   or not money.saveAndcontinue.length and not money.saveAndMenu.length
+                    %}
+
+                    {{ elements.emptySection (question.additionalSection,"additionalInfo",page) }}
+
+                    {% elseif
+                    not additionalInfo.saveAndcontinue.length and not additionalInfo.saveAndMenu.length
+                     %}
+                     <div class="column-full">
+                       <h2 class="heading-medium">Additional Information</h2>
+                       <ul>
+                    {{ elements.awaitingCompletion(question.additionalInfo,"additionalInfo",page) }}
+                  </ul>
+                </div>
+
+                {% else %}
+                {{ elements.completedSection (question.additionalSection,"additionalInfo",page) }}
+                    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+  						<div class="column-two-thirds">
+  						    <a href="/" class="link-back">Back</a>
+  							</div>
+  						</div>
+
+        </form>
+    </div>
+
+  </main>
+
+          {% endfor %}
+          {% endfor %}
+          {% endfor %}
+          {% endblock %}
