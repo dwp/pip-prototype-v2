@@ -69,7 +69,7 @@ var data = [ {
       ],
       "question1"        : "Check if you're in the right postcode below",
       "question2"        : "Already got an online account?",
-      "postCode"         : "<strong>Enter your postcode</strong>",
+      "postCode"         : "<strong>Enter your postcode</strong> (*Note* Only LS10 or ls10 accepted)",
       "postCodeHint"     : "",
       "submit"           : "Check your postcode",
       "backLink"         : "/pip24/apply"

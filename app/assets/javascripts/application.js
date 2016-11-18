@@ -332,6 +332,8 @@ $(document).ready(function() {
       $('#skipQuestion').click()
     });
 
+/**************************************************
+To add validation to nationality - Not tested
 
     $(".form-nationality").submit(function(e) {
         $('#otherNationality').each(function() {
@@ -346,6 +348,8 @@ $(document).ready(function() {
             }
         })
     });
+
+    *********************************************/
 
 
 });
