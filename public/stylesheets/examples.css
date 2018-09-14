@@ -1,4 +1,4 @@
-/* line 3, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/examples.scss */
+/* line 3, /Users/richardsmith/Documents/Sites/pip-prototype-v2/app/assets/sass/examples.scss */
 .area {
   font-family: 'nta', Sans-serif;
   font-size: 16px;
@@ -12,12 +12,12 @@
 }
 
 /* area styles specific to certain ones */
-/* line 16, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/examples.scss */
+/* line 16, /Users/richardsmith/Documents/Sites/pip-prototype-v2/app/assets/sass/examples.scss */
 main.area {
   min-height: 16em;
 }
 
-/* line 19, /Users/joechapman/Desktop/pip-prototype-v2/pip-prototype-v2/app/assets/sass/examples.scss */
+/* line 19, /Users/richardsmith/Documents/Sites/pip-prototype-v2/app/assets/sass/examples.scss */
 .header-proposition {
   clear: none;
   min-height: 6em;

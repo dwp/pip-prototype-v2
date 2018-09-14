@@ -1,44 +1,44 @@
 {
-  "name": "govuk_frontend_toolkit",
-  "version": "4.18.4",
-  "description": "npm package for using the GOV.UK frontend toolkit",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/alphagov/govuk_frontend_toolkit_npm.git"
+  "_from": "govuk_frontend_toolkit@^4.18.3",
+  "_id": "govuk_frontend_toolkit@4.18.4",
+  "_inBundle": false,
+  "_integrity": "sha1-BZHAGlo7GZjRYy3kE2+xZvO6mZM=",
+  "_location": "/govuk_frontend_toolkit",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "govuk_frontend_toolkit@^4.18.3",
+    "name": "govuk_frontend_toolkit",
+    "escapedName": "govuk_frontend_toolkit",
+    "rawSpec": "^4.18.3",
+    "saveSpec": null,
+    "fetchSpec": "^4.18.3"
   },
+  "_requiredBy": [
+    "/",
+    "/govuk-elements-sass"
+  ],
+  "_resolved": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-4.18.4.tgz",
+  "_shasum": "0591c01a5a3b1998d1632de4136fb166f3ba9993",
+  "_spec": "govuk_frontend_toolkit@^4.18.3",
+  "_where": "/Users/richardsmith/Documents/Sites/pip-prototype-v2",
   "author": {
     "name": "Government Digital Service developers",
     "email": "govuk-dev@digital.cabinet-office.gov.uk"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alphagov/govuk_frontend_toolkit/issues"
   },
-  "gitHead": "5cb7a4864929df86bcd323ce101d6dba08afc4ba",
-  "homepage": "https://github.com/alphagov/govuk_frontend_toolkit_npm",
-  "_id": "govuk_frontend_toolkit@4.18.4",
-  "scripts": {},
-  "_shasum": "0591c01a5a3b1998d1632de4136fb166f3ba9993",
-  "_from": "govuk_frontend_toolkit@>=4.6.0 <5.0.0",
-  "_npmVersion": "1.4.28",
-  "_npmUser": {
-    "name": "alphagov",
-    "email": "govuk-dev@digital.cabinet-office.gov.uk"
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "npm package for using the GOV.UK frontend toolkit",
+  "homepage": "https://github.com/alphagov/govuk_frontend_toolkit_npm#readme",
+  "license": "MIT",
+  "name": "govuk_frontend_toolkit",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alphagov/govuk_frontend_toolkit_npm.git"
   },
-  "maintainers": [
-    {
-      "name": "alphagov",
-      "email": "govuk-dev@digital.cabinet-office.gov.uk"
-    }
-  ],
-  "dist": {
-    "shasum": "0591c01a5a3b1998d1632de4136fb166f3ba9993",
-    "tarball": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-4.18.4.tgz"
-  },
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/govuk_frontend_toolkit-4.18.4.tgz_1476971624192_0.06650204118341208"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-4.18.4.tgz"
+  "version": "4.18.4"
 }
