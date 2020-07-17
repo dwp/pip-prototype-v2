@@ -15,7 +15,7 @@
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.26.9",
     "consolidate": "0.x",
     "express": "4.13.3",
     "express-session": "^1.13.0",
@@ -34,13 +34,13 @@
     "marked": "^0.3.6",
     "minimist": "0.0.8",
     "node-gyp": "^3.8.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.9.4",
     "nunjucks": "^2.4.2",
     "portscanner": "^1.0.0",
     "prompt": "^0.2.14",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0",
-    "standard": "^7.1.2",
+    "standard": "^11.0.0",
     "sync-request": "^3.0.1"
   }
 }
