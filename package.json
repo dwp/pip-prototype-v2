@@ -34,7 +34,7 @@
     "marked": "^0.3.6",
     "minimist": "0.0.8",
     "node-gyp": "^3.8.0",
-    "node-sass": "^4.9.3",
+    "node-sass": "^4.13.1",
     "nunjucks": "^2.4.2",
     "portscanner": "^1.0.0",
     "prompt": "^0.2.14",
