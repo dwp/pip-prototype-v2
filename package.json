@@ -35,7 +35,7 @@
     "minimist": "0.0.8",
     "node-gyp": "^3.8.0",
     "node-sass": "^4.9.3",
-    "nunjucks": "^2.4.2",
+    "nunjucks": "^3.2.4",
     "portscanner": "^1.0.0",
     "prompt": "^0.2.14",
     "readdir": "0.0.6",
